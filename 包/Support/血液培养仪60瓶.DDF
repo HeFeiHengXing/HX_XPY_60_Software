@@ -1,0 +1,43 @@
+.OPTION EXPLICIT
+.Set Cabinet=off
+.Set Compress=off
+.Set MaxDiskSize=CDROM
+.Set ReservePerCabinetSize=6144
+.Set DiskDirectoryTemplate=".."
+.Set CompressionType=MSZIP
+.Set CompressionLevel=7
+.Set CompressionMemory=21
+.Set CabinetNameTemplate="全自动血培养仪60.CAB"
+"Setup.Lst"
+"setup.exe"
+.Set Cabinet=on
+.Set Compress=on
+"全自动血培养仪60.exe"
+"msvbvm60.dll"
+"oleaut32.dll"
+"olepro32.dll"
+"asycfilt.dll"
+"stdole2.tlb"
+"COMCAT.DLL"
+"VB6CHS.DLL"
+"scrrun.dll"
+"msvcrt.dll"
+"SCRRNCHS.DLL"
+"asctrls.ocx"
+"MSSTDFMT.DLL"
+"STDFTCHS.DLL"
+"actskn43.ocx"
+"wmp.dll"
+"MSCOMM32.OCX"
+"MSCOMCHS.DLL"
+"TABCTL32.OCX"
+"TABCTCHS.DLL"
+"COMDLG32.OCX"
+"CMDLGCHS.DLL"
+"Richtx32.ocx"
+"RICHED32.DLL"
+"GAPI32.DLL"
+"RCHTXCHS.DLL"
+"SETUP1.EXE"
+"VB6STKIT.DLL"
+"ST6UNST.EXE"
