@@ -46,7 +46,7 @@ Private Sub UserControl_Resize()
     
 End Sub
 
-Public Function DrawGraph(ByVal RValues As Collection)
+Public Function DrawGraph(ByVal RValues As Collection, ByVal O1Values As Collection, ByVal O2Values As Collection, ByVal O3Values As Collection, DayNum As Integer)
     
     Dim IntX(1) As Integer                                                      'x轴坐标值
     
@@ -108,18 +108,15 @@ Public Function DrawGraph(ByVal RValues As Collection)
     
     
     
-    For i = 0 To Val(Form2.SkinLabel11(n))
+    For i = 0 To DayNum
         
         Graph.CurrentY = 2600
         
-        Graph.CurrentX = CInt((Graph.Width - 200) / Val(Form2.SkinLabel11(n)) * i) - 60
+        Graph.CurrentX = CInt((Graph.Width - 200) / DayNum * i) - 60
         
         Graph.Print i
         
     Next i
-    
-    
-    
     
     Graph.CurrentX = 20
     
@@ -135,14 +132,12 @@ Public Function DrawGraph(ByVal RValues As Collection)
     Dim nUpValCount As Integer
     Dim nIndex As Integer
     Dim bChangePoint As Boolean
-    '    Dim Max1 As Integer
-    '    Dim Max2 As Integer
-    '    Dim Max3 As Integer
-    '    Dim Min1 As Integer
-    '    Dim Min2 As Integer
-    '    Dim Min3 As Integer
-    '    Dim Swap As Integer
+    
     Dim Temp As Integer
+    
+    Dim temp_m As Integer
+    Dim temp_n As Integer
+    Dim q As Integer
     
     nUpValCount = 0
     
@@ -166,50 +161,83 @@ Public Function DrawGraph(ByVal RValues As Collection)
             
         End If
         
-        If i >= 75 And Red1_Flag = 0 Then                                       '10小时以后，连续15个（1差值）大于0。阳性
+        
+        If i > 20 And Red1_Flag = 0 Then                                        '连续8个二阶大于0
             
-            If (RValues(i) - RValues(i - 1) > 0) And (RValues(i - 1) - RValues(i - 2) > 0) And (RValues(i - 2) - RValues(i - 3) > 0) And (RValues(i - 3) - RValues(i - 4) > 0) And (RValues(i - 4) - RValues(i - 5) > 0) _
-                And (RValues(i - 5) - RValues(i - 6) > 0) And (RValues(i - 6) - RValues(i - 7) > 0) And (RValues(i - 7) - RValues(i - 8)) > 0 And (RValues(i - 8) - RValues(i - 9) > 0) And (RValues(i - 9) - RValues(i - 10) > 0) _
-                And (RValues(i - 10) - RValues(i - 11) > 0) And (RValues(i - 11) - RValues(i - 12) > 0) And (RValues(i - 12) - RValues(i - 13) > 0) And (RValues(i - 13) - RValues(i - 14) > 0) And (RValues(i - 14) - RValues(i - 15) > 0) Then
-                'If (RValues(j) - RValues(i - 1) > 0) And (RValues(i - 1) - RValues(i - 2) > 0) And (RValues(i - 2) - RValues(i - 3) > 0) And (RValues(i - 3) - RValues(i - 4) > 0) And (RValues(i - 4) - RValues(i - 5)) > 0 And (RValues(i - 5) - RValues(i - 6)) > 0 And (RValues(i - 6) - RValues(i - 7)) > 0 And (RValues(i - 7) - RValues(i - 8)) > 0 And (RValues(i - 8) - RValues(i - 9)) > 0 And (RValues(i - 9) - RValues(i - 10)) > 0 Then   '曲线变红
+            If (O2Values(i) > 0 And O2Values(i - 1) > 0 And O2Values(i - 2) > 0 And O2Values(i - 3) > 0 And _
+                O2Values(i - 4) > 0 And O2Values(i - 5) > 0 And O2Values(i - 6) > 0 And O2Values(i - 7) > 0 And _
+                O1Values(i - 8) > 0 And RValues(i) - RValues(i - 8) > 50) Then
                 
                 Red1_Flag = 1
-                
                 line = i
                 
             End If
             
         End If
         
-        '        If i >= 45 And Red1_Flag = 0 Then
+        If i > 22 And Red1_Flag = 0 Then                                        '连续10个二阶大于等于0
+            
+            If (O2Values(i) > 0) Then
+                
+                temp_m = 0
+                temp_n = 0
+                
+                For q = 1 To 11
+                    
+                    If (O2Values(i - q) > 0) Then
+                        
+                        temp_m = temp_m + 1
+                        
+                    ElseIf (O2Values(i - q) < 0) Then
+                        
+                        Exit For
+                        
+                    Else
+                        
+                        temp_n = temp_n + 1
+                        
+                    End If
+                    
+                    If temp_n > 3 Then
+                        
+                        Exit For
+                        
+                    End If
+                    
+                    If temp_m > 7 And i - temp_n - temp_m > 12 And O1Values(i - temp_n - temp_m) > 0 And RValues(i) - RValues(i - temp_n - temp_m) > 50 Then
+                        
+                        Red1_Flag = 1
+                        
+                        line = i
+                        
+                        Exit For
+                        
+                    End If
+                    
+                Next q
+                
+            End If
+            
+        End If
+        
+        '        If i > 22 And Red1_Flag = 0 Then                                        '前12组放弃
         '
-        '            'If (RValues(i) - RValues(i - 1)) > 2 And (RValues(i - 1) - RValues(i - 2)) > 2 And (RValues(i - 2) - RValues(i - 3)) > 2 And (RValues(i - 3) - RValues(i - 4)) > 1 And (RValues(i - 4) - RValues(i - 5)) > 1 And (RValues(i - 5) - RValues(i - 6)) > 1 And (RValues(i - 6) - RValues(i - 7)) > 1 And (RValues(i - 7) - RValues(i - 8)) > 1 Then
-        '            If (RValues(i) - RValues(i - 1)) > 0 And (RValues(i - 1) - RValues(i - 2)) > 0 And (RValues(i - 2) - RValues(i - 3)) > 0 And (RValues(i - 3) - RValues(i - 4)) > 0 And (RValues(i - 4) - RValues(i - 5)) > 0 And (RValues(i - 5) - RValues(i - 6)) > 0 And (RValues(i - 6) - RValues(i - 7)) > 0 And (RValues(i - 7) - RValues(i - 8)) > 0 Then
+        '            If (O2Values(i) > 0 And O2Values(i - 1) > 0 And O2Values(i - 2) > 0 And O2Values(i - 3) > 0 And O2Values(i - 4) > 0 And _
+        '                O2Values(i - 5) > 0 And O2Values(i - 6) > 0 And O2Values(i - 7) > 0 And O2Values(i - 8) > 0 And O2Values(i - 9) > 0 And _
+        '                O1Values(i) > 0 And RValues(i) - RValues(i - 10) > 50) Then
         '
         '                Red1_Flag = 1
-        '
         '                line = i
         '
         '            End If
-        
-        '*********************************************************************************************************
-        '        Else
-        If i >= 18 And Red1_Flag = 0 Then
-            
-            If ((RValues(i) - RValues(i - 1)) >= 1 And (RValues(i - 1) - RValues(i - 2)) >= 1 And (RValues(i - 2) - RValues(i - 3)) >= 1 And (RValues(i - 3) - RValues(i - 4)) >= 1 And (RValues(i - 4) - RValues(i - 5)) >= 1 And (RValues(i) - RValues(i - 1)) - (RValues(i - 1) - RValues(i - 2))) >= 1 And ((RValues(i - 1) - RValues(i - 2)) - (RValues(i - 2) - RValues(i - 3))) >= 1 And ((RValues(i - 2) - RValues(i - 3)) - (RValues(i - 3) - RValues(i - 4))) >= 1 And ((RValues(i - 3) - RValues(i - 4)) - (RValues(i - 4) - RValues(i - 5))) >= 1 Then '曲线变红
-                
-                Red1_Flag = 1
-                
-                line = i
-                
-            End If
-            
-        End If
-        
-        '*********************************************************************************************************
-        '        If i >= 169 And Red1_Flag = 0 Then
         '
-        '            If (RValues(i) - RValues(i - 2) > 0) And (RValues(i - 2) - RValues(i - 4) > 0) And (RValues(i - 4) - RValues(i - 6) > 0) And (RValues(i - 6) - RValues(i - 8) > 0) And (RValues(i - 8) - RValues(i - 10) > 0) And (RValues(i - 10) - RValues(i - 12) > 0) And (RValues(i - 12) - RValues(i - 14) > 0) And (RValues(i - 14) - RValues(i - 16)) > 0 And (RValues(i - 16) - RValues(i - 18) > 0) And (RValues(i - 18) - RValues(i - 20) > 0) And (RValues(i - 20) - RValues(i - 22) > 0) And (RValues(i - 22) - RValues(i - 24) > 0) Then
+        '        End If
+        
+        '        If i >= 9 And Red1_Flag = 0 Then                                        '前三组放弃
+        '
+        '            If (O1Values(i) > 0 And O1Values(i - 1) > 0 And O1Values(i - 2) > 0 And O1Values(i - 3) > 0 And O1Values(i - 4) > 0 And O1Values(i - 5) > 0 And _
+        '                O2Values(i - 3) > 0 And O2Values(i - 4) > 0 And O2Values(i - 5) > 0 And _
+        '                O3Values(i - 5) > 0) And RValues(i) - RValues(i - 6) > 60 Then
         '
         '                Red1_Flag = 1
         '
@@ -219,61 +247,7 @@ Public Function DrawGraph(ByVal RValues As Collection)
         '
         '        End If
         
-        '*********************************************************************************************************
         If i >= 289 And Red1_Flag = 0 Then
-            
-            '            Max1 = RValues(i) - RValues(i - 1)
-            '            Max2 = RValues(i - 1) - RValues(i - 2)
-            '            Max3 = RValues(i - 2) - RValues(i - 3)
-            '            Min1 = RValues(i) - RValues(i - 1)
-            '            Min2 = RValues(i - 1) - RValues(i - 2)
-            '            Min3 = RValues(i - 2) - RValues(i - 3)
-            '
-            '            For nIndex = 3 To 143
-            '
-            '                Temp = RValues(i - nIndex) - RValues(i - nIndex - 1)
-            '
-            '                If Temp > Max1 Then
-            '                    Swap = Max1
-            '                    Max1 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp > Max2 Then
-            '                    Swap = Max2
-            '                    Max2 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp > Max3 Then
-            '                    Swap = Max3
-            '                    Max3 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                Temp = RValues(i - nIndex) - RValues(i - nIndex - 1)
-            '
-            '                If Temp < Min1 Then
-            '                    Swap = Min1
-            '                    Min1 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp < Min2 Then
-            '                    Swap = Min2
-            '                    Min2 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp < Min3 Then
-            '                    Swap = Min3
-            '                    Min3 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '            Next nIndex
-            '
-            '            Temp = RValues(i) - RValues(i - 144) - Max1 - Max2 - Max3 - Min1 - Min2 - Min3
             
             bChangePoint = False
             
@@ -321,59 +295,6 @@ Public Function DrawGraph(ByVal RValues As Collection)
             
         ElseIf i >= 145 And Red1_Flag = 0 Then
             
-            '            Max1 = RValues(i) - RValues(i - 1)
-            '            Max2 = RValues(i - 1) - RValues(i - 2)
-            '            Max3 = RValues(i - 2) - RValues(i - 3)
-            '            Min1 = RValues(i) - RValues(i - 1)
-            '            Min2 = RValues(i - 1) - RValues(i - 2)
-            '            Min3 = RValues(i - 2) - RValues(i - 3)
-            '
-            '            For nIndex = 3 To 107
-            '
-            '                Temp = RValues(i - nIndex) - RValues(i - nIndex - 1)
-            '
-            '                If Temp > Max1 Then
-            '                    Swap = Max1
-            '                    Max1 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp > Max2 Then
-            '                    Swap = Max2
-            '                    Max2 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp > Max3 Then
-            '                    Swap = Max3
-            '                    Max3 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                Temp = RValues(i - nIndex) - RValues(i - nIndex - 1)
-            '
-            '                If Temp < Min1 Then
-            '                    Swap = Min1
-            '                    Min1 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp < Min2 Then
-            '                    Swap = Min2
-            '                    Min2 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '                If Temp < Min3 Then
-            '                    Swap = Min3
-            '                    Min3 = Temp
-            '                    Temp = Swap
-            '                End If
-            '
-            '            Next nIndex
-            '
-            '            Temp = RValues(i) - RValues(i - 108) - Max1 - Max2 - Max3 - Min1 - Min2 - Min3
-            
             bChangePoint = False
             
             Temp = 0
@@ -420,82 +341,6 @@ Public Function DrawGraph(ByVal RValues As Collection)
             
         End If
         
-        If (i Mod 144 = 0) Then
-            
-            Open App.Path & "\data\" & barcode_name & ".txt" For Input As #1    '显示曲线
-            
-            Line Input #1, store_line                                           '以下跳过不读
-            If store_line = "Revision 2017" Then
-                Line Input #1, store_line
-                Line Input #1, store_line
-                Line Input #1, store_line
-            End If
-            Line Input #1, store_line
-            Line Input #1, store_line
-            Line Input #1, store_line
-            Line Input #1, store_line
-            Line Input #1, store_line
-            Line Input #1, store_line
-            Line Input #1, store_line
-            
-            For k = 1 To i - 1
-                
-                Line Input #1, store_line
-                
-            Next k
-            
-            Line Input #1, store_line                                           '读时间*****************************************
-            
-            time_start = Mid(store_line, 16, 5)
-            
-            Close #1
-            
-            'j = i / 144
-            
-            'time_day = day_media + j
-            
-            'time_month = month_media
-            
-            'If (time_day > 29 And month_media = 2) Then '2月份
-            
-            'time_month = month_media + 1
-            
-            'time_day = time_day - 29
-            
-            'ElseIf (time_day > 30 And (month_media = 4 Or month_media = 6 Or month_media = 9 Or month_media = 11)) Then
-            
-            'time_month = month_media + 1
-            
-            'time_day = time_day - 30
-            
-            'ElseIf (time_day > 31 And (month_media = 1 Or month_media = 3 Or month_media = 5 Or month_media = 7 Or month_media = 8 Or month_media = 10)) Then
-            
-            'time_month = month_media + 1
-            
-            'time_day = time_day - 31
-            
-            'ElseIf (time_day > 31 And month_media = 12) Then
-            
-            'time_month = 1
-            
-            'time_day = time_day - 31
-            
-            'End If
-            
-            'time_start = Format(time_month, "00") & "-" & Format(time_day, "00")
-            
-            Graph.CurrentX = cul_time * i
-            
-            Graph.CurrentY = 2600
-            
-            Graph.ForeColor = RGB(255, 255, 255)                                '白色
-            
-            'Graph.Print time_start '2011-11-26,2012-3-5修改,由于改为显示天数,原来日期注释
-            
-            'col = RGB(0, 255, 0) '绿色
-            
-        End If
-        
         If (Red1_Flag = 1 And Red2_Flag = 0) Then
             
             Red2_Flag = 1
@@ -524,7 +369,7 @@ Public Function DrawGraph(ByVal RValues As Collection)
             
             Line Input #1, store_line                                           '读时间*****************************************
             
-            time = Mid(store_line, 16, 14)
+            time = Mid(store_line, 39, 14)
             
             Close #1
             

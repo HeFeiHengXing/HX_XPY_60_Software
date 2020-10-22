@@ -1,22 +1,22 @@
 VERSION 5.00
 Object = "{74848F95-A02A-4286-AF0C-A3C755E4A5B3}#1.0#0"; "actskn43.ocx"
+Object = "{6BF52A50-394A-11D3-B153-00C04F79FAA6}#1.0#0"; "wmp.dll"
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
-Object = "{6BF52A50-394A-11D3-B153-00C04F79FAA6}#1.0#0"; "wmp.dll"
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "Richtx32.ocx"
 Begin VB.Form Form2 
    BackColor       =   &H8000000A&
    Caption         =   "血液细菌培养仪"
-   ClientHeight    =   11025
+   ClientHeight    =   11070
    ClientLeft      =   1845
    ClientTop       =   555
-   ClientWidth     =   15255
+   ClientWidth     =   15285
    Icon            =   "workfrm.frx":0000
    LinkTopic       =   "Form2"
    LockControls    =   -1  'True
-   ScaleHeight     =   11025
-   ScaleWidth      =   15255
+   ScaleHeight     =   11070
+   ScaleWidth      =   15285
    StartUpPosition =   2  '屏幕中心
    Begin TabDlg.SSTab SSTab1 
       Height          =   11055
@@ -49,26 +49,24 @@ Begin VB.Form Form2
       TabCaption(1)   =   "系统设置"
       TabPicture(1)   =   "workfrm.frx":686E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "WindowsMediaPlayer1"
-      Tab(1).Control(1)=   "MSComm1"
-      Tab(1).Control(2)=   "Frame6"
-      Tab(1).Control(3)=   "Frame8"
-      Tab(1).Control(4)=   "Frame9"
-      Tab(1).Control(5)=   "Text3"
-      Tab(1).Control(6)=   "Text4"
-      Tab(1).Control(7)=   "Text5"
-      Tab(1).Control(8)=   "Text6"
-      Tab(1).Control(9)=   "Text9"
-      Tab(1).Control(10)=   "Text10"
-      Tab(1).Control(11)=   "Frame15"
-      Tab(1).Control(12)=   "Frame16"
-      Tab(1).Control(13)=   "Timer1"
-      Tab(1).Control(14)=   "Timer2"
-      Tab(1).Control(15)=   "Frame19"
-      Tab(1).Control(16)=   "Frame20"
-      Tab(1).Control(17)=   "Frame18"
-      Tab(1).Control(18)=   "Frame21"
-      Tab(1).ControlCount=   19
+      Tab(1).Control(0)=   "Frame21"
+      Tab(1).Control(1)=   "Frame18"
+      Tab(1).Control(2)=   "Frame20"
+      Tab(1).Control(3)=   "Frame19"
+      Tab(1).Control(4)=   "Timer2"
+      Tab(1).Control(5)=   "Timer1"
+      Tab(1).Control(6)=   "Frame16"
+      Tab(1).Control(7)=   "Text10"
+      Tab(1).Control(8)=   "Text9"
+      Tab(1).Control(9)=   "Text6"
+      Tab(1).Control(10)=   "Text5"
+      Tab(1).Control(11)=   "Text4"
+      Tab(1).Control(12)=   "Text3"
+      Tab(1).Control(13)=   "Frame8"
+      Tab(1).Control(14)=   "Frame6"
+      Tab(1).Control(15)=   "MSComm1"
+      Tab(1).Control(16)=   "WindowsMediaPlayer1"
+      Tab(1).ControlCount=   17
       TabCaption(2)   =   "查询统计"
       TabPicture(2)   =   "workfrm.frx":688A
       Tab(2).ControlEnabled=   0   'False
@@ -82,32 +80,32 @@ Begin VB.Form Form2
       Tab(2).ControlCount=   7
       Begin VB.Frame Frame21 
          Caption         =   "警报设置"
-         Height          =   1335
-         Left            =   -72720
-         TabIndex        =   951
-         Top             =   4080
-         Width           =   3375
+         Height          =   1500
+         Left            =   -72480
+         TabIndex        =   935
+         Top             =   7200
+         Width           =   3615
          Begin VB.CommandButton Command18 
             Caption         =   "确定"
             Height          =   375
             Left            =   2400
-            TabIndex        =   961
-            Top             =   720
+            TabIndex        =   945
+            Top             =   840
             Width           =   735
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel76 
             Height          =   255
             Left            =   360
             OleObjectBlob   =   "workfrm.frx":68A6
-            TabIndex        =   960
-            Top             =   840
+            TabIndex        =   944
+            Top             =   960
             Width           =   1335
          End
          Begin VB.CheckBox Check1 
             Caption         =   "Check1"
             Height          =   255
             Left            =   2640
-            TabIndex        =   959
+            TabIndex        =   943
             Top             =   360
             Value           =   1  'Checked
             Width           =   255
@@ -116,64 +114,64 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   360
             OleObjectBlob   =   "workfrm.frx":6912
-            TabIndex        =   958
+            TabIndex        =   942
             Top             =   360
             Width           =   1335
          End
       End
       Begin VB.Frame Frame18 
          Caption         =   "设置温度"
-         Height          =   1335
-         Left            =   -72720
-         TabIndex        =   950
-         Top             =   2520
-         Width           =   3375
+         Height          =   1800
+         Left            =   -72480
+         TabIndex        =   934
+         Top             =   2040
+         Width           =   3615
          Begin VB.CommandButton Command5 
             Caption         =   "↑"
             Height          =   195
             Left            =   1800
-            TabIndex        =   955
-            Top             =   720
+            TabIndex        =   939
+            Top             =   840
             Width           =   255
          End
          Begin VB.CommandButton Command6 
             Caption         =   "↓"
             Height          =   195
             Left            =   1800
-            TabIndex        =   954
-            Top             =   960
+            TabIndex        =   938
+            Top             =   1080
             Width           =   255
          End
          Begin VB.CommandButton Command7 
             Caption         =   "确定"
             Height          =   375
             Left            =   2400
-            TabIndex        =   952
-            Top             =   720
+            TabIndex        =   936
+            Top             =   1200
             Width           =   750
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel21 
             Height          =   255
             Left            =   1440
             OleObjectBlob   =   "workfrm.frx":697E
-            TabIndex        =   953
-            Top             =   840
+            TabIndex        =   937
+            Top             =   960
             Width           =   255
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel20 
             Height          =   255
             Left            =   840
             OleObjectBlob   =   "workfrm.frx":69E0
-            TabIndex        =   956
-            Top             =   840
+            TabIndex        =   940
+            Top             =   960
             Width           =   375
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel19 
             Height          =   255
             Left            =   240
             OleObjectBlob   =   "workfrm.frx":6A3E
-            TabIndex        =   957
-            Top             =   360
+            TabIndex        =   941
+            Top             =   480
             Width           =   1095
          End
       End
@@ -181,13 +179,13 @@ Begin VB.Form Form2
          Caption         =   "删除文件"
          Height          =   1095
          Left            =   -73200
-         TabIndex        =   946
+         TabIndex        =   930
          Top             =   720
          Width           =   4695
          Begin VB.TextBox Text12 
             Height          =   285
             Left            =   720
-            TabIndex        =   948
+            TabIndex        =   932
             Top             =   600
             Width           =   2415
          End
@@ -195,7 +193,7 @@ Begin VB.Form Form2
             Caption         =   "确定"
             Height          =   375
             Left            =   3600
-            TabIndex        =   947
+            TabIndex        =   931
             Top             =   600
             Width           =   750
          End
@@ -203,7 +201,7 @@ Begin VB.Form Form2
             Height          =   375
             Left            =   360
             OleObjectBlob   =   "workfrm.frx":6AA8
-            TabIndex        =   949
+            TabIndex        =   933
             Top             =   240
             Width           =   2175
          End
@@ -212,7 +210,7 @@ Begin VB.Form Form2
          Caption         =   "瓶位状态"
          Height          =   1935
          Left            =   480
-         TabIndex        =   937
+         TabIndex        =   921
          Top             =   8520
          Width           =   6975
          Begin VB.PictureBox Picture4 
@@ -223,7 +221,7 @@ Begin VB.Form Form2
             Picture         =   "workfrm.frx":6B1E
             ScaleHeight     =   465
             ScaleWidth      =   465
-            TabIndex        =   972
+            TabIndex        =   956
             Top             =   960
             Width           =   525
          End
@@ -235,7 +233,7 @@ Begin VB.Form Form2
             Picture         =   "workfrm.frx":6F37
             ScaleHeight     =   465
             ScaleWidth      =   465
-            TabIndex        =   971
+            TabIndex        =   955
             Top             =   360
             Width           =   525
          End
@@ -247,7 +245,7 @@ Begin VB.Form Form2
             Picture         =   "workfrm.frx":7343
             ScaleHeight     =   465
             ScaleWidth      =   465
-            TabIndex        =   970
+            TabIndex        =   954
             Top             =   960
             Width           =   525
          End
@@ -259,7 +257,7 @@ Begin VB.Form Form2
             Picture         =   "workfrm.frx":773B
             ScaleHeight     =   465
             ScaleWidth      =   465
-            TabIndex        =   969
+            TabIndex        =   953
             Top             =   360
             Width           =   525
          End
@@ -267,7 +265,7 @@ Begin VB.Form Form2
             Caption         =   "取瓶"
             Height          =   375
             Left            =   5760
-            TabIndex        =   968
+            TabIndex        =   952
             Top             =   1080
             Width           =   750
          End
@@ -275,7 +273,7 @@ Begin VB.Form Form2
             Caption         =   "取瓶"
             Height          =   375
             Left            =   5760
-            TabIndex        =   967
+            TabIndex        =   951
             Top             =   480
             Width           =   750
          End
@@ -283,7 +281,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   2280
             OleObjectBlob   =   "workfrm.frx":7B34
-            TabIndex        =   945
+            TabIndex        =   929
             Top             =   1200
             Width           =   615
          End
@@ -291,7 +289,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   5040
             OleObjectBlob   =   "workfrm.frx":7B92
-            TabIndex        =   944
+            TabIndex        =   928
             Top             =   1200
             Width           =   615
          End
@@ -299,7 +297,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   5040
             OleObjectBlob   =   "workfrm.frx":7BF0
-            TabIndex        =   943
+            TabIndex        =   927
             Top             =   600
             Width           =   615
          End
@@ -307,7 +305,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   2280
             OleObjectBlob   =   "workfrm.frx":7C4E
-            TabIndex        =   942
+            TabIndex        =   926
             Top             =   600
             Width           =   615
          End
@@ -315,7 +313,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   360
             OleObjectBlob   =   "workfrm.frx":7CAC
-            TabIndex        =   941
+            TabIndex        =   925
             Top             =   1200
             Width           =   1215
          End
@@ -323,7 +321,7 @@ Begin VB.Form Form2
             Height          =   270
             Left            =   3240
             OleObjectBlob   =   "workfrm.frx":7D16
-            TabIndex        =   940
+            TabIndex        =   924
             Top             =   600
             Width           =   1335
          End
@@ -331,7 +329,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   3240
             OleObjectBlob   =   "workfrm.frx":7D7E
-            TabIndex        =   939
+            TabIndex        =   923
             Top             =   1200
             Width           =   1335
          End
@@ -339,7 +337,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   360
             OleObjectBlob   =   "workfrm.frx":7DE6
-            TabIndex        =   938
+            TabIndex        =   922
             Top             =   600
             Width           =   1095
          End
@@ -351,85 +349,85 @@ Begin VB.Form Form2
       End
       Begin VB.Frame Frame20 
          Caption         =   "设置培养时间"
-         Height          =   1815
-         Left            =   -72720
-         TabIndex        =   929
-         Top             =   5640
-         Width           =   3375
+         Height          =   2200
+         Left            =   -72480
+         TabIndex        =   913
+         Top             =   4440
+         Width           =   3615
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel77 
             Height          =   255
             Left            =   2640
             OleObjectBlob   =   "workfrm.frx":8084
-            TabIndex        =   963
-            Top             =   840
+            TabIndex        =   947
+            Top             =   1200
             Width           =   375
          End
          Begin VB.CommandButton Command20 
             Caption         =   "确定"
             Height          =   375
             Left            =   2400
-            TabIndex        =   932
-            Top             =   1200
+            TabIndex        =   916
+            Top             =   1680
             Width           =   750
          End
          Begin VB.TextBox Text14 
             Height          =   285
             Left            =   2160
-            TabIndex        =   931
-            Top             =   360
+            TabIndex        =   915
+            Top             =   600
             Width           =   735
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel67 
             Height          =   375
             Left            =   240
             OleObjectBlob   =   "workfrm.frx":80E4
-            TabIndex        =   930
-            Top             =   360
+            TabIndex        =   914
+            Top             =   600
             Width           =   1815
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel68 
             Height          =   255
             Left            =   240
             OleObjectBlob   =   "workfrm.frx":8158
-            TabIndex        =   933
-            Top             =   840
+            TabIndex        =   917
+            Top             =   1200
             Width           =   1695
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel69 
             Height          =   255
             Left            =   1920
             OleObjectBlob   =   "workfrm.frx":81C8
-            TabIndex        =   934
-            Top             =   840
+            TabIndex        =   918
+            Top             =   1200
             Width           =   615
          End
       End
       Begin VB.Frame Frame19 
          Caption         =   "阈值设置"
-         Height          =   2415
-         Left            =   -66000
-         TabIndex        =   919
-         Top             =   7680
+         Height          =   2200
+         Left            =   -66240
+         TabIndex        =   903
+         Top             =   6120
          Width           =   3615
          Begin VB.TextBox Text13 
             Height          =   285
             Left            =   1920
-            TabIndex        =   927
+            TabIndex        =   911
             Top             =   1080
             Width           =   615
          End
          Begin VB.CommandButton Command16 
             Caption         =   "确定"
             Height          =   375
-            Left            =   2400
-            TabIndex        =   925
-            Top             =   1800
+            Left            =   2520
+            TabIndex        =   909
+            Top             =   1680
             Width           =   750
          End
          Begin VB.TextBox Text11 
             Height          =   285
             Left            =   1920
-            TabIndex        =   921
+            TabIndex        =   905
             Top             =   360
             Width           =   615
          End
@@ -437,7 +435,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   600
             OleObjectBlob   =   "workfrm.frx":8226
-            TabIndex        =   920
+            TabIndex        =   904
             Top             =   360
             Width           =   1335
          End
@@ -445,7 +443,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   600
             OleObjectBlob   =   "workfrm.frx":8292
-            TabIndex        =   922
+            TabIndex        =   906
             Top             =   720
             Width           =   1335
          End
@@ -453,7 +451,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   1920
             OleObjectBlob   =   "workfrm.frx":82FE
-            TabIndex        =   923
+            TabIndex        =   907
             Top             =   720
             Width           =   615
          End
@@ -461,7 +459,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   600
             OleObjectBlob   =   "workfrm.frx":835C
-            TabIndex        =   924
+            TabIndex        =   908
             Top             =   1080
             Width           =   1335
          End
@@ -469,7 +467,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   1920
             OleObjectBlob   =   "workfrm.frx":83C8
-            TabIndex        =   926
+            TabIndex        =   910
             Top             =   1440
             Width           =   615
          End
@@ -477,7 +475,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   600
             OleObjectBlob   =   "workfrm.frx":8426
-            TabIndex        =   928
+            TabIndex        =   912
             Top             =   1440
             Width           =   1335
          End
@@ -497,14 +495,14 @@ Begin VB.Form Form2
          Caption         =   "工作状态"
          Height          =   1935
          Left            =   11760
-         TabIndex        =   916
+         TabIndex        =   900
          Top             =   8520
          Width           =   3015
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel61 
             Height          =   255
             Left            =   480
             OleObjectBlob   =   "workfrm.frx":8492
-            TabIndex        =   918
+            TabIndex        =   902
             Top             =   600
             Width           =   2175
          End
@@ -512,7 +510,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   2280
             OleObjectBlob   =   "workfrm.frx":84F0
-            TabIndex        =   964
+            TabIndex        =   948
             Top             =   1200
             Width           =   375
          End
@@ -520,7 +518,7 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   1680
             OleObjectBlob   =   "workfrm.frx":8552
-            TabIndex        =   965
+            TabIndex        =   949
             Top             =   1200
             Width           =   375
          End
@@ -528,117 +526,39 @@ Begin VB.Form Form2
             Height          =   255
             Left            =   480
             OleObjectBlob   =   "workfrm.frx":85B0
-            TabIndex        =   966
+            TabIndex        =   950
             Top             =   1200
             Width           =   1095
          End
       End
       Begin VB.Frame Frame16 
          Caption         =   "恢复出厂设置"
-         Height          =   1815
-         Left            =   -66000
-         TabIndex        =   908
-         Top             =   5520
+         Height          =   1100
+         Left            =   -66240
+         TabIndex        =   894
+         Top             =   8760
          Width           =   3615
          Begin VB.CommandButton Command17 
             Caption         =   "确定"
             Height          =   375
-            Left            =   2400
-            TabIndex        =   915
-            Top             =   1200
+            Left            =   2640
+            TabIndex        =   899
+            Top             =   480
             Width           =   750
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel60 
             Height          =   255
-            Left            =   240
+            Left            =   120
             OleObjectBlob   =   "workfrm.frx":861A
-            TabIndex        =   914
+            TabIndex        =   898
             Top             =   600
             Width           =   2535
-         End
-      End
-      Begin VB.Frame Frame15 
-         Caption         =   "校准参数设置"
-         Height          =   2415
-         Left            =   -72720
-         TabIndex        =   898
-         Top             =   7680
-         Width           =   3375
-         Begin VB.CommandButton Command15 
-            Caption         =   "确定"
-            Height          =   375
-            Left            =   2280
-            TabIndex        =   907
-            Top             =   1800
-            Width           =   750
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel52 
-            Height          =   255
-            Left            =   2280
-            OleObjectBlob   =   "workfrm.frx":8696
-            TabIndex        =   906
-            Top             =   1440
-            Width           =   495
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel51 
-            Height          =   255
-            Left            =   480
-            OleObjectBlob   =   "workfrm.frx":86F4
-            TabIndex        =   905
-            Top             =   1440
-            Width           =   1815
-         End
-         Begin VB.TextBox Text8 
-            Height          =   285
-            Left            =   2280
-            TabIndex        =   904
-            Top             =   1080
-            Width           =   615
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel50 
-            Height          =   255
-            Left            =   480
-            OleObjectBlob   =   "workfrm.frx":8766
-            TabIndex        =   903
-            Top             =   1080
-            Width           =   1815
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel49 
-            Height          =   255
-            Left            =   480
-            OleObjectBlob   =   "workfrm.frx":87D8
-            TabIndex        =   902
-            Top             =   720
-            Width           =   1815
-         End
-         Begin VB.TextBox Text7 
-            Height          =   285
-            Left            =   2280
-            TabIndex        =   901
-            Top             =   360
-            Width           =   615
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel48 
-            Height          =   255
-            Left            =   2280
-            OleObjectBlob   =   "workfrm.frx":884A
-            TabIndex        =   900
-            Top             =   720
-            Width           =   495
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel47 
-            Height          =   255
-            Left            =   480
-            OleObjectBlob   =   "workfrm.frx":88A8
-            TabIndex        =   899
-            Top             =   360
-            Width           =   1815
          End
       End
       Begin VB.TextBox Text10 
          Height          =   375
          Left            =   -61440
-         TabIndex        =   897
+         TabIndex        =   893
          Top             =   6480
          Visible         =   0   'False
          Width           =   1335
@@ -646,7 +566,7 @@ Begin VB.Form Form2
       Begin VB.TextBox Text9 
          Height          =   285
          Left            =   -61440
-         TabIndex        =   896
+         TabIndex        =   892
          Top             =   6000
          Visible         =   0   'False
          Width           =   1455
@@ -655,49 +575,49 @@ Begin VB.Form Form2
          Caption         =   "统计资料"
          Height          =   4575
          Left            =   -66360
-         TabIndex        =   889
+         TabIndex        =   885
          Top             =   2160
-         Width           =   4335
+         Width           =   4695
          Begin VB.CommandButton Command13 
             Caption         =   "打印"
             Height          =   375
-            Left            =   3240
-            TabIndex        =   891
+            Left            =   3600
+            TabIndex        =   887
             Top             =   3960
             Width           =   750
          End
          Begin RichTextLib.RichTextBox RichTextBox1 
             Height          =   3375
             Left            =   360
-            TabIndex        =   890
+            TabIndex        =   886
             Top             =   360
-            Width           =   3615
-            _ExtentX        =   6376
+            Width           =   3950
+            _ExtentX        =   6959
             _ExtentY        =   5953
             _Version        =   393217
-            TextRTF         =   $"workfrm.frx":891A
+            TextRTF         =   $"workfrm.frx":8696
          End
       End
       Begin VB.Frame Frame13 
          Caption         =   "统计提示"
          Height          =   1215
          Left            =   -66360
-         TabIndex        =   766
+         TabIndex        =   762
          Top             =   720
-         Width           =   4335
+         Width           =   4695
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel44 
             Height          =   255
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":89B7
-            TabIndex        =   888
+            OleObjectBlob   =   "workfrm.frx":8733
+            TabIndex        =   884
             Top             =   360
             Width           =   2055
          End
          Begin VB.CommandButton Command12 
             Caption         =   "调出统计资料"
             Height          =   375
-            Left            =   2280
-            TabIndex        =   767
+            Left            =   2760
+            TabIndex        =   763
             Top             =   720
             Width           =   1695
          End
@@ -705,7 +625,7 @@ Begin VB.Form Form2
       Begin 血液培养仪60瓶.SystemGraph SystemGraph1 
          Height          =   2775
          Left            =   -72000
-         TabIndex        =   765
+         TabIndex        =   761
          Top             =   6960
          Width           =   9015
          _ExtentX        =   15901
@@ -714,7 +634,7 @@ Begin VB.Form Form2
       Begin VB.TextBox Text6 
          Height          =   285
          Left            =   -61320
-         TabIndex        =   764
+         TabIndex        =   760
          Top             =   4560
          Visible         =   0   'False
          Width           =   615
@@ -722,7 +642,7 @@ Begin VB.Form Form2
       Begin VB.TextBox Text5 
          Height          =   375
          Left            =   -61320
-         TabIndex        =   763
+         TabIndex        =   759
          Top             =   3960
          Visible         =   0   'False
          Width           =   615
@@ -731,7 +651,7 @@ Begin VB.Form Form2
          Height          =   375
          Left            =   -61440
          MultiLine       =   -1  'True
-         TabIndex        =   762
+         TabIndex        =   758
          Top             =   3480
          Visible         =   0   'False
          Width           =   735
@@ -740,7 +660,7 @@ Begin VB.Form Form2
          Height          =   375
          Left            =   -61440
          MultiLine       =   -1  'True
-         TabIndex        =   761
+         TabIndex        =   757
          Top             =   2880
          Visible         =   0   'False
          Width           =   735
@@ -756,38 +676,38 @@ Begin VB.Form Form2
          Caption         =   "病人信息"
          Height          =   3975
          Left            =   -73200
-         TabIndex        =   744
+         TabIndex        =   740
          Top             =   2880
          Width           =   4695
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel82 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8A2B
-            TabIndex        =   1036
+            OleObjectBlob   =   "workfrm.frx":87A7
+            TabIndex        =   1020
             Top             =   240
             Width           =   1935
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel81 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8A89
-            TabIndex        =   1035
+            OleObjectBlob   =   "workfrm.frx":8805
+            TabIndex        =   1019
             Top             =   240
             Width           =   1095
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel80 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8AFD
-            TabIndex        =   1034
+            OleObjectBlob   =   "workfrm.frx":8879
+            TabIndex        =   1018
             Top             =   840
             Width           =   2535
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel79 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8B5B
-            TabIndex        =   1033
+            OleObjectBlob   =   "workfrm.frx":88D7
+            TabIndex        =   1017
             Top             =   840
             Width           =   975
          End
@@ -795,163 +715,163 @@ Begin VB.Form Form2
             Caption         =   "生成文件打印"
             Height          =   495
             Left            =   3120
-            TabIndex        =   895
+            TabIndex        =   891
             Top             =   3360
             Width           =   1335
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel46 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8BD7
-            TabIndex        =   894
+            OleObjectBlob   =   "workfrm.frx":8953
+            TabIndex        =   890
             Top             =   3600
             Width           =   1365
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel45 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8C35
-            TabIndex        =   893
+            OleObjectBlob   =   "workfrm.frx":89B1
+            TabIndex        =   889
             Top             =   3600
             Width           =   975
          End
          Begin RichTextLib.RichTextBox RichTextBox2 
             Height          =   2895
             Left            =   2640
-            TabIndex        =   892
+            TabIndex        =   888
             Top             =   240
             Visible         =   0   'False
             Width           =   1815
             _ExtentX        =   3201
             _ExtentY        =   5106
             _Version        =   393217
-            TextRTF         =   $"workfrm.frx":8C9D
+            TextRTF         =   $"workfrm.frx":8A19
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel40 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8D3A
-            TabIndex        =   760
+            OleObjectBlob   =   "workfrm.frx":8AB6
+            TabIndex        =   756
             Top             =   3240
             Width           =   2295
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel39 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8D98
-            TabIndex        =   759
+            OleObjectBlob   =   "workfrm.frx":8B14
+            TabIndex        =   755
             Top             =   3240
             Width           =   975
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel38 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8E00
-            TabIndex        =   758
+            OleObjectBlob   =   "workfrm.frx":8B7C
+            TabIndex        =   754
             Top             =   2880
             Width           =   495
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel37 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8E5E
-            TabIndex        =   757
+            OleObjectBlob   =   "workfrm.frx":8BDA
+            TabIndex        =   753
             Top             =   2880
             Width           =   975
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel36 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8EC6
-            TabIndex        =   756
+            OleObjectBlob   =   "workfrm.frx":8C42
+            TabIndex        =   752
             Top             =   2520
             Width           =   2415
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel35 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8F24
-            TabIndex        =   755
+            OleObjectBlob   =   "workfrm.frx":8CA0
+            TabIndex        =   751
             Top             =   2520
             Width           =   975
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel34 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":8F92
-            TabIndex        =   754
+            OleObjectBlob   =   "workfrm.frx":8D0E
+            TabIndex        =   750
             Top             =   2160
             Width           =   1815
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel33 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":8FF0
-            TabIndex        =   753
+            OleObjectBlob   =   "workfrm.frx":8D6C
+            TabIndex        =   749
             Top             =   2160
             Width           =   975
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel32 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":9064
-            TabIndex        =   752
+            OleObjectBlob   =   "workfrm.frx":8DE0
+            TabIndex        =   748
             Top             =   1800
             Width           =   495
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel31 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":90C2
-            TabIndex        =   751
+            OleObjectBlob   =   "workfrm.frx":8E3E
+            TabIndex        =   747
             Top             =   1800
             Width           =   1095
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel30 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":9136
-            TabIndex        =   750
+            OleObjectBlob   =   "workfrm.frx":8EB2
+            TabIndex        =   746
             Top             =   1440
             Width           =   375
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel29 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":9194
-            TabIndex        =   749
+            OleObjectBlob   =   "workfrm.frx":8F10
+            TabIndex        =   745
             Top             =   1440
             Width           =   975
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel28 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":9208
-            TabIndex        =   748
+            OleObjectBlob   =   "workfrm.frx":8F84
+            TabIndex        =   744
             Top             =   1080
             Width           =   2055
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel27 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":9266
-            TabIndex        =   747
+            OleObjectBlob   =   "workfrm.frx":8FE2
+            TabIndex        =   743
             Top             =   1080
             Width           =   975
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel26 
             Height          =   255
             Left            =   1200
-            OleObjectBlob   =   "workfrm.frx":92DA
-            TabIndex        =   746
+            OleObjectBlob   =   "workfrm.frx":9056
+            TabIndex        =   742
             Top             =   525
             Width           =   1935
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel25 
             Height          =   255
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":9338
-            TabIndex        =   745
+            OleObjectBlob   =   "workfrm.frx":90B4
+            TabIndex        =   741
             Top             =   525
             Width           =   975
          End
@@ -960,109 +880,54 @@ Begin VB.Form Form2
          Caption         =   "查询提示"
          Height          =   855
          Left            =   -73200
-         TabIndex        =   741
+         TabIndex        =   737
          Top             =   1920
          Width           =   4695
          Begin VB.CommandButton Command10 
             Caption         =   "调出历史数据"
             Height          =   375
             Left            =   2760
-            TabIndex        =   743
+            TabIndex        =   739
             Top             =   240
             Width           =   1815
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel24 
             Height          =   375
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":93A6
-            TabIndex        =   742
+            OleObjectBlob   =   "workfrm.frx":9122
+            TabIndex        =   738
             Top             =   360
             Width           =   2175
          End
       End
-      Begin VB.Frame Frame9 
-         Caption         =   "校准2"
-         Height          =   1935
-         Left            =   -66000
-         TabIndex        =   737
-         Top             =   3120
-         Width           =   3615
-         Begin VB.CommandButton Command23 
-            Caption         =   "校准数据"
-            Height          =   375
-            Left            =   600
-            TabIndex        =   1038
-            Top             =   1320
-            Width           =   1050
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel59 
-            Height          =   255
-            Left            =   2400
-            OleObjectBlob   =   "workfrm.frx":941C
-            TabIndex        =   912
-            Top             =   960
-            Width           =   495
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel58 
-            Height          =   255
-            Left            =   600
-            OleObjectBlob   =   "workfrm.frx":947A
-            TabIndex        =   911
-            Top             =   960
-            Width           =   1695
-         End
-         Begin VB.CommandButton Command9 
-            Caption         =   "确定"
-            Height          =   375
-            Left            =   2400
-            TabIndex        =   740
-            Top             =   1320
-            Width           =   750
-         End
-         Begin VB.TextBox Text2 
-            Height          =   285
-            Left            =   2400
-            TabIndex        =   739
-            Top             =   480
-            Width           =   495
-         End
-         Begin ACTIVESKINLibCtl.SkinLabel SkinLabel23 
-            Height          =   375
-            Left            =   600
-            OleObjectBlob   =   "workfrm.frx":94EA
-            TabIndex        =   738
-            Top             =   480
-            Width           =   1695
-         End
-      End
       Begin VB.Frame Frame8 
-         Caption         =   "校准1"
+         Caption         =   "校准"
          Height          =   1935
-         Left            =   -66000
+         Left            =   -66240
          TabIndex        =   733
-         Top             =   720
+         Top             =   3720
          Width           =   3615
          Begin VB.CommandButton Command22 
             Caption         =   "校准数据"
             Height          =   375
             Left            =   600
-            TabIndex        =   1037
+            TabIndex        =   1021
             Top             =   1320
             Width           =   1050
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel57 
             Height          =   255
             Left            =   2400
-            OleObjectBlob   =   "workfrm.frx":955A
-            TabIndex        =   910
+            OleObjectBlob   =   "workfrm.frx":9198
+            TabIndex        =   896
             Top             =   960
             Width           =   495
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel56 
             Height          =   255
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":95B8
-            TabIndex        =   909
+            OleObjectBlob   =   "workfrm.frx":91F6
+            TabIndex        =   895
             Top             =   960
             Width           =   1695
          End
@@ -1084,7 +949,7 @@ Begin VB.Form Form2
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel22 
             Height          =   375
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":9628
+            OleObjectBlob   =   "workfrm.frx":9266
             TabIndex        =   734
             Top             =   480
             Width           =   1695
@@ -1093,15 +958,15 @@ Begin VB.Form Form2
       Begin VB.Frame Frame6 
          Caption         =   "调试/运行设置"
          Height          =   1695
-         Left            =   -72720
+         Left            =   -66240
          TabIndex        =   726
-         Top             =   720
-         Width           =   3375
+         Top             =   1560
+         Width           =   3615
          Begin VB.PictureBox Picture3 
             AutoSize        =   -1  'True
             Height          =   525
-            Left            =   2520
-            Picture         =   "workfrm.frx":9698
+            Left            =   2760
+            Picture         =   "workfrm.frx":92D6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   732
@@ -1119,7 +984,7 @@ Begin VB.Form Form2
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel15 
             Height          =   255
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":9A90
+            OleObjectBlob   =   "workfrm.frx":96CE
             TabIndex        =   730
             Top             =   1200
             Width           =   975
@@ -1127,8 +992,8 @@ Begin VB.Form Form2
          Begin VB.PictureBox Picture2 
             AutoSize        =   -1  'True
             Height          =   525
-            Left            =   2520
-            Picture         =   "workfrm.frx":9AF8
+            Left            =   2760
+            Picture         =   "workfrm.frx":9736
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   729
@@ -1146,7 +1011,7 @@ Begin VB.Form Form2
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel14 
             Height          =   255
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":9EF0
+            OleObjectBlob   =   "workfrm.frx":9B2E
             TabIndex        =   727
             Top             =   600
             Width           =   975
@@ -1162,15 +1027,15 @@ Begin VB.Form Form2
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel12 
             Height          =   255
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":9F58
-            TabIndex        =   936
+            OleObjectBlob   =   "workfrm.frx":9B96
+            TabIndex        =   920
             Top             =   360
             Width           =   1695
          End
          Begin VB.TextBox Text15 
             Height          =   390
             Left            =   360
-            TabIndex        =   935
+            TabIndex        =   919
             Top             =   720
             Width           =   2415
          End
@@ -1196,7 +1061,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   59
             Left            =   13440
-            Picture         =   "workfrm.frx":9FC2
+            Picture         =   "workfrm.frx":9C00
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   303
@@ -1219,7 +1084,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   58
             Left            =   12000
-            Picture         =   "workfrm.frx":A3BA
+            Picture         =   "workfrm.frx":9FF8
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   302
@@ -1242,7 +1107,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   57
             Left            =   10560
-            Picture         =   "workfrm.frx":A7B2
+            Picture         =   "workfrm.frx":A3F0
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   301
@@ -1265,7 +1130,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   56
             Left            =   9120
-            Picture         =   "workfrm.frx":ABAA
+            Picture         =   "workfrm.frx":A7E8
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   300
@@ -1288,7 +1153,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   55
             Left            =   7680
-            Picture         =   "workfrm.frx":AFA2
+            Picture         =   "workfrm.frx":ABE0
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   299
@@ -1311,7 +1176,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   54
             Left            =   6240
-            Picture         =   "workfrm.frx":B39A
+            Picture         =   "workfrm.frx":AFD8
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   298
@@ -1334,7 +1199,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   53
             Left            =   4800
-            Picture         =   "workfrm.frx":B792
+            Picture         =   "workfrm.frx":B3D0
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   297
@@ -1357,7 +1222,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   52
             Left            =   3360
-            Picture         =   "workfrm.frx":BB8A
+            Picture         =   "workfrm.frx":B7C8
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   296
@@ -1380,7 +1245,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   51
             Left            =   1920
-            Picture         =   "workfrm.frx":BF82
+            Picture         =   "workfrm.frx":BBC0
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   295
@@ -1403,7 +1268,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   50
             Left            =   480
-            Picture         =   "workfrm.frx":C37A
+            Picture         =   "workfrm.frx":BFB8
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   294
@@ -1426,7 +1291,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   49
             Left            =   13440
-            Picture         =   "workfrm.frx":C772
+            Picture         =   "workfrm.frx":C3B0
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   293
@@ -1449,7 +1314,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   48
             Left            =   12000
-            Picture         =   "workfrm.frx":CB6A
+            Picture         =   "workfrm.frx":C7A8
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   292
@@ -1472,7 +1337,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   47
             Left            =   10560
-            Picture         =   "workfrm.frx":CF62
+            Picture         =   "workfrm.frx":CBA0
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   291
@@ -1495,7 +1360,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   46
             Left            =   9120
-            Picture         =   "workfrm.frx":D35A
+            Picture         =   "workfrm.frx":CF98
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   290
@@ -1518,7 +1383,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   45
             Left            =   7680
-            Picture         =   "workfrm.frx":D752
+            Picture         =   "workfrm.frx":D390
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   289
@@ -1541,7 +1406,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   44
             Left            =   6240
-            Picture         =   "workfrm.frx":DB4A
+            Picture         =   "workfrm.frx":D788
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   288
@@ -1564,7 +1429,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   43
             Left            =   4800
-            Picture         =   "workfrm.frx":DF42
+            Picture         =   "workfrm.frx":DB80
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   287
@@ -1587,7 +1452,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   42
             Left            =   3360
-            Picture         =   "workfrm.frx":E33A
+            Picture         =   "workfrm.frx":DF78
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   286
@@ -1610,7 +1475,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   41
             Left            =   1920
-            Picture         =   "workfrm.frx":E732
+            Picture         =   "workfrm.frx":E370
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   285
@@ -1633,7 +1498,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   40
             Left            =   480
-            Picture         =   "workfrm.frx":EB2A
+            Picture         =   "workfrm.frx":E768
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   284
@@ -1655,7 +1520,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":EF22
+            OleObjectBlob   =   "workfrm.frx":EB60
             TabIndex        =   264
             Top             =   240
             Width           =   375
@@ -1664,7 +1529,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1800
-            OleObjectBlob   =   "workfrm.frx":EF86
+            OleObjectBlob   =   "workfrm.frx":EBC4
             TabIndex        =   265
             Top             =   240
             Width           =   375
@@ -1673,7 +1538,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   3240
-            OleObjectBlob   =   "workfrm.frx":EFEA
+            OleObjectBlob   =   "workfrm.frx":EC28
             TabIndex        =   266
             Top             =   240
             Width           =   375
@@ -1682,7 +1547,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   4680
-            OleObjectBlob   =   "workfrm.frx":F04E
+            OleObjectBlob   =   "workfrm.frx":EC8C
             TabIndex        =   267
             Top             =   240
             Width           =   375
@@ -1691,7 +1556,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   6120
-            OleObjectBlob   =   "workfrm.frx":F0B2
+            OleObjectBlob   =   "workfrm.frx":ECF0
             TabIndex        =   268
             Top             =   240
             Width           =   375
@@ -1700,7 +1565,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   7560
-            OleObjectBlob   =   "workfrm.frx":F116
+            OleObjectBlob   =   "workfrm.frx":ED54
             TabIndex        =   269
             Top             =   240
             Width           =   375
@@ -1709,7 +1574,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   9000
-            OleObjectBlob   =   "workfrm.frx":F17A
+            OleObjectBlob   =   "workfrm.frx":EDB8
             TabIndex        =   270
             Top             =   240
             Width           =   375
@@ -1718,7 +1583,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":F1DE
+            OleObjectBlob   =   "workfrm.frx":EE1C
             TabIndex        =   271
             Top             =   240
             Width           =   375
@@ -1727,7 +1592,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   11880
-            OleObjectBlob   =   "workfrm.frx":F242
+            OleObjectBlob   =   "workfrm.frx":EE80
             TabIndex        =   272
             Top             =   240
             Width           =   375
@@ -1736,7 +1601,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   13320
-            OleObjectBlob   =   "workfrm.frx":F2A6
+            OleObjectBlob   =   "workfrm.frx":EEE4
             TabIndex        =   273
             Top             =   240
             Width           =   375
@@ -1745,7 +1610,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":F30A
+            OleObjectBlob   =   "workfrm.frx":EF48
             TabIndex        =   274
             Top             =   1200
             Width           =   375
@@ -1754,7 +1619,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1800
-            OleObjectBlob   =   "workfrm.frx":F36E
+            OleObjectBlob   =   "workfrm.frx":EFAC
             TabIndex        =   275
             Top             =   1200
             Width           =   375
@@ -1763,7 +1628,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   3240
-            OleObjectBlob   =   "workfrm.frx":F3D2
+            OleObjectBlob   =   "workfrm.frx":F010
             TabIndex        =   276
             Top             =   1200
             Width           =   375
@@ -1772,7 +1637,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   4680
-            OleObjectBlob   =   "workfrm.frx":F436
+            OleObjectBlob   =   "workfrm.frx":F074
             TabIndex        =   277
             Top             =   1200
             Width           =   375
@@ -1781,7 +1646,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   6120
-            OleObjectBlob   =   "workfrm.frx":F49A
+            OleObjectBlob   =   "workfrm.frx":F0D8
             TabIndex        =   278
             Top             =   1200
             Width           =   375
@@ -1790,7 +1655,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   7560
-            OleObjectBlob   =   "workfrm.frx":F4FE
+            OleObjectBlob   =   "workfrm.frx":F13C
             TabIndex        =   279
             Top             =   1200
             Width           =   375
@@ -1799,7 +1664,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   9000
-            OleObjectBlob   =   "workfrm.frx":F562
+            OleObjectBlob   =   "workfrm.frx":F1A0
             TabIndex        =   280
             Top             =   1200
             Width           =   375
@@ -1808,7 +1673,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":F5C6
+            OleObjectBlob   =   "workfrm.frx":F204
             TabIndex        =   281
             Top             =   1200
             Width           =   375
@@ -1817,7 +1682,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   11880
-            OleObjectBlob   =   "workfrm.frx":F62A
+            OleObjectBlob   =   "workfrm.frx":F268
             TabIndex        =   282
             Top             =   1200
             Width           =   375
@@ -1826,7 +1691,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   13320
-            OleObjectBlob   =   "workfrm.frx":F68E
+            OleObjectBlob   =   "workfrm.frx":F2CC
             TabIndex        =   283
             Top             =   1200
             Width           =   375
@@ -1835,7 +1700,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":F6F2
+            OleObjectBlob   =   "workfrm.frx":F330
             TabIndex        =   324
             Top             =   240
             Visible         =   0   'False
@@ -1845,7 +1710,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":F750
+            OleObjectBlob   =   "workfrm.frx":F38E
             TabIndex        =   325
             Top             =   240
             Visible         =   0   'False
@@ -1855,7 +1720,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":F7AE
+            OleObjectBlob   =   "workfrm.frx":F3EC
             TabIndex        =   326
             Top             =   240
             Visible         =   0   'False
@@ -1865,7 +1730,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":F80C
+            OleObjectBlob   =   "workfrm.frx":F44A
             TabIndex        =   327
             Top             =   240
             Visible         =   0   'False
@@ -1875,7 +1740,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":F86A
+            OleObjectBlob   =   "workfrm.frx":F4A8
             TabIndex        =   328
             Top             =   240
             Visible         =   0   'False
@@ -1885,7 +1750,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":F8C8
+            OleObjectBlob   =   "workfrm.frx":F506
             TabIndex        =   329
             Top             =   240
             Visible         =   0   'False
@@ -1895,7 +1760,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":F926
+            OleObjectBlob   =   "workfrm.frx":F564
             TabIndex        =   330
             Top             =   240
             Visible         =   0   'False
@@ -1905,7 +1770,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":F984
+            OleObjectBlob   =   "workfrm.frx":F5C2
             TabIndex        =   331
             Top             =   240
             Visible         =   0   'False
@@ -1915,7 +1780,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":F9E2
+            OleObjectBlob   =   "workfrm.frx":F620
             TabIndex        =   332
             Top             =   240
             Visible         =   0   'False
@@ -1925,7 +1790,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":FA40
+            OleObjectBlob   =   "workfrm.frx":F67E
             TabIndex        =   333
             Top             =   240
             Visible         =   0   'False
@@ -1935,7 +1800,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":FA9E
+            OleObjectBlob   =   "workfrm.frx":F6DC
             TabIndex        =   334
             Top             =   1200
             Visible         =   0   'False
@@ -1945,7 +1810,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":FAFC
+            OleObjectBlob   =   "workfrm.frx":F73A
             TabIndex        =   335
             Top             =   1200
             Visible         =   0   'False
@@ -1955,7 +1820,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":FB5A
+            OleObjectBlob   =   "workfrm.frx":F798
             TabIndex        =   336
             Top             =   1200
             Visible         =   0   'False
@@ -1965,7 +1830,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":FBB8
+            OleObjectBlob   =   "workfrm.frx":F7F6
             TabIndex        =   337
             Top             =   1200
             Visible         =   0   'False
@@ -1975,7 +1840,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":FC16
+            OleObjectBlob   =   "workfrm.frx":F854
             TabIndex        =   338
             Top             =   1200
             Visible         =   0   'False
@@ -1985,7 +1850,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":FC74
+            OleObjectBlob   =   "workfrm.frx":F8B2
             TabIndex        =   339
             Top             =   1200
             Visible         =   0   'False
@@ -1995,7 +1860,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":FCD2
+            OleObjectBlob   =   "workfrm.frx":F910
             TabIndex        =   340
             Top             =   1200
             Visible         =   0   'False
@@ -2005,7 +1870,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":FD30
+            OleObjectBlob   =   "workfrm.frx":F96E
             TabIndex        =   341
             Top             =   1200
             Visible         =   0   'False
@@ -2015,7 +1880,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":FD8E
+            OleObjectBlob   =   "workfrm.frx":F9CC
             TabIndex        =   342
             Top             =   1200
             Visible         =   0   'False
@@ -2025,7 +1890,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":FDEC
+            OleObjectBlob   =   "workfrm.frx":FA2A
             TabIndex        =   343
             Top             =   1200
             Visible         =   0   'False
@@ -2035,7 +1900,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":FE4A
+            OleObjectBlob   =   "workfrm.frx":FA88
             TabIndex        =   364
             Top             =   240
             Visible         =   0   'False
@@ -2045,7 +1910,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":FEA8
+            OleObjectBlob   =   "workfrm.frx":FAE6
             TabIndex        =   365
             Top             =   240
             Visible         =   0   'False
@@ -2055,7 +1920,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":FF06
+            OleObjectBlob   =   "workfrm.frx":FB44
             TabIndex        =   366
             Top             =   240
             Visible         =   0   'False
@@ -2065,7 +1930,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":FF64
+            OleObjectBlob   =   "workfrm.frx":FBA2
             TabIndex        =   367
             Top             =   240
             Visible         =   0   'False
@@ -2075,7 +1940,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":FFC2
+            OleObjectBlob   =   "workfrm.frx":FC00
             TabIndex        =   368
             Top             =   240
             Visible         =   0   'False
@@ -2085,7 +1950,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":10020
+            OleObjectBlob   =   "workfrm.frx":FC5E
             TabIndex        =   369
             Top             =   240
             Visible         =   0   'False
@@ -2095,7 +1960,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1007E
+            OleObjectBlob   =   "workfrm.frx":FCBC
             TabIndex        =   370
             Top             =   240
             Visible         =   0   'False
@@ -2105,7 +1970,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":100DC
+            OleObjectBlob   =   "workfrm.frx":FD1A
             TabIndex        =   371
             Top             =   240
             Visible         =   0   'False
@@ -2115,7 +1980,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1013A
+            OleObjectBlob   =   "workfrm.frx":FD78
             TabIndex        =   372
             Top             =   240
             Visible         =   0   'False
@@ -2125,7 +1990,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":10198
+            OleObjectBlob   =   "workfrm.frx":FDD6
             TabIndex        =   373
             Top             =   240
             Visible         =   0   'False
@@ -2135,7 +2000,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":101F6
+            OleObjectBlob   =   "workfrm.frx":FE34
             TabIndex        =   374
             Top             =   1200
             Visible         =   0   'False
@@ -2145,7 +2010,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":10254
+            OleObjectBlob   =   "workfrm.frx":FE92
             TabIndex        =   375
             Top             =   1200
             Visible         =   0   'False
@@ -2155,7 +2020,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":102B2
+            OleObjectBlob   =   "workfrm.frx":FEF0
             TabIndex        =   376
             Top             =   1200
             Visible         =   0   'False
@@ -2165,7 +2030,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":10310
+            OleObjectBlob   =   "workfrm.frx":FF4E
             TabIndex        =   377
             Top             =   1200
             Visible         =   0   'False
@@ -2175,7 +2040,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1036E
+            OleObjectBlob   =   "workfrm.frx":FFAC
             TabIndex        =   378
             Top             =   1200
             Visible         =   0   'False
@@ -2185,7 +2050,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":103CC
+            OleObjectBlob   =   "workfrm.frx":1000A
             TabIndex        =   379
             Top             =   1200
             Visible         =   0   'False
@@ -2195,7 +2060,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1042A
+            OleObjectBlob   =   "workfrm.frx":10068
             TabIndex        =   380
             Top             =   1200
             Visible         =   0   'False
@@ -2205,7 +2070,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":10488
+            OleObjectBlob   =   "workfrm.frx":100C6
             TabIndex        =   381
             Top             =   1200
             Visible         =   0   'False
@@ -2215,7 +2080,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":104E6
+            OleObjectBlob   =   "workfrm.frx":10124
             TabIndex        =   382
             Top             =   1200
             Visible         =   0   'False
@@ -2225,7 +2090,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9120
-            OleObjectBlob   =   "workfrm.frx":10544
+            OleObjectBlob   =   "workfrm.frx":10182
             TabIndex        =   383
             Top             =   1200
             Visible         =   0   'False
@@ -2235,7 +2100,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":105A2
+            OleObjectBlob   =   "workfrm.frx":101E0
             TabIndex        =   404
             Top             =   240
             Visible         =   0   'False
@@ -2245,7 +2110,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":10600
+            OleObjectBlob   =   "workfrm.frx":1023E
             TabIndex        =   405
             Top             =   240
             Visible         =   0   'False
@@ -2255,7 +2120,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1065E
+            OleObjectBlob   =   "workfrm.frx":1029C
             TabIndex        =   406
             Top             =   240
             Visible         =   0   'False
@@ -2265,7 +2130,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":106BC
+            OleObjectBlob   =   "workfrm.frx":102FA
             TabIndex        =   407
             Top             =   240
             Visible         =   0   'False
@@ -2275,7 +2140,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1071A
+            OleObjectBlob   =   "workfrm.frx":10358
             TabIndex        =   408
             Top             =   240
             Visible         =   0   'False
@@ -2285,7 +2150,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   45
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":10778
+            OleObjectBlob   =   "workfrm.frx":103B6
             TabIndex        =   409
             Top             =   240
             Visible         =   0   'False
@@ -2295,7 +2160,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":107D6
+            OleObjectBlob   =   "workfrm.frx":10414
             TabIndex        =   410
             Top             =   240
             Visible         =   0   'False
@@ -2305,7 +2170,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":10834
+            OleObjectBlob   =   "workfrm.frx":10472
             TabIndex        =   411
             Top             =   240
             Visible         =   0   'False
@@ -2315,7 +2180,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   48
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":10892
+            OleObjectBlob   =   "workfrm.frx":104D0
             TabIndex        =   412
             Top             =   240
             Visible         =   0   'False
@@ -2325,7 +2190,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":108F0
+            OleObjectBlob   =   "workfrm.frx":1052E
             TabIndex        =   413
             Top             =   240
             Visible         =   0   'False
@@ -2335,7 +2200,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1094E
+            OleObjectBlob   =   "workfrm.frx":1058C
             TabIndex        =   414
             Top             =   1200
             Visible         =   0   'False
@@ -2345,7 +2210,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":109AC
+            OleObjectBlob   =   "workfrm.frx":105EA
             TabIndex        =   415
             Top             =   1080
             Visible         =   0   'False
@@ -2355,7 +2220,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":10A0A
+            OleObjectBlob   =   "workfrm.frx":10648
             TabIndex        =   416
             Top             =   1200
             Visible         =   0   'False
@@ -2365,7 +2230,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   53
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":10A68
+            OleObjectBlob   =   "workfrm.frx":106A6
             TabIndex        =   417
             Top             =   1200
             Visible         =   0   'False
@@ -2375,7 +2240,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   54
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":10AC6
+            OleObjectBlob   =   "workfrm.frx":10704
             TabIndex        =   418
             Top             =   1200
             Visible         =   0   'False
@@ -2385,7 +2250,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   55
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":10B24
+            OleObjectBlob   =   "workfrm.frx":10762
             TabIndex        =   419
             Top             =   1200
             Visible         =   0   'False
@@ -2395,7 +2260,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":10B82
+            OleObjectBlob   =   "workfrm.frx":107C0
             TabIndex        =   420
             Top             =   1200
             Visible         =   0   'False
@@ -2405,7 +2270,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":10BE0
+            OleObjectBlob   =   "workfrm.frx":1081E
             TabIndex        =   421
             Top             =   1200
             Visible         =   0   'False
@@ -2415,7 +2280,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":10C3E
+            OleObjectBlob   =   "workfrm.frx":1087C
             TabIndex        =   422
             Top             =   1200
             Visible         =   0   'False
@@ -2425,7 +2290,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":10C9C
+            OleObjectBlob   =   "workfrm.frx":108DA
             TabIndex        =   423
             Top             =   1200
             Visible         =   0   'False
@@ -2435,7 +2300,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":10CFA
+            OleObjectBlob   =   "workfrm.frx":10938
             TabIndex        =   444
             Top             =   240
             Visible         =   0   'False
@@ -2445,7 +2310,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":10D58
+            OleObjectBlob   =   "workfrm.frx":10996
             TabIndex        =   445
             Top             =   240
             Visible         =   0   'False
@@ -2455,7 +2320,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":10DB6
+            OleObjectBlob   =   "workfrm.frx":109F4
             TabIndex        =   446
             Top             =   240
             Visible         =   0   'False
@@ -2465,7 +2330,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":10E14
+            OleObjectBlob   =   "workfrm.frx":10A52
             TabIndex        =   447
             Top             =   240
             Visible         =   0   'False
@@ -2475,7 +2340,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":10E72
+            OleObjectBlob   =   "workfrm.frx":10AB0
             TabIndex        =   448
             Top             =   240
             Visible         =   0   'False
@@ -2485,7 +2350,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":10ED0
+            OleObjectBlob   =   "workfrm.frx":10B0E
             TabIndex        =   449
             Top             =   240
             Visible         =   0   'False
@@ -2495,7 +2360,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":10F2E
+            OleObjectBlob   =   "workfrm.frx":10B6C
             TabIndex        =   450
             Top             =   240
             Visible         =   0   'False
@@ -2505,7 +2370,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":10F8C
+            OleObjectBlob   =   "workfrm.frx":10BCA
             TabIndex        =   451
             Top             =   240
             Visible         =   0   'False
@@ -2515,7 +2380,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":10FEA
+            OleObjectBlob   =   "workfrm.frx":10C28
             TabIndex        =   452
             Top             =   240
             Visible         =   0   'False
@@ -2525,7 +2390,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":11048
+            OleObjectBlob   =   "workfrm.frx":10C86
             TabIndex        =   453
             Top             =   240
             Visible         =   0   'False
@@ -2535,7 +2400,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":110A6
+            OleObjectBlob   =   "workfrm.frx":10CE4
             TabIndex        =   454
             Top             =   1200
             Visible         =   0   'False
@@ -2545,7 +2410,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":11104
+            OleObjectBlob   =   "workfrm.frx":10D42
             TabIndex        =   455
             Top             =   1200
             Visible         =   0   'False
@@ -2555,7 +2420,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":11162
+            OleObjectBlob   =   "workfrm.frx":10DA0
             TabIndex        =   456
             Top             =   1200
             Visible         =   0   'False
@@ -2565,7 +2430,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":111C0
+            OleObjectBlob   =   "workfrm.frx":10DFE
             TabIndex        =   457
             Top             =   1200
             Visible         =   0   'False
@@ -2575,7 +2440,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1121E
+            OleObjectBlob   =   "workfrm.frx":10E5C
             TabIndex        =   458
             Top             =   1200
             Visible         =   0   'False
@@ -2585,7 +2450,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1127C
+            OleObjectBlob   =   "workfrm.frx":10EBA
             TabIndex        =   459
             Top             =   1200
             Visible         =   0   'False
@@ -2595,7 +2460,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":112DA
+            OleObjectBlob   =   "workfrm.frx":10F18
             TabIndex        =   460
             Top             =   1200
             Visible         =   0   'False
@@ -2605,7 +2470,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":11338
+            OleObjectBlob   =   "workfrm.frx":10F76
             TabIndex        =   461
             Top             =   1200
             Visible         =   0   'False
@@ -2615,7 +2480,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":11396
+            OleObjectBlob   =   "workfrm.frx":10FD4
             TabIndex        =   462
             Top             =   1200
             Visible         =   0   'False
@@ -2625,7 +2490,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9360
-            OleObjectBlob   =   "workfrm.frx":113F4
+            OleObjectBlob   =   "workfrm.frx":11032
             TabIndex        =   463
             Top             =   1200
             Visible         =   0   'False
@@ -2635,7 +2500,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":11452
+            OleObjectBlob   =   "workfrm.frx":11090
             TabIndex        =   484
             Top             =   240
             Visible         =   0   'False
@@ -2645,7 +2510,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":114B0
+            OleObjectBlob   =   "workfrm.frx":110EE
             TabIndex        =   485
             Top             =   240
             Visible         =   0   'False
@@ -2655,7 +2520,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1150E
+            OleObjectBlob   =   "workfrm.frx":1114C
             TabIndex        =   486
             Top             =   240
             Visible         =   0   'False
@@ -2665,7 +2530,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1156C
+            OleObjectBlob   =   "workfrm.frx":111AA
             TabIndex        =   487
             Top             =   240
             Visible         =   0   'False
@@ -2675,7 +2540,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":115CA
+            OleObjectBlob   =   "workfrm.frx":11208
             TabIndex        =   488
             Top             =   240
             Visible         =   0   'False
@@ -2685,7 +2550,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":11628
+            OleObjectBlob   =   "workfrm.frx":11266
             TabIndex        =   489
             Top             =   240
             Visible         =   0   'False
@@ -2695,7 +2560,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":11686
+            OleObjectBlob   =   "workfrm.frx":112C4
             TabIndex        =   490
             Top             =   240
             Visible         =   0   'False
@@ -2705,7 +2570,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":116E4
+            OleObjectBlob   =   "workfrm.frx":11322
             TabIndex        =   491
             Top             =   240
             Visible         =   0   'False
@@ -2715,7 +2580,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":11742
+            OleObjectBlob   =   "workfrm.frx":11380
             TabIndex        =   492
             Top             =   240
             Visible         =   0   'False
@@ -2725,7 +2590,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":117A0
+            OleObjectBlob   =   "workfrm.frx":113DE
             TabIndex        =   493
             Top             =   240
             Visible         =   0   'False
@@ -2735,7 +2600,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":117FE
+            OleObjectBlob   =   "workfrm.frx":1143C
             TabIndex        =   494
             Top             =   1200
             Visible         =   0   'False
@@ -2745,7 +2610,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1185C
+            OleObjectBlob   =   "workfrm.frx":1149A
             TabIndex        =   495
             Top             =   1080
             Visible         =   0   'False
@@ -2755,7 +2620,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":118BA
+            OleObjectBlob   =   "workfrm.frx":114F8
             TabIndex        =   496
             Top             =   1200
             Visible         =   0   'False
@@ -2765,7 +2630,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":11918
+            OleObjectBlob   =   "workfrm.frx":11556
             TabIndex        =   497
             Top             =   1200
             Visible         =   0   'False
@@ -2775,7 +2640,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":11976
+            OleObjectBlob   =   "workfrm.frx":115B4
             TabIndex        =   498
             Top             =   1200
             Visible         =   0   'False
@@ -2785,7 +2650,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":119D4
+            OleObjectBlob   =   "workfrm.frx":11612
             TabIndex        =   499
             Top             =   1200
             Visible         =   0   'False
@@ -2795,7 +2660,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":11A32
+            OleObjectBlob   =   "workfrm.frx":11670
             TabIndex        =   500
             Top             =   1200
             Visible         =   0   'False
@@ -2805,7 +2670,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":11A90
+            OleObjectBlob   =   "workfrm.frx":116CE
             TabIndex        =   501
             Top             =   1200
             Visible         =   0   'False
@@ -2815,7 +2680,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":11AEE
+            OleObjectBlob   =   "workfrm.frx":1172C
             TabIndex        =   502
             Top             =   1200
             Visible         =   0   'False
@@ -2825,7 +2690,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":11B4C
+            OleObjectBlob   =   "workfrm.frx":1178A
             TabIndex        =   503
             Top             =   1200
             Visible         =   0   'False
@@ -2835,7 +2700,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":11BAA
+            OleObjectBlob   =   "workfrm.frx":117E8
             TabIndex        =   524
             Top             =   240
             Visible         =   0   'False
@@ -2845,7 +2710,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":11C08
+            OleObjectBlob   =   "workfrm.frx":11846
             TabIndex        =   525
             Top             =   240
             Visible         =   0   'False
@@ -2855,7 +2720,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":11C66
+            OleObjectBlob   =   "workfrm.frx":118A4
             TabIndex        =   526
             Top             =   240
             Visible         =   0   'False
@@ -2865,7 +2730,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":11CC4
+            OleObjectBlob   =   "workfrm.frx":11902
             TabIndex        =   527
             Top             =   240
             Visible         =   0   'False
@@ -2875,7 +2740,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":11D22
+            OleObjectBlob   =   "workfrm.frx":11960
             TabIndex        =   528
             Top             =   240
             Visible         =   0   'False
@@ -2885,7 +2750,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":11D80
+            OleObjectBlob   =   "workfrm.frx":119BE
             TabIndex        =   529
             Top             =   240
             Visible         =   0   'False
@@ -2895,7 +2760,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":11DDE
+            OleObjectBlob   =   "workfrm.frx":11A1C
             TabIndex        =   530
             Top             =   240
             Visible         =   0   'False
@@ -2905,7 +2770,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":11E3C
+            OleObjectBlob   =   "workfrm.frx":11A7A
             TabIndex        =   531
             Top             =   240
             Visible         =   0   'False
@@ -2915,7 +2780,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":11E9A
+            OleObjectBlob   =   "workfrm.frx":11AD8
             TabIndex        =   532
             Top             =   240
             Visible         =   0   'False
@@ -2925,7 +2790,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":11EF8
+            OleObjectBlob   =   "workfrm.frx":11B36
             TabIndex        =   533
             Top             =   240
             Visible         =   0   'False
@@ -2935,7 +2800,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":11F56
+            OleObjectBlob   =   "workfrm.frx":11B94
             TabIndex        =   534
             Top             =   1200
             Visible         =   0   'False
@@ -2945,7 +2810,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":11FB4
+            OleObjectBlob   =   "workfrm.frx":11BF2
             TabIndex        =   535
             Top             =   1200
             Visible         =   0   'False
@@ -2955,7 +2820,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":12012
+            OleObjectBlob   =   "workfrm.frx":11C50
             TabIndex        =   536
             Top             =   1200
             Visible         =   0   'False
@@ -2965,7 +2830,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":12070
+            OleObjectBlob   =   "workfrm.frx":11CAE
             TabIndex        =   537
             Top             =   1200
             Visible         =   0   'False
@@ -2975,7 +2840,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":120CE
+            OleObjectBlob   =   "workfrm.frx":11D0C
             TabIndex        =   538
             Top             =   1200
             Visible         =   0   'False
@@ -2985,7 +2850,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1212C
+            OleObjectBlob   =   "workfrm.frx":11D6A
             TabIndex        =   539
             Top             =   1200
             Visible         =   0   'False
@@ -2995,7 +2860,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1218A
+            OleObjectBlob   =   "workfrm.frx":11DC8
             TabIndex        =   540
             Top             =   1200
             Visible         =   0   'False
@@ -3005,7 +2870,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":121E8
+            OleObjectBlob   =   "workfrm.frx":11E26
             TabIndex        =   541
             Top             =   1200
             Visible         =   0   'False
@@ -3015,7 +2880,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":12246
+            OleObjectBlob   =   "workfrm.frx":11E84
             TabIndex        =   542
             Top             =   1200
             Visible         =   0   'False
@@ -3025,7 +2890,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":122A4
+            OleObjectBlob   =   "workfrm.frx":11EE2
             TabIndex        =   543
             Top             =   1200
             Visible         =   0   'False
@@ -3035,7 +2900,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":12302
+            OleObjectBlob   =   "workfrm.frx":11F40
             TabIndex        =   564
             Top             =   240
             Visible         =   0   'False
@@ -3045,7 +2910,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":12360
+            OleObjectBlob   =   "workfrm.frx":11F9E
             TabIndex        =   565
             Top             =   240
             Visible         =   0   'False
@@ -3055,7 +2920,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":123BE
+            OleObjectBlob   =   "workfrm.frx":11FFC
             TabIndex        =   566
             Top             =   240
             Visible         =   0   'False
@@ -3065,7 +2930,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":1241C
+            OleObjectBlob   =   "workfrm.frx":1205A
             TabIndex        =   567
             Top             =   240
             Visible         =   0   'False
@@ -3075,7 +2940,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1247A
+            OleObjectBlob   =   "workfrm.frx":120B8
             TabIndex        =   568
             Top             =   240
             Visible         =   0   'False
@@ -3085,7 +2950,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":124D8
+            OleObjectBlob   =   "workfrm.frx":12116
             TabIndex        =   569
             Top             =   240
             Visible         =   0   'False
@@ -3095,7 +2960,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":12536
+            OleObjectBlob   =   "workfrm.frx":12174
             TabIndex        =   570
             Top             =   240
             Visible         =   0   'False
@@ -3105,7 +2970,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":12594
+            OleObjectBlob   =   "workfrm.frx":121D2
             TabIndex        =   571
             Top             =   240
             Visible         =   0   'False
@@ -3115,7 +2980,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":125F2
+            OleObjectBlob   =   "workfrm.frx":12230
             TabIndex        =   572
             Top             =   240
             Visible         =   0   'False
@@ -3125,7 +2990,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":12650
+            OleObjectBlob   =   "workfrm.frx":1228E
             TabIndex        =   573
             Top             =   240
             Visible         =   0   'False
@@ -3135,7 +3000,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":126AE
+            OleObjectBlob   =   "workfrm.frx":122EC
             TabIndex        =   574
             Top             =   1200
             Visible         =   0   'False
@@ -3145,7 +3010,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1270C
+            OleObjectBlob   =   "workfrm.frx":1234A
             TabIndex        =   575
             Top             =   1200
             Visible         =   0   'False
@@ -3155,7 +3020,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1276A
+            OleObjectBlob   =   "workfrm.frx":123A8
             TabIndex        =   576
             Top             =   1200
             Visible         =   0   'False
@@ -3165,7 +3030,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":127C8
+            OleObjectBlob   =   "workfrm.frx":12406
             TabIndex        =   577
             Top             =   1200
             Visible         =   0   'False
@@ -3175,7 +3040,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":12826
+            OleObjectBlob   =   "workfrm.frx":12464
             TabIndex        =   578
             Top             =   1200
             Visible         =   0   'False
@@ -3185,7 +3050,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":12884
+            OleObjectBlob   =   "workfrm.frx":124C2
             TabIndex        =   579
             Top             =   1200
             Visible         =   0   'False
@@ -3195,7 +3060,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":128E2
+            OleObjectBlob   =   "workfrm.frx":12520
             TabIndex        =   580
             Top             =   1200
             Visible         =   0   'False
@@ -3205,7 +3070,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":12940
+            OleObjectBlob   =   "workfrm.frx":1257E
             TabIndex        =   581
             Top             =   1200
             Visible         =   0   'False
@@ -3215,7 +3080,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1299E
+            OleObjectBlob   =   "workfrm.frx":125DC
             TabIndex        =   582
             Top             =   1200
             Visible         =   0   'False
@@ -3225,7 +3090,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":129FC
+            OleObjectBlob   =   "workfrm.frx":1263A
             TabIndex        =   583
             Top             =   1200
             Visible         =   0   'False
@@ -3235,7 +3100,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":12A5A
+            OleObjectBlob   =   "workfrm.frx":12698
             TabIndex        =   604
             Top             =   240
             Visible         =   0   'False
@@ -3245,7 +3110,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":12AB8
+            OleObjectBlob   =   "workfrm.frx":126F6
             TabIndex        =   605
             Top             =   240
             Visible         =   0   'False
@@ -3255,7 +3120,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":12B16
+            OleObjectBlob   =   "workfrm.frx":12754
             TabIndex        =   606
             Top             =   240
             Visible         =   0   'False
@@ -3265,7 +3130,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":12B74
+            OleObjectBlob   =   "workfrm.frx":127B2
             TabIndex        =   607
             Top             =   240
             Visible         =   0   'False
@@ -3275,7 +3140,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":12BD2
+            OleObjectBlob   =   "workfrm.frx":12810
             TabIndex        =   608
             Top             =   240
             Visible         =   0   'False
@@ -3285,7 +3150,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":12C30
+            OleObjectBlob   =   "workfrm.frx":1286E
             TabIndex        =   609
             Top             =   240
             Visible         =   0   'False
@@ -3295,7 +3160,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":12C8E
+            OleObjectBlob   =   "workfrm.frx":128CC
             TabIndex        =   610
             Top             =   240
             Visible         =   0   'False
@@ -3305,7 +3170,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":12CEC
+            OleObjectBlob   =   "workfrm.frx":1292A
             TabIndex        =   611
             Top             =   240
             Visible         =   0   'False
@@ -3315,7 +3180,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":12D4A
+            OleObjectBlob   =   "workfrm.frx":12988
             TabIndex        =   612
             Top             =   240
             Visible         =   0   'False
@@ -3325,7 +3190,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9360
-            OleObjectBlob   =   "workfrm.frx":12DA8
+            OleObjectBlob   =   "workfrm.frx":129E6
             TabIndex        =   613
             Top             =   240
             Visible         =   0   'False
@@ -3335,7 +3200,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":12E06
+            OleObjectBlob   =   "workfrm.frx":12A44
             TabIndex        =   614
             Top             =   1200
             Visible         =   0   'False
@@ -3345,7 +3210,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":12E64
+            OleObjectBlob   =   "workfrm.frx":12AA2
             TabIndex        =   615
             Top             =   1200
             Visible         =   0   'False
@@ -3355,7 +3220,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":12EC2
+            OleObjectBlob   =   "workfrm.frx":12B00
             TabIndex        =   616
             Top             =   1200
             Visible         =   0   'False
@@ -3365,7 +3230,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":12F20
+            OleObjectBlob   =   "workfrm.frx":12B5E
             TabIndex        =   617
             Top             =   1200
             Visible         =   0   'False
@@ -3375,7 +3240,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":12F7E
+            OleObjectBlob   =   "workfrm.frx":12BBC
             TabIndex        =   618
             Top             =   1200
             Visible         =   0   'False
@@ -3385,7 +3250,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":12FDC
+            OleObjectBlob   =   "workfrm.frx":12C1A
             TabIndex        =   619
             Top             =   1200
             Visible         =   0   'False
@@ -3395,7 +3260,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1303A
+            OleObjectBlob   =   "workfrm.frx":12C78
             TabIndex        =   620
             Top             =   1200
             Visible         =   0   'False
@@ -3405,7 +3270,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":13098
+            OleObjectBlob   =   "workfrm.frx":12CD6
             TabIndex        =   621
             Top             =   1200
             Visible         =   0   'False
@@ -3415,7 +3280,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":130F6
+            OleObjectBlob   =   "workfrm.frx":12D34
             TabIndex        =   622
             Top             =   1200
             Visible         =   0   'False
@@ -3425,7 +3290,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9360
-            OleObjectBlob   =   "workfrm.frx":13154
+            OleObjectBlob   =   "workfrm.frx":12D92
             TabIndex        =   623
             Top             =   1200
             Visible         =   0   'False
@@ -3435,7 +3300,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":131B2
+            OleObjectBlob   =   "workfrm.frx":12DF0
             TabIndex        =   644
             Top             =   240
             Visible         =   0   'False
@@ -3445,7 +3310,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":13210
+            OleObjectBlob   =   "workfrm.frx":12E4E
             TabIndex        =   645
             Top             =   240
             Visible         =   0   'False
@@ -3455,7 +3320,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1326E
+            OleObjectBlob   =   "workfrm.frx":12EAC
             TabIndex        =   646
             Top             =   240
             Visible         =   0   'False
@@ -3465,7 +3330,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":132CC
+            OleObjectBlob   =   "workfrm.frx":12F0A
             TabIndex        =   647
             Top             =   240
             Visible         =   0   'False
@@ -3475,7 +3340,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1332A
+            OleObjectBlob   =   "workfrm.frx":12F68
             TabIndex        =   648
             Top             =   240
             Visible         =   0   'False
@@ -3485,7 +3350,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":13388
+            OleObjectBlob   =   "workfrm.frx":12FC6
             TabIndex        =   649
             Top             =   240
             Visible         =   0   'False
@@ -3495,7 +3360,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":133E6
+            OleObjectBlob   =   "workfrm.frx":13024
             TabIndex        =   650
             Top             =   240
             Visible         =   0   'False
@@ -3505,7 +3370,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":13444
+            OleObjectBlob   =   "workfrm.frx":13082
             TabIndex        =   651
             Top             =   240
             Visible         =   0   'False
@@ -3515,7 +3380,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":134A2
+            OleObjectBlob   =   "workfrm.frx":130E0
             TabIndex        =   652
             Top             =   240
             Visible         =   0   'False
@@ -3525,7 +3390,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":13500
+            OleObjectBlob   =   "workfrm.frx":1313E
             TabIndex        =   653
             Top             =   240
             Visible         =   0   'False
@@ -3535,7 +3400,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1355E
+            OleObjectBlob   =   "workfrm.frx":1319C
             TabIndex        =   654
             Top             =   1200
             Visible         =   0   'False
@@ -3545,7 +3410,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":135BC
+            OleObjectBlob   =   "workfrm.frx":131FA
             TabIndex        =   655
             Top             =   1200
             Visible         =   0   'False
@@ -3555,7 +3420,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1361A
+            OleObjectBlob   =   "workfrm.frx":13258
             TabIndex        =   656
             Top             =   1200
             Visible         =   0   'False
@@ -3565,7 +3430,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":13678
+            OleObjectBlob   =   "workfrm.frx":132B6
             TabIndex        =   657
             Top             =   1200
             Visible         =   0   'False
@@ -3575,7 +3440,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":136D6
+            OleObjectBlob   =   "workfrm.frx":13314
             TabIndex        =   658
             Top             =   1200
             Visible         =   0   'False
@@ -3585,7 +3450,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":13734
+            OleObjectBlob   =   "workfrm.frx":13372
             TabIndex        =   659
             Top             =   1080
             Visible         =   0   'False
@@ -3595,7 +3460,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":13792
+            OleObjectBlob   =   "workfrm.frx":133D0
             TabIndex        =   660
             Top             =   1200
             Visible         =   0   'False
@@ -3605,7 +3470,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":137F0
+            OleObjectBlob   =   "workfrm.frx":1342E
             TabIndex        =   661
             Top             =   1200
             Visible         =   0   'False
@@ -3615,7 +3480,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":1384E
+            OleObjectBlob   =   "workfrm.frx":1348C
             TabIndex        =   662
             Top             =   1200
             Visible         =   0   'False
@@ -3625,7 +3490,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":138AC
+            OleObjectBlob   =   "workfrm.frx":134EA
             TabIndex        =   663
             Top             =   1200
             Visible         =   0   'False
@@ -3635,7 +3500,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1390A
+            OleObjectBlob   =   "workfrm.frx":13548
             TabIndex        =   704
             Top             =   240
             Visible         =   0   'False
@@ -3645,7 +3510,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":13968
+            OleObjectBlob   =   "workfrm.frx":135A6
             TabIndex        =   705
             Top             =   240
             Visible         =   0   'False
@@ -3655,7 +3520,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":139C6
+            OleObjectBlob   =   "workfrm.frx":13604
             TabIndex        =   706
             Top             =   240
             Visible         =   0   'False
@@ -3665,7 +3530,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":13A24
+            OleObjectBlob   =   "workfrm.frx":13662
             TabIndex        =   707
             Top             =   240
             Visible         =   0   'False
@@ -3675,7 +3540,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":13A82
+            OleObjectBlob   =   "workfrm.frx":136C0
             TabIndex        =   708
             Top             =   240
             Visible         =   0   'False
@@ -3685,7 +3550,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":13AE0
+            OleObjectBlob   =   "workfrm.frx":1371E
             TabIndex        =   709
             Top             =   240
             Visible         =   0   'False
@@ -3695,7 +3560,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":13B3E
+            OleObjectBlob   =   "workfrm.frx":1377C
             TabIndex        =   710
             Top             =   240
             Visible         =   0   'False
@@ -3705,7 +3570,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":13B9C
+            OleObjectBlob   =   "workfrm.frx":137DA
             TabIndex        =   711
             Top             =   240
             Visible         =   0   'False
@@ -3715,7 +3580,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":13BFA
+            OleObjectBlob   =   "workfrm.frx":13838
             TabIndex        =   712
             Top             =   240
             Visible         =   0   'False
@@ -3725,7 +3590,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":13C58
+            OleObjectBlob   =   "workfrm.frx":13896
             TabIndex        =   713
             Top             =   240
             Visible         =   0   'False
@@ -3735,7 +3600,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":13CB6
+            OleObjectBlob   =   "workfrm.frx":138F4
             TabIndex        =   714
             Top             =   1080
             Visible         =   0   'False
@@ -3745,7 +3610,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":13D14
+            OleObjectBlob   =   "workfrm.frx":13952
             TabIndex        =   715
             Top             =   1200
             Visible         =   0   'False
@@ -3755,7 +3620,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2400
-            OleObjectBlob   =   "workfrm.frx":13D72
+            OleObjectBlob   =   "workfrm.frx":139B0
             TabIndex        =   716
             Top             =   1200
             Visible         =   0   'False
@@ -3765,7 +3630,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":13DD0
+            OleObjectBlob   =   "workfrm.frx":13A0E
             TabIndex        =   717
             Top             =   1200
             Visible         =   0   'False
@@ -3775,7 +3640,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":13E2E
+            OleObjectBlob   =   "workfrm.frx":13A6C
             TabIndex        =   718
             Top             =   1200
             Visible         =   0   'False
@@ -3785,7 +3650,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":13E8C
+            OleObjectBlob   =   "workfrm.frx":13ACA
             TabIndex        =   719
             Top             =   1200
             Visible         =   0   'False
@@ -3795,7 +3660,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":13EEA
+            OleObjectBlob   =   "workfrm.frx":13B28
             TabIndex        =   720
             Top             =   1200
             Visible         =   0   'False
@@ -3805,7 +3670,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":13F48
+            OleObjectBlob   =   "workfrm.frx":13B86
             TabIndex        =   721
             Top             =   1200
             Visible         =   0   'False
@@ -3815,7 +3680,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":13FA6
+            OleObjectBlob   =   "workfrm.frx":13BE4
             TabIndex        =   722
             Top             =   1200
             Visible         =   0   'False
@@ -3825,7 +3690,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":14004
+            OleObjectBlob   =   "workfrm.frx":13C42
             TabIndex        =   723
             Top             =   1200
             Visible         =   0   'False
@@ -3835,8 +3700,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":14062
-            TabIndex        =   808
+            OleObjectBlob   =   "workfrm.frx":13CA0
+            TabIndex        =   804
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3845,8 +3710,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":140C0
-            TabIndex        =   809
+            OleObjectBlob   =   "workfrm.frx":13CFE
+            TabIndex        =   805
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3855,8 +3720,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1411E
-            TabIndex        =   810
+            OleObjectBlob   =   "workfrm.frx":13D5C
+            TabIndex        =   806
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3865,8 +3730,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1417C
-            TabIndex        =   811
+            OleObjectBlob   =   "workfrm.frx":13DBA
+            TabIndex        =   807
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3875,8 +3740,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":141DA
-            TabIndex        =   812
+            OleObjectBlob   =   "workfrm.frx":13E18
+            TabIndex        =   808
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3885,8 +3750,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":14238
-            TabIndex        =   813
+            OleObjectBlob   =   "workfrm.frx":13E76
+            TabIndex        =   809
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3895,8 +3760,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":14296
-            TabIndex        =   814
+            OleObjectBlob   =   "workfrm.frx":13ED4
+            TabIndex        =   810
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3905,8 +3770,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":142F4
-            TabIndex        =   815
+            OleObjectBlob   =   "workfrm.frx":13F32
+            TabIndex        =   811
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3915,8 +3780,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":14352
-            TabIndex        =   816
+            OleObjectBlob   =   "workfrm.frx":13F90
+            TabIndex        =   812
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3925,8 +3790,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9360
-            OleObjectBlob   =   "workfrm.frx":143B0
-            TabIndex        =   817
+            OleObjectBlob   =   "workfrm.frx":13FEE
+            TabIndex        =   813
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -3935,8 +3800,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1440E
-            TabIndex        =   818
+            OleObjectBlob   =   "workfrm.frx":1404C
+            TabIndex        =   814
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -3945,8 +3810,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1446C
-            TabIndex        =   819
+            OleObjectBlob   =   "workfrm.frx":140AA
+            TabIndex        =   815
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -3955,8 +3820,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":144CA
-            TabIndex        =   820
+            OleObjectBlob   =   "workfrm.frx":14108
+            TabIndex        =   816
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -3965,8 +3830,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":14528
-            TabIndex        =   821
+            OleObjectBlob   =   "workfrm.frx":14166
+            TabIndex        =   817
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -3975,8 +3840,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":14586
-            TabIndex        =   822
+            OleObjectBlob   =   "workfrm.frx":141C4
+            TabIndex        =   818
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -3985,8 +3850,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":145E4
-            TabIndex        =   823
+            OleObjectBlob   =   "workfrm.frx":14222
+            TabIndex        =   819
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -3995,8 +3860,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":14642
-            TabIndex        =   824
+            OleObjectBlob   =   "workfrm.frx":14280
+            TabIndex        =   820
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -4005,8 +3870,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":146A0
-            TabIndex        =   825
+            OleObjectBlob   =   "workfrm.frx":142DE
+            TabIndex        =   821
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -4015,8 +3880,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":146FE
-            TabIndex        =   826
+            OleObjectBlob   =   "workfrm.frx":1433C
+            TabIndex        =   822
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -4025,8 +3890,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1475C
-            TabIndex        =   827
+            OleObjectBlob   =   "workfrm.frx":1439A
+            TabIndex        =   823
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -4035,8 +3900,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":147BA
-            TabIndex        =   868
+            OleObjectBlob   =   "workfrm.frx":143F8
+            TabIndex        =   864
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4045,8 +3910,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":14818
-            TabIndex        =   869
+            OleObjectBlob   =   "workfrm.frx":14456
+            TabIndex        =   865
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4055,8 +3920,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":14876
-            TabIndex        =   870
+            OleObjectBlob   =   "workfrm.frx":144B4
+            TabIndex        =   866
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4065,8 +3930,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":148D4
-            TabIndex        =   871
+            OleObjectBlob   =   "workfrm.frx":14512
+            TabIndex        =   867
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4075,8 +3940,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":14932
-            TabIndex        =   872
+            OleObjectBlob   =   "workfrm.frx":14570
+            TabIndex        =   868
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4085,8 +3950,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":14990
-            TabIndex        =   873
+            OleObjectBlob   =   "workfrm.frx":145CE
+            TabIndex        =   869
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4095,8 +3960,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":149EE
-            TabIndex        =   874
+            OleObjectBlob   =   "workfrm.frx":1462C
+            TabIndex        =   870
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4105,8 +3970,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":14A4C
-            TabIndex        =   875
+            OleObjectBlob   =   "workfrm.frx":1468A
+            TabIndex        =   871
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4115,8 +3980,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":14AAA
-            TabIndex        =   876
+            OleObjectBlob   =   "workfrm.frx":146E8
+            TabIndex        =   872
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4125,8 +3990,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":14B08
-            TabIndex        =   877
+            OleObjectBlob   =   "workfrm.frx":14746
+            TabIndex        =   873
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -4135,8 +4000,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":14B66
-            TabIndex        =   878
+            OleObjectBlob   =   "workfrm.frx":147A4
+            TabIndex        =   874
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4145,8 +4010,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":14BC4
-            TabIndex        =   879
+            OleObjectBlob   =   "workfrm.frx":14802
+            TabIndex        =   875
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4155,8 +4020,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":14C22
-            TabIndex        =   880
+            OleObjectBlob   =   "workfrm.frx":14860
+            TabIndex        =   876
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4165,8 +4030,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":14C80
-            TabIndex        =   881
+            OleObjectBlob   =   "workfrm.frx":148BE
+            TabIndex        =   877
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4175,8 +4040,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":14CDE
-            TabIndex        =   882
+            OleObjectBlob   =   "workfrm.frx":1491C
+            TabIndex        =   878
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4185,8 +4050,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":14D3C
-            TabIndex        =   883
+            OleObjectBlob   =   "workfrm.frx":1497A
+            TabIndex        =   879
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4195,8 +4060,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":14D9A
-            TabIndex        =   884
+            OleObjectBlob   =   "workfrm.frx":149D8
+            TabIndex        =   880
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4205,8 +4070,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":14DF8
-            TabIndex        =   885
+            OleObjectBlob   =   "workfrm.frx":14A36
+            TabIndex        =   881
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4215,8 +4080,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":14E56
-            TabIndex        =   886
+            OleObjectBlob   =   "workfrm.frx":14A94
+            TabIndex        =   882
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4225,8 +4090,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   9120
-            OleObjectBlob   =   "workfrm.frx":14EB4
-            TabIndex        =   887
+            OleObjectBlob   =   "workfrm.frx":14AF2
+            TabIndex        =   883
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -4235,8 +4100,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   40
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":14F12
-            TabIndex        =   1013
+            OleObjectBlob   =   "workfrm.frx":14B50
+            TabIndex        =   997
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4245,8 +4110,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   41
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":14F70
-            TabIndex        =   1014
+            OleObjectBlob   =   "workfrm.frx":14BAE
+            TabIndex        =   998
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -4255,8 +4120,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   42
             Left            =   3120
-            OleObjectBlob   =   "workfrm.frx":14FCE
-            TabIndex        =   1015
+            OleObjectBlob   =   "workfrm.frx":14C0C
+            TabIndex        =   999
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4265,8 +4130,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   43
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1502C
-            TabIndex        =   1016
+            OleObjectBlob   =   "workfrm.frx":14C6A
+            TabIndex        =   1000
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -4275,8 +4140,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   44
             Left            =   6000
-            OleObjectBlob   =   "workfrm.frx":1508A
-            TabIndex        =   1017
+            OleObjectBlob   =   "workfrm.frx":14CC8
+            TabIndex        =   1001
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4285,8 +4150,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   45
             Left            =   7200
-            OleObjectBlob   =   "workfrm.frx":150E8
-            TabIndex        =   1018
+            OleObjectBlob   =   "workfrm.frx":14D26
+            TabIndex        =   1002
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4295,8 +4160,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   46
             Left            =   8880
-            OleObjectBlob   =   "workfrm.frx":15146
-            TabIndex        =   1019
+            OleObjectBlob   =   "workfrm.frx":14D84
+            TabIndex        =   1003
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4305,8 +4170,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   47
             Left            =   10200
-            OleObjectBlob   =   "workfrm.frx":151A4
-            TabIndex        =   1020
+            OleObjectBlob   =   "workfrm.frx":14DE2
+            TabIndex        =   1004
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4315,8 +4180,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   48
             Left            =   11640
-            OleObjectBlob   =   "workfrm.frx":15202
-            TabIndex        =   1021
+            OleObjectBlob   =   "workfrm.frx":14E40
+            TabIndex        =   1005
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4325,8 +4190,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   49
             Left            =   13200
-            OleObjectBlob   =   "workfrm.frx":15260
-            TabIndex        =   1022
+            OleObjectBlob   =   "workfrm.frx":14E9E
+            TabIndex        =   1006
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -4335,8 +4200,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   50
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":152BE
-            TabIndex        =   1023
+            OleObjectBlob   =   "workfrm.frx":14EFC
+            TabIndex        =   1007
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4345,8 +4210,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   51
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1531C
-            TabIndex        =   1024
+            OleObjectBlob   =   "workfrm.frx":14F5A
+            TabIndex        =   1008
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4355,8 +4220,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   52
             Left            =   3000
-            OleObjectBlob   =   "workfrm.frx":1537A
-            TabIndex        =   1025
+            OleObjectBlob   =   "workfrm.frx":14FB8
+            TabIndex        =   1009
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4365,8 +4230,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   53
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":153D8
-            TabIndex        =   1026
+            OleObjectBlob   =   "workfrm.frx":15016
+            TabIndex        =   1010
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4375,8 +4240,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   54
             Left            =   6000
-            OleObjectBlob   =   "workfrm.frx":15436
-            TabIndex        =   1027
+            OleObjectBlob   =   "workfrm.frx":15074
+            TabIndex        =   1011
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -4385,8 +4250,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   55
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":15494
-            TabIndex        =   1028
+            OleObjectBlob   =   "workfrm.frx":150D2
+            TabIndex        =   1012
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4395,8 +4260,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   56
             Left            =   8880
-            OleObjectBlob   =   "workfrm.frx":154F2
-            TabIndex        =   1029
+            OleObjectBlob   =   "workfrm.frx":15130
+            TabIndex        =   1013
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4405,8 +4270,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   57
             Left            =   10320
-            OleObjectBlob   =   "workfrm.frx":15550
-            TabIndex        =   1030
+            OleObjectBlob   =   "workfrm.frx":1518E
+            TabIndex        =   1014
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4415,8 +4280,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   58
             Left            =   11640
-            OleObjectBlob   =   "workfrm.frx":155AE
-            TabIndex        =   1031
+            OleObjectBlob   =   "workfrm.frx":151EC
+            TabIndex        =   1015
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4425,8 +4290,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   59
             Left            =   13200
-            OleObjectBlob   =   "workfrm.frx":1560C
-            TabIndex        =   1032
+            OleObjectBlob   =   "workfrm.frx":1524A
+            TabIndex        =   1016
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -4444,7 +4309,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":1566A
+            OleObjectBlob   =   "workfrm.frx":152A8
             TabIndex        =   624
             Top             =   240
             Visible         =   0   'False
@@ -4454,7 +4319,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":156C8
+            OleObjectBlob   =   "workfrm.frx":15306
             TabIndex        =   584
             Top             =   240
             Visible         =   0   'False
@@ -4464,7 +4329,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":15726
+            OleObjectBlob   =   "workfrm.frx":15364
             TabIndex        =   544
             Top             =   240
             Visible         =   0   'False
@@ -4474,7 +4339,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":15784
+            OleObjectBlob   =   "workfrm.frx":153C2
             TabIndex        =   504
             Top             =   240
             Visible         =   0   'False
@@ -4484,7 +4349,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":157E2
+            OleObjectBlob   =   "workfrm.frx":15420
             TabIndex        =   464
             Top             =   240
             Visible         =   0   'False
@@ -4494,7 +4359,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":15840
+            OleObjectBlob   =   "workfrm.frx":1547E
             TabIndex        =   424
             Top             =   240
             Visible         =   0   'False
@@ -4504,7 +4369,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":1589E
+            OleObjectBlob   =   "workfrm.frx":154DC
             TabIndex        =   384
             Top             =   120
             Visible         =   0   'False
@@ -4514,7 +4379,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":158FC
+            OleObjectBlob   =   "workfrm.frx":1553A
             TabIndex        =   344
             Top             =   240
             Visible         =   0   'False
@@ -4524,7 +4389,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":1595A
+            OleObjectBlob   =   "workfrm.frx":15598
             TabIndex        =   304
             Top             =   240
             Visible         =   0   'False
@@ -4535,7 +4400,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   39
             Left            =   13440
-            Picture         =   "workfrm.frx":159B8
+            Picture         =   "workfrm.frx":155F6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   262
@@ -4558,7 +4423,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   38
             Left            =   12000
-            Picture         =   "workfrm.frx":15DB0
+            Picture         =   "workfrm.frx":159EE
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   261
@@ -4581,7 +4446,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   37
             Left            =   10560
-            Picture         =   "workfrm.frx":161A8
+            Picture         =   "workfrm.frx":15DE6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   260
@@ -4604,7 +4469,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   36
             Left            =   9120
-            Picture         =   "workfrm.frx":165A0
+            Picture         =   "workfrm.frx":161DE
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   259
@@ -4627,7 +4492,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   35
             Left            =   7680
-            Picture         =   "workfrm.frx":16998
+            Picture         =   "workfrm.frx":165D6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   258
@@ -4650,7 +4515,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   34
             Left            =   6240
-            Picture         =   "workfrm.frx":16D90
+            Picture         =   "workfrm.frx":169CE
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   257
@@ -4673,7 +4538,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   33
             Left            =   4800
-            Picture         =   "workfrm.frx":17188
+            Picture         =   "workfrm.frx":16DC6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   256
@@ -4696,7 +4561,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   32
             Left            =   3360
-            Picture         =   "workfrm.frx":17580
+            Picture         =   "workfrm.frx":171BE
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   255
@@ -4719,7 +4584,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   31
             Left            =   1920
-            Picture         =   "workfrm.frx":17978
+            Picture         =   "workfrm.frx":175B6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   254
@@ -4742,7 +4607,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   30
             Left            =   480
-            Picture         =   "workfrm.frx":17D70
+            Picture         =   "workfrm.frx":179AE
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   253
@@ -4765,7 +4630,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   29
             Left            =   13440
-            Picture         =   "workfrm.frx":18168
+            Picture         =   "workfrm.frx":17DA6
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   252
@@ -4788,7 +4653,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   28
             Left            =   12000
-            Picture         =   "workfrm.frx":18560
+            Picture         =   "workfrm.frx":1819E
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   251
@@ -4811,7 +4676,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   27
             Left            =   10560
-            Picture         =   "workfrm.frx":18958
+            Picture         =   "workfrm.frx":18596
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   250
@@ -4834,7 +4699,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   26
             Left            =   9120
-            Picture         =   "workfrm.frx":18D50
+            Picture         =   "workfrm.frx":1898E
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   249
@@ -4857,7 +4722,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   25
             Left            =   7680
-            Picture         =   "workfrm.frx":19148
+            Picture         =   "workfrm.frx":18D86
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   248
@@ -4880,7 +4745,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   24
             Left            =   6240
-            Picture         =   "workfrm.frx":19540
+            Picture         =   "workfrm.frx":1917E
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   247
@@ -4903,7 +4768,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   23
             Left            =   4800
-            Picture         =   "workfrm.frx":19938
+            Picture         =   "workfrm.frx":19576
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   246
@@ -4926,7 +4791,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   22
             Left            =   3360
-            Picture         =   "workfrm.frx":19D30
+            Picture         =   "workfrm.frx":1996E
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   245
@@ -4949,7 +4814,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   21
             Left            =   1920
-            Picture         =   "workfrm.frx":1A128
+            Picture         =   "workfrm.frx":19D66
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   244
@@ -4972,7 +4837,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   20
             Left            =   480
-            Picture         =   "workfrm.frx":1A520
+            Picture         =   "workfrm.frx":1A15E
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   243
@@ -4994,7 +4859,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":1A918
+            OleObjectBlob   =   "workfrm.frx":1A556
             TabIndex        =   223
             Top             =   240
             Width           =   375
@@ -5003,7 +4868,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1800
-            OleObjectBlob   =   "workfrm.frx":1A97C
+            OleObjectBlob   =   "workfrm.frx":1A5BA
             TabIndex        =   224
             Top             =   240
             Width           =   375
@@ -5012,7 +4877,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   3240
-            OleObjectBlob   =   "workfrm.frx":1A9E0
+            OleObjectBlob   =   "workfrm.frx":1A61E
             TabIndex        =   225
             Top             =   240
             Width           =   375
@@ -5021,7 +4886,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   4680
-            OleObjectBlob   =   "workfrm.frx":1AA44
+            OleObjectBlob   =   "workfrm.frx":1A682
             TabIndex        =   226
             Top             =   240
             Width           =   375
@@ -5030,7 +4895,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   6120
-            OleObjectBlob   =   "workfrm.frx":1AAA8
+            OleObjectBlob   =   "workfrm.frx":1A6E6
             TabIndex        =   227
             Top             =   240
             Width           =   375
@@ -5039,7 +4904,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   7560
-            OleObjectBlob   =   "workfrm.frx":1AB0C
+            OleObjectBlob   =   "workfrm.frx":1A74A
             TabIndex        =   228
             Top             =   240
             Width           =   375
@@ -5048,7 +4913,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   9000
-            OleObjectBlob   =   "workfrm.frx":1AB70
+            OleObjectBlob   =   "workfrm.frx":1A7AE
             TabIndex        =   229
             Top             =   240
             Width           =   375
@@ -5057,7 +4922,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":1ABD4
+            OleObjectBlob   =   "workfrm.frx":1A812
             TabIndex        =   230
             Top             =   240
             Width           =   375
@@ -5066,7 +4931,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   11880
-            OleObjectBlob   =   "workfrm.frx":1AC38
+            OleObjectBlob   =   "workfrm.frx":1A876
             TabIndex        =   231
             Top             =   240
             Width           =   375
@@ -5075,7 +4940,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   13320
-            OleObjectBlob   =   "workfrm.frx":1AC9C
+            OleObjectBlob   =   "workfrm.frx":1A8DA
             TabIndex        =   232
             Top             =   240
             Width           =   375
@@ -5084,7 +4949,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":1AD00
+            OleObjectBlob   =   "workfrm.frx":1A93E
             TabIndex        =   233
             Top             =   1200
             Width           =   375
@@ -5093,7 +4958,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1800
-            OleObjectBlob   =   "workfrm.frx":1AD64
+            OleObjectBlob   =   "workfrm.frx":1A9A2
             TabIndex        =   234
             Top             =   1200
             Width           =   375
@@ -5102,7 +4967,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   3240
-            OleObjectBlob   =   "workfrm.frx":1ADC8
+            OleObjectBlob   =   "workfrm.frx":1AA06
             TabIndex        =   235
             Top             =   1200
             Width           =   375
@@ -5111,7 +4976,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   4680
-            OleObjectBlob   =   "workfrm.frx":1AE2C
+            OleObjectBlob   =   "workfrm.frx":1AA6A
             TabIndex        =   236
             Top             =   1200
             Width           =   375
@@ -5120,7 +4985,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   6120
-            OleObjectBlob   =   "workfrm.frx":1AE90
+            OleObjectBlob   =   "workfrm.frx":1AACE
             TabIndex        =   237
             Top             =   1200
             Width           =   375
@@ -5129,7 +4994,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   7560
-            OleObjectBlob   =   "workfrm.frx":1AEF4
+            OleObjectBlob   =   "workfrm.frx":1AB32
             TabIndex        =   238
             Top             =   1200
             Width           =   375
@@ -5138,7 +5003,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   9000
-            OleObjectBlob   =   "workfrm.frx":1AF58
+            OleObjectBlob   =   "workfrm.frx":1AB96
             TabIndex        =   239
             Top             =   1200
             Width           =   375
@@ -5147,7 +5012,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":1AFBC
+            OleObjectBlob   =   "workfrm.frx":1ABFA
             TabIndex        =   240
             Top             =   1200
             Width           =   375
@@ -5156,7 +5021,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   11880
-            OleObjectBlob   =   "workfrm.frx":1B020
+            OleObjectBlob   =   "workfrm.frx":1AC5E
             TabIndex        =   241
             Top             =   1200
             Width           =   375
@@ -5165,7 +5030,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   13320
-            OleObjectBlob   =   "workfrm.frx":1B084
+            OleObjectBlob   =   "workfrm.frx":1ACC2
             TabIndex        =   242
             Top             =   1200
             Width           =   375
@@ -5174,7 +5039,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1B0E8
+            OleObjectBlob   =   "workfrm.frx":1AD26
             TabIndex        =   305
             Top             =   240
             Visible         =   0   'False
@@ -5184,7 +5049,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1B146
+            OleObjectBlob   =   "workfrm.frx":1AD84
             TabIndex        =   306
             Top             =   240
             Visible         =   0   'False
@@ -5194,7 +5059,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1B1A4
+            OleObjectBlob   =   "workfrm.frx":1ADE2
             TabIndex        =   307
             Top             =   240
             Visible         =   0   'False
@@ -5204,7 +5069,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1B202
+            OleObjectBlob   =   "workfrm.frx":1AE40
             TabIndex        =   308
             Top             =   240
             Visible         =   0   'False
@@ -5214,7 +5079,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1B260
+            OleObjectBlob   =   "workfrm.frx":1AE9E
             TabIndex        =   309
             Top             =   240
             Visible         =   0   'False
@@ -5224,7 +5089,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":1B2BE
+            OleObjectBlob   =   "workfrm.frx":1AEFC
             TabIndex        =   310
             Top             =   240
             Visible         =   0   'False
@@ -5234,7 +5099,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1B31C
+            OleObjectBlob   =   "workfrm.frx":1AF5A
             TabIndex        =   311
             Top             =   240
             Visible         =   0   'False
@@ -5244,7 +5109,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1B37A
+            OleObjectBlob   =   "workfrm.frx":1AFB8
             TabIndex        =   312
             Top             =   240
             Visible         =   0   'False
@@ -5254,7 +5119,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1B3D8
+            OleObjectBlob   =   "workfrm.frx":1B016
             TabIndex        =   313
             Top             =   240
             Visible         =   0   'False
@@ -5264,7 +5129,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1B436
+            OleObjectBlob   =   "workfrm.frx":1B074
             TabIndex        =   314
             Top             =   1200
             Visible         =   0   'False
@@ -5274,7 +5139,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1B494
+            OleObjectBlob   =   "workfrm.frx":1B0D2
             TabIndex        =   315
             Top             =   1200
             Visible         =   0   'False
@@ -5284,7 +5149,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1B4F2
+            OleObjectBlob   =   "workfrm.frx":1B130
             TabIndex        =   316
             Top             =   1200
             Visible         =   0   'False
@@ -5294,7 +5159,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1B550
+            OleObjectBlob   =   "workfrm.frx":1B18E
             TabIndex        =   317
             Top             =   1200
             Visible         =   0   'False
@@ -5304,7 +5169,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1B5AE
+            OleObjectBlob   =   "workfrm.frx":1B1EC
             TabIndex        =   318
             Top             =   1200
             Visible         =   0   'False
@@ -5314,7 +5179,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1B60C
+            OleObjectBlob   =   "workfrm.frx":1B24A
             TabIndex        =   319
             Top             =   1200
             Visible         =   0   'False
@@ -5324,7 +5189,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1B66A
+            OleObjectBlob   =   "workfrm.frx":1B2A8
             TabIndex        =   320
             Top             =   1200
             Visible         =   0   'False
@@ -5334,7 +5199,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1B6C8
+            OleObjectBlob   =   "workfrm.frx":1B306
             TabIndex        =   321
             Top             =   1200
             Visible         =   0   'False
@@ -5344,7 +5209,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1B726
+            OleObjectBlob   =   "workfrm.frx":1B364
             TabIndex        =   322
             Top             =   1200
             Visible         =   0   'False
@@ -5354,7 +5219,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1B784
+            OleObjectBlob   =   "workfrm.frx":1B3C2
             TabIndex        =   323
             Top             =   1200
             Visible         =   0   'False
@@ -5364,7 +5229,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1B7E2
+            OleObjectBlob   =   "workfrm.frx":1B420
             TabIndex        =   345
             Top             =   240
             Visible         =   0   'False
@@ -5374,7 +5239,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1B840
+            OleObjectBlob   =   "workfrm.frx":1B47E
             TabIndex        =   346
             Top             =   240
             Visible         =   0   'False
@@ -5384,7 +5249,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1B89E
+            OleObjectBlob   =   "workfrm.frx":1B4DC
             TabIndex        =   347
             Top             =   240
             Visible         =   0   'False
@@ -5394,7 +5259,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1B8FC
+            OleObjectBlob   =   "workfrm.frx":1B53A
             TabIndex        =   348
             Top             =   240
             Visible         =   0   'False
@@ -5404,7 +5269,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1B95A
+            OleObjectBlob   =   "workfrm.frx":1B598
             TabIndex        =   349
             Top             =   240
             Visible         =   0   'False
@@ -5414,7 +5279,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1B9B8
+            OleObjectBlob   =   "workfrm.frx":1B5F6
             TabIndex        =   350
             Top             =   240
             Visible         =   0   'False
@@ -5424,7 +5289,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1BA16
+            OleObjectBlob   =   "workfrm.frx":1B654
             TabIndex        =   351
             Top             =   240
             Visible         =   0   'False
@@ -5434,7 +5299,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1BA74
+            OleObjectBlob   =   "workfrm.frx":1B6B2
             TabIndex        =   352
             Top             =   240
             Visible         =   0   'False
@@ -5444,7 +5309,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1BAD2
+            OleObjectBlob   =   "workfrm.frx":1B710
             TabIndex        =   353
             Top             =   240
             Visible         =   0   'False
@@ -5454,7 +5319,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1BB30
+            OleObjectBlob   =   "workfrm.frx":1B76E
             TabIndex        =   354
             Top             =   1200
             Visible         =   0   'False
@@ -5464,7 +5329,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1BB8E
+            OleObjectBlob   =   "workfrm.frx":1B7CC
             TabIndex        =   355
             Top             =   1200
             Visible         =   0   'False
@@ -5474,7 +5339,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1BBEC
+            OleObjectBlob   =   "workfrm.frx":1B82A
             TabIndex        =   356
             Top             =   1200
             Visible         =   0   'False
@@ -5484,7 +5349,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1BC4A
+            OleObjectBlob   =   "workfrm.frx":1B888
             TabIndex        =   357
             Top             =   1200
             Visible         =   0   'False
@@ -5494,7 +5359,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1BCA8
+            OleObjectBlob   =   "workfrm.frx":1B8E6
             TabIndex        =   358
             Top             =   1200
             Visible         =   0   'False
@@ -5504,7 +5369,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1BD06
+            OleObjectBlob   =   "workfrm.frx":1B944
             TabIndex        =   359
             Top             =   1200
             Visible         =   0   'False
@@ -5514,7 +5379,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1BD64
+            OleObjectBlob   =   "workfrm.frx":1B9A2
             TabIndex        =   360
             Top             =   1200
             Visible         =   0   'False
@@ -5524,7 +5389,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1BDC2
+            OleObjectBlob   =   "workfrm.frx":1BA00
             TabIndex        =   361
             Top             =   1200
             Visible         =   0   'False
@@ -5534,7 +5399,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1BE20
+            OleObjectBlob   =   "workfrm.frx":1BA5E
             TabIndex        =   362
             Top             =   1200
             Visible         =   0   'False
@@ -5544,7 +5409,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1BE7E
+            OleObjectBlob   =   "workfrm.frx":1BABC
             TabIndex        =   363
             Top             =   1200
             Visible         =   0   'False
@@ -5554,7 +5419,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1BEDC
+            OleObjectBlob   =   "workfrm.frx":1BB1A
             TabIndex        =   385
             Top             =   240
             Visible         =   0   'False
@@ -5564,7 +5429,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   22
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1BF3A
+            OleObjectBlob   =   "workfrm.frx":1BB78
             TabIndex        =   386
             Top             =   240
             Visible         =   0   'False
@@ -5574,7 +5439,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   23
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":1BF98
+            OleObjectBlob   =   "workfrm.frx":1BBD6
             TabIndex        =   387
             Top             =   240
             Visible         =   0   'False
@@ -5584,7 +5449,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   24
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":1BFF6
+            OleObjectBlob   =   "workfrm.frx":1BC34
             TabIndex        =   388
             Top             =   240
             Visible         =   0   'False
@@ -5594,7 +5459,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   25
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1C054
+            OleObjectBlob   =   "workfrm.frx":1BC92
             TabIndex        =   389
             Top             =   240
             Visible         =   0   'False
@@ -5604,7 +5469,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   26
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":1C0B2
+            OleObjectBlob   =   "workfrm.frx":1BCF0
             TabIndex        =   390
             Top             =   240
             Visible         =   0   'False
@@ -5614,7 +5479,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   27
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1C110
+            OleObjectBlob   =   "workfrm.frx":1BD4E
             TabIndex        =   391
             Top             =   240
             Visible         =   0   'False
@@ -5624,7 +5489,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1C16E
+            OleObjectBlob   =   "workfrm.frx":1BDAC
             TabIndex        =   392
             Top             =   240
             Visible         =   0   'False
@@ -5634,7 +5499,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1C1CC
+            OleObjectBlob   =   "workfrm.frx":1BE0A
             TabIndex        =   393
             Top             =   240
             Visible         =   0   'False
@@ -5644,7 +5509,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1C22A
+            OleObjectBlob   =   "workfrm.frx":1BE68
             TabIndex        =   394
             Top             =   1200
             Visible         =   0   'False
@@ -5654,7 +5519,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   31
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1C288
+            OleObjectBlob   =   "workfrm.frx":1BEC6
             TabIndex        =   395
             Top             =   1200
             Visible         =   0   'False
@@ -5664,7 +5529,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1C2E6
+            OleObjectBlob   =   "workfrm.frx":1BF24
             TabIndex        =   396
             Top             =   1200
             Visible         =   0   'False
@@ -5674,7 +5539,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   33
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":1C344
+            OleObjectBlob   =   "workfrm.frx":1BF82
             TabIndex        =   397
             Top             =   1200
             Visible         =   0   'False
@@ -5684,7 +5549,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   34
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":1C3A2
+            OleObjectBlob   =   "workfrm.frx":1BFE0
             TabIndex        =   398
             Top             =   1200
             Visible         =   0   'False
@@ -5694,7 +5559,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   35
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1C400
+            OleObjectBlob   =   "workfrm.frx":1C03E
             TabIndex        =   399
             Top             =   1200
             Visible         =   0   'False
@@ -5704,7 +5569,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1C45E
+            OleObjectBlob   =   "workfrm.frx":1C09C
             TabIndex        =   400
             Top             =   1200
             Visible         =   0   'False
@@ -5714,7 +5579,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1C4BC
+            OleObjectBlob   =   "workfrm.frx":1C0FA
             TabIndex        =   401
             Top             =   1200
             Visible         =   0   'False
@@ -5724,7 +5589,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1C51A
+            OleObjectBlob   =   "workfrm.frx":1C158
             TabIndex        =   402
             Top             =   1200
             Visible         =   0   'False
@@ -5734,7 +5599,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1C578
+            OleObjectBlob   =   "workfrm.frx":1C1B6
             TabIndex        =   403
             Top             =   1080
             Visible         =   0   'False
@@ -5744,7 +5609,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1C5D6
+            OleObjectBlob   =   "workfrm.frx":1C214
             TabIndex        =   425
             Top             =   240
             Visible         =   0   'False
@@ -5754,7 +5619,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1C634
+            OleObjectBlob   =   "workfrm.frx":1C272
             TabIndex        =   426
             Top             =   240
             Visible         =   0   'False
@@ -5764,7 +5629,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":1C692
+            OleObjectBlob   =   "workfrm.frx":1C2D0
             TabIndex        =   427
             Top             =   240
             Visible         =   0   'False
@@ -5774,7 +5639,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":1C6F0
+            OleObjectBlob   =   "workfrm.frx":1C32E
             TabIndex        =   428
             Top             =   240
             Visible         =   0   'False
@@ -5784,7 +5649,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1C74E
+            OleObjectBlob   =   "workfrm.frx":1C38C
             TabIndex        =   429
             Top             =   240
             Visible         =   0   'False
@@ -5794,7 +5659,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1C7AC
+            OleObjectBlob   =   "workfrm.frx":1C3EA
             TabIndex        =   430
             Top             =   240
             Visible         =   0   'False
@@ -5804,7 +5669,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1C80A
+            OleObjectBlob   =   "workfrm.frx":1C448
             TabIndex        =   431
             Top             =   240
             Visible         =   0   'False
@@ -5814,7 +5679,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":1C868
+            OleObjectBlob   =   "workfrm.frx":1C4A6
             TabIndex        =   432
             Top             =   240
             Visible         =   0   'False
@@ -5824,7 +5689,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1C8C6
+            OleObjectBlob   =   "workfrm.frx":1C504
             TabIndex        =   433
             Top             =   240
             Visible         =   0   'False
@@ -5834,7 +5699,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1C924
+            OleObjectBlob   =   "workfrm.frx":1C562
             TabIndex        =   434
             Top             =   1200
             Visible         =   0   'False
@@ -5844,7 +5709,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1C982
+            OleObjectBlob   =   "workfrm.frx":1C5C0
             TabIndex        =   435
             Top             =   1200
             Visible         =   0   'False
@@ -5854,7 +5719,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1C9E0
+            OleObjectBlob   =   "workfrm.frx":1C61E
             TabIndex        =   436
             Top             =   1200
             Visible         =   0   'False
@@ -5864,7 +5729,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1CA3E
+            OleObjectBlob   =   "workfrm.frx":1C67C
             TabIndex        =   437
             Top             =   1200
             Visible         =   0   'False
@@ -5874,7 +5739,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1CA9C
+            OleObjectBlob   =   "workfrm.frx":1C6DA
             TabIndex        =   438
             Top             =   1200
             Visible         =   0   'False
@@ -5884,7 +5749,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1CAFA
+            OleObjectBlob   =   "workfrm.frx":1C738
             TabIndex        =   439
             Top             =   1200
             Visible         =   0   'False
@@ -5894,7 +5759,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1CB58
+            OleObjectBlob   =   "workfrm.frx":1C796
             TabIndex        =   440
             Top             =   1200
             Visible         =   0   'False
@@ -5904,7 +5769,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1CBB6
+            OleObjectBlob   =   "workfrm.frx":1C7F4
             TabIndex        =   441
             Top             =   1200
             Visible         =   0   'False
@@ -5914,7 +5779,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1CC14
+            OleObjectBlob   =   "workfrm.frx":1C852
             TabIndex        =   442
             Top             =   1200
             Visible         =   0   'False
@@ -5924,7 +5789,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1CC72
+            OleObjectBlob   =   "workfrm.frx":1C8B0
             TabIndex        =   443
             Top             =   1200
             Visible         =   0   'False
@@ -5934,7 +5799,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1CCD0
+            OleObjectBlob   =   "workfrm.frx":1C90E
             TabIndex        =   465
             Top             =   240
             Visible         =   0   'False
@@ -5944,7 +5809,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1CD2E
+            OleObjectBlob   =   "workfrm.frx":1C96C
             TabIndex        =   466
             Top             =   240
             Visible         =   0   'False
@@ -5954,7 +5819,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":1CD8C
+            OleObjectBlob   =   "workfrm.frx":1C9CA
             TabIndex        =   467
             Top             =   240
             Visible         =   0   'False
@@ -5964,7 +5829,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1CDEA
+            OleObjectBlob   =   "workfrm.frx":1CA28
             TabIndex        =   468
             Top             =   240
             Visible         =   0   'False
@@ -5974,7 +5839,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1CE48
+            OleObjectBlob   =   "workfrm.frx":1CA86
             TabIndex        =   469
             Top             =   240
             Visible         =   0   'False
@@ -5984,7 +5849,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1CEA6
+            OleObjectBlob   =   "workfrm.frx":1CAE4
             TabIndex        =   470
             Top             =   240
             Visible         =   0   'False
@@ -5994,7 +5859,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1CF04
+            OleObjectBlob   =   "workfrm.frx":1CB42
             TabIndex        =   471
             Top             =   240
             Visible         =   0   'False
@@ -6004,7 +5869,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1CF62
+            OleObjectBlob   =   "workfrm.frx":1CBA0
             TabIndex        =   472
             Top             =   240
             Visible         =   0   'False
@@ -6014,7 +5879,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1CFC0
+            OleObjectBlob   =   "workfrm.frx":1CBFE
             TabIndex        =   473
             Top             =   240
             Visible         =   0   'False
@@ -6024,7 +5889,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1D01E
+            OleObjectBlob   =   "workfrm.frx":1CC5C
             TabIndex        =   474
             Top             =   1200
             Visible         =   0   'False
@@ -6034,7 +5899,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1D07C
+            OleObjectBlob   =   "workfrm.frx":1CCBA
             TabIndex        =   475
             Top             =   1200
             Visible         =   0   'False
@@ -6044,7 +5909,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1D0DA
+            OleObjectBlob   =   "workfrm.frx":1CD18
             TabIndex        =   476
             Top             =   1200
             Visible         =   0   'False
@@ -6054,7 +5919,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":1D138
+            OleObjectBlob   =   "workfrm.frx":1CD76
             TabIndex        =   477
             Top             =   1200
             Visible         =   0   'False
@@ -6064,7 +5929,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1D196
+            OleObjectBlob   =   "workfrm.frx":1CDD4
             TabIndex        =   478
             Top             =   1200
             Visible         =   0   'False
@@ -6074,7 +5939,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1D1F4
+            OleObjectBlob   =   "workfrm.frx":1CE32
             TabIndex        =   479
             Top             =   1200
             Visible         =   0   'False
@@ -6084,7 +5949,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1D252
+            OleObjectBlob   =   "workfrm.frx":1CE90
             TabIndex        =   480
             Top             =   1200
             Visible         =   0   'False
@@ -6094,7 +5959,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1D2B0
+            OleObjectBlob   =   "workfrm.frx":1CEEE
             TabIndex        =   481
             Top             =   1200
             Visible         =   0   'False
@@ -6104,7 +5969,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1D30E
+            OleObjectBlob   =   "workfrm.frx":1CF4C
             TabIndex        =   482
             Top             =   1080
             Visible         =   0   'False
@@ -6114,7 +5979,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1D36C
+            OleObjectBlob   =   "workfrm.frx":1CFAA
             TabIndex        =   483
             Top             =   1200
             Visible         =   0   'False
@@ -6124,7 +5989,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1D3CA
+            OleObjectBlob   =   "workfrm.frx":1D008
             TabIndex        =   505
             Top             =   240
             Visible         =   0   'False
@@ -6134,7 +5999,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1D428
+            OleObjectBlob   =   "workfrm.frx":1D066
             TabIndex        =   506
             Top             =   240
             Visible         =   0   'False
@@ -6144,7 +6009,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1D486
+            OleObjectBlob   =   "workfrm.frx":1D0C4
             TabIndex        =   507
             Top             =   240
             Visible         =   0   'False
@@ -6154,7 +6019,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1D4E4
+            OleObjectBlob   =   "workfrm.frx":1D122
             TabIndex        =   508
             Top             =   240
             Visible         =   0   'False
@@ -6164,7 +6029,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1D542
+            OleObjectBlob   =   "workfrm.frx":1D180
             TabIndex        =   509
             Top             =   240
             Visible         =   0   'False
@@ -6174,7 +6039,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1D5A0
+            OleObjectBlob   =   "workfrm.frx":1D1DE
             TabIndex        =   510
             Top             =   240
             Visible         =   0   'False
@@ -6184,7 +6049,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1D5FE
+            OleObjectBlob   =   "workfrm.frx":1D23C
             TabIndex        =   511
             Top             =   240
             Visible         =   0   'False
@@ -6194,7 +6059,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1D65C
+            OleObjectBlob   =   "workfrm.frx":1D29A
             TabIndex        =   512
             Top             =   240
             Visible         =   0   'False
@@ -6204,7 +6069,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1D6BA
+            OleObjectBlob   =   "workfrm.frx":1D2F8
             TabIndex        =   513
             Top             =   240
             Visible         =   0   'False
@@ -6214,7 +6079,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1D718
+            OleObjectBlob   =   "workfrm.frx":1D356
             TabIndex        =   514
             Top             =   1200
             Visible         =   0   'False
@@ -6224,7 +6089,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1D776
+            OleObjectBlob   =   "workfrm.frx":1D3B4
             TabIndex        =   515
             Top             =   1200
             Visible         =   0   'False
@@ -6234,7 +6099,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1D7D4
+            OleObjectBlob   =   "workfrm.frx":1D412
             TabIndex        =   516
             Top             =   1200
             Visible         =   0   'False
@@ -6244,7 +6109,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1D832
+            OleObjectBlob   =   "workfrm.frx":1D470
             TabIndex        =   517
             Top             =   1200
             Visible         =   0   'False
@@ -6254,7 +6119,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1D890
+            OleObjectBlob   =   "workfrm.frx":1D4CE
             TabIndex        =   518
             Top             =   1200
             Visible         =   0   'False
@@ -6264,7 +6129,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1D8EE
+            OleObjectBlob   =   "workfrm.frx":1D52C
             TabIndex        =   519
             Top             =   1200
             Visible         =   0   'False
@@ -6274,7 +6139,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1D94C
+            OleObjectBlob   =   "workfrm.frx":1D58A
             TabIndex        =   520
             Top             =   1200
             Visible         =   0   'False
@@ -6284,7 +6149,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1D9AA
+            OleObjectBlob   =   "workfrm.frx":1D5E8
             TabIndex        =   521
             Top             =   1080
             Visible         =   0   'False
@@ -6294,7 +6159,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1DA08
+            OleObjectBlob   =   "workfrm.frx":1D646
             TabIndex        =   522
             Top             =   1200
             Visible         =   0   'False
@@ -6304,7 +6169,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1DA66
+            OleObjectBlob   =   "workfrm.frx":1D6A4
             TabIndex        =   523
             Top             =   1200
             Visible         =   0   'False
@@ -6314,7 +6179,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1DAC4
+            OleObjectBlob   =   "workfrm.frx":1D702
             TabIndex        =   545
             Top             =   240
             Visible         =   0   'False
@@ -6324,7 +6189,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1DB22
+            OleObjectBlob   =   "workfrm.frx":1D760
             TabIndex        =   546
             Top             =   240
             Visible         =   0   'False
@@ -6334,7 +6199,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1DB80
+            OleObjectBlob   =   "workfrm.frx":1D7BE
             TabIndex        =   547
             Top             =   240
             Visible         =   0   'False
@@ -6344,7 +6209,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1DBDE
+            OleObjectBlob   =   "workfrm.frx":1D81C
             TabIndex        =   548
             Top             =   240
             Visible         =   0   'False
@@ -6354,7 +6219,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1DC3C
+            OleObjectBlob   =   "workfrm.frx":1D87A
             TabIndex        =   549
             Top             =   240
             Visible         =   0   'False
@@ -6364,7 +6229,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1DC9A
+            OleObjectBlob   =   "workfrm.frx":1D8D8
             TabIndex        =   550
             Top             =   240
             Visible         =   0   'False
@@ -6374,7 +6239,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1DCF8
+            OleObjectBlob   =   "workfrm.frx":1D936
             TabIndex        =   551
             Top             =   240
             Visible         =   0   'False
@@ -6384,7 +6249,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1DD56
+            OleObjectBlob   =   "workfrm.frx":1D994
             TabIndex        =   552
             Top             =   240
             Visible         =   0   'False
@@ -6394,7 +6259,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1DDB4
+            OleObjectBlob   =   "workfrm.frx":1D9F2
             TabIndex        =   553
             Top             =   240
             Visible         =   0   'False
@@ -6404,7 +6269,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1DE12
+            OleObjectBlob   =   "workfrm.frx":1DA50
             TabIndex        =   554
             Top             =   1200
             Visible         =   0   'False
@@ -6414,7 +6279,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1DE70
+            OleObjectBlob   =   "workfrm.frx":1DAAE
             TabIndex        =   555
             Top             =   1200
             Visible         =   0   'False
@@ -6424,7 +6289,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1DECE
+            OleObjectBlob   =   "workfrm.frx":1DB0C
             TabIndex        =   556
             Top             =   1200
             Visible         =   0   'False
@@ -6434,7 +6299,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1DF2C
+            OleObjectBlob   =   "workfrm.frx":1DB6A
             TabIndex        =   557
             Top             =   1200
             Visible         =   0   'False
@@ -6444,7 +6309,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1DF8A
+            OleObjectBlob   =   "workfrm.frx":1DBC8
             TabIndex        =   558
             Top             =   1200
             Visible         =   0   'False
@@ -6454,7 +6319,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1DFE8
+            OleObjectBlob   =   "workfrm.frx":1DC26
             TabIndex        =   559
             Top             =   1200
             Visible         =   0   'False
@@ -6464,7 +6329,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1E046
+            OleObjectBlob   =   "workfrm.frx":1DC84
             TabIndex        =   560
             Top             =   1200
             Visible         =   0   'False
@@ -6474,7 +6339,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1E0A4
+            OleObjectBlob   =   "workfrm.frx":1DCE2
             TabIndex        =   561
             Top             =   1200
             Visible         =   0   'False
@@ -6484,7 +6349,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":1E102
+            OleObjectBlob   =   "workfrm.frx":1DD40
             TabIndex        =   562
             Top             =   1200
             Visible         =   0   'False
@@ -6494,7 +6359,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1E160
+            OleObjectBlob   =   "workfrm.frx":1DD9E
             TabIndex        =   563
             Top             =   1200
             Visible         =   0   'False
@@ -6504,7 +6369,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1E1BE
+            OleObjectBlob   =   "workfrm.frx":1DDFC
             TabIndex        =   585
             Top             =   240
             Visible         =   0   'False
@@ -6514,7 +6379,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1E21C
+            OleObjectBlob   =   "workfrm.frx":1DE5A
             TabIndex        =   586
             Top             =   240
             Visible         =   0   'False
@@ -6524,7 +6389,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1E27A
+            OleObjectBlob   =   "workfrm.frx":1DEB8
             TabIndex        =   587
             Top             =   240
             Visible         =   0   'False
@@ -6534,7 +6399,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":1E2D8
+            OleObjectBlob   =   "workfrm.frx":1DF16
             TabIndex        =   588
             Top             =   240
             Visible         =   0   'False
@@ -6544,7 +6409,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":1E336
+            OleObjectBlob   =   "workfrm.frx":1DF74
             TabIndex        =   589
             Top             =   240
             Visible         =   0   'False
@@ -6554,7 +6419,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1E394
+            OleObjectBlob   =   "workfrm.frx":1DFD2
             TabIndex        =   590
             Top             =   240
             Visible         =   0   'False
@@ -6564,7 +6429,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1E3F2
+            OleObjectBlob   =   "workfrm.frx":1E030
             TabIndex        =   591
             Top             =   240
             Visible         =   0   'False
@@ -6574,7 +6439,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":1E450
+            OleObjectBlob   =   "workfrm.frx":1E08E
             TabIndex        =   592
             Top             =   240
             Visible         =   0   'False
@@ -6584,7 +6449,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1E4AE
+            OleObjectBlob   =   "workfrm.frx":1E0EC
             TabIndex        =   593
             Top             =   240
             Visible         =   0   'False
@@ -6594,7 +6459,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1E50C
+            OleObjectBlob   =   "workfrm.frx":1E14A
             TabIndex        =   594
             Top             =   1200
             Visible         =   0   'False
@@ -6604,7 +6469,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1E56A
+            OleObjectBlob   =   "workfrm.frx":1E1A8
             TabIndex        =   595
             Top             =   1200
             Visible         =   0   'False
@@ -6614,7 +6479,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1E5C8
+            OleObjectBlob   =   "workfrm.frx":1E206
             TabIndex        =   596
             Top             =   1200
             Visible         =   0   'False
@@ -6624,7 +6489,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1E626
+            OleObjectBlob   =   "workfrm.frx":1E264
             TabIndex        =   597
             Top             =   1200
             Visible         =   0   'False
@@ -6634,7 +6499,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":1E684
+            OleObjectBlob   =   "workfrm.frx":1E2C2
             TabIndex        =   598
             Top             =   1200
             Visible         =   0   'False
@@ -6644,7 +6509,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1E6E2
+            OleObjectBlob   =   "workfrm.frx":1E320
             TabIndex        =   599
             Top             =   1200
             Visible         =   0   'False
@@ -6654,7 +6519,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1E740
+            OleObjectBlob   =   "workfrm.frx":1E37E
             TabIndex        =   600
             Top             =   1200
             Visible         =   0   'False
@@ -6664,7 +6529,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1E79E
+            OleObjectBlob   =   "workfrm.frx":1E3DC
             TabIndex        =   601
             Top             =   1200
             Visible         =   0   'False
@@ -6674,7 +6539,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1E7FC
+            OleObjectBlob   =   "workfrm.frx":1E43A
             TabIndex        =   602
             Top             =   1200
             Visible         =   0   'False
@@ -6684,7 +6549,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1E85A
+            OleObjectBlob   =   "workfrm.frx":1E498
             TabIndex        =   603
             Top             =   1200
             Visible         =   0   'False
@@ -6694,7 +6559,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1E8B8
+            OleObjectBlob   =   "workfrm.frx":1E4F6
             TabIndex        =   625
             Top             =   240
             Visible         =   0   'False
@@ -6704,7 +6569,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1E916
+            OleObjectBlob   =   "workfrm.frx":1E554
             TabIndex        =   626
             Top             =   240
             Visible         =   0   'False
@@ -6714,7 +6579,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1E974
+            OleObjectBlob   =   "workfrm.frx":1E5B2
             TabIndex        =   627
             Top             =   240
             Visible         =   0   'False
@@ -6724,7 +6589,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1E9D2
+            OleObjectBlob   =   "workfrm.frx":1E610
             TabIndex        =   628
             Top             =   240
             Visible         =   0   'False
@@ -6734,7 +6599,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1EA30
+            OleObjectBlob   =   "workfrm.frx":1E66E
             TabIndex        =   629
             Top             =   240
             Visible         =   0   'False
@@ -6744,7 +6609,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1EA8E
+            OleObjectBlob   =   "workfrm.frx":1E6CC
             TabIndex        =   630
             Top             =   240
             Visible         =   0   'False
@@ -6754,7 +6619,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1EAEC
+            OleObjectBlob   =   "workfrm.frx":1E72A
             TabIndex        =   631
             Top             =   240
             Visible         =   0   'False
@@ -6764,7 +6629,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1EB4A
+            OleObjectBlob   =   "workfrm.frx":1E788
             TabIndex        =   632
             Top             =   240
             Visible         =   0   'False
@@ -6774,7 +6639,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1EBA8
+            OleObjectBlob   =   "workfrm.frx":1E7E6
             TabIndex        =   633
             Top             =   240
             Visible         =   0   'False
@@ -6784,7 +6649,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1EC06
+            OleObjectBlob   =   "workfrm.frx":1E844
             TabIndex        =   634
             Top             =   1200
             Visible         =   0   'False
@@ -6794,7 +6659,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1EC64
+            OleObjectBlob   =   "workfrm.frx":1E8A2
             TabIndex        =   635
             Top             =   1200
             Visible         =   0   'False
@@ -6804,7 +6669,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1ECC2
+            OleObjectBlob   =   "workfrm.frx":1E900
             TabIndex        =   636
             Top             =   1200
             Visible         =   0   'False
@@ -6814,7 +6679,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1ED20
+            OleObjectBlob   =   "workfrm.frx":1E95E
             TabIndex        =   637
             Top             =   1200
             Visible         =   0   'False
@@ -6824,7 +6689,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1ED7E
+            OleObjectBlob   =   "workfrm.frx":1E9BC
             TabIndex        =   638
             Top             =   1200
             Visible         =   0   'False
@@ -6834,7 +6699,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1EDDC
+            OleObjectBlob   =   "workfrm.frx":1EA1A
             TabIndex        =   639
             Top             =   1080
             Visible         =   0   'False
@@ -6844,7 +6709,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1EE3A
+            OleObjectBlob   =   "workfrm.frx":1EA78
             TabIndex        =   640
             Top             =   1200
             Visible         =   0   'False
@@ -6854,7 +6719,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1EE98
+            OleObjectBlob   =   "workfrm.frx":1EAD6
             TabIndex        =   641
             Top             =   1200
             Visible         =   0   'False
@@ -6864,7 +6729,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1EEF6
+            OleObjectBlob   =   "workfrm.frx":1EB34
             TabIndex        =   642
             Top             =   1200
             Visible         =   0   'False
@@ -6874,7 +6739,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1EF54
+            OleObjectBlob   =   "workfrm.frx":1EB92
             TabIndex        =   643
             Top             =   1200
             Visible         =   0   'False
@@ -6884,7 +6749,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1EFB2
+            OleObjectBlob   =   "workfrm.frx":1EBF0
             TabIndex        =   684
             Top             =   240
             Visible         =   0   'False
@@ -6894,7 +6759,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1F010
+            OleObjectBlob   =   "workfrm.frx":1EC4E
             TabIndex        =   685
             Top             =   240
             Visible         =   0   'False
@@ -6904,7 +6769,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1F06E
+            OleObjectBlob   =   "workfrm.frx":1ECAC
             TabIndex        =   686
             Top             =   240
             Visible         =   0   'False
@@ -6914,7 +6779,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1F0CC
+            OleObjectBlob   =   "workfrm.frx":1ED0A
             TabIndex        =   687
             Top             =   240
             Visible         =   0   'False
@@ -6924,7 +6789,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1F12A
+            OleObjectBlob   =   "workfrm.frx":1ED68
             TabIndex        =   688
             Top             =   240
             Visible         =   0   'False
@@ -6934,7 +6799,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1F188
+            OleObjectBlob   =   "workfrm.frx":1EDC6
             TabIndex        =   689
             Top             =   240
             Visible         =   0   'False
@@ -6944,7 +6809,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1F1E6
+            OleObjectBlob   =   "workfrm.frx":1EE24
             TabIndex        =   690
             Top             =   240
             Visible         =   0   'False
@@ -6954,7 +6819,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1F244
+            OleObjectBlob   =   "workfrm.frx":1EE82
             TabIndex        =   691
             Top             =   240
             Visible         =   0   'False
@@ -6964,7 +6829,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1F2A2
+            OleObjectBlob   =   "workfrm.frx":1EEE0
             TabIndex        =   692
             Top             =   240
             Visible         =   0   'False
@@ -6974,7 +6839,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1F300
+            OleObjectBlob   =   "workfrm.frx":1EF3E
             TabIndex        =   693
             Top             =   240
             Visible         =   0   'False
@@ -6984,7 +6849,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1F35E
+            OleObjectBlob   =   "workfrm.frx":1EF9C
             TabIndex        =   694
             Top             =   1200
             Visible         =   0   'False
@@ -6994,7 +6859,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1F3BC
+            OleObjectBlob   =   "workfrm.frx":1EFFA
             TabIndex        =   695
             Top             =   1200
             Visible         =   0   'False
@@ -7004,7 +6869,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1F41A
+            OleObjectBlob   =   "workfrm.frx":1F058
             TabIndex        =   696
             Top             =   1200
             Visible         =   0   'False
@@ -7014,7 +6879,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1F478
+            OleObjectBlob   =   "workfrm.frx":1F0B6
             TabIndex        =   697
             Top             =   1200
             Visible         =   0   'False
@@ -7024,7 +6889,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1F4D6
+            OleObjectBlob   =   "workfrm.frx":1F114
             TabIndex        =   698
             Top             =   1200
             Visible         =   0   'False
@@ -7034,7 +6899,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1F534
+            OleObjectBlob   =   "workfrm.frx":1F172
             TabIndex        =   699
             Top             =   1200
             Visible         =   0   'False
@@ -7044,7 +6909,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1F592
+            OleObjectBlob   =   "workfrm.frx":1F1D0
             TabIndex        =   700
             Top             =   1200
             Visible         =   0   'False
@@ -7054,7 +6919,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":1F5F0
+            OleObjectBlob   =   "workfrm.frx":1F22E
             TabIndex        =   701
             Top             =   1200
             Visible         =   0   'False
@@ -7064,7 +6929,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1F64E
+            OleObjectBlob   =   "workfrm.frx":1F28C
             TabIndex        =   702
             Top             =   1200
             Visible         =   0   'False
@@ -7074,7 +6939,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1F6AC
+            OleObjectBlob   =   "workfrm.frx":1F2EA
             TabIndex        =   703
             Top             =   1200
             Visible         =   0   'False
@@ -7084,8 +6949,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1F70A
-            TabIndex        =   788
+            OleObjectBlob   =   "workfrm.frx":1F348
+            TabIndex        =   784
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7094,8 +6959,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":1F768
-            TabIndex        =   789
+            OleObjectBlob   =   "workfrm.frx":1F3A6
+            TabIndex        =   785
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7104,8 +6969,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1F7C6
-            TabIndex        =   790
+            OleObjectBlob   =   "workfrm.frx":1F404
+            TabIndex        =   786
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7114,8 +6979,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1F824
-            TabIndex        =   791
+            OleObjectBlob   =   "workfrm.frx":1F462
+            TabIndex        =   787
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7124,8 +6989,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1F882
-            TabIndex        =   792
+            OleObjectBlob   =   "workfrm.frx":1F4C0
+            TabIndex        =   788
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7134,8 +6999,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1F8E0
-            TabIndex        =   793
+            OleObjectBlob   =   "workfrm.frx":1F51E
+            TabIndex        =   789
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7144,8 +7009,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1F93E
-            TabIndex        =   794
+            OleObjectBlob   =   "workfrm.frx":1F57C
+            TabIndex        =   790
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7154,8 +7019,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1F99C
-            TabIndex        =   795
+            OleObjectBlob   =   "workfrm.frx":1F5DA
+            TabIndex        =   791
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7164,8 +7029,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":1F9FA
-            TabIndex        =   796
+            OleObjectBlob   =   "workfrm.frx":1F638
+            TabIndex        =   792
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7174,8 +7039,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1FA58
-            TabIndex        =   797
+            OleObjectBlob   =   "workfrm.frx":1F696
+            TabIndex        =   793
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7184,8 +7049,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1FAB6
-            TabIndex        =   798
+            OleObjectBlob   =   "workfrm.frx":1F6F4
+            TabIndex        =   794
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7194,8 +7059,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1FB14
-            TabIndex        =   799
+            OleObjectBlob   =   "workfrm.frx":1F752
+            TabIndex        =   795
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7204,8 +7069,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":1FB72
-            TabIndex        =   800
+            OleObjectBlob   =   "workfrm.frx":1F7B0
+            TabIndex        =   796
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7214,8 +7079,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1FBD0
-            TabIndex        =   801
+            OleObjectBlob   =   "workfrm.frx":1F80E
+            TabIndex        =   797
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7224,8 +7089,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1FC2E
-            TabIndex        =   802
+            OleObjectBlob   =   "workfrm.frx":1F86C
+            TabIndex        =   798
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7234,8 +7099,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":1FC8C
-            TabIndex        =   803
+            OleObjectBlob   =   "workfrm.frx":1F8CA
+            TabIndex        =   799
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7244,8 +7109,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":1FCEA
-            TabIndex        =   804
+            OleObjectBlob   =   "workfrm.frx":1F928
+            TabIndex        =   800
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7254,8 +7119,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":1FD48
-            TabIndex        =   805
+            OleObjectBlob   =   "workfrm.frx":1F986
+            TabIndex        =   801
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7264,8 +7129,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":1FDA6
-            TabIndex        =   806
+            OleObjectBlob   =   "workfrm.frx":1F9E4
+            TabIndex        =   802
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7274,8 +7139,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":1FE04
-            TabIndex        =   807
+            OleObjectBlob   =   "workfrm.frx":1FA42
+            TabIndex        =   803
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -7284,8 +7149,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":1FE62
-            TabIndex        =   848
+            OleObjectBlob   =   "workfrm.frx":1FAA0
+            TabIndex        =   844
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7294,8 +7159,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":1FEC0
-            TabIndex        =   849
+            OleObjectBlob   =   "workfrm.frx":1FAFE
+            TabIndex        =   845
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7304,8 +7169,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":1FF1E
-            TabIndex        =   850
+            OleObjectBlob   =   "workfrm.frx":1FB5C
+            TabIndex        =   846
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7314,8 +7179,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":1FF7C
-            TabIndex        =   851
+            OleObjectBlob   =   "workfrm.frx":1FBBA
+            TabIndex        =   847
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7324,8 +7189,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":1FFDA
-            TabIndex        =   852
+            OleObjectBlob   =   "workfrm.frx":1FC18
+            TabIndex        =   848
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7334,8 +7199,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":20038
-            TabIndex        =   853
+            OleObjectBlob   =   "workfrm.frx":1FC76
+            TabIndex        =   849
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7344,8 +7209,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":20096
-            TabIndex        =   854
+            OleObjectBlob   =   "workfrm.frx":1FCD4
+            TabIndex        =   850
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7354,8 +7219,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":200F4
-            TabIndex        =   855
+            OleObjectBlob   =   "workfrm.frx":1FD32
+            TabIndex        =   851
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7364,8 +7229,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":20152
-            TabIndex        =   856
+            OleObjectBlob   =   "workfrm.frx":1FD90
+            TabIndex        =   852
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7374,8 +7239,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":201B0
-            TabIndex        =   857
+            OleObjectBlob   =   "workfrm.frx":1FDEE
+            TabIndex        =   853
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7384,8 +7249,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2020E
-            TabIndex        =   858
+            OleObjectBlob   =   "workfrm.frx":1FE4C
+            TabIndex        =   854
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7394,8 +7259,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2026C
-            TabIndex        =   859
+            OleObjectBlob   =   "workfrm.frx":1FEAA
+            TabIndex        =   855
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7404,8 +7269,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":202CA
-            TabIndex        =   860
+            OleObjectBlob   =   "workfrm.frx":1FF08
+            TabIndex        =   856
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7414,8 +7279,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":20328
-            TabIndex        =   861
+            OleObjectBlob   =   "workfrm.frx":1FF66
+            TabIndex        =   857
             Top             =   1320
             Visible         =   0   'False
             Width           =   495
@@ -7424,8 +7289,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":20386
-            TabIndex        =   862
+            OleObjectBlob   =   "workfrm.frx":1FFC4
+            TabIndex        =   858
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7434,8 +7299,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":203E4
-            TabIndex        =   863
+            OleObjectBlob   =   "workfrm.frx":20022
+            TabIndex        =   859
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7444,8 +7309,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":20442
-            TabIndex        =   864
+            OleObjectBlob   =   "workfrm.frx":20080
+            TabIndex        =   860
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7454,8 +7319,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":204A0
-            TabIndex        =   865
+            OleObjectBlob   =   "workfrm.frx":200DE
+            TabIndex        =   861
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7464,8 +7329,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":204FE
-            TabIndex        =   866
+            OleObjectBlob   =   "workfrm.frx":2013C
+            TabIndex        =   862
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7474,8 +7339,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2055C
-            TabIndex        =   867
+            OleObjectBlob   =   "workfrm.frx":2019A
+            TabIndex        =   863
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -7484,8 +7349,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   20
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":205BA
-            TabIndex        =   993
+            OleObjectBlob   =   "workfrm.frx":201F8
+            TabIndex        =   977
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7494,8 +7359,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   21
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":20618
-            TabIndex        =   994
+            OleObjectBlob   =   "workfrm.frx":20256
+            TabIndex        =   978
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7504,8 +7369,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   22
             Left            =   3120
-            OleObjectBlob   =   "workfrm.frx":20676
-            TabIndex        =   995
+            OleObjectBlob   =   "workfrm.frx":202B4
+            TabIndex        =   979
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7514,8 +7379,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   23
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":206D4
-            TabIndex        =   996
+            OleObjectBlob   =   "workfrm.frx":20312
+            TabIndex        =   980
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -7524,8 +7389,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   24
             Left            =   6000
-            OleObjectBlob   =   "workfrm.frx":20732
-            TabIndex        =   997
+            OleObjectBlob   =   "workfrm.frx":20370
+            TabIndex        =   981
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7534,8 +7399,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   25
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":20790
-            TabIndex        =   998
+            OleObjectBlob   =   "workfrm.frx":203CE
+            TabIndex        =   982
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7544,8 +7409,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   26
             Left            =   8880
-            OleObjectBlob   =   "workfrm.frx":207EE
-            TabIndex        =   999
+            OleObjectBlob   =   "workfrm.frx":2042C
+            TabIndex        =   983
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7554,8 +7419,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   27
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":2084C
-            TabIndex        =   1000
+            OleObjectBlob   =   "workfrm.frx":2048A
+            TabIndex        =   984
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7564,8 +7429,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   28
             Left            =   11760
-            OleObjectBlob   =   "workfrm.frx":208AA
-            TabIndex        =   1001
+            OleObjectBlob   =   "workfrm.frx":204E8
+            TabIndex        =   985
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7574,8 +7439,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   29
             Left            =   13200
-            OleObjectBlob   =   "workfrm.frx":20908
-            TabIndex        =   1002
+            OleObjectBlob   =   "workfrm.frx":20546
+            TabIndex        =   986
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -7584,8 +7449,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   30
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":20966
-            TabIndex        =   1003
+            OleObjectBlob   =   "workfrm.frx":205A4
+            TabIndex        =   987
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -7594,8 +7459,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   31
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":209C4
-            TabIndex        =   1004
+            OleObjectBlob   =   "workfrm.frx":20602
+            TabIndex        =   988
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -7604,8 +7469,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   32
             Left            =   3120
-            OleObjectBlob   =   "workfrm.frx":20A22
-            TabIndex        =   1005
+            OleObjectBlob   =   "workfrm.frx":20660
+            TabIndex        =   989
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -7614,8 +7479,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   33
             Left            =   4200
-            OleObjectBlob   =   "workfrm.frx":20A80
-            TabIndex        =   1006
+            OleObjectBlob   =   "workfrm.frx":206BE
+            TabIndex        =   990
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -7624,8 +7489,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   34
             Left            =   5880
-            OleObjectBlob   =   "workfrm.frx":20ADE
-            TabIndex        =   1007
+            OleObjectBlob   =   "workfrm.frx":2071C
+            TabIndex        =   991
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -7634,8 +7499,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   35
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":20B3C
-            TabIndex        =   1008
+            OleObjectBlob   =   "workfrm.frx":2077A
+            TabIndex        =   992
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -7644,8 +7509,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   36
             Left            =   8880
-            OleObjectBlob   =   "workfrm.frx":20B9A
-            TabIndex        =   1009
+            OleObjectBlob   =   "workfrm.frx":207D8
+            TabIndex        =   993
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -7654,8 +7519,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   37
             Left            =   10320
-            OleObjectBlob   =   "workfrm.frx":20BF8
-            TabIndex        =   1010
+            OleObjectBlob   =   "workfrm.frx":20836
+            TabIndex        =   994
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -7664,8 +7529,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   38
             Left            =   11760
-            OleObjectBlob   =   "workfrm.frx":20C56
-            TabIndex        =   1011
+            OleObjectBlob   =   "workfrm.frx":20894
+            TabIndex        =   995
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -7674,8 +7539,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   39
             Left            =   13200
-            OleObjectBlob   =   "workfrm.frx":20CB4
-            TabIndex        =   1012
+            OleObjectBlob   =   "workfrm.frx":208F2
+            TabIndex        =   996
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -7693,8 +7558,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":20D12
-            TabIndex        =   973
+            OleObjectBlob   =   "workfrm.frx":20950
+            TabIndex        =   957
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -7703,8 +7568,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":20D70
-            TabIndex        =   828
+            OleObjectBlob   =   "workfrm.frx":209AE
+            TabIndex        =   824
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -7713,8 +7578,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":20DCE
-            TabIndex        =   768
+            OleObjectBlob   =   "workfrm.frx":20A0C
+            TabIndex        =   764
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -7723,7 +7588,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":20E2C
+            OleObjectBlob   =   "workfrm.frx":20A6A
             TabIndex        =   664
             Top             =   240
             Visible         =   0   'False
@@ -7733,7 +7598,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":20E8A
+            OleObjectBlob   =   "workfrm.frx":20AC8
             TabIndex        =   218
             Top             =   1320
             Visible         =   0   'False
@@ -7743,7 +7608,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":20EE8
+            OleObjectBlob   =   "workfrm.frx":20B26
             TabIndex        =   202
             Top             =   240
             Visible         =   0   'False
@@ -7753,7 +7618,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":20F46
+            OleObjectBlob   =   "workfrm.frx":20B84
             TabIndex        =   182
             Top             =   240
             Visible         =   0   'False
@@ -7763,7 +7628,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":20FA4
+            OleObjectBlob   =   "workfrm.frx":20BE2
             TabIndex        =   162
             Top             =   240
             Visible         =   0   'False
@@ -7773,7 +7638,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":21002
+            OleObjectBlob   =   "workfrm.frx":20C40
             TabIndex        =   158
             Top             =   1320
             Visible         =   0   'False
@@ -7783,7 +7648,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":21060
+            OleObjectBlob   =   "workfrm.frx":20C9E
             TabIndex        =   142
             Top             =   240
             Visible         =   0   'False
@@ -7793,7 +7658,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":210BE
+            OleObjectBlob   =   "workfrm.frx":20CFC
             TabIndex        =   122
             Top             =   240
             Visible         =   0   'False
@@ -7803,7 +7668,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2111C
+            OleObjectBlob   =   "workfrm.frx":20D5A
             TabIndex        =   102
             Top             =   240
             Visible         =   0   'False
@@ -7813,7 +7678,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2117A
+            OleObjectBlob   =   "workfrm.frx":20DB8
             TabIndex        =   82
             Top             =   240
             Visible         =   0   'False
@@ -7823,7 +7688,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":211D8
+            OleObjectBlob   =   "workfrm.frx":20E16
             TabIndex        =   62
             Top             =   240
             Visible         =   0   'False
@@ -7833,7 +7698,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":21236
+            OleObjectBlob   =   "workfrm.frx":20E74
             TabIndex        =   42
             Top             =   240
             Visible         =   0   'False
@@ -7844,7 +7709,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   19
             Left            =   13440
-            Picture         =   "workfrm.frx":21294
+            Picture         =   "workfrm.frx":20ED2
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   41
@@ -7867,7 +7732,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   18
             Left            =   12000
-            Picture         =   "workfrm.frx":2168C
+            Picture         =   "workfrm.frx":212CA
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   40
@@ -7890,7 +7755,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   17
             Left            =   10560
-            Picture         =   "workfrm.frx":21A84
+            Picture         =   "workfrm.frx":216C2
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   39
@@ -7913,7 +7778,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   16
             Left            =   9120
-            Picture         =   "workfrm.frx":21E7C
+            Picture         =   "workfrm.frx":21ABA
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   38
@@ -7936,7 +7801,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   15
             Left            =   7680
-            Picture         =   "workfrm.frx":22274
+            Picture         =   "workfrm.frx":21EB2
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   37
@@ -7959,7 +7824,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   14
             Left            =   6240
-            Picture         =   "workfrm.frx":2266C
+            Picture         =   "workfrm.frx":222AA
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   36
@@ -7982,7 +7847,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   13
             Left            =   4800
-            Picture         =   "workfrm.frx":22A64
+            Picture         =   "workfrm.frx":226A2
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   35
@@ -8005,7 +7870,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   12
             Left            =   3360
-            Picture         =   "workfrm.frx":22E5C
+            Picture         =   "workfrm.frx":22A9A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   34
@@ -8028,7 +7893,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   11
             Left            =   1920
-            Picture         =   "workfrm.frx":23254
+            Picture         =   "workfrm.frx":22E92
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   33
@@ -8051,7 +7916,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   10
             Left            =   480
-            Picture         =   "workfrm.frx":2364C
+            Picture         =   "workfrm.frx":2328A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   32
@@ -8074,7 +7939,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   9
             Left            =   13440
-            Picture         =   "workfrm.frx":23A44
+            Picture         =   "workfrm.frx":23682
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   31
@@ -8097,7 +7962,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   8
             Left            =   12000
-            Picture         =   "workfrm.frx":23E3C
+            Picture         =   "workfrm.frx":23A7A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   30
@@ -8120,7 +7985,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   7
             Left            =   10560
-            Picture         =   "workfrm.frx":24234
+            Picture         =   "workfrm.frx":23E72
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   29
@@ -8143,7 +8008,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   6
             Left            =   9120
-            Picture         =   "workfrm.frx":2462C
+            Picture         =   "workfrm.frx":2426A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   28
@@ -8166,7 +8031,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   5
             Left            =   7680
-            Picture         =   "workfrm.frx":24A24
+            Picture         =   "workfrm.frx":24662
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   27
@@ -8189,7 +8054,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   4
             Left            =   6240
-            Picture         =   "workfrm.frx":24E1C
+            Picture         =   "workfrm.frx":24A5A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   26
@@ -8212,7 +8077,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   3
             Left            =   4800
-            Picture         =   "workfrm.frx":25214
+            Picture         =   "workfrm.frx":24E52
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   25
@@ -8235,7 +8100,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   2
             Left            =   3360
-            Picture         =   "workfrm.frx":2560C
+            Picture         =   "workfrm.frx":2524A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   24
@@ -8258,7 +8123,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   1
             Left            =   1920
-            Picture         =   "workfrm.frx":25A04
+            Picture         =   "workfrm.frx":25642
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   23
@@ -8281,7 +8146,7 @@ Begin VB.Form Form2
             Height          =   525
             Index           =   0
             Left            =   480
-            Picture         =   "workfrm.frx":25DFC
+            Picture         =   "workfrm.frx":25A3A
             ScaleHeight     =   465
             ScaleWidth      =   465
             TabIndex        =   12
@@ -8303,7 +8168,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   0
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":261F4
+            OleObjectBlob   =   "workfrm.frx":25E32
             TabIndex        =   2
             Top             =   240
             Width           =   255
@@ -8312,7 +8177,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1800
-            OleObjectBlob   =   "workfrm.frx":26256
+            OleObjectBlob   =   "workfrm.frx":25E94
             TabIndex        =   3
             Top             =   240
             Width           =   255
@@ -8321,7 +8186,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   3240
-            OleObjectBlob   =   "workfrm.frx":262B8
+            OleObjectBlob   =   "workfrm.frx":25EF6
             TabIndex        =   4
             Top             =   240
             Width           =   255
@@ -8330,7 +8195,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   4680
-            OleObjectBlob   =   "workfrm.frx":2631A
+            OleObjectBlob   =   "workfrm.frx":25F58
             TabIndex        =   5
             Top             =   240
             Width           =   255
@@ -8339,7 +8204,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   6120
-            OleObjectBlob   =   "workfrm.frx":2637C
+            OleObjectBlob   =   "workfrm.frx":25FBA
             TabIndex        =   6
             Top             =   240
             Width           =   255
@@ -8348,7 +8213,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   7560
-            OleObjectBlob   =   "workfrm.frx":263DE
+            OleObjectBlob   =   "workfrm.frx":2601C
             TabIndex        =   7
             Top             =   240
             Width           =   255
@@ -8357,7 +8222,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   9000
-            OleObjectBlob   =   "workfrm.frx":26440
+            OleObjectBlob   =   "workfrm.frx":2607E
             TabIndex        =   8
             Top             =   240
             Width           =   255
@@ -8366,7 +8231,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":264A2
+            OleObjectBlob   =   "workfrm.frx":260E0
             TabIndex        =   9
             Top             =   240
             Width           =   255
@@ -8375,7 +8240,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   11880
-            OleObjectBlob   =   "workfrm.frx":26504
+            OleObjectBlob   =   "workfrm.frx":26142
             TabIndex        =   10
             Top             =   240
             Width           =   255
@@ -8384,7 +8249,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   13320
-            OleObjectBlob   =   "workfrm.frx":26566
+            OleObjectBlob   =   "workfrm.frx":261A4
             TabIndex        =   11
             Top             =   240
             Width           =   375
@@ -8393,7 +8258,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   360
-            OleObjectBlob   =   "workfrm.frx":265CA
+            OleObjectBlob   =   "workfrm.frx":26208
             TabIndex        =   13
             Top             =   1200
             Width           =   375
@@ -8402,7 +8267,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1800
-            OleObjectBlob   =   "workfrm.frx":2662E
+            OleObjectBlob   =   "workfrm.frx":2626C
             TabIndex        =   14
             Top             =   1200
             Width           =   375
@@ -8411,7 +8276,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   3240
-            OleObjectBlob   =   "workfrm.frx":26692
+            OleObjectBlob   =   "workfrm.frx":262D0
             TabIndex        =   15
             Top             =   1200
             Width           =   375
@@ -8420,7 +8285,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   4680
-            OleObjectBlob   =   "workfrm.frx":266F6
+            OleObjectBlob   =   "workfrm.frx":26334
             TabIndex        =   16
             Top             =   1200
             Width           =   375
@@ -8429,7 +8294,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   6120
-            OleObjectBlob   =   "workfrm.frx":2675A
+            OleObjectBlob   =   "workfrm.frx":26398
             TabIndex        =   17
             Top             =   1200
             Width           =   375
@@ -8438,7 +8303,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   7560
-            OleObjectBlob   =   "workfrm.frx":267BE
+            OleObjectBlob   =   "workfrm.frx":263FC
             TabIndex        =   18
             Top             =   1200
             Width           =   375
@@ -8447,7 +8312,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   9000
-            OleObjectBlob   =   "workfrm.frx":26822
+            OleObjectBlob   =   "workfrm.frx":26460
             TabIndex        =   19
             Top             =   1200
             Width           =   375
@@ -8456,7 +8321,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   10440
-            OleObjectBlob   =   "workfrm.frx":26886
+            OleObjectBlob   =   "workfrm.frx":264C4
             TabIndex        =   20
             Top             =   1200
             Width           =   375
@@ -8465,7 +8330,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   11880
-            OleObjectBlob   =   "workfrm.frx":268EA
+            OleObjectBlob   =   "workfrm.frx":26528
             TabIndex        =   21
             Top             =   1200
             Width           =   375
@@ -8474,7 +8339,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   13320
-            OleObjectBlob   =   "workfrm.frx":2694E
+            OleObjectBlob   =   "workfrm.frx":2658C
             TabIndex        =   22
             Top             =   1200
             Width           =   375
@@ -8483,7 +8348,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":269B2
+            OleObjectBlob   =   "workfrm.frx":265F0
             TabIndex        =   43
             Top             =   240
             Visible         =   0   'False
@@ -8493,7 +8358,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":26A10
+            OleObjectBlob   =   "workfrm.frx":2664E
             TabIndex        =   44
             Top             =   360
             Visible         =   0   'False
@@ -8503,7 +8368,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":26A6E
+            OleObjectBlob   =   "workfrm.frx":266AC
             TabIndex        =   45
             Top             =   360
             Visible         =   0   'False
@@ -8513,7 +8378,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":26ACC
+            OleObjectBlob   =   "workfrm.frx":2670A
             TabIndex        =   46
             Top             =   360
             Visible         =   0   'False
@@ -8523,7 +8388,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":26B2A
+            OleObjectBlob   =   "workfrm.frx":26768
             TabIndex        =   47
             Top             =   240
             Visible         =   0   'False
@@ -8533,7 +8398,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":26B88
+            OleObjectBlob   =   "workfrm.frx":267C6
             TabIndex        =   48
             Top             =   360
             Visible         =   0   'False
@@ -8543,7 +8408,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":26BE6
+            OleObjectBlob   =   "workfrm.frx":26824
             TabIndex        =   49
             Top             =   360
             Visible         =   0   'False
@@ -8553,7 +8418,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":26C44
+            OleObjectBlob   =   "workfrm.frx":26882
             TabIndex        =   50
             Top             =   360
             Visible         =   0   'False
@@ -8563,7 +8428,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":26CA2
+            OleObjectBlob   =   "workfrm.frx":268E0
             TabIndex        =   51
             Top             =   360
             Visible         =   0   'False
@@ -8573,7 +8438,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":26D00
+            OleObjectBlob   =   "workfrm.frx":2693E
             TabIndex        =   52
             Top             =   1320
             Visible         =   0   'False
@@ -8583,7 +8448,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":26D5E
+            OleObjectBlob   =   "workfrm.frx":2699C
             TabIndex        =   53
             Top             =   1320
             Visible         =   0   'False
@@ -8593,7 +8458,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":26DBC
+            OleObjectBlob   =   "workfrm.frx":269FA
             TabIndex        =   54
             Top             =   1320
             Visible         =   0   'False
@@ -8603,7 +8468,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":26E1A
+            OleObjectBlob   =   "workfrm.frx":26A58
             TabIndex        =   55
             Top             =   1320
             Visible         =   0   'False
@@ -8613,7 +8478,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":26E78
+            OleObjectBlob   =   "workfrm.frx":26AB6
             TabIndex        =   56
             Top             =   1320
             Visible         =   0   'False
@@ -8623,7 +8488,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":26ED6
+            OleObjectBlob   =   "workfrm.frx":26B14
             TabIndex        =   57
             Top             =   1320
             Visible         =   0   'False
@@ -8633,7 +8498,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":26F34
+            OleObjectBlob   =   "workfrm.frx":26B72
             TabIndex        =   58
             Top             =   1320
             Visible         =   0   'False
@@ -8643,7 +8508,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":26F92
+            OleObjectBlob   =   "workfrm.frx":26BD0
             TabIndex        =   59
             Top             =   1320
             Visible         =   0   'False
@@ -8653,7 +8518,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":26FF0
+            OleObjectBlob   =   "workfrm.frx":26C2E
             TabIndex        =   60
             Top             =   1200
             Visible         =   0   'False
@@ -8663,7 +8528,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2704E
+            OleObjectBlob   =   "workfrm.frx":26C8C
             TabIndex        =   61
             Top             =   1320
             Visible         =   0   'False
@@ -8673,7 +8538,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":270AC
+            OleObjectBlob   =   "workfrm.frx":26CEA
             TabIndex        =   63
             Top             =   240
             Visible         =   0   'False
@@ -8683,7 +8548,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2710A
+            OleObjectBlob   =   "workfrm.frx":26D48
             TabIndex        =   64
             Top             =   360
             Visible         =   0   'False
@@ -8693,7 +8558,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":27168
+            OleObjectBlob   =   "workfrm.frx":26DA6
             TabIndex        =   65
             Top             =   240
             Visible         =   0   'False
@@ -8703,7 +8568,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":271C6
+            OleObjectBlob   =   "workfrm.frx":26E04
             TabIndex        =   66
             Top             =   240
             Visible         =   0   'False
@@ -8713,7 +8578,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":27224
+            OleObjectBlob   =   "workfrm.frx":26E62
             TabIndex        =   67
             Top             =   240
             Visible         =   0   'False
@@ -8723,7 +8588,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":27282
+            OleObjectBlob   =   "workfrm.frx":26EC0
             TabIndex        =   68
             Top             =   240
             Visible         =   0   'False
@@ -8733,7 +8598,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":272E0
+            OleObjectBlob   =   "workfrm.frx":26F1E
             TabIndex        =   69
             Top             =   240
             Visible         =   0   'False
@@ -8743,7 +8608,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2733E
+            OleObjectBlob   =   "workfrm.frx":26F7C
             TabIndex        =   70
             Top             =   360
             Visible         =   0   'False
@@ -8753,7 +8618,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2739C
+            OleObjectBlob   =   "workfrm.frx":26FDA
             TabIndex        =   71
             Top             =   360
             Visible         =   0   'False
@@ -8763,7 +8628,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":273FA
+            OleObjectBlob   =   "workfrm.frx":27038
             TabIndex        =   72
             Top             =   1200
             Visible         =   0   'False
@@ -8773,7 +8638,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":27458
+            OleObjectBlob   =   "workfrm.frx":27096
             TabIndex        =   73
             Top             =   1200
             Visible         =   0   'False
@@ -8783,7 +8648,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":274B6
+            OleObjectBlob   =   "workfrm.frx":270F4
             TabIndex        =   74
             Top             =   1320
             Visible         =   0   'False
@@ -8793,7 +8658,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":27514
+            OleObjectBlob   =   "workfrm.frx":27152
             TabIndex        =   75
             Top             =   1320
             Visible         =   0   'False
@@ -8803,7 +8668,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":27572
+            OleObjectBlob   =   "workfrm.frx":271B0
             TabIndex        =   76
             Top             =   1320
             Visible         =   0   'False
@@ -8813,7 +8678,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":275D0
+            OleObjectBlob   =   "workfrm.frx":2720E
             TabIndex        =   77
             Top             =   1200
             Visible         =   0   'False
@@ -8823,7 +8688,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2762E
+            OleObjectBlob   =   "workfrm.frx":2726C
             TabIndex        =   78
             Top             =   1320
             Visible         =   0   'False
@@ -8833,7 +8698,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2768C
+            OleObjectBlob   =   "workfrm.frx":272CA
             TabIndex        =   79
             Top             =   1320
             Visible         =   0   'False
@@ -8843,7 +8708,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":276EA
+            OleObjectBlob   =   "workfrm.frx":27328
             TabIndex        =   80
             Top             =   1200
             Visible         =   0   'False
@@ -8853,7 +8718,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":27748
+            OleObjectBlob   =   "workfrm.frx":27386
             TabIndex        =   81
             Top             =   1200
             Visible         =   0   'False
@@ -8863,7 +8728,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":277A6
+            OleObjectBlob   =   "workfrm.frx":273E4
             TabIndex        =   83
             Top             =   360
             Visible         =   0   'False
@@ -8873,7 +8738,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   2400
-            OleObjectBlob   =   "workfrm.frx":27804
+            OleObjectBlob   =   "workfrm.frx":27442
             TabIndex        =   84
             Top             =   360
             Visible         =   0   'False
@@ -8883,7 +8748,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":27862
+            OleObjectBlob   =   "workfrm.frx":274A0
             TabIndex        =   85
             Top             =   360
             Visible         =   0   'False
@@ -8893,7 +8758,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":278C0
+            OleObjectBlob   =   "workfrm.frx":274FE
             TabIndex        =   86
             Top             =   360
             Visible         =   0   'False
@@ -8903,7 +8768,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2791E
+            OleObjectBlob   =   "workfrm.frx":2755C
             TabIndex        =   87
             Top             =   360
             Visible         =   0   'False
@@ -8913,7 +8778,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2797C
+            OleObjectBlob   =   "workfrm.frx":275BA
             TabIndex        =   88
             Top             =   360
             Visible         =   0   'False
@@ -8923,7 +8788,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":279DA
+            OleObjectBlob   =   "workfrm.frx":27618
             TabIndex        =   89
             Top             =   360
             Visible         =   0   'False
@@ -8933,7 +8798,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":27A38
+            OleObjectBlob   =   "workfrm.frx":27676
             TabIndex        =   90
             Top             =   360
             Visible         =   0   'False
@@ -8943,7 +8808,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":27A96
+            OleObjectBlob   =   "workfrm.frx":276D4
             TabIndex        =   91
             Top             =   360
             Visible         =   0   'False
@@ -8953,7 +8818,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":27AF4
+            OleObjectBlob   =   "workfrm.frx":27732
             TabIndex        =   92
             Top             =   1320
             Visible         =   0   'False
@@ -8963,7 +8828,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":27B52
+            OleObjectBlob   =   "workfrm.frx":27790
             TabIndex        =   93
             Top             =   1320
             Visible         =   0   'False
@@ -8973,7 +8838,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":27BB0
+            OleObjectBlob   =   "workfrm.frx":277EE
             TabIndex        =   94
             Top             =   1320
             Visible         =   0   'False
@@ -8983,7 +8848,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":27C0E
+            OleObjectBlob   =   "workfrm.frx":2784C
             TabIndex        =   95
             Top             =   1320
             Visible         =   0   'False
@@ -8993,7 +8858,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":27C6C
+            OleObjectBlob   =   "workfrm.frx":278AA
             TabIndex        =   96
             Top             =   1320
             Visible         =   0   'False
@@ -9003,7 +8868,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":27CCA
+            OleObjectBlob   =   "workfrm.frx":27908
             TabIndex        =   97
             Top             =   1320
             Visible         =   0   'False
@@ -9013,7 +8878,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":27D28
+            OleObjectBlob   =   "workfrm.frx":27966
             TabIndex        =   98
             Top             =   1320
             Visible         =   0   'False
@@ -9023,7 +8888,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":27D86
+            OleObjectBlob   =   "workfrm.frx":279C4
             TabIndex        =   99
             Top             =   1320
             Visible         =   0   'False
@@ -9033,7 +8898,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":27DE4
+            OleObjectBlob   =   "workfrm.frx":27A22
             TabIndex        =   100
             Top             =   1320
             Visible         =   0   'False
@@ -9043,7 +8908,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":27E42
+            OleObjectBlob   =   "workfrm.frx":27A80
             TabIndex        =   101
             Top             =   1320
             Visible         =   0   'False
@@ -9053,7 +8918,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":27EA0
+            OleObjectBlob   =   "workfrm.frx":27ADE
             TabIndex        =   103
             Top             =   240
             Visible         =   0   'False
@@ -9063,7 +8928,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   2400
-            OleObjectBlob   =   "workfrm.frx":27EFE
+            OleObjectBlob   =   "workfrm.frx":27B3C
             TabIndex        =   104
             Top             =   360
             Visible         =   0   'False
@@ -9073,7 +8938,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":27F5C
+            OleObjectBlob   =   "workfrm.frx":27B9A
             TabIndex        =   105
             Top             =   360
             Visible         =   0   'False
@@ -9083,7 +8948,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":27FBA
+            OleObjectBlob   =   "workfrm.frx":27BF8
             TabIndex        =   106
             Top             =   360
             Visible         =   0   'False
@@ -9093,7 +8958,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":28018
+            OleObjectBlob   =   "workfrm.frx":27C56
             TabIndex        =   107
             Top             =   360
             Visible         =   0   'False
@@ -9103,7 +8968,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":28076
+            OleObjectBlob   =   "workfrm.frx":27CB4
             TabIndex        =   108
             Top             =   360
             Visible         =   0   'False
@@ -9113,7 +8978,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":280D4
+            OleObjectBlob   =   "workfrm.frx":27D12
             TabIndex        =   109
             Top             =   360
             Visible         =   0   'False
@@ -9123,7 +8988,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":28132
+            OleObjectBlob   =   "workfrm.frx":27D70
             TabIndex        =   110
             Top             =   360
             Visible         =   0   'False
@@ -9133,7 +8998,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":28190
+            OleObjectBlob   =   "workfrm.frx":27DCE
             TabIndex        =   111
             Top             =   360
             Visible         =   0   'False
@@ -9143,7 +9008,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   720
-            OleObjectBlob   =   "workfrm.frx":281EE
+            OleObjectBlob   =   "workfrm.frx":27E2C
             TabIndex        =   112
             Top             =   1320
             Visible         =   0   'False
@@ -9153,7 +9018,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2824C
+            OleObjectBlob   =   "workfrm.frx":27E8A
             TabIndex        =   113
             Top             =   1320
             Visible         =   0   'False
@@ -9163,7 +9028,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":282AA
+            OleObjectBlob   =   "workfrm.frx":27EE8
             TabIndex        =   114
             Top             =   1320
             Visible         =   0   'False
@@ -9173,7 +9038,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":28308
+            OleObjectBlob   =   "workfrm.frx":27F46
             TabIndex        =   115
             Top             =   1320
             Visible         =   0   'False
@@ -9183,7 +9048,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":28366
+            OleObjectBlob   =   "workfrm.frx":27FA4
             TabIndex        =   116
             Top             =   1320
             Visible         =   0   'False
@@ -9193,7 +9058,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":283C4
+            OleObjectBlob   =   "workfrm.frx":28002
             TabIndex        =   117
             Top             =   1320
             Visible         =   0   'False
@@ -9203,7 +9068,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":28422
+            OleObjectBlob   =   "workfrm.frx":28060
             TabIndex        =   118
             Top             =   1320
             Visible         =   0   'False
@@ -9213,7 +9078,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":28480
+            OleObjectBlob   =   "workfrm.frx":280BE
             TabIndex        =   119
             Top             =   1320
             Visible         =   0   'False
@@ -9223,7 +9088,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":284DE
+            OleObjectBlob   =   "workfrm.frx":2811C
             TabIndex        =   120
             Top             =   1320
             Visible         =   0   'False
@@ -9233,7 +9098,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2853C
+            OleObjectBlob   =   "workfrm.frx":2817A
             TabIndex        =   121
             Top             =   1320
             Visible         =   0   'False
@@ -9243,7 +9108,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2859A
+            OleObjectBlob   =   "workfrm.frx":281D8
             TabIndex        =   123
             Top             =   360
             Visible         =   0   'False
@@ -9253,7 +9118,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":285F8
+            OleObjectBlob   =   "workfrm.frx":28236
             TabIndex        =   124
             Top             =   360
             Visible         =   0   'False
@@ -9263,7 +9128,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":28656
+            OleObjectBlob   =   "workfrm.frx":28294
             TabIndex        =   125
             Top             =   360
             Visible         =   0   'False
@@ -9273,7 +9138,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":286B4
+            OleObjectBlob   =   "workfrm.frx":282F2
             TabIndex        =   126
             Top             =   240
             Visible         =   0   'False
@@ -9283,7 +9148,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":28712
+            OleObjectBlob   =   "workfrm.frx":28350
             TabIndex        =   127
             Top             =   360
             Visible         =   0   'False
@@ -9293,7 +9158,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":28770
+            OleObjectBlob   =   "workfrm.frx":283AE
             TabIndex        =   128
             Top             =   360
             Visible         =   0   'False
@@ -9303,7 +9168,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":287CE
+            OleObjectBlob   =   "workfrm.frx":2840C
             TabIndex        =   129
             Top             =   240
             Visible         =   0   'False
@@ -9313,7 +9178,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   8
             Left            =   8160
-            OleObjectBlob   =   "workfrm.frx":2882C
+            OleObjectBlob   =   "workfrm.frx":2846A
             TabIndex        =   130
             Top             =   360
             Visible         =   0   'False
@@ -9323,7 +9188,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2888A
+            OleObjectBlob   =   "workfrm.frx":284C8
             TabIndex        =   131
             Top             =   480
             Visible         =   0   'False
@@ -9333,7 +9198,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":288E8
+            OleObjectBlob   =   "workfrm.frx":28526
             TabIndex        =   132
             Top             =   1200
             Visible         =   0   'False
@@ -9343,7 +9208,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":28946
+            OleObjectBlob   =   "workfrm.frx":28584
             TabIndex        =   133
             Top             =   1320
             Visible         =   0   'False
@@ -9353,7 +9218,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   12
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":289A4
+            OleObjectBlob   =   "workfrm.frx":285E2
             TabIndex        =   134
             Top             =   1320
             Visible         =   0   'False
@@ -9363,7 +9228,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":28A02
+            OleObjectBlob   =   "workfrm.frx":28640
             TabIndex        =   135
             Top             =   1320
             Visible         =   0   'False
@@ -9373,7 +9238,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":28A60
+            OleObjectBlob   =   "workfrm.frx":2869E
             TabIndex        =   136
             Top             =   1200
             Visible         =   0   'False
@@ -9383,7 +9248,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   15
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":28ABE
+            OleObjectBlob   =   "workfrm.frx":286FC
             TabIndex        =   137
             Top             =   1200
             Visible         =   0   'False
@@ -9393,7 +9258,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":28B1C
+            OleObjectBlob   =   "workfrm.frx":2875A
             TabIndex        =   138
             Top             =   1320
             Visible         =   0   'False
@@ -9403,7 +9268,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":28B7A
+            OleObjectBlob   =   "workfrm.frx":287B8
             TabIndex        =   139
             Top             =   1320
             Visible         =   0   'False
@@ -9413,7 +9278,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   18
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":28BD8
+            OleObjectBlob   =   "workfrm.frx":28816
             TabIndex        =   140
             Top             =   1320
             Visible         =   0   'False
@@ -9423,7 +9288,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":28C36
+            OleObjectBlob   =   "workfrm.frx":28874
             TabIndex        =   141
             Top             =   1320
             Visible         =   0   'False
@@ -9433,7 +9298,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":28C94
+            OleObjectBlob   =   "workfrm.frx":288D2
             TabIndex        =   143
             Top             =   240
             Visible         =   0   'False
@@ -9443,7 +9308,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":28CF2
+            OleObjectBlob   =   "workfrm.frx":28930
             TabIndex        =   144
             Top             =   240
             Visible         =   0   'False
@@ -9453,7 +9318,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":28D50
+            OleObjectBlob   =   "workfrm.frx":2898E
             TabIndex        =   145
             Top             =   240
             Visible         =   0   'False
@@ -9463,7 +9328,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":28DAE
+            OleObjectBlob   =   "workfrm.frx":289EC
             TabIndex        =   146
             Top             =   240
             Visible         =   0   'False
@@ -9473,7 +9338,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":28E0C
+            OleObjectBlob   =   "workfrm.frx":28A4A
             TabIndex        =   147
             Top             =   360
             Visible         =   0   'False
@@ -9483,7 +9348,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":28E6A
+            OleObjectBlob   =   "workfrm.frx":28AA8
             TabIndex        =   148
             Top             =   360
             Visible         =   0   'False
@@ -9493,7 +9358,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":28EC8
+            OleObjectBlob   =   "workfrm.frx":28B06
             TabIndex        =   149
             Top             =   240
             Visible         =   0   'False
@@ -9503,7 +9368,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":28F26
+            OleObjectBlob   =   "workfrm.frx":28B64
             TabIndex        =   150
             Top             =   360
             Visible         =   0   'False
@@ -9513,7 +9378,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":28F84
+            OleObjectBlob   =   "workfrm.frx":28BC2
             TabIndex        =   151
             Top             =   360
             Visible         =   0   'False
@@ -9523,7 +9388,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":28FE2
+            OleObjectBlob   =   "workfrm.frx":28C20
             TabIndex        =   152
             Top             =   1200
             Visible         =   0   'False
@@ -9533,7 +9398,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":29040
+            OleObjectBlob   =   "workfrm.frx":28C7E
             TabIndex        =   153
             Top             =   1320
             Visible         =   0   'False
@@ -9543,7 +9408,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2909E
+            OleObjectBlob   =   "workfrm.frx":28CDC
             TabIndex        =   154
             Top             =   1320
             Visible         =   0   'False
@@ -9553,7 +9418,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":290FC
+            OleObjectBlob   =   "workfrm.frx":28D3A
             TabIndex        =   155
             Top             =   1320
             Visible         =   0   'False
@@ -9563,7 +9428,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2915A
+            OleObjectBlob   =   "workfrm.frx":28D98
             TabIndex        =   156
             Top             =   1320
             Visible         =   0   'False
@@ -9573,7 +9438,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   15
             Left            =   5520
-            OleObjectBlob   =   "workfrm.frx":291B8
+            OleObjectBlob   =   "workfrm.frx":28DF6
             TabIndex        =   157
             Top             =   1320
             Visible         =   0   'False
@@ -9583,7 +9448,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":29216
+            OleObjectBlob   =   "workfrm.frx":28E54
             TabIndex        =   159
             Top             =   1320
             Visible         =   0   'False
@@ -9593,7 +9458,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":29274
+            OleObjectBlob   =   "workfrm.frx":28EB2
             TabIndex        =   160
             Top             =   1200
             Visible         =   0   'False
@@ -9603,7 +9468,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":292D2
+            OleObjectBlob   =   "workfrm.frx":28F10
             TabIndex        =   161
             Top             =   1320
             Visible         =   0   'False
@@ -9613,7 +9478,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   1
             Left            =   1440
-            OleObjectBlob   =   "workfrm.frx":29330
+            OleObjectBlob   =   "workfrm.frx":28F6E
             TabIndex        =   163
             Top             =   240
             Visible         =   0   'False
@@ -9623,7 +9488,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2938E
+            OleObjectBlob   =   "workfrm.frx":28FCC
             TabIndex        =   164
             Top             =   240
             Visible         =   0   'False
@@ -9633,7 +9498,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":293EC
+            OleObjectBlob   =   "workfrm.frx":2902A
             TabIndex        =   165
             Top             =   240
             Visible         =   0   'False
@@ -9643,7 +9508,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2944A
+            OleObjectBlob   =   "workfrm.frx":29088
             TabIndex        =   166
             Top             =   240
             Visible         =   0   'False
@@ -9653,7 +9518,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":294A8
+            OleObjectBlob   =   "workfrm.frx":290E6
             TabIndex        =   167
             Top             =   240
             Visible         =   0   'False
@@ -9663,7 +9528,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":29506
+            OleObjectBlob   =   "workfrm.frx":29144
             TabIndex        =   168
             Top             =   240
             Visible         =   0   'False
@@ -9673,7 +9538,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":29564
+            OleObjectBlob   =   "workfrm.frx":291A2
             TabIndex        =   169
             Top             =   240
             Visible         =   0   'False
@@ -9683,7 +9548,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":295C2
+            OleObjectBlob   =   "workfrm.frx":29200
             TabIndex        =   170
             Top             =   360
             Visible         =   0   'False
@@ -9693,7 +9558,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   9
             Left            =   9360
-            OleObjectBlob   =   "workfrm.frx":29620
+            OleObjectBlob   =   "workfrm.frx":2925E
             TabIndex        =   171
             Top             =   360
             Visible         =   0   'False
@@ -9703,7 +9568,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2967E
+            OleObjectBlob   =   "workfrm.frx":292BC
             TabIndex        =   172
             Top             =   1200
             Visible         =   0   'False
@@ -9713,7 +9578,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   11
             Left            =   1680
-            OleObjectBlob   =   "workfrm.frx":296DC
+            OleObjectBlob   =   "workfrm.frx":2931A
             TabIndex        =   173
             Top             =   1320
             Visible         =   0   'False
@@ -9723,7 +9588,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   12
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":2973A
+            OleObjectBlob   =   "workfrm.frx":29378
             TabIndex        =   174
             Top             =   1320
             Visible         =   0   'False
@@ -9733,7 +9598,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   13
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":29798
+            OleObjectBlob   =   "workfrm.frx":293D6
             TabIndex        =   175
             Top             =   1320
             Visible         =   0   'False
@@ -9743,7 +9608,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":297F6
+            OleObjectBlob   =   "workfrm.frx":29434
             TabIndex        =   176
             Top             =   1320
             Visible         =   0   'False
@@ -9753,7 +9618,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":29854
+            OleObjectBlob   =   "workfrm.frx":29492
             TabIndex        =   177
             Top             =   1320
             Visible         =   0   'False
@@ -9763,7 +9628,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   16
             Left            =   6480
-            OleObjectBlob   =   "workfrm.frx":298B2
+            OleObjectBlob   =   "workfrm.frx":294F0
             TabIndex        =   178
             Top             =   1320
             Visible         =   0   'False
@@ -9773,7 +9638,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   17
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":29910
+            OleObjectBlob   =   "workfrm.frx":2954E
             TabIndex        =   179
             Top             =   1200
             Visible         =   0   'False
@@ -9783,7 +9648,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   18
             Left            =   8400
-            OleObjectBlob   =   "workfrm.frx":2996E
+            OleObjectBlob   =   "workfrm.frx":295AC
             TabIndex        =   180
             Top             =   1200
             Visible         =   0   'False
@@ -9793,7 +9658,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":299CC
+            OleObjectBlob   =   "workfrm.frx":2960A
             TabIndex        =   181
             Top             =   1200
             Visible         =   0   'False
@@ -9803,7 +9668,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":29A2A
+            OleObjectBlob   =   "workfrm.frx":29668
             TabIndex        =   183
             Top             =   360
             Visible         =   0   'False
@@ -9813,7 +9678,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":29A88
+            OleObjectBlob   =   "workfrm.frx":296C6
             TabIndex        =   184
             Top             =   360
             Visible         =   0   'False
@@ -9823,7 +9688,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":29AE6
+            OleObjectBlob   =   "workfrm.frx":29724
             TabIndex        =   185
             Top             =   360
             Visible         =   0   'False
@@ -9833,7 +9698,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":29B44
+            OleObjectBlob   =   "workfrm.frx":29782
             TabIndex        =   186
             Top             =   360
             Visible         =   0   'False
@@ -9843,7 +9708,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":29BA2
+            OleObjectBlob   =   "workfrm.frx":297E0
             TabIndex        =   187
             Top             =   360
             Visible         =   0   'False
@@ -9853,7 +9718,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":29C00
+            OleObjectBlob   =   "workfrm.frx":2983E
             TabIndex        =   188
             Top             =   360
             Visible         =   0   'False
@@ -9863,7 +9728,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":29C5E
+            OleObjectBlob   =   "workfrm.frx":2989C
             TabIndex        =   189
             Top             =   360
             Visible         =   0   'False
@@ -9873,7 +9738,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":29CBC
+            OleObjectBlob   =   "workfrm.frx":298FA
             TabIndex        =   190
             Top             =   240
             Visible         =   0   'False
@@ -9883,7 +9748,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":29D1A
+            OleObjectBlob   =   "workfrm.frx":29958
             TabIndex        =   191
             Top             =   240
             Visible         =   0   'False
@@ -9893,7 +9758,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":29D78
+            OleObjectBlob   =   "workfrm.frx":299B6
             TabIndex        =   192
             Top             =   1200
             Visible         =   0   'False
@@ -9903,7 +9768,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":29DD6
+            OleObjectBlob   =   "workfrm.frx":29A14
             TabIndex        =   193
             Top             =   1200
             Visible         =   0   'False
@@ -9913,7 +9778,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":29E34
+            OleObjectBlob   =   "workfrm.frx":29A72
             TabIndex        =   194
             Top             =   1320
             Visible         =   0   'False
@@ -9923,7 +9788,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":29E92
+            OleObjectBlob   =   "workfrm.frx":29AD0
             TabIndex        =   195
             Top             =   1200
             Visible         =   0   'False
@@ -9933,7 +9798,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":29EF0
+            OleObjectBlob   =   "workfrm.frx":29B2E
             TabIndex        =   196
             Top             =   1200
             Visible         =   0   'False
@@ -9943,7 +9808,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":29F4E
+            OleObjectBlob   =   "workfrm.frx":29B8C
             TabIndex        =   197
             Top             =   1200
             Visible         =   0   'False
@@ -9953,7 +9818,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":29FAC
+            OleObjectBlob   =   "workfrm.frx":29BEA
             TabIndex        =   198
             Top             =   1320
             Visible         =   0   'False
@@ -9963,7 +9828,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   17
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":2A00A
+            OleObjectBlob   =   "workfrm.frx":29C48
             TabIndex        =   199
             Top             =   1200
             Visible         =   0   'False
@@ -9973,7 +9838,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2A068
+            OleObjectBlob   =   "workfrm.frx":29CA6
             TabIndex        =   200
             Top             =   1200
             Visible         =   0   'False
@@ -9983,7 +9848,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2A0C6
+            OleObjectBlob   =   "workfrm.frx":29D04
             TabIndex        =   201
             Top             =   1320
             Visible         =   0   'False
@@ -9993,7 +9858,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2A124
+            OleObjectBlob   =   "workfrm.frx":29D62
             TabIndex        =   203
             Top             =   240
             Visible         =   0   'False
@@ -10003,7 +9868,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   2
             Left            =   2400
-            OleObjectBlob   =   "workfrm.frx":2A182
+            OleObjectBlob   =   "workfrm.frx":29DC0
             TabIndex        =   204
             Top             =   240
             Visible         =   0   'False
@@ -10013,7 +9878,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   3
             Left            =   3360
-            OleObjectBlob   =   "workfrm.frx":2A1E0
+            OleObjectBlob   =   "workfrm.frx":29E1E
             TabIndex        =   205
             Top             =   240
             Visible         =   0   'False
@@ -10023,7 +9888,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2A23E
+            OleObjectBlob   =   "workfrm.frx":29E7C
             TabIndex        =   206
             Top             =   240
             Visible         =   0   'False
@@ -10033,7 +9898,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2A29C
+            OleObjectBlob   =   "workfrm.frx":29EDA
             TabIndex        =   207
             Top             =   240
             Visible         =   0   'False
@@ -10043,7 +9908,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2A2FA
+            OleObjectBlob   =   "workfrm.frx":29F38
             TabIndex        =   208
             Top             =   240
             Visible         =   0   'False
@@ -10053,7 +9918,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2A358
+            OleObjectBlob   =   "workfrm.frx":29F96
             TabIndex        =   209
             Top             =   240
             Visible         =   0   'False
@@ -10063,7 +9928,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   8
             Left            =   8160
-            OleObjectBlob   =   "workfrm.frx":2A3B6
+            OleObjectBlob   =   "workfrm.frx":29FF4
             TabIndex        =   210
             Top             =   360
             Visible         =   0   'False
@@ -10073,7 +9938,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2A414
+            OleObjectBlob   =   "workfrm.frx":2A052
             TabIndex        =   211
             Top             =   240
             Visible         =   0   'False
@@ -10083,7 +9948,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2A472
+            OleObjectBlob   =   "workfrm.frx":2A0B0
             TabIndex        =   212
             Top             =   1200
             Visible         =   0   'False
@@ -10093,7 +9958,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2A4D0
+            OleObjectBlob   =   "workfrm.frx":2A10E
             TabIndex        =   213
             Top             =   1200
             Visible         =   0   'False
@@ -10103,7 +9968,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2A52E
+            OleObjectBlob   =   "workfrm.frx":2A16C
             TabIndex        =   214
             Top             =   1200
             Visible         =   0   'False
@@ -10113,7 +9978,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":2A58C
+            OleObjectBlob   =   "workfrm.frx":2A1CA
             TabIndex        =   215
             Top             =   1200
             Visible         =   0   'False
@@ -10123,7 +9988,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2A5EA
+            OleObjectBlob   =   "workfrm.frx":2A228
             TabIndex        =   216
             Top             =   1200
             Visible         =   0   'False
@@ -10133,7 +9998,7 @@ Begin VB.Form Form2
             Height          =   375
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2A648
+            OleObjectBlob   =   "workfrm.frx":2A286
             TabIndex        =   217
             Top             =   1200
             Visible         =   0   'False
@@ -10143,7 +10008,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2A6A6
+            OleObjectBlob   =   "workfrm.frx":2A2E4
             TabIndex        =   219
             Top             =   1200
             Visible         =   0   'False
@@ -10153,7 +10018,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2A704
+            OleObjectBlob   =   "workfrm.frx":2A342
             TabIndex        =   220
             Top             =   1320
             Visible         =   0   'False
@@ -10163,7 +10028,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2A762
+            OleObjectBlob   =   "workfrm.frx":2A3A0
             TabIndex        =   221
             Top             =   1320
             Visible         =   0   'False
@@ -10173,7 +10038,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2A7C0
+            OleObjectBlob   =   "workfrm.frx":2A3FE
             TabIndex        =   665
             Top             =   240
             Visible         =   0   'False
@@ -10183,7 +10048,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2A81E
+            OleObjectBlob   =   "workfrm.frx":2A45C
             TabIndex        =   666
             Top             =   240
             Visible         =   0   'False
@@ -10193,7 +10058,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":2A87C
+            OleObjectBlob   =   "workfrm.frx":2A4BA
             TabIndex        =   667
             Top             =   240
             Visible         =   0   'False
@@ -10203,7 +10068,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2A8DA
+            OleObjectBlob   =   "workfrm.frx":2A518
             TabIndex        =   668
             Top             =   240
             Visible         =   0   'False
@@ -10213,7 +10078,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2A938
+            OleObjectBlob   =   "workfrm.frx":2A576
             TabIndex        =   669
             Top             =   240
             Visible         =   0   'False
@@ -10223,7 +10088,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2A996
+            OleObjectBlob   =   "workfrm.frx":2A5D4
             TabIndex        =   670
             Top             =   240
             Visible         =   0   'False
@@ -10233,7 +10098,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2A9F4
+            OleObjectBlob   =   "workfrm.frx":2A632
             TabIndex        =   671
             Top             =   240
             Visible         =   0   'False
@@ -10243,7 +10108,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2AA52
+            OleObjectBlob   =   "workfrm.frx":2A690
             TabIndex        =   672
             Top             =   240
             Visible         =   0   'False
@@ -10253,7 +10118,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2AAB0
+            OleObjectBlob   =   "workfrm.frx":2A6EE
             TabIndex        =   673
             Top             =   240
             Visible         =   0   'False
@@ -10263,7 +10128,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2AB0E
+            OleObjectBlob   =   "workfrm.frx":2A74C
             TabIndex        =   674
             Top             =   1200
             Visible         =   0   'False
@@ -10273,7 +10138,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2AB6C
+            OleObjectBlob   =   "workfrm.frx":2A7AA
             TabIndex        =   675
             Top             =   1200
             Visible         =   0   'False
@@ -10283,7 +10148,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   2640
-            OleObjectBlob   =   "workfrm.frx":2ABCA
+            OleObjectBlob   =   "workfrm.frx":2A808
             TabIndex        =   676
             Top             =   1200
             Visible         =   0   'False
@@ -10293,7 +10158,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":2AC28
+            OleObjectBlob   =   "workfrm.frx":2A866
             TabIndex        =   677
             Top             =   1200
             Visible         =   0   'False
@@ -10303,7 +10168,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2AC86
+            OleObjectBlob   =   "workfrm.frx":2A8C4
             TabIndex        =   678
             Top             =   1200
             Visible         =   0   'False
@@ -10313,7 +10178,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2ACE4
+            OleObjectBlob   =   "workfrm.frx":2A922
             TabIndex        =   679
             Top             =   1200
             Visible         =   0   'False
@@ -10323,7 +10188,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2AD42
+            OleObjectBlob   =   "workfrm.frx":2A980
             TabIndex        =   680
             Top             =   1200
             Visible         =   0   'False
@@ -10333,7 +10198,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2ADA0
+            OleObjectBlob   =   "workfrm.frx":2A9DE
             TabIndex        =   681
             Top             =   1200
             Visible         =   0   'False
@@ -10343,7 +10208,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2ADFE
+            OleObjectBlob   =   "workfrm.frx":2AA3C
             TabIndex        =   682
             Top             =   1200
             Visible         =   0   'False
@@ -10353,7 +10218,7 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2AE5C
+            OleObjectBlob   =   "workfrm.frx":2AA9A
             TabIndex        =   683
             Top             =   1200
             Visible         =   0   'False
@@ -10363,8 +10228,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2AEBA
-            TabIndex        =   769
+            OleObjectBlob   =   "workfrm.frx":2AAF8
+            TabIndex        =   765
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10373,8 +10238,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2AF18
-            TabIndex        =   770
+            OleObjectBlob   =   "workfrm.frx":2AB56
+            TabIndex        =   766
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10383,8 +10248,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":2AF76
-            TabIndex        =   771
+            OleObjectBlob   =   "workfrm.frx":2ABB4
+            TabIndex        =   767
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10393,8 +10258,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2AFD4
-            TabIndex        =   772
+            OleObjectBlob   =   "workfrm.frx":2AC12
+            TabIndex        =   768
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10403,8 +10268,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2B032
-            TabIndex        =   773
+            OleObjectBlob   =   "workfrm.frx":2AC70
+            TabIndex        =   769
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10413,8 +10278,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   6240
-            OleObjectBlob   =   "workfrm.frx":2B090
-            TabIndex        =   774
+            OleObjectBlob   =   "workfrm.frx":2ACCE
+            TabIndex        =   770
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10423,8 +10288,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2B0EE
-            TabIndex        =   775
+            OleObjectBlob   =   "workfrm.frx":2AD2C
+            TabIndex        =   771
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10433,8 +10298,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   8160
-            OleObjectBlob   =   "workfrm.frx":2B14C
-            TabIndex        =   776
+            OleObjectBlob   =   "workfrm.frx":2AD8A
+            TabIndex        =   772
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10443,8 +10308,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2B1AA
-            TabIndex        =   777
+            OleObjectBlob   =   "workfrm.frx":2ADE8
+            TabIndex        =   773
             Top             =   240
             Visible         =   0   'False
             Width           =   375
@@ -10453,8 +10318,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2B208
-            TabIndex        =   778
+            OleObjectBlob   =   "workfrm.frx":2AE46
+            TabIndex        =   774
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10463,8 +10328,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2B266
-            TabIndex        =   779
+            OleObjectBlob   =   "workfrm.frx":2AEA4
+            TabIndex        =   775
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10473,8 +10338,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2B2C4
-            TabIndex        =   780
+            OleObjectBlob   =   "workfrm.frx":2AF02
+            TabIndex        =   776
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10483,8 +10348,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   3600
-            OleObjectBlob   =   "workfrm.frx":2B322
-            TabIndex        =   781
+            OleObjectBlob   =   "workfrm.frx":2AF60
+            TabIndex        =   777
             Top             =   1080
             Visible         =   0   'False
             Width           =   375
@@ -10493,8 +10358,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":2B380
-            TabIndex        =   782
+            OleObjectBlob   =   "workfrm.frx":2AFBE
+            TabIndex        =   778
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10503,8 +10368,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2B3DE
-            TabIndex        =   783
+            OleObjectBlob   =   "workfrm.frx":2B01C
+            TabIndex        =   779
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10513,8 +10378,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2B43C
-            TabIndex        =   784
+            OleObjectBlob   =   "workfrm.frx":2B07A
+            TabIndex        =   780
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10523,8 +10388,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":2B49A
-            TabIndex        =   785
+            OleObjectBlob   =   "workfrm.frx":2B0D8
+            TabIndex        =   781
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10533,8 +10398,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2B4F8
-            TabIndex        =   786
+            OleObjectBlob   =   "workfrm.frx":2B136
+            TabIndex        =   782
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10543,8 +10408,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9360
-            OleObjectBlob   =   "workfrm.frx":2B556
-            TabIndex        =   787
+            OleObjectBlob   =   "workfrm.frx":2B194
+            TabIndex        =   783
             Top             =   1200
             Visible         =   0   'False
             Width           =   375
@@ -10553,8 +10418,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1440
-            OleObjectBlob   =   "workfrm.frx":2B5B4
-            TabIndex        =   829
+            OleObjectBlob   =   "workfrm.frx":2B1F2
+            TabIndex        =   825
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10563,8 +10428,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2B612
-            TabIndex        =   830
+            OleObjectBlob   =   "workfrm.frx":2B250
+            TabIndex        =   826
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10573,8 +10438,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   3360
-            OleObjectBlob   =   "workfrm.frx":2B670
-            TabIndex        =   831
+            OleObjectBlob   =   "workfrm.frx":2B2AE
+            TabIndex        =   827
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10583,8 +10448,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   4320
-            OleObjectBlob   =   "workfrm.frx":2B6CE
-            TabIndex        =   832
+            OleObjectBlob   =   "workfrm.frx":2B30C
+            TabIndex        =   828
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10593,8 +10458,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2B72C
-            TabIndex        =   833
+            OleObjectBlob   =   "workfrm.frx":2B36A
+            TabIndex        =   829
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10603,8 +10468,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   6240
-            OleObjectBlob   =   "workfrm.frx":2B78A
-            TabIndex        =   834
+            OleObjectBlob   =   "workfrm.frx":2B3C8
+            TabIndex        =   830
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10613,8 +10478,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   7200
-            OleObjectBlob   =   "workfrm.frx":2B7E8
-            TabIndex        =   835
+            OleObjectBlob   =   "workfrm.frx":2B426
+            TabIndex        =   831
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10623,8 +10488,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   8160
-            OleObjectBlob   =   "workfrm.frx":2B846
-            TabIndex        =   836
+            OleObjectBlob   =   "workfrm.frx":2B484
+            TabIndex        =   832
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10633,8 +10498,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   9120
-            OleObjectBlob   =   "workfrm.frx":2B8A4
-            TabIndex        =   837
+            OleObjectBlob   =   "workfrm.frx":2B4E2
+            TabIndex        =   833
             Top             =   240
             Visible         =   0   'False
             Width           =   495
@@ -10643,8 +10508,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   600
-            OleObjectBlob   =   "workfrm.frx":2B902
-            TabIndex        =   838
+            OleObjectBlob   =   "workfrm.frx":2B540
+            TabIndex        =   834
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10653,8 +10518,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1440
-            OleObjectBlob   =   "workfrm.frx":2B960
-            TabIndex        =   839
+            OleObjectBlob   =   "workfrm.frx":2B59E
+            TabIndex        =   835
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10663,8 +10528,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   2520
-            OleObjectBlob   =   "workfrm.frx":2B9BE
-            TabIndex        =   840
+            OleObjectBlob   =   "workfrm.frx":2B5FC
+            TabIndex        =   836
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10673,8 +10538,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   3480
-            OleObjectBlob   =   "workfrm.frx":2BA1C
-            TabIndex        =   841
+            OleObjectBlob   =   "workfrm.frx":2B65A
+            TabIndex        =   837
             Top             =   1080
             Visible         =   0   'False
             Width           =   495
@@ -10683,8 +10548,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   4440
-            OleObjectBlob   =   "workfrm.frx":2BA7A
-            TabIndex        =   842
+            OleObjectBlob   =   "workfrm.frx":2B6B8
+            TabIndex        =   838
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10693,8 +10558,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   5400
-            OleObjectBlob   =   "workfrm.frx":2BAD8
-            TabIndex        =   843
+            OleObjectBlob   =   "workfrm.frx":2B716
+            TabIndex        =   839
             Top             =   1080
             Visible         =   0   'False
             Width           =   495
@@ -10703,8 +10568,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   6360
-            OleObjectBlob   =   "workfrm.frx":2BB36
-            TabIndex        =   844
+            OleObjectBlob   =   "workfrm.frx":2B774
+            TabIndex        =   840
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10713,8 +10578,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   7320
-            OleObjectBlob   =   "workfrm.frx":2BB94
-            TabIndex        =   845
+            OleObjectBlob   =   "workfrm.frx":2B7D2
+            TabIndex        =   841
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10723,8 +10588,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   8280
-            OleObjectBlob   =   "workfrm.frx":2BBF2
-            TabIndex        =   846
+            OleObjectBlob   =   "workfrm.frx":2B830
+            TabIndex        =   842
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10733,8 +10598,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   9240
-            OleObjectBlob   =   "workfrm.frx":2BC50
-            TabIndex        =   847
+            OleObjectBlob   =   "workfrm.frx":2B88E
+            TabIndex        =   843
             Top             =   1200
             Visible         =   0   'False
             Width           =   495
@@ -10743,8 +10608,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   1
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2BCAE
-            TabIndex        =   974
+            OleObjectBlob   =   "workfrm.frx":2B8EC
+            TabIndex        =   958
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -10753,8 +10618,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   2
             Left            =   3120
-            OleObjectBlob   =   "workfrm.frx":2BD0C
-            TabIndex        =   975
+            OleObjectBlob   =   "workfrm.frx":2B94A
+            TabIndex        =   959
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -10763,8 +10628,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   3
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":2BD6A
-            TabIndex        =   976
+            OleObjectBlob   =   "workfrm.frx":2B9A8
+            TabIndex        =   960
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -10773,8 +10638,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   4
             Left            =   6000
-            OleObjectBlob   =   "workfrm.frx":2BDC8
-            TabIndex        =   977
+            OleObjectBlob   =   "workfrm.frx":2BA06
+            TabIndex        =   961
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -10783,8 +10648,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   5
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":2BE26
-            TabIndex        =   978
+            OleObjectBlob   =   "workfrm.frx":2BA64
+            TabIndex        =   962
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -10793,8 +10658,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   6
             Left            =   8880
-            OleObjectBlob   =   "workfrm.frx":2BE84
-            TabIndex        =   979
+            OleObjectBlob   =   "workfrm.frx":2BAC2
+            TabIndex        =   963
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -10803,8 +10668,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   7
             Left            =   10320
-            OleObjectBlob   =   "workfrm.frx":2BEE2
-            TabIndex        =   980
+            OleObjectBlob   =   "workfrm.frx":2BB20
+            TabIndex        =   964
             Top             =   720
             Visible         =   0   'False
             Width           =   135
@@ -10813,8 +10678,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   8
             Left            =   11760
-            OleObjectBlob   =   "workfrm.frx":2BF40
-            TabIndex        =   981
+            OleObjectBlob   =   "workfrm.frx":2BB7E
+            TabIndex        =   965
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -10823,8 +10688,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   9
             Left            =   13200
-            OleObjectBlob   =   "workfrm.frx":2BF9E
-            TabIndex        =   982
+            OleObjectBlob   =   "workfrm.frx":2BBDC
+            TabIndex        =   966
             Top             =   600
             Visible         =   0   'False
             Width           =   135
@@ -10833,8 +10698,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   10
             Left            =   240
-            OleObjectBlob   =   "workfrm.frx":2BFFC
-            TabIndex        =   983
+            OleObjectBlob   =   "workfrm.frx":2BC3A
+            TabIndex        =   967
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -10843,8 +10708,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   11
             Left            =   1560
-            OleObjectBlob   =   "workfrm.frx":2C05A
-            TabIndex        =   984
+            OleObjectBlob   =   "workfrm.frx":2BC98
+            TabIndex        =   968
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -10853,8 +10718,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   12
             Left            =   3120
-            OleObjectBlob   =   "workfrm.frx":2C0B8
-            TabIndex        =   985
+            OleObjectBlob   =   "workfrm.frx":2BCF6
+            TabIndex        =   969
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -10863,8 +10728,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   13
             Left            =   4560
-            OleObjectBlob   =   "workfrm.frx":2C116
-            TabIndex        =   986
+            OleObjectBlob   =   "workfrm.frx":2BD54
+            TabIndex        =   970
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -10873,8 +10738,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   14
             Left            =   6000
-            OleObjectBlob   =   "workfrm.frx":2C174
-            TabIndex        =   987
+            OleObjectBlob   =   "workfrm.frx":2BDB2
+            TabIndex        =   971
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -10883,8 +10748,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   15
             Left            =   7440
-            OleObjectBlob   =   "workfrm.frx":2C1D2
-            TabIndex        =   988
+            OleObjectBlob   =   "workfrm.frx":2BE10
+            TabIndex        =   972
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -10893,8 +10758,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   16
             Left            =   8880
-            OleObjectBlob   =   "workfrm.frx":2C230
-            TabIndex        =   989
+            OleObjectBlob   =   "workfrm.frx":2BE6E
+            TabIndex        =   973
             Top             =   1680
             Visible         =   0   'False
             Width           =   135
@@ -10903,8 +10768,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   17
             Left            =   10320
-            OleObjectBlob   =   "workfrm.frx":2C28E
-            TabIndex        =   990
+            OleObjectBlob   =   "workfrm.frx":2BECC
+            TabIndex        =   974
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -10913,8 +10778,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   18
             Left            =   11760
-            OleObjectBlob   =   "workfrm.frx":2C2EC
-            TabIndex        =   991
+            OleObjectBlob   =   "workfrm.frx":2BF2A
+            TabIndex        =   975
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -10923,8 +10788,8 @@ Begin VB.Form Form2
             Height          =   255
             Index           =   19
             Left            =   13200
-            OleObjectBlob   =   "workfrm.frx":2C34A
-            TabIndex        =   992
+            OleObjectBlob   =   "workfrm.frx":2BF88
+            TabIndex        =   976
             Top             =   1560
             Visible         =   0   'False
             Width           =   135
@@ -10941,7 +10806,7 @@ Begin VB.Form Form2
       Begin WMPLibCtl.WindowsMediaPlayer WindowsMediaPlayer1 
          Height          =   495
          Left            =   -61800
-         TabIndex        =   962
+         TabIndex        =   946
          Top             =   7680
          Visible         =   0   'False
          Width           =   1575
@@ -10976,7 +10841,7 @@ Begin VB.Form Form2
       Caption         =   "Label2"
       Height          =   495
       Left            =   4200
-      TabIndex        =   917
+      TabIndex        =   901
       Top             =   4200
       Width           =   1695
    End
@@ -10984,7 +10849,7 @@ Begin VB.Form Form2
       Caption         =   "Label1"
       Height          =   495
       Left            =   4680
-      TabIndex        =   913
+      TabIndex        =   897
       Top             =   4200
       Width           =   1215
    End
@@ -10994,6 +10859,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'Option Explicit
 Private Sub Check1_Click()
     
     If (Check1.Value = 0) Then
@@ -11044,6 +10910,9 @@ End Sub
 
 Private Sub Command22_Click()
     
+    Dim t As Integer
+    Dim textline As String
+    
     Command22.Enabled = False
     xzsjxs.Text1.Text = ""
     xzsjxs.Caption = "校正高值数据 "                                            '+ App.Path & "\sys\adjust1.txt"
@@ -11068,32 +10937,6 @@ Private Sub Command22_Click()
     
 End Sub
 
-Private Sub Command23_Click()
-    
-    Command23.Enabled = False
-    xzsjxs.Text1.Text = ""
-    xzsjxs.Caption = "校正低值数据 "                                            ' + App.Path & "\sys\adjust2.txt"
-    xzsjxs.Show
-    t = 0
-    
-    Open App.Path & "\sys\adjust2.txt" For Input As #6
-    
-    Do While Not EOF(6)                                                         'EOF为文尾测试函数
-        
-        Line Input #6, textline                                                 '将读入的1行存到变量TextLine中
-        
-        xzsjxs.Text1.Text = xzsjxs.Text1.Text + Format(t + 1, "0#") + "#:" + Mid(textline, 5, 12) + Chr(13) + Chr(10)
-        
-        t = t + 1                                                               '循环
-        
-    Loop
-    
-    Close #6
-    
-    Command23.Enabled = True
-    
-End Sub
-
 Private Sub Form_Load()                                                         '初始化各项信息和串口
     
     Me.Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2            '窗体居中
@@ -11110,7 +10953,6 @@ Private Sub Form_Load()                                                         
     
     Command4.Enabled = False                                                    '运行按钮禁用
     Command8.Enabled = False                                                    '校准1按钮禁用
-    Command9.Enabled = False                                                    '校准2按钮禁用
     Command11.Enabled = False                                                   '打印按钮不可用
     Command13.Enabled = False                                                   '打印按钮不可用
     
@@ -11137,7 +10979,7 @@ Private Sub Form_Load()                                                         
     If Not MSComm1.PortOpen Then                                                '串口关闭此时打开
         
         MSComm1.CommPort = intPort                                              '设置串口1
-        MSComm1.Settings = strSet                                               '波特率1200bit/s,无效验，8位数据，1位停止位
+        MSComm1.settings = strSet                                               '波特率1200bit/s,无效验，8位数据，1位停止位
         MSComm1.PortOpen = True                                                 '串口打开
         
     End If
@@ -11169,6 +11011,7 @@ Private Sub Form_Load()                                                         
         If k <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
         End If
+
         SkinLabel2(k).Caption = textline                                        '读条形码
         
         Line Input #2, textline                                                 '将读入的2行存到变量TextLine中
@@ -11263,32 +11106,7 @@ Private Sub Form_Load()                                                         
         
     End If
     
-    WindowsMediaPlayer1.Settings.setMode "loop", True
-    
-    
-    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    
-    '''''''''''''''''''''''''读取文件中校准1希望的值，显示'''''''''''''''''''''''''''''''
-    
-    Open App.Path & "\sys\hope1.txt" For Input As #7                            '在文件中读取校准1希望的值
-    
-    Line Input #7, textline                                                     '将读入数据存到变量textLine中
-    
-    SkinLabel48.Caption = Val(textline)                                         '显示校准1希望的值
-    
-    Close #7
-    
-    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    
-    '''''''''''''''''''''''''读取文件中校准2希望的值，显示''''''''''''''''''''''''''''''
-    
-    Open App.Path & "\sys\hope2.txt" For Input As #8                            '在文件中读取校准2希望的值
-    
-    Line Input #8, textline                                                     '将读入数据存到变量textLine中
-    
-    SkinLabel52.Caption = Val(textline)                                         '显示校准2希望的值
-    
-    Close #8
+    WindowsMediaPlayer1.settings.setMode "loop", True
     
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
@@ -11659,6 +11477,8 @@ End Sub
 
 Private Sub Command2_Click()                                                    '通过条形码查询信息
     
+    Dim textline As String
+    
     'Form2.Enabled = False                                                       '工作界面禁用
     'Form7.Show                                                                  '进入查找界面
     
@@ -11770,7 +11590,6 @@ Private Sub Command3_Click()                                                    
     Command3.Enabled = False                                                    '调试按钮禁用
     Command4.Enabled = True                                                     '运行按钮可用
     Command8.Enabled = True                                                     '校准1按钮可用
-    Command9.Enabled = True                                                     '校准2按钮可用
     
 End Sub
 
@@ -11793,7 +11612,6 @@ Private Sub Command4_Click()                                                    
     Command4.Enabled = False                                                    '运行按钮禁用
     Command3.Enabled = True                                                     '调试按钮可用
     Command8.Enabled = False                                                    '校准1按钮禁用
-    Command9.Enabled = False                                                    '校准2按钮禁用
     
 End Sub
 
@@ -11864,6 +11682,7 @@ End Sub
 Private Sub Command8_Click()
     
     Dim e As Integer                                                            'e在此作为循环变量
+    Dim textline As String
     
     If Text1.Text = "" Then                                                     '没有输入孔位
         
@@ -11898,8 +11717,6 @@ Private Sub Command8_Click()
         Form2.Enabled = False                                                   '工作界面禁用
         
         adjust1_flag = 1                                                        '接收上传的校准1数据标志位有效
-        
-        adjust2_flag = 0                                                        '接收上传的校准2数据标志位无效
         
         ''''''''''''''''''''''''''''''读校准1的数据''''''''''''''''''''''''''''''''''''''''''
         e = 0
@@ -12651,807 +12468,27 @@ Private Sub Command8_Click()
     
 End Sub
 
-Private Sub Command9_Click()                                                    '校准2发送命令
-    
-    Dim k As Integer                                                            'k在此作为循环变量
-    
-    If Text2.Text = "" Then                                                     '没有输入孔位
-        
-        answer = MsgBox("提示：没有输入孔位!", 48, "信息提示")
-        
-        If answer = 1 Then                                                      '重新输入孔位
-            
-            Text2.Enabled = True
-            
-            Exit Sub
-            
-        End If
-        
-    End If
-    
-    If Val(Text2.Text) < 1 Or Val(Text2.Text) > 60 Then
-        
-        answer = MsgBox("提示：请输入1-60之间的整数!", 48, "信息提示")
-        
-        If answer = 1 Then                                                      '重新输入孔位
-            
-            Text2.Text = ""                                                     '文本清空
-            
-            Text2.Enabled = True
-            
-            Exit Sub
-            
-        End If
-        
-    Else
-        
-        Form2.Enabled = False                                                   '工作界面禁用
-        
-        adjust1_flag = 0                                                        '接收上传的校准1数据标志位无效
-        
-        adjust2_flag = 1                                                        '接收上传的校准2数据标志位有效
-        
-        ''''''''''''''''''''''''''''''读校准2的数据''''''''''''''''''''''''''''''''''''''''''
-        k = 0
-        
-        Open App.Path & "\sys\adjust2.txt" For Input As #6                      '在文件中读取
-        
-        Do While Not EOF(6)                                                     'EOF为文尾测试函数
-            
-            Line Input #6, textline
-            
-            read2(k) = Mid(textline, 5, 12)
-            
-            k = k + 1                                                           '循环
-            
-        Loop
-        
-        Close #6
-        
-        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        s2 = Val(Text2.Text) - 1                                                '做第s2个孔位的校准
-        
-        Select Case s2
-            
-        Case 0
-            
-            command(0) = &H3D
-            
-            MSComm1.Output = command                                            '第1个瓶做校准1(61)
-            
-            command(0) = &H3D
-            
-            MSComm1.Output = command                                            '第1个瓶做校准1(61)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 1
-            
-            command(0) = &H3E
-            
-            MSComm1.Output = command                                            '第2个瓶做校准1(62)
-            
-            command(0) = &H3E
-            
-            MSComm1.Output = command                                            '第2个瓶做校准1(62)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 2
-            
-            command(0) = &H3F
-            
-            MSComm1.Output = command                                            '第3个瓶做校准1(63)
-            
-            command(0) = &H3F
-            
-            MSComm1.Output = command                                            '第3个瓶做校准1(63)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 3
-            
-            command(0) = &H40
-            
-            MSComm1.Output = command                                            '第4个瓶做校准1(64)
-            
-            command(0) = &H40
-            
-            MSComm1.Output = command                                            '第4个瓶做校准1(64)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 4
-            
-            command(0) = &H41
-            
-            MSComm1.Output = command                                            '第5个瓶做校准1(64)
-            
-            command(0) = &H41
-            
-            MSComm1.Output = command                                            '第5个瓶做校准1(65)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 5
-            
-            command(0) = &H42
-            
-            MSComm1.Output = command                                            '第6个瓶做校准1(66)
-            
-            command(0) = &H42
-            
-            MSComm1.Output = command                                            '第6个瓶做校准1(66)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 6
-            
-            command(0) = &H43
-            
-            MSComm1.Output = command                                            '第7个瓶做校准1(67)
-            
-            command(0) = &H43
-            
-            MSComm1.Output = command                                            '第7个瓶做校准1(67)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 7
-            
-            command(0) = &H44
-            
-            MSComm1.Output = command                                            '第8个瓶做校准1(68)
-            
-            command(0) = &H44
-            
-            MSComm1.Output = command                                            '第8个瓶做校准1(68)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 8
-            
-            command(0) = &H45
-            
-            MSComm1.Output = command                                            '第9个瓶做校准1(69)
-            
-            command(0) = &H45
-            
-            MSComm1.Output = command                                            '第9个瓶做校准1(69)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 9
-            
-            command(0) = &H46
-            
-            MSComm1.Output = command                                            '第10个瓶做校准1(70)
-            
-            command(0) = &H46
-            
-            MSComm1.Output = command                                            '第10个瓶做校准1(70)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 10
-            
-            command(0) = &H47
-            
-            MSComm1.Output = command                                            '第11个瓶做校准1(71)
-            
-            command(0) = &H47
-            
-            MSComm1.Output = command                                            '第11个瓶做校准1(71)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 11
-            
-            command(0) = &H48
-            
-            MSComm1.Output = command                                            '第12个瓶做校准1(72)
-            
-            command(0) = &H48
-            
-            MSComm1.Output = command                                            '第12个瓶做校准1(72)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 12
-            
-            command(0) = &H49
-            
-            MSComm1.Output = command                                            '第13个瓶做校准1(73)
-            
-            command(0) = &H49
-            
-            MSComm1.Output = command                                            '第13个瓶做校准1(73)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 13
-            
-            command(0) = &H4A
-            
-            MSComm1.Output = command                                            '第14个瓶做校准1(74)
-            
-            command(0) = &H4A
-            
-            MSComm1.Output = command                                            '第14个瓶做校准1(74)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 14
-            
-            command(0) = &H4B
-            
-            MSComm1.Output = command                                            '第15个瓶做校准1(75)
-            
-            command(0) = &H4B
-            
-            MSComm1.Output = command                                            '第15个瓶做校准1(75)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 15
-            
-            command(0) = &H4C
-            
-            MSComm1.Output = command                                            '第16个瓶做校准1(76)
-            
-            command(0) = &H4C
-            
-            MSComm1.Output = command                                            '第16个瓶做校准1(76)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 16
-            
-            command(0) = &H4D
-            
-            MSComm1.Output = command                                            '第17个瓶做校准1(77)
-            
-            command(0) = &H4D
-            
-            MSComm1.Output = command                                            '第17个瓶做校准1(77)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 17
-            
-            command(0) = &H4E
-            
-            MSComm1.Output = command                                            '第18个瓶做校准1(78)
-            
-            command(0) = &H4E
-            
-            MSComm1.Output = command                                            '第18个瓶做校准1(78)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 18
-            
-            command(0) = &H4F
-            
-            MSComm1.Output = command                                            '第19个瓶做校准1(79)
-            
-            command(0) = &H4F
-            
-            MSComm1.Output = command                                            '第19个瓶做校准1(79)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 19
-            
-            command(0) = &H50
-            
-            MSComm1.Output = command                                            '第20个瓶做校准1(80)
-            
-            command(0) = &H50
-            
-            MSComm1.Output = command                                            '第20个瓶做校准1(80)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 20
-            
-            command(0) = &H51
-            
-            MSComm1.Output = command                                            '第21个瓶做校准1(81)
-            
-            command(0) = &H51
-            
-            MSComm1.Output = command                                            '第21个瓶做校准1(81)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 21
-            
-            command(0) = &H52
-            
-            MSComm1.Output = command                                            '第22个瓶做校准1(82)
-            
-            command(0) = &H52
-            
-            MSComm1.Output = command                                            '第22个瓶做校准1(82)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 22
-            
-            command(0) = &H53
-            
-            MSComm1.Output = command                                            '第23个瓶做校准1(83)
-            
-            command(0) = &H53
-            
-            MSComm1.Output = command                                            '第23个瓶做校准1(83)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 23
-            
-            command(0) = &H54
-            
-            MSComm1.Output = command                                            '第24个瓶做校准2(84)
-            
-            command(0) = &H54
-            
-            MSComm1.Output = command                                            '第24个瓶做校准2(84)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 24
-            
-            command(0) = &H55
-            
-            MSComm1.Output = command                                            '第25个瓶做校准1(85)
-            
-            command(0) = &H55
-            
-            MSComm1.Output = command                                            '第25个瓶做校准1(85)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 25
-            
-            command(0) = &H56
-            
-            MSComm1.Output = command                                            '第26个瓶做校准1(86)
-            
-            command(0) = &H56
-            
-            MSComm1.Output = command                                            '第26个瓶做校准1(86)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 26
-            
-            command(0) = &H57
-            
-            MSComm1.Output = command                                            '第27个瓶做校准1(87)
-            
-            command(0) = &H57
-            
-            MSComm1.Output = command                                            '第27个瓶做校准1(87)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 27
-            
-            command(0) = &H58
-            
-            MSComm1.Output = command                                            '第28个瓶做校准1(88)
-            
-            command(0) = &H58
-            
-            MSComm1.Output = command                                            '第28个瓶做校准1(88)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 28
-            
-            command(0) = &H59
-            
-            MSComm1.Output = command                                            '第29个瓶做校准1(89)
-            
-            command(0) = &H59
-            
-            MSComm1.Output = command                                            '第29个瓶做校准1(89)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 29
-            
-            command(0) = &H5A
-            
-            MSComm1.Output = command                                            '第30个瓶做校准1(90)
-            
-            command(0) = &H5A
-            
-            MSComm1.Output = command                                            '第30个瓶做校准1(90)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 30
-            
-            command(0) = &H5B
-            
-            MSComm1.Output = command                                            '第31个瓶做校准1(91)
-            
-            command(0) = &H5B
-            
-            MSComm1.Output = command                                            '第31个瓶做校准1(91)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 31
-            
-            command(0) = &H5C
-            
-            MSComm1.Output = command                                            '第32个瓶做校准1(92)
-            
-            command(0) = &H5C
-            
-            MSComm1.Output = command                                            '第32个瓶做校准1(92)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 32
-            
-            command(0) = &H5D
-            
-            MSComm1.Output = command                                            '第33个瓶做校准1(93)
-            
-            command(0) = &H5D
-            
-            MSComm1.Output = command                                            '第33个瓶做校准1(93)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 33
-            
-            command(0) = &H5E
-            
-            MSComm1.Output = command                                            '第34个瓶做校准1(94)
-            
-            command(0) = &H5E
-            
-            MSComm1.Output = command                                            '第34个瓶做校准1(94)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 34
-            
-            command(0) = &H5F
-            
-            MSComm1.Output = command                                            '第35个瓶做校准1(95)
-            
-            command(0) = &H5F
-            
-            MSComm1.Output = command                                            '第35个瓶做校准1(95)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 35
-            
-            command(0) = &H60
-            
-            MSComm1.Output = command                                            '第36个瓶做校准1(96)
-            
-            command(0) = &H60
-            
-            MSComm1.Output = command                                            '第36个瓶做校准1(96)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 36
-            
-            command(0) = &H61
-            
-            MSComm1.Output = command                                            '第37个瓶做校准1(97)
-            
-            command(0) = &H61
-            
-            MSComm1.Output = command                                            '第37个瓶做校准1(97)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 37
-            
-            command(0) = &H62
-            
-            MSComm1.Output = command                                            '第38个瓶做校准1(98)
-            
-            command(0) = &H62
-            
-            MSComm1.Output = command                                            '第38个瓶做校准1(98)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 38
-            
-            command(0) = &H63
-            
-            MSComm1.Output = command                                            '第39个瓶做校准1(99)
-            
-            command(0) = &H63
-            
-            MSComm1.Output = command                                            '第39个瓶做校准1(99)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 39
-            
-            command(0) = &H64
-            
-            MSComm1.Output = command                                            '第40个瓶做校准1(100)
-            
-            command(0) = &H64
-            
-            MSComm1.Output = command                                            '第40个瓶做校准1(100)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 40
-            
-            command(0) = &H65
-            
-            MSComm1.Output = command                                            '第41个瓶做校准1(101)
-            
-            command(0) = &H65
-            
-            MSComm1.Output = command                                            '第41个瓶做校准1(101)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 41
-            
-            command(0) = &H66
-            
-            MSComm1.Output = command                                            '第42个瓶做校准1(102)
-            
-            command(0) = &H66
-            
-            MSComm1.Output = command                                            '第42个瓶做校准1(102)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 42
-            
-            command(0) = &H67
-            
-            MSComm1.Output = command                                            '第43个瓶做校准1(103)
-            
-            command(0) = &H67
-            
-            MSComm1.Output = command                                            '第43个瓶做校准1(103)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 43
-            
-            command(0) = &H68
-            
-            MSComm1.Output = command                                            '第44个瓶做校准1(104)
-            
-            command(0) = &H68
-            
-            MSComm1.Output = command                                            '第44个瓶做校准1(104)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 44
-            
-            command(0) = &H69
-            
-            MSComm1.Output = command                                            '第45个瓶做校准1(105)
-            
-            command(0) = &H69
-            
-            MSComm1.Output = command                                            '第45个瓶做校准1(105)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 45
-            
-            command(0) = &H6A
-            
-            MSComm1.Output = command                                            '第46个瓶做校准1(106)
-            
-            command(0) = &H6A
-            
-            MSComm1.Output = command                                            '第46个瓶做校准1(106)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 46
-            
-            command(0) = &H6B
-            
-            MSComm1.Output = command                                            '第47个瓶做校准1(107)
-            
-            command(0) = &H6B
-            
-            MSComm1.Output = command                                            '第47个瓶做校准1(107)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 47
-            
-            command(0) = &H6C
-            
-            MSComm1.Output = command                                            '第48个瓶做校准1(108)
-            
-            command(0) = &H6C
-            
-            MSComm1.Output = command                                            '第48个瓶做校准1(108)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 48
-            
-            command(0) = &H6D
-            
-            MSComm1.Output = command                                            '第49个瓶做校准1(109)
-            
-            command(0) = &H6D
-            
-            MSComm1.Output = command                                            '第49个瓶做校准1(109)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 49
-            
-            command(0) = &H6E
-            
-            MSComm1.Output = command                                            '第50个瓶做校准1(110)
-            
-            command(0) = &H6E
-            
-            MSComm1.Output = command                                            '第50个瓶做校准1(110)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 50
-            
-            command(0) = &H6F
-            
-            MSComm1.Output = command                                            '第51个瓶做校准1(111)
-            
-            command(0) = &H6F
-            
-            MSComm1.Output = command                                            '第51个瓶做校准1(111)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 51
-            
-            command(0) = &H70
-            
-            MSComm1.Output = command                                            '第52个瓶做校准1(112)
-            
-            command(0) = &H70
-            
-            MSComm1.Output = command                                            '第52个瓶做校准1(112)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 52
-            
-            command(0) = &H71
-            
-            MSComm1.Output = command                                            '第53个瓶做校准1(112)
-            
-            command(0) = &H71
-            
-            MSComm1.Output = command                                            '第53个瓶做校准1(113)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 53
-            
-            command(0) = &H72
-            
-            MSComm1.Output = command                                            '第54个瓶做校准1(114)
-            
-            command(0) = &H72
-            
-            MSComm1.Output = command                                            '第54个瓶做校准1(114)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 54
-            
-            command(0) = &H73
-            
-            MSComm1.Output = command                                            '第55个瓶做校准1(115)
-            
-            command(0) = &H73
-            
-            MSComm1.Output = command                                            '第55个瓶做校准1(115)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 55
-            
-            command(0) = &H74
-            
-            MSComm1.Output = command                                            '第56个瓶做校准1(116)
-            
-            command(0) = &H74
-            
-            MSComm1.Output = command                                            '第56个瓶做校准1(116)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 56
-            
-            command(0) = &H75
-            
-            MSComm1.Output = command                                            '第57个瓶做校准1(117)
-            
-            command(0) = &H75
-            
-            MSComm1.Output = command                                            '第57个瓶做校准1(117)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 57
-            
-            command(0) = &H76
-            
-            MSComm1.Output = command                                            '第58个瓶做校准1(118)
-            
-            command(0) = &H76
-            
-            MSComm1.Output = command                                            '第58个瓶做校准1(118)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 58
-            
-            command(0) = &H77
-            
-            MSComm1.Output = command                                            '第59个瓶做校准1(119)
-            
-            command(0) = &H77
-            
-            MSComm1.Output = command                                            '第59个瓶做校准1(119)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        Case 59
-            
-            command(0) = &H78
-            
-            MSComm1.Output = command                                            '第60个瓶做校准1(120)
-            
-            command(0) = &H78
-            
-            MSComm1.Output = command                                            '第60个瓶做校准1(120)
-            
-            command(0) = &HFF                                                   '清空命令
-            
-        End Select
-        
-    End If
-    
-    Form9.Show                                                                  '等待接收数据提示界面
-    
-End Sub
-
 Private Sub Command10_Click()                                                   '调出历史数据
     
     On Error GoTo err2
     
-    Dim fs As New FileSystemObject                                              '建立文件系统对象
+    Dim fs       As New FileSystemObject                                              '建立文件系统对象
     
-    Dim R3 As New Collection                                                    '定义集合变量
+    'Dim f As Object
     
-    Dim r As Integer
+    Dim textline As String
     
-    Dim m As Integer
+    Dim R3       As New Collection                                                    '定义集合变量
+    
+    Dim TempO1   As New Collection
+    
+    Dim TempO2   As New Collection
+    
+    Dim TempO3   As New Collection
+    
+    Dim r        As Integer
+    
+    Dim m        As Integer
     
     State_Flag = 0                                                              '培养状态标志位清零
     
@@ -13481,11 +12518,14 @@ Private Sub Command10_Click()                                                   
     
     If (strLine <> "Revision 2017") Then
         SkinLabel26.Caption = strLine                                           '读条形码
+        SkinLabel82.Caption = ""                                                '瓶孔号跳过
+        SkinLabel80.Caption = ""                                                'ID
     Else
         SkinLabel82.Caption = f.ReadLine                                        '瓶孔号跳过
         SkinLabel26.Caption = f.ReadLine                                        '读条形码
         SkinLabel80.Caption = f.ReadLine                                        'ID
     End If
+
     SkinLabel28.Caption = f.ReadLine                                            '读姓名
     SkinLabel30.Caption = Mid(f.ReadLine, 1, 1)                                 '读性别
     SkinLabel32.Caption = f.ReadLine                                            '读年龄
@@ -13502,6 +12542,7 @@ Private Sub Command10_Click()                                                   
     
     time_start = Mid(SkinLabel40, 6, 5)
     
+    '转换为x轴时间点的间隔时间
     If cul_time = 1 Then
         
         cul_time = 59
@@ -13575,6 +12616,7 @@ Private Sub Command10_Click()                                                   
         If r <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
         End If
+
         SkinLabel2(r).Caption = textline                                        '读条形码
         
         Line Input #2, textline                                                 '跳过不读
@@ -13608,10 +12650,105 @@ Private Sub Command10_Click()                                                   
     Do While f.AtEndOfLine = False
         
         R3.Add Int(Mid(f.ReadLine, 1, 4))                                       '读数据
+        TempO1.Add Val(Mid(textline, 21, 5))
+        TempO2.Add Val(Mid(textline, 27, 5))
+        TempO3.Add Val(Mid(textline, 33, 5))
         
     Loop
     
     f.Close
+    
+    ' TODO更改
+    '    Set f = fs.OpenTextFile(CommonDialog1.FileName, ForAppending, True)
+    '
+    '    Dim x As Integer
+    '    Dim xx As Integer
+    '    Dim order1_diff As Integer
+    '    Dim order2_diff As Integer
+    '    Dim order3_diff As Integer
+    '
+    '    Dim oo1 As New Collection
+    '
+    '    Dim oo2 As New Collection
+    '
+    '    Dim oo3 As New Collection
+    '
+    '    order1_diff = 0
+    '    order2_diff = 0
+    '    order3_diff = 0
+    '
+    '    For abc = 1 To R3.Count
+    '        x = R3(abc)
+    '        n = 1
+    '        If (abc - 1 > 0) Then
+    '            x = x + R3(abc - 1)
+    '            n = n + 1
+    '        End If
+    '        If (abc - 2 > 0) Then
+    '            x = x + R3(abc - 2)
+    '            n = n + 1
+    '        End If
+    '        If (abc - 3 > 0) Then
+    '            x = x + R3(abc - 3)
+    '            n = n + 1
+    '        End If
+    '        If (abc - 4 > 0) Then
+    '            x = x + R3(abc - 4)
+    '            n = n + 1
+    '        End If
+    '
+    '        x = x / n
+    
+    '    If (abc > 4) Then
+    '
+    '        order1_diff = x - R3(abc - 4)
+    '        order2_diff = order1_diff - oo1(abc - 4)
+    '        order3_diff = order2_diff - oo2(abc - 4)
+    '
+    '    End If
+    '
+    '    oo1.Add order1_diff
+    '    oo2.Add order2_diff
+    '    oo3.Add order3_diff
+    '
+    '    xx = x
+    '
+    '    sss = Format(x, "0000") & " "
+    '
+    '    If (order1_diff <= -1) Then
+    '
+    '        sss = sss + Format(order1_diff, "0000") & " "
+    '
+    '    Else
+    '
+    '        sss = sss + Format(order1_diff, "00000") & " "
+    '
+    '    End If
+    '
+    '    If (order2_diff <= -1) Then
+    '
+    '        sss = sss + Format(order2_diff, "0000") & " "
+    '
+    '    Else
+    '
+    '        sss = sss + Format(order2_diff, "00000") & " "
+    '
+    '    End If
+    '
+    '    If (order3_diff <= -1) Then
+    '
+    '        sss = sss + Format(order3_diff, "0000") & " "
+    '
+    '    Else
+    '
+    '        sss = sss + Format(order3_diff, "00000") & " "
+    '
+    '    End If
+    '
+    '    f.WriteLine (sss)
+    '
+    'Next abc
+    '    f.Close
     
     If Dir(App.Path & "\result\" & SkinLabel26.Caption & ".dat", vbDirectory) <> "" Then '已完成测量
         
@@ -13656,16 +12793,10 @@ Private Sub Command10_Click()                                                   
     End If
     
     '''''''''''''''''''''''''''''''以下显示打印内容''''''''''''''''''''''''''''''''''''''
-    RichTextBox2.Text = "安医第一附属医院" & (Chr(13) & Chr(10)) & "条形码：" & SkinLabel26.Caption & (Chr(13) & Chr(10)) _
-    & "姓名：" & SkinLabel28.Caption & (Chr(13) & Chr(10)) & "ID：" & SkinLabel28.Caption & (Chr(13) & Chr(10)) _
-    & "性别：" & SkinLabel30.Caption & (Chr(13) & Chr(10)) _
-    & "年龄：" & SkinLabel32.Caption & (Chr(13) & Chr(10)) & "科室：" & SkinLabel34.Caption & (Chr(13) & Chr(10)) _
-    & "培养瓶：" & SkinLabel36.Caption & (Chr(13) & Chr(10)) & "培养时间：" & SkinLabel38.Caption & (Chr(13) & Chr(10)) _
-    & "测量时间:" & SkinLabel40.Caption & (Chr(13) & Chr(10)) & "测量结果:" & SkinLabel46.Caption _
-    & (Chr(13) & Chr(10)) & "打印时间:" & Format(Now, "yyyy-mm-dd hh:mm")
+    RichTextBox2.Text = "安医第一附属医院" & (Chr(13) & Chr(10)) & "条形码：" & SkinLabel26.Caption & (Chr(13) & Chr(10)) & "姓名：" & SkinLabel28.Caption & (Chr(13) & Chr(10)) & "ID：" & SkinLabel28.Caption & (Chr(13) & Chr(10)) & "性别：" & SkinLabel30.Caption & (Chr(13) & Chr(10)) & "年龄：" & SkinLabel32.Caption & (Chr(13) & Chr(10)) & "科室：" & SkinLabel34.Caption & (Chr(13) & Chr(10)) & "培养瓶：" & SkinLabel36.Caption & (Chr(13) & Chr(10)) & "培养时间：" & SkinLabel38.Caption & (Chr(13) & Chr(10)) & "测量时间:" & SkinLabel40.Caption & (Chr(13) & Chr(10)) & "测量结果:" & SkinLabel46.Caption & (Chr(13) & Chr(10)) & "打印时间:" & Format(Now, "yyyy-mm-dd hh:mm")
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
-    Call SystemGraph1.DrawGraph(R3)
+    Call SystemGraph1.DrawGraph(R3, TempO1, TempO2, TempO3, Val(SkinLabel38.Caption))
     
     Form2.Enabled = True                                                        '工作界面可用
     
@@ -13682,6 +12813,8 @@ End Sub
 Private Sub Command11_Click()
     
     Dim word As Object
+    
+    Dim a As Object
     
     If Dir(App.Path & "\print\", vbDirectory) = "" Then
         
@@ -13730,6 +12863,8 @@ End Sub
 Private Sub Command13_Click()                                                   '打印统计资料
     
     Dim word As Object
+    
+    Dim a As Object
     
     Set word = CreateObject("Word.Application")
     
@@ -13813,75 +12948,6 @@ Private Sub Command14_Click()                                                   
     
 End Sub
 
-Private Sub Command15_Click()                                                   '校准1,2希望的值设置
-    
-    If Text7.Text = "" Then                                                     '校准1希望的值为空
-        
-        answer = MsgBox("提示：没有输入校准1希望的值!", 48, "信息提示")
-        
-        If answer = 1 Then                                                      '重新输入校准1希望的值
-            
-            Text7.Enabled = True
-            
-            Exit Sub
-            
-        End If
-        
-    ElseIf Text8.Text = "" Then                                                 '校准2希望的值为空
-        
-        answer = MsgBox("提示：没有输入校准2希望的值!", 48, "信息提示")
-        
-        If answer = 1 Then                                                      '重新校准2希望的值
-            
-            Text8.Enabled = True
-            
-            Exit Sub
-            
-        End If
-        
-    Else
-        
-        If (Val(Text7.Text) - Val(Text8.Text) <= 0) Then                        '设置希望值有错
-            
-            answer = MsgBox("提示：设置希望值有错，请重新设置!", 48, "信息提示")
-            
-            If answer = 1 Then                                                  '重新校准1,2希望的值
-                
-                Text7.Text = ""
-                
-                Text8.Text = ""
-                
-                Text7.Enabled = True
-                
-                Text8.Enabled = True
-                
-                Exit Sub
-                
-            End If
-            
-        Else
-            
-            SkinLabel48.Caption = Text7.Text                                    '显示
-            
-            SkinLabel52.Caption = Text8.Text                                    '显示
-            
-            Open App.Path & "\sys\hope1.txt" For Output As #7                   '保存校准1希望的值
-            
-            Print #7, Format(Text7.Text, "0000")
-            
-            Close #7
-            
-            Open App.Path & "\sys\hope2.txt" For Output As #8                   '保存校准2希望的值
-            
-            Print #8, Format(Text8.Text, "0000")
-            
-            Close #8
-            
-        End If
-        
-    End If
-    
-End Sub
 
 Private Sub Command16_Click()                                                   '设置阈值并保存
     
@@ -14081,25 +13147,6 @@ Private Sub Text2_KeyPress(KeyAscii As Integer)                                 
     
 End Sub
 
-Private Sub Text7_KeyPress(KeyAscii As Integer)                                 '希望值1只能输入数字和使用空格
-    
-    If (KeyAscii > Asc("9") Or KeyAscii < Asc("0")) And KeyAscii <> 8 Then
-        
-        KeyAscii = 0
-        
-    End If
-    
-End Sub
-
-Private Sub Text8_KeyPress(KeyAscii As Integer)                                 '希望值2只能输入数字和使用空格
-    
-    If (KeyAscii > Asc("9") Or KeyAscii < Asc("0")) And KeyAscii <> 8 Then
-        
-        KeyAscii = 0
-        
-    End If
-    
-End Sub
 
 Private Sub Text11_KeyPress(KeyAscii As Integer)                                '阈值上限值只能输入数字和使用空格
     
@@ -14135,80 +13182,118 @@ Private Sub MSComm1_OnComm()                                                    
     
     getLock
     
-    Dim a() As Byte                                                             '存放从下位机接收到的数据
+    Dim textline          As String
     
-    Dim strData As String                                                       '作为中间变量处理
+    Dim a()               As Byte                                                             '存放从下位机接收到的数据
     
-    Dim l As Integer                                                            '字节长度
+    Dim strData           As String                                                       '作为中间变量处理
     
-    Dim t As Integer                                                            '循环变量
+    Dim l                 As Integer                                                            '字节长度
     
-    Dim m As Integer                                                            '循环变量
+    Dim t                 As Integer                                                            '循环变量
     
-    Dim e As Integer                                                            '循环变量
+    Dim m                 As Integer                                                            '循环变量
     
-    Dim b As Integer                                                            '循环变量
+    Dim e                 As Integer                                                            '循环变量
     
-    Dim c As Integer                                                            '循环变量
+    Dim b                 As Integer                                                            '循环变量
     
-    Dim d As Integer                                                            '循环变量
+    Dim c                 As Integer                                                            '循环变量
     
-    Dim j As Long                                                               '循环变量
+    Dim d                 As Integer                                                            '循环变量
     
-    Dim q As Integer                                                            '循环变量
+    Dim j                 As Long                                                               '循环变量
     
-    Dim x As Integer                                                            '作为计算量
+    Dim q                 As Integer                                                            '循环变量
     
-    Dim x1 As Integer                                                           '作为计算量
+    Dim x                 As Integer                                                            '作为计算量
     
-    Dim x2 As Integer                                                           '作为计算量
+    Dim x1                As Integer                                                           '作为计算量
     
-    Dim y As Integer                                                            '作为计算量
+    Dim x2                As Integer                                                           '作为计算量
     
-    Dim yy As Long                                                              '作为计算量，2011-09-15日增加
+    Dim y                 As Integer                                                            '作为计算量
     
-    Dim y1 As Integer                                                           '作为计算量
+    Dim yy                As Long                                                              '作为计算量，2011-09-15日增加
     
-    Dim y2 As Integer                                                           '作为计算量
+    Dim y1                As Integer                                                           '作为计算量
     
-    Dim media As Integer
+    Dim y2                As Integer                                                           '作为计算量
     
-    Dim R1(0 To 59) As New Collection                                           '集合变量组
+    Dim Adjust_r(0 To 59) As Long
     
-    Dim R2(0 To 59) As New Collection                                           '集合变量组
+    Dim Adjust_g(0 To 59) As Long
+    
+    Dim Adjust_b(0 To 59) As Long
+    
+    Dim media             As Integer
+    
+    Dim red               As Long
+    
+    Dim green             As Long
+    
+    Dim blue              As Long
+    
+    Dim huv1              As Double
+    
+    Dim huv2              As Double
+    
+    Dim colorS1           As Double
+    
+    Dim colorS2           As Double
+    
+    Dim color_huv         As Long
+    
+    Dim color_temp        As Long
+    
+    Dim order1_diff       As Integer
+    
+    Dim order2_diff       As Integer
+    
+    Dim order3_diff       As Integer
+    
+    Dim R1(0 To 59)       As New Collection                                           '集合变量组
+    
+    Dim R2(0 To 59)       As New Collection                                           '集合变量组
+    
+    Dim O1(0 To 59)       As New Collection
+    
+    Dim O2(0 To 59)       As New Collection
+    
+    Dim O3(0 To 59)       As New Collection
     
     On Error Resume Next
     
     ''''''''''''''''''''''''''''''''''''串口中断事件'''''''''''''''''''''''''''''''''''''
     Select Case MSComm1.CommEvent                                               '检验串口事件
         
-    Case comEventOverrun                                                        '接收缓冲区溢出
+        Case comEventOverrun                                                        '接收缓冲区溢出
         
-        Text4.Text = ""                                                         '清空接收文本
+            Text4.Text = ""                                                         '清空接收文本
         
-        releaseLock
+            releaseLock
         
-        Exit Sub
+            Exit Sub
         
-    Case comEvReceive                                                           '接收缓冲区有数据
+        Case comEvReceive                                                           '接收缓冲区有数据
         
-        a() = MSComm1.Input                                                     '接收数据至数组中
+            a() = MSComm1.Input                                                     '接收数据至数组中
         
-        For l = 0 To UBound(a)                                                  '结果以十六进制显示
+            For l = 0 To UBound(a)                                                  '结果以十六进制显示
             
-            If Len(Hex(a(l))) = 1 Then
+                If Len(Hex(a(l))) = 1 Then
                 
-                strData = strData & "0" & Hex(a(l))
+                    strData = strData & "0" & Hex(a(l))
                 
-            Else
+                Else
                 
-                strData = strData & Hex(a(l))
+                    strData = strData & Hex(a(l))
                 
-            End If
+                End If
             
-        Next
+            Next
         
-        Text4.Text = Text4.Text + strData                                       '缓冲区中数据经处理后放入text4文本中
+            Text4.Text = Text4.Text + strData                                       '缓冲区中数据经处理后放入text4文本中
         
     End Select
     
@@ -14256,6 +13341,7 @@ Private Sub MSComm1_OnComm()                                                    
             If q <> 0 Or bNewRevision Then
                 Line Input #2, textline                                         '将读入的1行存到变量TextLine中
             End If
+
             SkinLabel2(q).Caption = textline                                    '读条形码
             
             Line Input #2, textline                                             '以下跳出
@@ -14296,43 +13382,17 @@ Private Sub MSComm1_OnComm()                                                    
             
             adjust1(m) = Mid(textline, 5, 4)
             
+            Adjust_r(m) = Val(Mid(textline, 5, 4))
+            
+            Adjust_g(m) = Val(Mid(textline, 9, 4))
+            
+            Adjust_b(m) = Val(Mid(textline, 13, 4))
+            
             m = m + 1                                                           '循环
             
         Loop
         
         Close 3#
-        
-        t = 0
-        
-        Open App.Path & "\sys\adjust2.txt" For Input As #6                      '读校准2的数据
-        
-        Do While Not EOF(6)                                                     'EOF为文尾测试函数
-            
-            Line Input #6, textline                                             '将读入的1行存到变量TextLine中
-            
-            adjust2(t) = Mid(textline, 5, 4)
-            
-            t = t + 1                                                           '循环
-            
-        Loop
-        
-        Close 6#
-        
-        Open App.Path & "\sys\hope1.txt" For Input As #7                        '读希望1的值
-        
-        Line Input #7, textline                                                 '将读入的1行存到变量TextLine中
-        
-        hope1 = Mid(textline, 1, 4)
-        
-        Close 7#
-        
-        Open App.Path & "\sys\hope2.txt" For Input As #8                        '读希望2的值
-        
-        Line Input #8, textline                                                 '将读入的1行存到变量TextLine中
-        
-        hope2 = Mid(textline, 1, 4)
-        
-        Close 8#
         
         For c = 0 To 59
             
@@ -14340,16 +13400,29 @@ Private Sub MSComm1_OnComm()                                                    
             
             media = x                                                           '暂存测量数据，用于后续阈值判断，2012-5-20
             
+            color_temp = Adjust_r(c) + Adjust_g(c) + Adjust_b(c)
+            red = color_temp * media / Adjust_r(c)
+            green = color_temp * Val(Format(HEX_to_DEC(Mid(Text4.Text, c * 12 + 9, 4)), "0000")) / Adjust_g(c)
+            blue = color_temp * Val(Format(HEX_to_DEC(Mid(Text4.Text, c * 12 + 13, 4)), "0000")) / Adjust_b(c)
+            
+            huv1 = CalcColorH(red, green, blue)
+            
+            colorS1 = CalcColorS(red, green, blue)
+            
+            color_huv = 13000 - CLng(GetAngleByPoint(colorS1 * Cos(huv1) - 0.5, colorS1 * Sin(huv1) + (Sqr(3#) / 2)) * 15000 / pi)
+            
             If SkinLabel2(c).Caption <> "" And x > yuzhidown Then               '条形码不为空且原始值大于阈值下限值进行滤波处理
                 
                 Open App.Path & "\data\" & SkinLabel2(c) & ".txt" For Input As #1
                 
                 Line Input #1, textline                                         '以下跳出不读
+
                 If textline = "Revision 2017" Then
                     Line Input #1, textline
                     Line Input #1, textline
                     Line Input #1, textline
                 End If
+
                 Line Input #1, textline
                 Line Input #1, textline
                 Line Input #1, textline
@@ -14364,55 +13437,70 @@ Private Sub MSComm1_OnComm()                                                    
                     
                     R2(c).Add Val(Mid(textline, 1, 4))
                     
+                    O1(c).Add Val(Mid(textline, 21, 5))
+                    
+                    O2(c).Add Val(Mid(textline, 27, 5))
+                    
+                    O3(c).Add Val(Mid(textline, 33, 5))
+                    
                 Loop
                 
                 Close #1
                 
-                x1 = Val(adjust1(c))
+            End If
+            
+            order1_diff = 0
+            order2_diff = 0
+            order3_diff = 0
+
+            
+            If (R2(c).Count > 3) Then
                 
-                x2 = Val(adjust2(c))
-                
-                If (x1 = x2) Then x1 = x2 + 1
-                
-                y1 = Val(hope1)
-                
-                y2 = Val(hope2)
-                
-                'y = CInt(((y1 - y2) / (x1 - x2)) * (x - x2)) + y2
-                
-                yy = CLng(((y1 - y2) / (x1 - x2)) * (x - x2)) + y2
-                
-                If (yy < 0) Then
-                    
-                    yy = 0
-                    
-                End If
-                
-                If (yy > 9999) Then
-                    
-                    yy = 9999
-                    
-                End If
-                
-                If (R2(c).Count > 4) Then
-                    
-                    j = R2(c).Count
-                    
-                    'y = CInt((y + R2(c)(j - 4) + R2(c)(j - 3) + R2(c)(j - 2) + R2(c)(j - 1)) / 5) '5次均值滤波,2011-6-20修改
-                    
-                End If
-                
-                x = yy
+                order1_diff = color_huv - R2(c)(R2(c).Count - 3)
+                order2_diff = order1_diff - O1(c)(R2(c).Count - 3)
+                order3_diff = order2_diff - O2(c)(R2(c).Count - 3)
                 
             End If
             
-            Text10.Text = Format(x, "0000")                                     '格式化数据
+            Text10.Text = Format(color_huv, "0000")                             '格式化数据
             
             Text3.Text = Text3.Text + Text10.Text
             
-            Text3.Text = Text3.Text + Format(HEX_to_DEC(Mid(Text4.Text, c * 12 + 9, 4)), "0000")
+            Text3.Text = Text3.Text + Format(media, "0000")
             
-            Text3.Text = Text3.Text + Format(HEX_to_DEC(Mid(Text4.Text, c * 12 + 13, 4)), "0000")
+            Text3.Text = Text3.Text + Format(Val(Format(HEX_to_DEC(Mid(Text4.Text, c * 12 + 9, 4)), "0000")), "0000")
+            
+            Text3.Text = Text3.Text + Format(Val(Format(HEX_to_DEC(Mid(Text4.Text, c * 12 + 13, 4)), "0000")), "0000")
+            
+            If (order1_diff < 0) Then
+                
+                Text3.Text = Text3.Text + Format(order1_diff, "0000")
+                
+            Else
+                
+                Text3.Text = Text3.Text + Format(order1_diff, "00000")
+                
+            End If
+            
+            If (order2_diff < 0) Then
+                
+                Text3.Text = Text3.Text + Format(order2_diff, "0000")
+                
+            Else
+                
+                Text3.Text = Text3.Text + Format(order2_diff, "00000")
+                
+            End If
+            
+            If (order3_diff < 0) Then
+                
+                Text3.Text = Text3.Text + Format(order3_diff, "0000")
+                
+            Else
+                
+                Text3.Text = Text3.Text + Format(order3_diff, "00000")
+                
+            End If
             
             If SkinLabel2(c).Caption <> "" Then                                 '条形码不为空且原始值大于阈值下限值进行滤波处理
                 
@@ -14420,7 +13508,7 @@ Private Sub MSComm1_OnComm()                                                    
                     
                     Open App.Path & "\data\" & SkinLabel2(c) & ".txt" For Append As #1
                     
-                    Print #1, Mid(Text3.Text, 1, 4); " "; Mid(Text3.Text, 5, 4); " "; Mid(Text3.Text, 9, 4); " "; Format(Now, "mm-dd hh:mm:ss")
+                    Print #1, Mid(Text3.Text, 1, 4); " "; Mid(Text3.Text, 5, 4); " "; Mid(Text3.Text, 9, 4); " "; Mid(Text3.Text, 13, 4); " "; Mid(Text3.Text, 17, 5); " "; Mid(Text3.Text, 22, 5); " "; Mid(Text3.Text, 27, 5); " "; Format(Now, "mm-dd hh:mm:ss")
                     
                     Close #1
                     
@@ -14444,33 +13532,22 @@ Private Sub MSComm1_OnComm()                                                    
             
         Next c
         
-        ''''''''''For d = 0 To 59  '保存颜色值数据
-        
-        ''''''''''If SkinLabel2(d).Caption <> "" Then  '保存数据到data文件夹里
-        
-        '''''''''''Open App.Path & "\data\" & d + 1 & "\" & SkinLabel2(d) & ".txt" For Append As #1
-        
-        '''''''''Print #1, Mid(Text3.Text, d * 12 + 1, 4); " "; Mid(Text3.Text, d * 12 + 5, 4); " "; Mid(Text3.Text, d * 12 + 9, 4); " "; Format(Now, "mm-dd hh:mm:ss")
-        
-        '''''''''Close #1
-        
-        '''''''''End If
-        
-        '''''''''Next d
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         
         ''''''''''''''''''''''''''''''''''''数据处理'''''''''''''''''''''''''''''''''''''''
-        Dim nUpValCount As Integer
-        Dim nIndex As Integer
-        Dim bChangePoint As Boolean
-        '        Dim Max1 As Integer
-        '        Dim Max2 As Integer
-        '        Dim Max3 As Integer
-        '        Dim Min1 As Integer
-        '        Dim Min2 As Integer
-        '        Dim Min3 As Integer
-        '        Dim Swap As Integer
-        Dim Temp As Integer
+        Dim nUpValCount     As Integer
+
+        Dim nIndex          As Integer
+
+        Dim bChangePoint    As Boolean
+
+        Dim Temp            As Integer
+        
+        Dim TempO1(0 To 59) As New Collection
+        
+        Dim TempO2(0 To 59) As New Collection
+        
+        Dim TempO3(0 To 59) As New Collection
         
         For b = 0 To 59                                                         '对保存在data文件夹里数据进行处理
             
@@ -14479,11 +13556,13 @@ Private Sub MSComm1_OnComm()                                                    
                 Open App.Path & "\data\" & SkinLabel2(b) & ".txt" For Input As #1 '开始读数据
                 
                 Line Input #1, textline                                         '以下跳出不读
+
                 If textline = "Revision 2017" Then
                     Line Input #1, textline
                     Line Input #1, textline
                     Line Input #1, textline
                 End If
+
                 Line Input #1, textline
                 Line Input #1, textline
                 Line Input #1, textline
@@ -14497,6 +13576,12 @@ Private Sub MSComm1_OnComm()                                                    
                     Line Input #1, textline                                     '将读入的一行存到变量TextLine中
                     
                     R1(b).Add Val(Mid(textline, 1, 4))
+                    
+                    TempO1(b).Add Val(Mid(textline, 21, 5))
+                    
+                    TempO2(b).Add Val(Mid(textline, 27, 5))
+                    
+                    TempO3(b).Add Val(Mid(textline, 33, 5))
                     
                 Loop
                 
@@ -14521,7 +13606,7 @@ Private Sub MSComm1_OnComm()                                                    
                                 
                                 Form15.Show
                                 
-                                GoTo NextLoop
+                                Exit For
                                 
                             End If
                             
@@ -14531,13 +13616,9 @@ Private Sub MSComm1_OnComm()                                                    
                             
                         End If
                         
-                        
-                        If j >= 75 Then                                         '10小时以后，连续15个（1差值）大于0。阳性
+                        If j > 20 Then                                          '连续8个二阶大于0
                             
-                            If (R1(b)(j) - R1(b)(j - 1) > 0) And (R1(b)(j - 1) - R1(b)(j - 2) > 0) And (R1(b)(j - 2) - R1(b)(j - 3) > 0) And (R1(b)(j - 3) - R1(b)(j - 4) > 0) And (R1(b)(j - 4) - R1(b)(j - 5) > 0) _
-                                And (R1(b)(j - 5) - R1(b)(j - 6) > 0) And (R1(b)(j - 6) - R1(b)(j - 7) > 0) And (R1(b)(j - 7) - R1(b)(j - 8)) > 0 And (R1(b)(j - 8) - R1(b)(j - 9) > 0) And (R1(b)(j - 9) - R1(b)(j - 10) > 0) _
-                                And (R1(b)(j - 10) - R1(b)(j - 11) > 0) And (R1(b)(j - 11) - R1(b)(j - 12) > 0) And (R1(b)(j - 12) - R1(b)(j - 13) > 0) And (R1(b)(j - 13) - R1(b)(j - 14) > 0) And (R1(b)(j - 14) - R1(b)(j - 15) > 0) Then
-                                'If (R1(b)(j) - R1(b)(j - 1) > 0) And (R1(b)(j - 1) - R1(b)(j - 2) > 0) And (R1(b)(j - 2) - R1(b)(j - 3) > 0) And (R1(b)(j - 3) - R1(b)(j - 4) > 0) And (R1(b)(j - 4) - R1(b)(j - 5)) > 0 And (R1(b)(j - 5) - R1(b)(j - 6)) > 0 And (R1(b)(j - 6) - R1(b)(j - 7)) > 0 And (R1(b)(j - 7) - R1(b)(j - 8)) > 0 And (R1(b)(j - 8) - R1(b)(j - 9)) > 0 And (R1(b)(j - 9) - R1(b)(j - 10)) > 0 Then   '曲线变红
+                            If (TempO2(b)(j) > 0 And TempO2(b)(j - 1) > 0 And TempO2(b)(j - 2) > 0 And TempO2(b)(j - 3) > 0 And TempO2(b)(j - 4) > 0 And TempO2(b)(j - 5) > 0 And TempO2(b)(j - 6) > 0 And TempO2(b)(j - 7) > 0 And TempO1(b)(j - 8) > 0 And R1(b)(j) - R1(b)(j - 8) > 50) Then
                                 
                                 Picture1(b).Picture = LoadPicture(App.Path + "\pic\6.jpg")
                                 
@@ -14545,106 +13626,70 @@ Private Sub MSComm1_OnComm()                                                    
                                 
                                 Form15.Show
                                 
-                                GoTo NextLoop
+                                Exit For
                                 
                             End If
                             
                         End If
                         
-                        '*********************************************************************************************************
-                        
-                        'Else
-                        If j >= 18 Then                                         '2小时后，连续6个差值的差值（5个数据）大于0。阳性
+                        If j > 22 Then                                          '连续10个二阶大于等于0
                             
-                            If ((R1(b)(j) - R1(b)(j - 1)) >= 1 And (R1(b)(j - 1) - R1(b)(j - 2)) >= 1 And (R1(b)(j - 2) - R1(b)(j - 3)) >= 1 And (R1(b)(j - 3) - R1(b)(j - 4)) >= 1 And (R1(b)(j - 4) - R1(b)(j - 5)) >= 1 And (R1(b)(j) - R1(b)(j - 1)) - (R1(b)(j - 1) - R1(b)(j - 2))) >= 1 And ((R1(b)(j - 1) - R1(b)(j - 2)) - (R1(b)(j - 2) - R1(b)(j - 3))) >= 1 And ((R1(b)(j - 2) - R1(b)(j - 3)) - (R1(b)(j - 3) - R1(b)(j - 4))) >= 1 And ((R1(b)(j - 3) - R1(b)(j - 4)) - (R1(b)(j - 4) - R1(b)(j - 5))) >= 1 Then '
-                                'If ((R1(b)(j) - R1(b)(j - 1)) - (R1(b)(j - 1) - R1(b)(j - 2))) > 1 And ((R1(b)(j - 1) - R1(b)(j - 2)) - (R1(b)(j - 2) - R1(b)(j - 3))) > 1 And ((R1(b)(j - 2) - R1(b)(j - 3)) - (R1(b)(j - 3) - R1(b)(j - 4))) > 0 Then '
+                            temp_pos = False
+                            
+                            If (TempO2(b)(j) > 0) Then
                                 
-                                Picture1(b).Picture = LoadPicture(App.Path + "\pic\6.jpg")
+                                temp_m = 0
+                                temp_n = 0
                                 
-                                SkinLabel10(b).Caption = 2
+                                For q = 1 To 11
+                                    
+                                    If (TempO2(b)(j - q) > 0) Then
+                                        
+                                        temp_m = temp_m + 1
+                                        
+                                    ElseIf (TempO2(b)(j - q) < 0) Then
+                                        
+                                        Exit For
+                                        
+                                    Else
+                                        
+                                        temp_n = temp_n + 1
+                                        
+                                    End If
+                                    
+                                    If temp_n > 3 Then
+                                        
+                                        Exit For
+                                        
+                                    End If
+                                    
+                                    If temp_m > 7 And j - temp_n - temp_m > 12 And TempO1(b)(j - temp_n - temp_m) > 0 And R1(b)(j) - R1(b)(j - temp_n - temp_m) > 50 Then
+                                        
+                                        Picture1(b).Picture = LoadPicture(App.Path + "\pic\6.jpg")
+                                        
+                                        SkinLabel10(b).Caption = 2
+                                        
+                                        Form15.Show
+                                        
+                                        temp_pos = True
+                                        
+                                        Exit For
+                                        
+                                    End If
+                                    
+                                Next q
                                 
-                                Form15.Show
-                                
-                                GoTo NextLoop
+                                If temp_pos Then
+                                    
+                                    Exit For
+                                    
+                                End If
                                 
                             End If
                             
                         End If
-                        
-                        '*********************************************************************************************************
-                        '                        If j >= 169 Then                                        '24小时以后，连续15个（2差值之和、）大于0。阳性。
-                        '
-                        '                            If (R1(b)(j) - R1(b)(j - 2) > 0) And (R1(b)(j - 2) - R1(b)(j - 4) > 0) And (R1(b)(j - 4) - R1(b)(j - 6) > 0) And (R1(b)(j - 6) - R1(b)(j - 8) > 0) And (R1(b)(j - 8) - R1(b)(j - 10) > 0) And (R1(b)(j - 10) - R1(b)(j - 12) > 0) And (R1(b)(j - 12) - R1(b)(j - 14) > 0) And (R1(b)(j - 14) - R1(b)(j - 16)) > 0 And (R1(b)(j - 16) - R1(b)(j - 18) > 0) And (R1(b)(j - 18) - R1(b)(j - 20) > 0) And (R1(b)(j - 20) - R1(b)(j - 22) > 0) And (R1(b)(j - 22) - R1(b)(j - 24) > 0) Then
-                        '
-                        '                                Picture1(b).Picture = LoadPicture(App.Path + "\pic\6.jpg")
-                        '
-                        '                                SkinLabel10(b).Caption = 2
-                        '
-                        '                                Form15.Show
-                        '
-                        '                                GoTo NextLoop
-                        '
-                        '                            End If
-                        '
-                        '                        End If
-                        
-                        '**********************************************************************************************************
-                        '24小时后，连续144个差值，去除3个最高值和3个最低值，132个差值之和大于380。阳性
-                        '48小时后，连续144个差值，去除3个最高值和3个最低值，132个差值之和大于250。阳性
-                        '72小时后，连续144个差值，去除3个最高值和3个最低值，132个差值之和大于150。阳性
                         
                         If j >= 289 Then
-                            
-                            '                            Max1 = R1(b)(j) - R1(b)(j - 1)
-                            '                            Max2 = R1(b)(j - 1) - R1(b)(j - 2)
-                            '                            Max3 = R1(b)(j - 2) - R1(b)(j - 3)
-                            '                            Min1 = R1(b)(j) - R1(b)(j - 1)
-                            '                            Min2 = R1(b)(j - 1) - R1(b)(j - 2)
-                            '                            Min3 = R1(b)(j - 2) - R1(b)(j - 3)
-                            '
-                            '                            For nIndex = 3 To 143
-                            '
-                            '                                Temp = R1(b)(j - nIndex) - R1(b)(j - nIndex - 1)
-                            '
-                            '                                If Temp > Max1 Then
-                            '                                    Swap = Max1
-                            '                                    Max1 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp > Max2 Then
-                            '                                    Swap = Max2
-                            '                                    Max2 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp > Max3 Then
-                            '                                    Swap = Max3
-                            '                                    Max3 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                Temp = R1(b)(j - nIndex) - R1(b)(j - nIndex - 1)
-                            '
-                            '                                If Temp < Min1 Then
-                            '                                    Swap = Min1
-                            '                                    Min1 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp < Min2 Then
-                            '                                    Swap = Min2
-                            '                                    Min2 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp < Min3 Then
-                            '                                    Swap = Min3
-                            '                                    Min3 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                            Next nIndex
                             
                             bChangePoint = False
                             
@@ -14695,57 +13740,6 @@ Private Sub MSComm1_OnComm()                                                    
                             End If
                             
                         ElseIf j >= 145 Then
-                            
-                            '                            Max1 = R1(b)(j) - R1(b)(j - 1)
-                            '                            Max2 = R1(b)(j - 1) - R1(b)(j - 2)
-                            '                            Max3 = R1(b)(j - 2) - R1(b)(j - 3)
-                            '                            Min1 = R1(b)(j) - R1(b)(j - 1)
-                            '                            Min2 = R1(b)(j - 1) - R1(b)(j - 2)
-                            '                            Min3 = R1(b)(j - 2) - R1(b)(j - 3)
-                            '
-                            '                            For nIndex = 3 To 107
-                            '
-                            '                                Temp = R1(b)(j - nIndex) - R1(b)(j - nIndex - 1)
-                            '
-                            '                                If Temp > Max1 Then
-                            '                                    Swap = Max1
-                            '                                    Max1 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp > Max2 Then
-                            '                                    Swap = Max2
-                            '                                    Max2 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp > Max3 Then
-                            '                                    Swap = Max3
-                            '                                    Max3 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                Temp = R1(b)(j - nIndex) - R1(b)(j - nIndex - 1)
-                            '
-                            '                                If Temp < Min1 Then
-                            '                                    Swap = Min1
-                            '                                    Min1 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp < Min2 Then
-                            '                                    Swap = Min2
-                            '                                    Min2 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                                If Temp < Min3 Then
-                            '                                    Swap = Min3
-                            '                                    Min3 = Temp
-                            '                                    Temp = Swap
-                            '                                End If
-                            '
-                            '                            Next nIndex
                             
                             bChangePoint = False
                             
@@ -14840,6 +13834,7 @@ NextLoop:
             End If
             
         Next t
+
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ''''''''''''''''''''''''''''重写系统文件'''''''''''''''''''''''''''''''''''''''''''
         Open App.Path & "\sys\sys.txt" For Output As #2                         '重建sys文件
@@ -14879,10 +13874,11 @@ NextLoop:
         releaseLock
         
         Exit Sub
+
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         
         '''''''''''''''''''''''''''''''接收校准1数据'''''''''''''''''''''''''''''''''''''''''
-    ElseIf (Len(Text4.Text) = 12 And adjust1_flag = 1 And adjust2_flag = 0) Then '接收校准1数据正确
+    ElseIf (Len(Text4.Text) = 12 And adjust1_flag = 1) Then '接收校准1数据正确
         
         adjust1_flag = 0                                                        '标志位清零
         
@@ -14894,45 +13890,45 @@ NextLoop:
         
         read1(s1) = Text9.Text
         
-        t = 0
+        SkinLabel57.Caption = Val(Mid(read1(s1), 1, 4))                         '显示校准1的数据
         
-        Open App.Path & "\sys\adjust2.txt" For Input As #6                      '读校准2的数据
+        Dim ad1_max As Double
+
+        Dim ad1_min As Double
         
-        Do While Not EOF(6)                                                     'EOF为文尾测试函数
-            
-            Line Input #6, textline                                             '将读入的1行存到变量TextLine中
-            
-            read2(t) = Mid(textline, 5, 4)
-            
-            t = t + 1                                                           '循环
-            
-        Loop
+        ad1_max = Val(Mid(read1(s1), 1, 4))
         
-        Close 6#
+        ad1_min = Val(Mid(read1(s1), 1, 4))
         
-        If (Val(Mid(read1(s1), 1, 4)) - Val(Mid(read2(s1), 1, 4)) <= 0) Then
+        If (Val(Mid(read1(s1), 5, 4)) > ad1_max) Then
             
-            answer = MsgBox("提示：数据有错,请重新放好孔位测量!", 48, "信息提示")
-            
-            If answer = 1 Then                                                  '重新校准1
-                
-                Text1.Text = ""
-                
-                Text4.Text = ""
-                
-                Text9.Text = ""
-                
-                Unload Form9
-                
-                releaseLock
-                
-                Exit Sub
-                
-            End If
+            ad1_max = Val(Mid(read1(s1), 5, 4))
             
         End If
         
-        SkinLabel57.Caption = Val(Mid(read1(s1), 1, 4))                         '显示校准1的数据
+        If (Val(Mid(read1(s1), 9, 4)) > ad1_max) Then
+            
+            ad1_max = Val(Mid(read1(s1), 9, 4))
+            
+        End If
+        
+        If (Val(Mid(read1(s1), 5, 4)) < ad1_min) Then
+            
+            ad1_min = Val(Mid(read1(s1), 5, 4))
+            
+        End If
+        
+        If (Val(Mid(read1(s1), 9, 4)) < ad1_min) Then
+            
+            ad1_min = Val(Mid(read1(s1), 9, 4))
+            
+        End If
+        
+        If (ad1_max - ad1_min) / ad1_max > 0.15 Then
+            
+            answer = MsgBox("提示：数据有错,请检查校准瓶和孔位!", 48, "信息提示")
+            
+        End If
         
         Open App.Path & "\sys\adjust1.txt" For Output As #3                     '保存数据到adjust1文件里
         
@@ -14945,82 +13941,6 @@ NextLoop:
         Close #3
         
         Text1.Text = ""                                                         '读完数据文本清空
-        
-        Text4.Text = ""
-        
-        Text9.Text = ""
-        
-        Unload Form9
-        
-        releaseLock
-        
-        Exit Sub
-        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        
-        '''''''''''''''''''''''''''''''接收校准2数据'''''''''''''''''''''''''''''''''''''''''
-    ElseIf (Len(Text4.Text) = 12 And adjust1_flag = 0 And adjust2_flag = 1) Then '接收校准2的数据正确
-        
-        adjust2_flag = 0                                                        '标志位清零
-        
-        For c = 0 To 2                                                          '处理后的数据放到text9文本里
-            
-            Text9.Text = Text9.Text + Format(HEX_to_DEC(Mid(Text4.Text, c * 4 + 1, 4)), "0000")
-            
-        Next c
-        
-        read2(s2) = Text9.Text
-        
-        m = 0
-        
-        Open App.Path & "\sys\adjust1.txt" For Input As #3                      '读校准1的数据
-        
-        Do While Not EOF(3)                                                     'EOF为文尾测试函数
-            
-            Line Input #3, textline                                             '将读入的1行存到变量TextLine中
-            
-            read1(m) = Mid(textline, 5, 4)
-            
-            m = m + 1                                                           '循环
-            
-        Loop
-        
-        Close 3#
-        
-        If (Val(Mid(read2(s2), 1, 4)) - Val(Mid(read1(s2), 1, 4)) >= 0) Then
-            
-            answer = MsgBox("提示：数据有错,请重新放好孔位测量!", 48, "信息提示")
-            
-            If answer = 1 Then                                                  '重新校准2
-                
-                Text2.Text = ""
-                
-                Text4.Text = ""
-                
-                Text9.Text = ""
-                
-                Unload Form9
-                
-                releaseLock
-                
-                Exit Sub
-                
-            End If
-            
-        End If
-        
-        SkinLabel59.Caption = Val(Mid(read2(s2), 1, 4))                         '显示校准2的数据
-        
-        Open App.Path & "\sys\adjust2.txt" For Output As #6                     '保存数据到adjust2文件里
-        
-        For d = 0 To 59
-            
-            Print #6, Format((d + 1), "00") & "#:" & Mid(read2(d), 1, 4); Mid(read2(d), 5, 4); Mid(read2(d), 9, 4)
-            
-        Next d
-        
-        Close #6
-        
-        Text2.Text = ""                                                         '
         
         Text4.Text = ""
         
@@ -15131,6 +14051,8 @@ Private Sub Timer2_Timer()                                                      
     
     Dim k As Integer
     
+    Dim textline As String
+    
     time_count = time_count + 1
     
     ''''''''''''''''''''''''''''''''''读系统文件'''''''''''''''''''''''''''''''''''''''
@@ -15188,7 +14110,7 @@ Private Sub Timer2_Timer()                                                      
             
             If Val(SkinLabel10(k).Caption) = 2 Or Val(SkinLabel10(k).Caption) = 3 Or Val(SkinLabel10(k).Caption) = 4 Then '正在测量中的培养瓶有呈阳性的，发生报警
                 
-                'Call PlayBeep '上位机报警
+                WindowsMediaPlayer1.Controls.play                               'Call PlayBeep '上位机报警
                 
                 command(0) = &H8B                                               '下位机报警命令
                 
@@ -15205,6 +14127,8 @@ Private Sub Timer2_Timer()                                                      
     End If
     
     If Check1.Value = 0 Or time_count = 4 Or time_count = 9 Or time_count = 14 Then '持续一分钟
+        
+        WindowsMediaPlayer1.Controls.stop
         
         command(0) = &H8A                                                       '清除下位机报警命令
         

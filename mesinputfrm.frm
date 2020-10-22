@@ -199,8 +199,11 @@ Const SWP_NOMOVE = &H2
 Const SWP_NOSIZE = &H1
 Const SWP_NOZORDER = &H4
 Const SWP_DRAWFRAME = &H20
+Private CheckBarcode As Boolean
 
 Private Sub Form_Load()                                                         '初始化各项信息
+    
+    CheckBarcode = True
     
     Me.Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2            '窗体居中
     
@@ -909,6 +912,46 @@ Private Sub Command4_Click()                                                    
             Exit Sub
             
         End If
+        
+    End If
+    
+End Sub
+
+Private Sub Text1_Change()
+    
+    If (CheckBarcode And Len(Text1.Text) > 1) Then
+        
+        CheckBarcode = False
+        
+        textheader = UCase(Mid(Text1.Text, 1, 2))
+        
+        If (textheader = "SG") Then
+            
+            Combo2.Text = "中和抗生素厌氧培养瓶"
+            
+        ElseIf (textheader = "SP") Then
+            
+            Combo2.Text = "中和抗生素儿童培养瓶"
+            
+        ElseIf (textheader = "SA") Then
+            
+            Combo2.Text = "需氧培养瓶"
+            
+        ElseIf (textheader = "SF") Then
+            
+            Combo2.Text = "中和抗生素需氧培养瓶"
+            
+        ElseIf (textheader = "SN") Then
+            
+            Combo2.Text = "厌氧培养瓶"
+            
+        End If
+        
+    End If
+    
+    If (Len(Text1.Text) < 2) Then
+        
+        CheckBarcode = True
         
     End If
     

@@ -3,6 +3,8 @@ Public Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 Private Declare Function APIBeep Lib "kernel32" Alias "Beep" (ByVal dwFreq As Long, ByVal dwDuration As Long) As Long
 Option Explicit
 
+Public Const pi As Double = 3.14159265358979
+
 Public n As Integer                                                             '培养瓶的孔位
 Public s1 As Integer                                                            '校准1的孔位
 Public s2 As Integer                                                            '校准2的孔位
@@ -11,14 +13,10 @@ Public yuzhiup As Integer                                                       
 Public yuzhidown As Integer                                                     '阈值下限值
 Public time_count As Integer                                                    '定时器计数
 Public adjust1_flag As Integer                                                  '校准1标志位
-Public adjust2_flag As Integer                                                  '校准2标志位
 Public Interface_flag As Integer                                                '界面提示标志位
 Public read1(0 To 59) As String                                                 '保存校准1的数据
 Public read2(0 To 59) As String                                                 '保存校准2的数据
 Public adjust1(0 To 59) As String                                               '校准1的数据
-Public adjust2(0 To 59) As String                                               '校准2的数据
-Public hope1 As String                                                          '希望值1
-Public hope2 As String                                                          '希望值2
 Public warning As String                                                        '报警音频文件存储路径
 Public sum As Integer                                                           '阳阴性总数
 Public sum1 As Integer                                                          '阳性总数
@@ -140,4 +138,144 @@ Public Sub releaseLock()
     
 End Sub
 
+Public Function ArcCos(x As Double) As Double
+    Dim Temp As Double
+    If x = 0 Then
+        Temp = pi / 2
+    Else
+        Temp = Atn(Sqr(1 - x * x) / x)
+    End If
+    If Temp < 0 Then
+        Temp = Temp + pi
+    End If
+    ArcCos = Temp
+End Function
+
+Public Function GetAngleByPoint(x As Double, y As Double) As Double
+    
+    Dim Temp As Double
+    
+    Temp = ArcCos(x / Sqr(x * x + y * y))
+    
+    If y <= 0 Then
+        
+        Temp = 2 * pi - Temp
+        
+    End If
+    
+    GetAngleByPoint = Temp
+    
+End Function
+
+Public Function CalcColorH(red As Long, green As Long, blue As Long) As Double
+    
+    Dim color_min As Long
+    Dim color_max As Long
+    Dim color_temp As Long
+    Dim color_huv As Double
+    
+    color_min = red
+    color_max = red
+    
+    If color_min > green Then
+        
+        color_min = green
+        
+    End If
+    
+    If color_max < green Then
+        
+        color_max = green
+        
+    End If
+    
+    If color_min > blue Then
+        
+        color_min = blue
+        
+    End If
+    
+    If color_max < blue Then
+        
+        color_max = blue
+        
+    End If
+    
+    color_temp = color_max - color_min
+    
+    If color_temp = 0 Then
+        
+        color_huv = 2 * pi
+        
+    ElseIf (color_max = red) And (green >= blue) Then
+        
+        color_huv = (pi * 60 * (green - blue)) / (180 * color_temp)
+        
+    ElseIf color_max = red Then
+        
+        color_huv = 2 * pi - ((pi * 60 * (blue - green)) / (180 * color_temp))
+        
+    ElseIf (color_max = green) And (blue >= red) Then
+        
+        color_huv = (2 * pi / 3) + ((pi * 60 * (blue - red)) / (180 * color_temp))
+        
+    ElseIf color_max = green Then
+        
+        color_huv = (2 * pi / 3) - ((pi * 60 * (red - blue)) / (180 * color_temp))
+        
+    ElseIf (color_max = blue) And (red >= green) Then
+        
+        color_huv = (4 * pi / 3) + ((pi * 60 * (red - green)) / (180 * color_temp))
+        
+    ElseIf color_max = blue Then
+        
+        color_huv = (4 * pi / 3) - (pi * 60 * (green - red) / (180 * color_temp))
+        
+    End If
+    
+    CalcColorH = color_huv
+    
+End Function
+
+
+Public Function CalcColorS(red As Long, green As Long, blue As Long) As Double
+    
+    Dim color_s As Double
+    Dim color_min As Long
+    Dim color_max As Long
+    
+    color_min = red
+    color_max = red
+    
+    If color_min > green Then
+        
+        color_min = green
+        
+    End If
+    
+    If color_max < green Then
+        
+        color_max = green
+        
+    End If
+    
+    If color_min > blue Then
+        
+        color_min = blue
+        
+    End If
+    
+    If color_max < blue Then
+        
+        color_max = blue
+        
+    End If
+    
+    color_s = Val(color_max - color_min)
+    
+    color_s = color_s / color_max
+    
+    CalcColorS = color_s
+    
+End Function
 

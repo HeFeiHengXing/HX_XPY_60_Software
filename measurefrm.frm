@@ -286,6 +286,12 @@ Private Sub Form_Load()                                                         
     
     Dim R2 As New Collection                                                    '定义集合变量
     
+    Dim TempO1 As New Collection
+    
+    Dim TempO2 As New Collection
+    
+    Dim TempO3 As New Collection
+    
     q = 0                                                                       '开始读入病人各项信息
     
     Dim bNewRevision As Boolean
@@ -463,12 +469,15 @@ Private Sub Form_Load()                                                         
             
             Line Input #1, textline                                             '读数据
             R2.Add Int(Mid(textline, 1, 4))
+            TempO1.Add Val(Mid(textline, 21, 5))
+            TempO2.Add Val(Mid(textline, 27, 5))
+            TempO3.Add Val(Mid(textline, 33, 5))
             
         Loop
         
         Close #1
         
-        Call SystemGraph1.DrawGraph(R2)                                         '画曲线
+        Call SystemGraph1.DrawGraph(R2, TempO1, TempO2, TempO3, Val(Form2.SkinLabel11(n))) '画曲线
         
     Else
         

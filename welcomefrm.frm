@@ -66,8 +66,6 @@ Private Sub Form_Load()
     
     adjust1_flag = 0                                                            '校准1复位
     
-    adjust2_flag = 0                                                            '校准2复位
-    
     DataReceiver_flag = 0                                                       '判断是否接收到下位机数据的标志位
     
     Interface_flag = 0                                                          '界面提示标志位
@@ -77,8 +75,6 @@ Private Sub Form_Load()
     'Form2.SkinLabel13.Caption = ""                                              '工作状态初始化,清空
     
     Form2.SkinLabel57.Caption = ""                                              '上传的校准1数据清空
-    
-    Form2.SkinLabel59.Caption = ""                                              '上传的校准2数据清空
     
 End Sub
 
