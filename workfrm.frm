@@ -70,20 +70,20 @@ Begin VB.Form Form2
       TabCaption(2)   =   "查询统计"
       TabPicture(2)   =   "workfrm.frx":688A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame12"
-      Tab(2).Control(1)=   "Frame14"
-      Tab(2).Control(2)=   "Frame13"
+      Tab(2).Control(0)=   "Frame10"
+      Tab(2).Control(1)=   "Frame11"
+      Tab(2).Control(2)=   "CommonDialog1"
       Tab(2).Control(3)=   "SystemGraph1"
-      Tab(2).Control(4)=   "CommonDialog1"
-      Tab(2).Control(5)=   "Frame11"
-      Tab(2).Control(6)=   "Frame10"
+      Tab(2).Control(4)=   "Frame13"
+      Tab(2).Control(5)=   "Frame14"
+      Tab(2).Control(6)=   "Frame12"
       Tab(2).ControlCount=   7
       Begin VB.Frame Frame21 
          Caption         =   "警报设置"
          Height          =   1500
          Left            =   -72480
          TabIndex        =   935
-         Top             =   7200
+         Top             =   5760
          Width           =   3615
          Begin VB.CommandButton Command18 
             Caption         =   "确定"
@@ -98,7 +98,7 @@ Begin VB.Form Form2
             Left            =   360
             OleObjectBlob   =   "workfrm.frx":68A6
             TabIndex        =   944
-            Top             =   960
+            Top             =   840
             Width           =   1335
          End
          Begin VB.CheckBox Check1 
@@ -121,10 +121,10 @@ Begin VB.Form Form2
       End
       Begin VB.Frame Frame18 
          Caption         =   "设置温度"
-         Height          =   1800
+         Height          =   1600
          Left            =   -72480
          TabIndex        =   934
-         Top             =   2040
+         Top             =   1560
          Width           =   3615
          Begin VB.CommandButton Command5 
             Caption         =   "↑"
@@ -147,7 +147,7 @@ Begin VB.Form Form2
             Height          =   375
             Left            =   2400
             TabIndex        =   936
-            Top             =   1200
+            Top             =   960
             Width           =   750
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel21 
@@ -349,17 +349,17 @@ Begin VB.Form Form2
       End
       Begin VB.Frame Frame20 
          Caption         =   "设置培养时间"
-         Height          =   2200
+         Height          =   2000
          Left            =   -72480
          TabIndex        =   913
-         Top             =   4440
+         Top             =   3480
          Width           =   3615
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel77 
             Height          =   255
             Left            =   2640
             OleObjectBlob   =   "workfrm.frx":8084
             TabIndex        =   947
-            Top             =   1200
+            Top             =   960
             Width           =   375
          End
          Begin VB.CommandButton Command20 
@@ -367,7 +367,7 @@ Begin VB.Form Form2
             Height          =   375
             Left            =   2400
             TabIndex        =   916
-            Top             =   1680
+            Top             =   1440
             Width           =   750
          End
          Begin VB.TextBox Text14 
@@ -390,7 +390,7 @@ Begin VB.Form Form2
             Left            =   240
             OleObjectBlob   =   "workfrm.frx":8158
             TabIndex        =   917
-            Top             =   1200
+            Top             =   960
             Width           =   1695
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel69 
@@ -398,16 +398,16 @@ Begin VB.Form Form2
             Left            =   1920
             OleObjectBlob   =   "workfrm.frx":81C8
             TabIndex        =   918
-            Top             =   1200
+            Top             =   960
             Width           =   615
          End
       End
       Begin VB.Frame Frame19 
          Caption         =   "阈值设置"
          Height          =   2200
-         Left            =   -66240
+         Left            =   -72480
          TabIndex        =   903
-         Top             =   6120
+         Top             =   7560
          Width           =   3615
          Begin VB.TextBox Text13 
             Height          =   285
@@ -533,17 +533,17 @@ Begin VB.Form Form2
       End
       Begin VB.Frame Frame16 
          Caption         =   "恢复出厂设置"
-         Height          =   1100
+         Height          =   1700
          Left            =   -66240
          TabIndex        =   894
-         Top             =   8760
+         Top             =   6120
          Width           =   3615
          Begin VB.CommandButton Command17 
             Caption         =   "确定"
             Height          =   375
             Left            =   2640
             TabIndex        =   899
-            Top             =   480
+            Top             =   960
             Width           =   750
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel60 
@@ -595,7 +595,6 @@ Begin VB.Form Form2
             _ExtentX        =   6959
             _ExtentY        =   5953
             _Version        =   393217
-            Enabled         =   -1  'True
             TextRTF         =   $"workfrm.frx":8696
          End
       End
@@ -631,6 +630,7 @@ Begin VB.Form Form2
          Width           =   9015
          _ExtentX        =   15901
          _ExtentY        =   4895
+         MaxScale        =   0
       End
       Begin VB.TextBox Text6 
          Height          =   285
@@ -746,7 +746,6 @@ Begin VB.Form Form2
             _ExtentX        =   3201
             _ExtentY        =   5106
             _Version        =   393217
-            Enabled         =   -1  'True
             TextRTF         =   $"workfrm.frx":8A19
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel40 

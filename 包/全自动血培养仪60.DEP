@@ -1,0 +1,44 @@
+[Version]
+Version=2.0.0.124
+
+[全自动血培养仪60.exe <0804>]
+Dest=$(AppPath)
+Date=2020/10/22
+Time=15:14
+Version=2.0.0.124
+CABFilename=全自动血培养仪60.CAB
+CABINFFile=全自动血培养仪60.INF
+Uses1=msvbvm60.dll
+Uses2=oleaut32.dll
+Uses3=olepro32.dll
+Uses4=asycfilt.dll
+Uses5=stdole2.tlb
+Uses6=COMCAT.DLL
+Uses7=VB6CHS.DLL
+Uses8=scrrun.dll
+Uses9=asctrls.ocx
+Uses10=MSSTDFMT.DLL
+Uses11=actskn43.ocx
+Uses12=wmp.dll
+Uses13=MSCOMM32.OCX
+Uses14=TABCTL32.OCX
+Uses15=COMDLG32.OCX
+Uses16=Richtx32.ocx
+
+[asctrls.ocx <0804>]
+Dest=$(WinSysPath)
+Date=2020/9/9
+Time=10:59
+Version=6.0.2900.5512
+
+[actskn43.ocx <0804>]
+Dest=$(WinSysPath)
+Date=2010/4/1
+Time=17:14
+Version=4.3.0.0
+
+[wmp.dll <0804>]
+Dest=$(AppPath)
+Date=2020/10/14
+Time=14:26
+Version=12.0.18362.1110
