@@ -11552,6 +11552,8 @@ Private Sub Command2_Click()                                                    
             
             n = m
             
+            Form2.Enabled = False                                               '工作界面禁用
+            
             Form3.Show
             
             Exit Sub
@@ -11683,6 +11685,9 @@ End Sub
 Private Sub Command8_Click()
     
     Dim e As Integer                                                            'e在此作为循环变量
+    
+    Dim s As Integer
+    
     Dim textline As String
     
     If Text1.Text = "" Then                                                     '没有输入孔位
@@ -11737,9 +11742,9 @@ Private Sub Command8_Click()
         Close #3
         
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-        s1 = Val(Text1.Text) - 1                                                '做第s1号孔位的校准
+        s = Val(Text1.Text) - 1                                                '做第s1号孔位的校准
         
-        Select Case s1
+        Select Case s
             
         Case 0
             
@@ -12473,7 +12478,7 @@ Private Sub Command10_Click()                                                   
     
     On Error GoTo err2
     
-    Dim fs       As New FileSystemObject                                              '建立文件系统对象
+    Dim fs As New FileSystemObject                                              '建立文件系统对象
     
     'Dim f As Object
     
@@ -12658,98 +12663,6 @@ Private Sub Command10_Click()                                                   
     Loop
     
     f.Close
-    
-    ' TODO更改
-    '    Set f = fs.OpenTextFile(CommonDialog1.FileName, ForAppending, True)
-    '
-    '    Dim x As Integer
-    '    Dim xx As Integer
-    '    Dim order1_diff As Integer
-    '    Dim order2_diff As Integer
-    '    Dim order3_diff As Integer
-    '
-    '    Dim oo1 As New Collection
-    '
-    '    Dim oo2 As New Collection
-    '
-    '    Dim oo3 As New Collection
-    '
-    '    order1_diff = 0
-    '    order2_diff = 0
-    '    order3_diff = 0
-    '
-    '    For abc = 1 To R3.Count
-    '        x = R3(abc)
-    '        n = 1
-    '        If (abc - 1 > 0) Then
-    '            x = x + R3(abc - 1)
-    '            n = n + 1
-    '        End If
-    '        If (abc - 2 > 0) Then
-    '            x = x + R3(abc - 2)
-    '            n = n + 1
-    '        End If
-    '        If (abc - 3 > 0) Then
-    '            x = x + R3(abc - 3)
-    '            n = n + 1
-    '        End If
-    '        If (abc - 4 > 0) Then
-    '            x = x + R3(abc - 4)
-    '            n = n + 1
-    '        End If
-    '
-    '        x = x / n
-    
-    '    If (abc > 4) Then
-    '
-    '        order1_diff = x - R3(abc - 4)
-    '        order2_diff = order1_diff - oo1(abc - 4)
-    '        order3_diff = order2_diff - oo2(abc - 4)
-    '
-    '    End If
-    '
-    '    oo1.Add order1_diff
-    '    oo2.Add order2_diff
-    '    oo3.Add order3_diff
-    '
-    '    xx = x
-    '
-    '    sss = Format(x, "0000") & " "
-    '
-    '    If (order1_diff <= -1) Then
-    '
-    '        sss = sss + Format(order1_diff, "0000") & " "
-    '
-    '    Else
-    '
-    '        sss = sss + Format(order1_diff, "00000") & " "
-    '
-    '    End If
-    '
-    '    If (order2_diff <= -1) Then
-    '
-    '        sss = sss + Format(order2_diff, "0000") & " "
-    '
-    '    Else
-    '
-    '        sss = sss + Format(order2_diff, "00000") & " "
-    '
-    '    End If
-    '
-    '    If (order3_diff <= -1) Then
-    '
-    '        sss = sss + Format(order3_diff, "0000") & " "
-    '
-    '    Else
-    '
-    '        sss = sss + Format(order3_diff, "00000") & " "
-    '
-    '    End If
-    '
-    '    f.WriteLine (sss)
-    '
-    'Next abc
-    '    f.Close
     
     If Dir(App.Path & "\result\" & SkinLabel26.Caption & ".dat", vbDirectory) <> "" Then '已完成测量
         
@@ -13138,16 +13051,6 @@ Private Sub Text1_KeyPress(KeyAscii As Integer)                                 
     
 End Sub
 
-Private Sub Text2_KeyPress(KeyAscii As Integer)                                 '校准2只能输入数字和使用空格
-    
-    If (KeyAscii > Asc("9") Or KeyAscii < Asc("0")) And KeyAscii <> 8 Then
-        
-        KeyAscii = 0
-        
-    End If
-    
-End Sub
-
 
 Private Sub Text11_KeyPress(KeyAscii As Integer)                                '阈值上限值只能输入数字和使用空格
     
@@ -13187,7 +13090,7 @@ Private Sub MSComm1_OnComm()                                                    
     
     Dim a()               As Byte                                                             '存放从下位机接收到的数据
     
-    Dim strData           As String                                                       '作为中间变量处理
+    Dim strData           As String                                                           '作为中间变量处理
     
     Dim l                 As Integer                                                            '字节长度
     
@@ -13301,7 +13204,6 @@ Private Sub MSComm1_OnComm()                                                    
     ''''''''''''''''''''''''''''''''''数据保存并处理'''''''''''''''''''''''''''''''''''''
     If (Len(Text4.Text) = 724) Then
         
-        'SkinLabel13.Caption = "下位机处于运行状态"
         SkinLabel61.Caption = "已连接..."
         
         DataReceiver_flag = 1                                                   '判断是否接收到下位机数据的标志位
@@ -13736,7 +13638,7 @@ Private Sub MSComm1_OnComm()                                                    
                                 
                                 Form15.Show
                                 
-                                GoTo NextLoop
+                                Exit For
                                 
                             End If
                             
@@ -13788,7 +13690,7 @@ Private Sub MSComm1_OnComm()                                                    
                                 
                                 Form15.Show
                                 
-                                GoTo NextLoop
+                                Exit For
                                 
                             End If
                             

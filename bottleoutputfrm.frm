@@ -1703,8 +1703,6 @@ End Sub
 
 Private Sub Command2_Click()                                                    '取消按钮
     
-    Form3.Enabled = True                                                        '测量界面启用
-    
     Unload Form6                                                                '卸载本窗体
     
 End Sub
@@ -1721,5 +1719,7 @@ Private Sub Form_Unload(Cancel As Integer)
     Form2.MSComm1.Output = command                                              ''
     
     command(0) = &HFF                                                           '清空命令
+    
+    Form3.Enabled = True                                                        '测量界面启用
     
 End Sub
