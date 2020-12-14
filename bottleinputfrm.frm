@@ -63,15 +63,37 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Declare Function SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
-Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
-Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long) As Long
+
+Private Declare Function SetWindowPos _
+                Lib "user32" (ByVal hWnd As Long, _
+                              ByVal hWndInsertAfter As Long, _
+                              ByVal x As Long, _
+                              ByVal y As Long, _
+                              ByVal cx As Long, _
+                              ByVal cy As Long, _
+                              ByVal wFlags As Long) As Long
+
+Private Declare Function SetWindowLong _
+                Lib "user32" _
+                Alias "SetWindowLongA" (ByVal hWnd As Long, _
+                                        ByVal nIndex As Long, _
+                                        ByVal dwNewLong As Long) As Long
+
+Private Declare Function GetWindowLong _
+                Lib "user32" _
+                Alias "GetWindowLongA" (ByVal hWnd As Long, _
+                                        ByVal nIndex As Long) As Long
 
 Const WS_SYSMENU = &H80000                                                      ''''''''''''''''''''''''''''''消除界面上的X按钮
+
 Const GWL_STYLE = (-16)
+
 Const SWP_NOMOVE = &H2
+
 Const SWP_NOSIZE = &H1
+
 Const SWP_NOZORDER = &H4
+
 Const SWP_DRAWFRAME = &H20
 
 Private Sub Form_Load()
@@ -85,6 +107,7 @@ Private Sub Form_Load()
     SkinLabel3.Caption = (n + 1) & "#"                                          '孔位号
     
     Dim lStyle As Long                                                          ''''''''''''''''''''''''''''''消除界面上的X按钮
+
     lStyle = GetWindowLong(hWnd, GWL_STYLE)
     lStyle = lStyle And Not WS_SYSMENU
     SetWindowLong Me.hWnd, GWL_STYLE, lStyle
@@ -94,15 +117,15 @@ End Sub
 
 Private Sub Command1_Click()                                                    '确认按钮
     
-    Dim a As Integer                                                            '作为循环变量
+    Dim a          As Integer                                                            '作为循环变量
     
     Dim keshi_name As String                                                    '当前科室
     
     Dim keshi_file As String                                                    '当前科室文件名
     
-    Dim pyp_name As String                                                      '当前培养瓶种类
+    Dim pyp_name   As String                                                      '当前培养瓶种类
     
-    Dim pyp_file As String                                                      '当前培养瓶种类文件名
+    Dim pyp_file   As String                                                      '当前培养瓶种类文件名
     
     Form3.Command1.Enabled = False                                              '培养瓶放入按钮不可用
     
@@ -143,6 +166,8 @@ Private Sub Command1_Click()                                                    
     
     If Dir(App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & "统计情况" & ".txt", vbDirectory) = "" Then
         
+        getFileWriteLock
+        
         Open App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & "统计情况" & ".txt" For Output As #4 '按时间保存统计情况资料初始化
         
         Print #4, Form2.SkinLabel42(n).Caption & "年" & Form2.SkinLabel43(n).Caption & "月" & "统计情况:"
@@ -162,6 +187,8 @@ Private Sub Command1_Click()                                                    
         
         Close #5
         
+        releaseFileWriteLock
+        
     End If
     
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -169,6 +196,8 @@ Private Sub Command1_Click()                                                    
     '''''''''''''''''''''''''''''按科室保存统计资料初始化''''''''''''''''''''''''''''''''
     
     If Dir(App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & Form2.SkinLabel6(n).Caption & ".txt", vbDirectory) = "" Then
+        
+        getFileWriteLock
         
         Open App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & Form2.SkinLabel6(n).Caption & ".txt" For Output As #4
         
@@ -188,8 +217,9 @@ Private Sub Command1_Click()                                                    
         
         Close #5
         
+        releaseFileWriteLock
+        
     End If
-    
     
     ''''''1、内科
     
@@ -309,6 +339,8 @@ Private Sub Command1_Click()                                                    
     
     If Dir(App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & Form2.SkinLabel7(n).Caption & ".txt", vbDirectory) = "" Then
         
+        getFileWriteLock
+        
         Open App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & Form2.SkinLabel7(n).Caption & ".txt" For Output As #4
         
         Print #4, Form2.SkinLabel42(n).Caption & "年" & Form2.SkinLabel43(n).Caption & "月" & Form2.SkinLabel7(n).Caption & "统计情况:"
@@ -327,8 +359,9 @@ Private Sub Command1_Click()                                                    
         
         Close #5
         
+        releaseFileWriteLock
+        
     End If
-    
     
     ''''''1、标准嗜养瓶
     
@@ -502,6 +535,8 @@ Private Sub Command1_Click()                                                    
     
     ''''''''''''''''''''''''''''''统计病人信息统计资料'''''''''''''''''''''''''''''''''''
     
+   getFileWriteLock
+    
     If Dir(App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & "病人信息" & ".txt", vbDirectory) = "" Then
         
         Open App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & "病人信息" & ".txt" For Output As #8 '新建文件,文件名不允许改动
@@ -515,7 +550,7 @@ Private Sub Command1_Click()                                                    
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     
     ''''''''''''''''''''''''''''''''刷新sys文件,白到绿'''''''''''''''''''''''''''''''''''
-    
+     
     Open App.Path & "\sys\sys.txt" For Output As #2
     
     Print #2, "Revision 2017"                                                   '文件版本
@@ -536,6 +571,8 @@ Private Sub Command1_Click()                                                    
     Next a
     
     Close #2
+    
+    releaseFileWriteLock
     
     Form2.AllStatesStatistic
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

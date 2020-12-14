@@ -49,34 +49,34 @@ Begin VB.Form Form2
       TabCaption(1)   =   "系统设置"
       TabPicture(1)   =   "workfrm.frx":686E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame21"
-      Tab(1).Control(1)=   "Frame18"
-      Tab(1).Control(2)=   "Frame20"
-      Tab(1).Control(3)=   "Frame19"
-      Tab(1).Control(4)=   "Timer2"
-      Tab(1).Control(5)=   "Timer1"
-      Tab(1).Control(6)=   "Frame16"
-      Tab(1).Control(7)=   "Text10"
+      Tab(1).Control(0)=   "WindowsMediaPlayer1"
+      Tab(1).Control(1)=   "MSComm1"
+      Tab(1).Control(2)=   "Frame6"
+      Tab(1).Control(3)=   "Frame8"
+      Tab(1).Control(4)=   "Text3"
+      Tab(1).Control(5)=   "Text4"
+      Tab(1).Control(6)=   "Text5"
+      Tab(1).Control(7)=   "Text6"
       Tab(1).Control(8)=   "Text9"
-      Tab(1).Control(9)=   "Text6"
-      Tab(1).Control(10)=   "Text5"
-      Tab(1).Control(11)=   "Text4"
-      Tab(1).Control(12)=   "Text3"
-      Tab(1).Control(13)=   "Frame8"
-      Tab(1).Control(14)=   "Frame6"
-      Tab(1).Control(15)=   "MSComm1"
-      Tab(1).Control(16)=   "WindowsMediaPlayer1"
+      Tab(1).Control(9)=   "Text10"
+      Tab(1).Control(10)=   "Frame16"
+      Tab(1).Control(11)=   "Timer1"
+      Tab(1).Control(12)=   "Timer2"
+      Tab(1).Control(13)=   "Frame19"
+      Tab(1).Control(14)=   "Frame20"
+      Tab(1).Control(15)=   "Frame18"
+      Tab(1).Control(16)=   "Frame21"
       Tab(1).ControlCount=   17
       TabCaption(2)   =   "查询统计"
       TabPicture(2)   =   "workfrm.frx":688A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame12"
-      Tab(2).Control(1)=   "Frame14"
-      Tab(2).Control(2)=   "Frame13"
+      Tab(2).Control(0)=   "Frame10"
+      Tab(2).Control(1)=   "Frame11"
+      Tab(2).Control(2)=   "CommonDialog1"
       Tab(2).Control(3)=   "SystemGraph1"
-      Tab(2).Control(4)=   "CommonDialog1"
-      Tab(2).Control(5)=   "Frame11"
-      Tab(2).Control(6)=   "Frame10"
+      Tab(2).Control(4)=   "Frame13"
+      Tab(2).Control(5)=   "Frame14"
+      Tab(2).Control(6)=   "Frame12"
       Tab(2).ControlCount=   7
       Begin VB.Frame Frame21 
          Caption         =   "警报设置"
@@ -10860,6 +10860,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 'Option Explicit
 Private Sub Check1_Click()
     
@@ -10911,7 +10912,8 @@ End Sub
 
 Private Sub Command22_Click()
     
-    Dim t As Integer
+    Dim t        As Integer
+
     Dim textline As String
     
     Command22.Enabled = False
@@ -11011,6 +11013,7 @@ Private Sub Form_Load()                                                         
         
         If k <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
+
         End If
 
         SkinLabel2(k).Caption = textline                                        '读条形码
@@ -11093,11 +11096,15 @@ Private Sub Form_Load()                                                         
         
         warning = App.Path & "\music\warning.mp3"
         
+        getFileWriteLock
+        
         Open App.Path & "\sys\warning.txt" For Output As #13
         
         Print #13, warning                                                      '显示设置的培养时间
         
         Close #13
+        
+        releaseFileWriteLock
         
     End If
     
@@ -11229,245 +11236,245 @@ Private Sub Picture1_Click(Index As Integer)                                    
     
     Select Case Index                                                           '确定孔位
         
-    Case 0
+        Case 0
         
-        n = 0                                                                   '选择1号孔位
+            n = 0                                                                   '选择1号孔位
         
-    Case 1
+        Case 1
         
-        n = 1                                                                   '选择2号孔位
+            n = 1                                                                   '选择2号孔位
         
-    Case 2
+        Case 2
         
-        n = 2                                                                   '选择3号孔位
+            n = 2                                                                   '选择3号孔位
         
-    Case 3
+        Case 3
         
-        n = 3                                                                   '选择4号孔位
+            n = 3                                                                   '选择4号孔位
         
-    Case 4
+        Case 4
         
-        n = 4                                                                   '选择5号孔位
+            n = 4                                                                   '选择5号孔位
         
-    Case 5
+        Case 5
         
-        n = 5                                                                   '选择6号孔位
+            n = 5                                                                   '选择6号孔位
         
-    Case 6
+        Case 6
         
-        n = 6                                                                   '选择7号孔位
+            n = 6                                                                   '选择7号孔位
         
-    Case 7
+        Case 7
         
-        n = 7                                                                   '选择8号孔位
+            n = 7                                                                   '选择8号孔位
         
-    Case 8
+        Case 8
         
-        n = 8                                                                   '选择9号孔位
+            n = 8                                                                   '选择9号孔位
         
-    Case 9
+        Case 9
         
-        n = 9                                                                   '选择10号孔位
+            n = 9                                                                   '选择10号孔位
         
-    Case 10
+        Case 10
         
-        n = 10                                                                  '选择11号孔位
+            n = 10                                                                  '选择11号孔位
         
-    Case 11
+        Case 11
         
-        n = 11                                                                  '选择12号孔位
+            n = 11                                                                  '选择12号孔位
         
-    Case 12
+        Case 12
         
-        n = 12                                                                  '选择13号孔位
+            n = 12                                                                  '选择13号孔位
         
-    Case 13
+        Case 13
         
-        n = 13                                                                  '选择14号孔位
+            n = 13                                                                  '选择14号孔位
         
-    Case 14
+        Case 14
         
-        n = 14                                                                  '选择15号孔位
+            n = 14                                                                  '选择15号孔位
         
-    Case 15
+        Case 15
         
-        n = 15                                                                  '选择16号孔位
+            n = 15                                                                  '选择16号孔位
         
-    Case 16
+        Case 16
         
-        n = 16                                                                  '选择17号孔位
+            n = 16                                                                  '选择17号孔位
         
-    Case 17
+        Case 17
         
-        n = 17                                                                  '选择18号孔位
+            n = 17                                                                  '选择18号孔位
         
-    Case 18
+        Case 18
         
-        n = 18                                                                  '选择19号孔位
+            n = 18                                                                  '选择19号孔位
         
-    Case 19
+        Case 19
         
-        n = 19                                                                  '选择20号孔位
+            n = 19                                                                  '选择20号孔位
         
-    Case 20
+        Case 20
         
-        n = 20                                                                  '选择21号孔位
+            n = 20                                                                  '选择21号孔位
         
-    Case 21
+        Case 21
         
-        n = 21                                                                  '选择22号孔位
+            n = 21                                                                  '选择22号孔位
         
-    Case 22
+        Case 22
         
-        n = 22                                                                  '选择23号孔位
+            n = 22                                                                  '选择23号孔位
         
-    Case 23
+        Case 23
         
-        n = 23                                                                  '选择24号孔位
+            n = 23                                                                  '选择24号孔位
         
-    Case 24
+        Case 24
         
-        n = 24                                                                  '选择25号孔位
+            n = 24                                                                  '选择25号孔位
         
-    Case 25
+        Case 25
         
-        n = 25                                                                  '选择26号孔位
+            n = 25                                                                  '选择26号孔位
         
-    Case 26
+        Case 26
         
-        n = 26                                                                  '选择27号孔位
+            n = 26                                                                  '选择27号孔位
         
-    Case 27
+        Case 27
         
-        n = 27                                                                  '选择28号孔位
+            n = 27                                                                  '选择28号孔位
         
-    Case 28
+        Case 28
         
-        n = 28                                                                  '选择29号孔位
+            n = 28                                                                  '选择29号孔位
         
-    Case 29
+        Case 29
         
-        n = 29                                                                  '选择30号孔位
+            n = 29                                                                  '选择30号孔位
         
-    Case 30
+        Case 30
         
-        n = 30                                                                  '选择31号孔位
+            n = 30                                                                  '选择31号孔位
         
-    Case 31
+        Case 31
         
-        n = 31                                                                  '选择31号孔位
+            n = 31                                                                  '选择31号孔位
         
-    Case 32
+        Case 32
         
-        n = 32                                                                  '选择33号孔位
+            n = 32                                                                  '选择33号孔位
         
-    Case 33
+        Case 33
         
-        n = 33                                                                  '选择34号孔位
+            n = 33                                                                  '选择34号孔位
         
-    Case 34
+        Case 34
         
-        n = 34                                                                  '选择35号孔位
+            n = 34                                                                  '选择35号孔位
         
-    Case 35
+        Case 35
         
-        n = 35                                                                  '选择36号孔位
+            n = 35                                                                  '选择36号孔位
         
-    Case 36
+        Case 36
         
-        n = 36                                                                  '选择37号孔位
+            n = 36                                                                  '选择37号孔位
         
-    Case 37
+        Case 37
         
-        n = 37                                                                  '选择38号孔位
+            n = 37                                                                  '选择38号孔位
         
-    Case 38
+        Case 38
         
-        n = 38                                                                  '选择39号孔位
+            n = 38                                                                  '选择39号孔位
         
-    Case 39
+        Case 39
         
-        n = 39                                                                  '选择40号孔位
+            n = 39                                                                  '选择40号孔位
         
-    Case 40
+        Case 40
         
-        n = 40                                                                  '选择41号孔位
+            n = 40                                                                  '选择41号孔位
         
-    Case 41
+        Case 41
         
-        n = 41                                                                  '选择42号孔位
+            n = 41                                                                  '选择42号孔位
         
-    Case 42
+        Case 42
         
-        n = 42                                                                  '选择43号孔位
+            n = 42                                                                  '选择43号孔位
         
-    Case 43
+        Case 43
         
-        n = 43                                                                  '选择44号孔位
+            n = 43                                                                  '选择44号孔位
         
-    Case 44
+        Case 44
         
-        n = 44                                                                  '选择45号孔位
+            n = 44                                                                  '选择45号孔位
         
-    Case 45
+        Case 45
         
-        n = 45                                                                  '选择46号孔位
+            n = 45                                                                  '选择46号孔位
         
-    Case 46
+        Case 46
         
-        n = 46                                                                  '选择47号孔位
+            n = 46                                                                  '选择47号孔位
         
-    Case 47
+        Case 47
         
-        n = 47                                                                  '选择48号孔位
+            n = 47                                                                  '选择48号孔位
         
-    Case 48
+        Case 48
         
-        n = 48                                                                  '选择49号孔位
+            n = 48                                                                  '选择49号孔位
         
-    Case 49
+        Case 49
         
-        n = 49                                                                  '选择50号孔位
+            n = 49                                                                  '选择50号孔位
         
-    Case 50
+        Case 50
         
-        n = 50                                                                  '选择51号孔位
+            n = 50                                                                  '选择51号孔位
         
-    Case 51
+        Case 51
         
-        n = 51                                                                  '选择52号孔位
+            n = 51                                                                  '选择52号孔位
         
-    Case 52
+        Case 52
         
-        n = 52                                                                  '选择53号孔位
+            n = 52                                                                  '选择53号孔位
         
-    Case 53
+        Case 53
         
-        n = 53                                                                  '选择54号孔位
+            n = 53                                                                  '选择54号孔位
         
-    Case 54
+        Case 54
         
-        n = 54                                                                  '选择55号孔位
+            n = 54                                                                  '选择55号孔位
         
-    Case 55
+        Case 55
         
-        n = 55                                                                  '选择56号孔位
+            n = 55                                                                  '选择56号孔位
         
-    Case 56
+        Case 56
         
-        n = 56                                                                  '选择57号孔位
+            n = 56                                                                  '选择57号孔位
         
-    Case 57
+        Case 57
         
-        n = 57                                                                  '选择58号孔位
+            n = 57                                                                  '选择58号孔位
         
-    Case 58
+        Case 58
         
-        n = 58                                                                  '选择59号孔位
+            n = 58                                                                  '选择59号孔位
         
-    Case 59
+        Case 59
         
-        n = 59                                                                  '选择60号孔位
+            n = 59                                                                  '选择60号孔位
         
     End Select
     
@@ -11483,9 +11490,9 @@ Private Sub Command2_Click()                                                    
     'Form2.Enabled = False                                                       '工作界面禁用
     'Form7.Show                                                                  '进入查找界面
     
-    Dim r As Integer                                                            'r在此作为孔位标志位
+    Dim r        As Integer                                                            'r在此作为孔位标志位
     
-    Dim m As Integer                                                            'm在此作为孔位标志位
+    Dim m        As Integer                                                            'm在此作为孔位标志位
     
     If Text15.Text = "" Then
         
@@ -11523,13 +11530,16 @@ Private Sub Command2_Click()                                                    
         
         If r <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
+
         End If
+
         SkinLabel2(r).Caption = textline                                        '读条形码
         
         Line Input #2, textline                                                 '以下跳出不读
         
         If bNewRevision Then
             Line Input #2, textline
+
         End If
         
         Line Input #2, textline
@@ -11662,11 +11672,15 @@ Private Sub Command7_Click()                                                    
     
     command(0) = CInt(Val(SkinLabel20.Caption) * 10 - 150)                      '转换后发送到下位机
     
+    getFileWriteLock
+    
     Open App.Path & "\temp\temp.txt" For Output As #10                          '保存设置的温度值
     
     Print #10, SkinLabel20.Caption
     
     Close #10
+    
+    releaseFileWriteLock
     
     MSComm1.Output = command                                                    '发送温度值
     
@@ -11684,9 +11698,9 @@ End Sub
 
 Private Sub Command8_Click()
     
-    Dim e As Integer                                                            'e在此作为循环变量
+    Dim e        As Integer                                                            'e在此作为循环变量
     
-    Dim s As Integer
+    Dim s        As Integer
     
     Dim textline As String
     
@@ -11746,725 +11760,725 @@ Private Sub Command8_Click()
         
         Select Case s
             
-        Case 0
+            Case 0
             
-            command(0) = &H3D
+                command(0) = &H3D
             
-            MSComm1.Output = command                                            '第1个瓶做校准1(61)
+                MSComm1.Output = command                                            '第1个瓶做校准1(61)
             
-            command(0) = &H3D
+                command(0) = &H3D
             
-            MSComm1.Output = command                                            '第1个瓶做校准1(61)
+                MSComm1.Output = command                                            '第1个瓶做校准1(61)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 1
+            Case 1
             
-            command(0) = &H3E
+                command(0) = &H3E
             
-            MSComm1.Output = command                                            '第2个瓶做校准1(61)
+                MSComm1.Output = command                                            '第2个瓶做校准1(61)
             
-            command(0) = &H3E
+                command(0) = &H3E
             
-            MSComm1.Output = command                                            '第2个瓶做校准1(62)
+                MSComm1.Output = command                                            '第2个瓶做校准1(62)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 2
+            Case 2
             
-            command(0) = &H3F
+                command(0) = &H3F
             
-            MSComm1.Output = command                                            '第3个瓶做校准1(63)
+                MSComm1.Output = command                                            '第3个瓶做校准1(63)
             
-            command(0) = &H3F
+                command(0) = &H3F
             
-            MSComm1.Output = command                                            '第3个瓶做校准1(63)
+                MSComm1.Output = command                                            '第3个瓶做校准1(63)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 3
+            Case 3
             
-            command(0) = &H40
+                command(0) = &H40
             
-            MSComm1.Output = command                                            '第4个瓶做校准1(64)
+                MSComm1.Output = command                                            '第4个瓶做校准1(64)
             
-            command(0) = &H40
+                command(0) = &H40
             
-            MSComm1.Output = command                                            '第4个瓶做校准1(64)
+                MSComm1.Output = command                                            '第4个瓶做校准1(64)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 4
+            Case 4
             
-            command(0) = &H41
+                command(0) = &H41
             
-            MSComm1.Output = command                                            '第5个瓶做校准1(65)
+                MSComm1.Output = command                                            '第5个瓶做校准1(65)
             
-            command(0) = &H41
+                command(0) = &H41
             
-            MSComm1.Output = command                                            '第5个瓶做校准1(65)
+                MSComm1.Output = command                                            '第5个瓶做校准1(65)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 5
+            Case 5
             
-            command(0) = &H42
+                command(0) = &H42
             
-            MSComm1.Output = command                                            '第6个瓶做校准1(66)
+                MSComm1.Output = command                                            '第6个瓶做校准1(66)
             
-            command(0) = &H42
+                command(0) = &H42
             
-            MSComm1.Output = command                                            '第6个瓶做校准1(66)
+                MSComm1.Output = command                                            '第6个瓶做校准1(66)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 6
+            Case 6
             
-            command(0) = &H43
+                command(0) = &H43
             
-            MSComm1.Output = command                                            '第7个瓶做校准1(67)
+                MSComm1.Output = command                                            '第7个瓶做校准1(67)
             
-            command(0) = &H43
+                command(0) = &H43
             
-            MSComm1.Output = command                                            '第7个瓶做校准1(67)
+                MSComm1.Output = command                                            '第7个瓶做校准1(67)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 7
+            Case 7
             
-            command(0) = &H44
+                command(0) = &H44
             
-            MSComm1.Output = command                                            '第8个瓶做校准1(68)
+                MSComm1.Output = command                                            '第8个瓶做校准1(68)
             
-            command(0) = &H44
+                command(0) = &H44
             
-            MSComm1.Output = command                                            '第8个瓶做校准1(68)
+                MSComm1.Output = command                                            '第8个瓶做校准1(68)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 8
+            Case 8
             
-            command(0) = &H45
+                command(0) = &H45
             
-            MSComm1.Output = command                                            '第9个瓶做校准1(69)
+                MSComm1.Output = command                                            '第9个瓶做校准1(69)
             
-            command(0) = &H45
+                command(0) = &H45
             
-            MSComm1.Output = command                                            '第9个瓶做校准1(69)
+                MSComm1.Output = command                                            '第9个瓶做校准1(69)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 9
+            Case 9
             
-            command(0) = &H46
+                command(0) = &H46
             
-            MSComm1.Output = command                                            '第10个瓶做校准1(70)
+                MSComm1.Output = command                                            '第10个瓶做校准1(70)
             
-            command(0) = &H46
+                command(0) = &H46
             
-            MSComm1.Output = command                                            '第10个瓶做校准1(70)
+                MSComm1.Output = command                                            '第10个瓶做校准1(70)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 10
+            Case 10
             
-            command(0) = &H47
+                command(0) = &H47
             
-            MSComm1.Output = command                                            '第11个瓶做校准1(71)
+                MSComm1.Output = command                                            '第11个瓶做校准1(71)
             
-            command(0) = &H47
+                command(0) = &H47
             
-            MSComm1.Output = command                                            '第11个瓶做校准1(71)
+                MSComm1.Output = command                                            '第11个瓶做校准1(71)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 11
+            Case 11
             
-            command(0) = &H48
+                command(0) = &H48
             
-            MSComm1.Output = command                                            '第12个瓶做校准1(72)
+                MSComm1.Output = command                                            '第12个瓶做校准1(72)
             
-            command(0) = &H48
+                command(0) = &H48
             
-            MSComm1.Output = command                                            '第12个瓶做校准1(72)
+                MSComm1.Output = command                                            '第12个瓶做校准1(72)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 12
+            Case 12
             
-            command(0) = &H49
+                command(0) = &H49
             
-            MSComm1.Output = command                                            '第13个瓶做校准1(73)
+                MSComm1.Output = command                                            '第13个瓶做校准1(73)
             
-            command(0) = &H49
+                command(0) = &H49
             
-            MSComm1.Output = command                                            '第13个瓶做校准1(73)
+                MSComm1.Output = command                                            '第13个瓶做校准1(73)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 13
+            Case 13
             
-            command(0) = &H4A
+                command(0) = &H4A
             
-            MSComm1.Output = command                                            '第14个瓶做校准1(74)
+                MSComm1.Output = command                                            '第14个瓶做校准1(74)
             
-            command(0) = &H4A
+                command(0) = &H4A
             
-            MSComm1.Output = command                                            '第14个瓶做校准1(74)
+                MSComm1.Output = command                                            '第14个瓶做校准1(74)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 14
+            Case 14
             
-            command(0) = &H4B
+                command(0) = &H4B
             
-            MSComm1.Output = command                                            '第15个瓶做校准1(75)
+                MSComm1.Output = command                                            '第15个瓶做校准1(75)
             
-            command(0) = &H4B
+                command(0) = &H4B
             
-            MSComm1.Output = command                                            '第15个瓶做校准1(75)
+                MSComm1.Output = command                                            '第15个瓶做校准1(75)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 15
+            Case 15
             
-            command(0) = &H4C
+                command(0) = &H4C
             
-            MSComm1.Output = command                                            '第16个瓶做校准1(76)
+                MSComm1.Output = command                                            '第16个瓶做校准1(76)
             
-            command(0) = &H4C
+                command(0) = &H4C
             
-            MSComm1.Output = command                                            '第16个瓶做校准1(76)
+                MSComm1.Output = command                                            '第16个瓶做校准1(76)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 16
+            Case 16
             
-            command(0) = &H4D
+                command(0) = &H4D
             
-            MSComm1.Output = command                                            '第17个瓶做校准1(77)
+                MSComm1.Output = command                                            '第17个瓶做校准1(77)
             
-            command(0) = &H4D
+                command(0) = &H4D
             
-            MSComm1.Output = command                                            '第17个瓶做校准1(77)
+                MSComm1.Output = command                                            '第17个瓶做校准1(77)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 17
+            Case 17
             
-            command(0) = &H4E
+                command(0) = &H4E
             
-            MSComm1.Output = command                                            '第18个瓶做校准1(78)
+                MSComm1.Output = command                                            '第18个瓶做校准1(78)
             
-            command(0) = &H4E
+                command(0) = &H4E
             
-            MSComm1.Output = command                                            '第18个瓶做校准1(78)
+                MSComm1.Output = command                                            '第18个瓶做校准1(78)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 18
+            Case 18
             
-            command(0) = &H4F
+                command(0) = &H4F
             
-            MSComm1.Output = command                                            '第19个瓶做校准1(79)
+                MSComm1.Output = command                                            '第19个瓶做校准1(79)
             
-            command(0) = &H4F
+                command(0) = &H4F
             
-            MSComm1.Output = command                                            '第19个瓶做校准1(79)
+                MSComm1.Output = command                                            '第19个瓶做校准1(79)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 19
+            Case 19
             
-            command(0) = &H50
+                command(0) = &H50
             
-            MSComm1.Output = command                                            '第20个瓶做校准1(80)
+                MSComm1.Output = command                                            '第20个瓶做校准1(80)
             
-            command(0) = &H50
+                command(0) = &H50
             
-            MSComm1.Output = command                                            '第20个瓶做校准1(80)
+                MSComm1.Output = command                                            '第20个瓶做校准1(80)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 20
+            Case 20
             
-            command(0) = &H51
+                command(0) = &H51
             
-            MSComm1.Output = command                                            '第21个瓶做校准1(81)
+                MSComm1.Output = command                                            '第21个瓶做校准1(81)
             
-            command(0) = &H51
+                command(0) = &H51
             
-            MSComm1.Output = command                                            '第21个瓶做校准1(81)
+                MSComm1.Output = command                                            '第21个瓶做校准1(81)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 21
+            Case 21
             
-            command(0) = &H52
+                command(0) = &H52
             
-            MSComm1.Output = command                                            '第22个瓶做校准1(82)
+                MSComm1.Output = command                                            '第22个瓶做校准1(82)
             
-            command(0) = &H52
+                command(0) = &H52
             
-            MSComm1.Output = command                                            '第22个瓶做校准1(82)
+                MSComm1.Output = command                                            '第22个瓶做校准1(82)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 22
+            Case 22
             
-            command(0) = &H53
+                command(0) = &H53
             
-            MSComm1.Output = command                                            '第23个瓶做校准1(83)
+                MSComm1.Output = command                                            '第23个瓶做校准1(83)
             
-            command(0) = &H53
+                command(0) = &H53
             
-            MSComm1.Output = command                                            '第23个瓶做校准1(83)
+                MSComm1.Output = command                                            '第23个瓶做校准1(83)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 23
+            Case 23
             
-            command(0) = &H54
+                command(0) = &H54
             
-            MSComm1.Output = command                                            '第24个瓶做校准2(84)
+                MSComm1.Output = command                                            '第24个瓶做校准2(84)
             
-            command(0) = &H54
+                command(0) = &H54
             
-            MSComm1.Output = command                                            '第24个瓶做校准2(84)
+                MSComm1.Output = command                                            '第24个瓶做校准2(84)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 24
+            Case 24
             
-            command(0) = &H55
+                command(0) = &H55
             
-            MSComm1.Output = command                                            '第25个瓶做校准1(85)
+                MSComm1.Output = command                                            '第25个瓶做校准1(85)
             
-            command(0) = &H55
+                command(0) = &H55
             
-            MSComm1.Output = command                                            '第25个瓶做校准1(85)
+                MSComm1.Output = command                                            '第25个瓶做校准1(85)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 25
+            Case 25
             
-            command(0) = &H56
+                command(0) = &H56
             
-            MSComm1.Output = command                                            '第26个瓶做校准1(86)
+                MSComm1.Output = command                                            '第26个瓶做校准1(86)
             
-            command(0) = &H56
+                command(0) = &H56
             
-            MSComm1.Output = command                                            '第26个瓶做校准1(86)
+                MSComm1.Output = command                                            '第26个瓶做校准1(86)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 26
+            Case 26
             
-            command(0) = &H57
+                command(0) = &H57
             
-            MSComm1.Output = command                                            '第27个瓶做校准1(87)
+                MSComm1.Output = command                                            '第27个瓶做校准1(87)
             
-            command(0) = &H57
+                command(0) = &H57
             
-            MSComm1.Output = command                                            '第27个瓶做校准1(87)
+                MSComm1.Output = command                                            '第27个瓶做校准1(87)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 27
+            Case 27
             
-            command(0) = &H58
+                command(0) = &H58
             
-            MSComm1.Output = command                                            '第28个瓶做校准1(88)
+                MSComm1.Output = command                                            '第28个瓶做校准1(88)
             
-            command(0) = &H58
+                command(0) = &H58
             
-            MSComm1.Output = command                                            '第28个瓶做校准1(88)
+                MSComm1.Output = command                                            '第28个瓶做校准1(88)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 28
+            Case 28
             
-            command(0) = &H59
+                command(0) = &H59
             
-            MSComm1.Output = command                                            '第29个瓶做校准1(89)
+                MSComm1.Output = command                                            '第29个瓶做校准1(89)
             
-            command(0) = &H59
+                command(0) = &H59
             
-            MSComm1.Output = command                                            '第29个瓶做校准1(89)
+                MSComm1.Output = command                                            '第29个瓶做校准1(89)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 29
+            Case 29
             
-            command(0) = &H5A
+                command(0) = &H5A
             
-            MSComm1.Output = command                                            '第30个瓶做校准1(90)
+                MSComm1.Output = command                                            '第30个瓶做校准1(90)
             
-            command(0) = &H5A
+                command(0) = &H5A
             
-            MSComm1.Output = command                                            '第30个瓶做校准1(90)
+                MSComm1.Output = command                                            '第30个瓶做校准1(90)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 30
+            Case 30
             
-            command(0) = &H5B
+                command(0) = &H5B
             
-            MSComm1.Output = command                                            '第31个瓶做校准1(91)
+                MSComm1.Output = command                                            '第31个瓶做校准1(91)
             
-            command(0) = &H5B
+                command(0) = &H5B
             
-            MSComm1.Output = command                                            '第31个瓶做校准1(91)
+                MSComm1.Output = command                                            '第31个瓶做校准1(91)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 31
+            Case 31
             
-            command(0) = &H5C
+                command(0) = &H5C
             
-            MSComm1.Output = command                                            '第32个瓶做校准1(92)
+                MSComm1.Output = command                                            '第32个瓶做校准1(92)
             
-            command(0) = &H5C
+                command(0) = &H5C
             
-            MSComm1.Output = command                                            '第32个瓶做校准1(92)
+                MSComm1.Output = command                                            '第32个瓶做校准1(92)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 32
+            Case 32
             
-            command(0) = &H5D
+                command(0) = &H5D
             
-            MSComm1.Output = command                                            '第33个瓶做校准1(93)
+                MSComm1.Output = command                                            '第33个瓶做校准1(93)
             
-            command(0) = &H5D
+                command(0) = &H5D
             
-            MSComm1.Output = command                                            '第33个瓶做校准1(93)
+                MSComm1.Output = command                                            '第33个瓶做校准1(93)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 33
+            Case 33
             
-            command(0) = &H5E
+                command(0) = &H5E
             
-            MSComm1.Output = command                                            '第34个瓶做校准1(94)
+                MSComm1.Output = command                                            '第34个瓶做校准1(94)
             
-            command(0) = &H5E
+                command(0) = &H5E
             
-            MSComm1.Output = command                                            '第34个瓶做校准1(94)
+                MSComm1.Output = command                                            '第34个瓶做校准1(94)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 34
+            Case 34
             
-            command(0) = &H5F
+                command(0) = &H5F
             
-            MSComm1.Output = command                                            '第35个瓶做校准1(95)
+                MSComm1.Output = command                                            '第35个瓶做校准1(95)
             
-            command(0) = &H5F
+                command(0) = &H5F
             
-            MSComm1.Output = command                                            '第35个瓶做校准1(95)
+                MSComm1.Output = command                                            '第35个瓶做校准1(95)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 35
+            Case 35
             
-            command(0) = &H60
+                command(0) = &H60
             
-            MSComm1.Output = command                                            '第36个瓶做校准1(96)
+                MSComm1.Output = command                                            '第36个瓶做校准1(96)
             
-            command(0) = &H60
+                command(0) = &H60
             
-            MSComm1.Output = command                                            '第36个瓶做校准1(96)
+                MSComm1.Output = command                                            '第36个瓶做校准1(96)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 36
+            Case 36
             
-            command(0) = &H61
+                command(0) = &H61
             
-            MSComm1.Output = command                                            '第37个瓶做校准1(97)
+                MSComm1.Output = command                                            '第37个瓶做校准1(97)
             
-            command(0) = &H61
+                command(0) = &H61
             
-            MSComm1.Output = command                                            '第37个瓶做校准1(97)
+                MSComm1.Output = command                                            '第37个瓶做校准1(97)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 37
+            Case 37
             
-            command(0) = &H62
+                command(0) = &H62
             
-            MSComm1.Output = command                                            '第38个瓶做校准1(98)
+                MSComm1.Output = command                                            '第38个瓶做校准1(98)
             
-            command(0) = &H62
+                command(0) = &H62
             
-            MSComm1.Output = command                                            '第38个瓶做校准1(98)
+                MSComm1.Output = command                                            '第38个瓶做校准1(98)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 38
+            Case 38
             
-            command(0) = &H63
+                command(0) = &H63
             
-            MSComm1.Output = command                                            '第39个瓶做校准1(99)
+                MSComm1.Output = command                                            '第39个瓶做校准1(99)
             
-            command(0) = &H63
+                command(0) = &H63
             
-            MSComm1.Output = command                                            '第39个瓶做校准1(99)
+                MSComm1.Output = command                                            '第39个瓶做校准1(99)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 39
+            Case 39
             
-            command(0) = &H64
+                command(0) = &H64
             
-            MSComm1.Output = command                                            '第40个瓶做校准1(100)
+                MSComm1.Output = command                                            '第40个瓶做校准1(100)
             
-            command(0) = &H64
+                command(0) = &H64
             
-            MSComm1.Output = command                                            '第40个瓶做校准1(100)
+                MSComm1.Output = command                                            '第40个瓶做校准1(100)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 40
+            Case 40
             
-            command(0) = &H65
+                command(0) = &H65
             
-            MSComm1.Output = command                                            '第41个瓶做校准1(101)
+                MSComm1.Output = command                                            '第41个瓶做校准1(101)
             
-            command(0) = &H65
+                command(0) = &H65
             
-            MSComm1.Output = command                                            '第41个瓶做校准1(101)
+                MSComm1.Output = command                                            '第41个瓶做校准1(101)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 41
+            Case 41
             
-            command(0) = &H66
+                command(0) = &H66
             
-            MSComm1.Output = command                                            '第42个瓶做校准1(102)
+                MSComm1.Output = command                                            '第42个瓶做校准1(102)
             
-            command(0) = &H66
+                command(0) = &H66
             
-            MSComm1.Output = command                                            '第42个瓶做校准1(102)
+                MSComm1.Output = command                                            '第42个瓶做校准1(102)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 42
+            Case 42
             
-            command(0) = &H67
+                command(0) = &H67
             
-            MSComm1.Output = command                                            '第43个瓶做校准1(103)
+                MSComm1.Output = command                                            '第43个瓶做校准1(103)
             
-            command(0) = &H67
+                command(0) = &H67
             
-            MSComm1.Output = command                                            '第43个瓶做校准1(103)
+                MSComm1.Output = command                                            '第43个瓶做校准1(103)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 43
+            Case 43
             
-            command(0) = &H68
+                command(0) = &H68
             
-            MSComm1.Output = command                                            '第44个瓶做校准1(104)
+                MSComm1.Output = command                                            '第44个瓶做校准1(104)
             
-            command(0) = &H68
+                command(0) = &H68
             
-            MSComm1.Output = command                                            '第44个瓶做校准1(104)
+                MSComm1.Output = command                                            '第44个瓶做校准1(104)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 44
+            Case 44
             
-            command(0) = &H69
+                command(0) = &H69
             
-            MSComm1.Output = command                                            '第45个瓶做校准1(105)
+                MSComm1.Output = command                                            '第45个瓶做校准1(105)
             
-            command(0) = &H69
+                command(0) = &H69
             
-            MSComm1.Output = command                                            '第45个瓶做校准1(105)
+                MSComm1.Output = command                                            '第45个瓶做校准1(105)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 45
+            Case 45
             
-            command(0) = &H6A
+                command(0) = &H6A
             
-            MSComm1.Output = command                                            '第46个瓶做校准1(106)
+                MSComm1.Output = command                                            '第46个瓶做校准1(106)
             
-            command(0) = &H6A
+                command(0) = &H6A
             
-            MSComm1.Output = command                                            '第46个瓶做校准1(106)
+                MSComm1.Output = command                                            '第46个瓶做校准1(106)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 46
+            Case 46
             
-            command(0) = &H6B
+                command(0) = &H6B
             
-            MSComm1.Output = command                                            '第47个瓶做校准1(107)
+                MSComm1.Output = command                                            '第47个瓶做校准1(107)
             
-            command(0) = &H6B
+                command(0) = &H6B
             
-            MSComm1.Output = command                                            '第47个瓶做校准1(107)
+                MSComm1.Output = command                                            '第47个瓶做校准1(107)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 47
+            Case 47
             
-            command(0) = &H6C
+                command(0) = &H6C
             
-            MSComm1.Output = command                                            '第48个瓶做校准1(108)
+                MSComm1.Output = command                                            '第48个瓶做校准1(108)
             
-            command(0) = &H6C
+                command(0) = &H6C
             
-            MSComm1.Output = command                                            '第48个瓶做校准1(108)
+                MSComm1.Output = command                                            '第48个瓶做校准1(108)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 48
+            Case 48
             
-            command(0) = &H6D
+                command(0) = &H6D
             
-            MSComm1.Output = command                                            '第49个瓶做校准1(109)
+                MSComm1.Output = command                                            '第49个瓶做校准1(109)
             
-            command(0) = &H6D
+                command(0) = &H6D
             
-            MSComm1.Output = command                                            '第49个瓶做校准1(109)
+                MSComm1.Output = command                                            '第49个瓶做校准1(109)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 49
+            Case 49
             
-            command(0) = &H6E
+                command(0) = &H6E
             
-            MSComm1.Output = command                                            '第50个瓶做校准1(110)
+                MSComm1.Output = command                                            '第50个瓶做校准1(110)
             
-            command(0) = &H6E
+                command(0) = &H6E
             
-            MSComm1.Output = command                                            '第50个瓶做校准1(110)
+                MSComm1.Output = command                                            '第50个瓶做校准1(110)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 50
+            Case 50
             
-            command(0) = &H6F
+                command(0) = &H6F
             
-            MSComm1.Output = command                                            '第51个瓶做校准1(111)
+                MSComm1.Output = command                                            '第51个瓶做校准1(111)
             
-            command(0) = &H6F
+                command(0) = &H6F
             
-            MSComm1.Output = command                                            '第51个瓶做校准1(111)
+                MSComm1.Output = command                                            '第51个瓶做校准1(111)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 51
+            Case 51
             
-            command(0) = &H70
+                command(0) = &H70
             
-            MSComm1.Output = command                                            '第52个瓶做校准1(112)
+                MSComm1.Output = command                                            '第52个瓶做校准1(112)
             
-            command(0) = &H70
+                command(0) = &H70
             
-            MSComm1.Output = command                                            '第52个瓶做校准1(112)
+                MSComm1.Output = command                                            '第52个瓶做校准1(112)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 52
+            Case 52
             
-            command(0) = &H71
+                command(0) = &H71
             
-            MSComm1.Output = command                                            '第53个瓶做校准1(113)
+                MSComm1.Output = command                                            '第53个瓶做校准1(113)
             
-            command(0) = &H71
+                command(0) = &H71
             
-            MSComm1.Output = command                                            '第53个瓶做校准1(113)
+                MSComm1.Output = command                                            '第53个瓶做校准1(113)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 53
+            Case 53
             
-            command(0) = &H72
+                command(0) = &H72
             
-            MSComm1.Output = command                                            '第54个瓶做校准1(114)
+                MSComm1.Output = command                                            '第54个瓶做校准1(114)
             
-            command(0) = &H72
+                command(0) = &H72
             
-            MSComm1.Output = command                                            '第54个瓶做校准1(114)
+                MSComm1.Output = command                                            '第54个瓶做校准1(114)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 54
+            Case 54
             
-            command(0) = &H73
+                command(0) = &H73
             
-            MSComm1.Output = command                                            '第55个瓶做校准1(115)
+                MSComm1.Output = command                                            '第55个瓶做校准1(115)
             
-            command(0) = &H73
+                command(0) = &H73
             
-            MSComm1.Output = command                                            '第55个瓶做校准1(115)
+                MSComm1.Output = command                                            '第55个瓶做校准1(115)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 55
+            Case 55
             
-            command(0) = &H74
+                command(0) = &H74
             
-            MSComm1.Output = command                                            '第56个瓶做校准1(116)
+                MSComm1.Output = command                                            '第56个瓶做校准1(116)
             
-            command(0) = &H74
+                command(0) = &H74
             
-            MSComm1.Output = command                                            '第56个瓶做校准1(116)
+                MSComm1.Output = command                                            '第56个瓶做校准1(116)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 56
+            Case 56
             
-            command(0) = &H75
+                command(0) = &H75
             
-            MSComm1.Output = command                                            '第57个瓶做校准1(117)
+                MSComm1.Output = command                                            '第57个瓶做校准1(117)
             
-            command(0) = &H75
+                command(0) = &H75
             
-            MSComm1.Output = command                                            '第57个瓶做校准1(117)
+                MSComm1.Output = command                                            '第57个瓶做校准1(117)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 57
+            Case 57
             
-            command(0) = &H76
+                command(0) = &H76
             
-            MSComm1.Output = command                                            '第58个瓶做校准1(118)
+                MSComm1.Output = command                                            '第58个瓶做校准1(118)
             
-            command(0) = &H76
+                command(0) = &H76
             
-            MSComm1.Output = command                                            '第58个瓶做校准1(118)
+                MSComm1.Output = command                                            '第58个瓶做校准1(118)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 58
+            Case 58
             
-            command(0) = &H77
+                command(0) = &H77
             
-            MSComm1.Output = command                                            '第59个瓶做校准1(119)
+                MSComm1.Output = command                                            '第59个瓶做校准1(119)
             
-            command(0) = &H77
+                command(0) = &H77
             
-            MSComm1.Output = command                                            '第59个瓶做校准1(119)
+                MSComm1.Output = command                                            '第59个瓶做校准1(119)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
-        Case 59
+            Case 59
             
-            command(0) = &H78
+                command(0) = &H78
             
-            MSComm1.Output = command                                            '第60个瓶做校准1(120)
+                MSComm1.Output = command                                            '第60个瓶做校准1(120)
             
-            command(0) = &H78
+                command(0) = &H78
             
-            MSComm1.Output = command                                            '第60个瓶做校准1(120)
+                MSComm1.Output = command                                            '第60个瓶做校准1(120)
             
-            command(0) = &HFF                                                   '清空命令
+                command(0) = &HFF                                                   '清空命令
             
         End Select
         
@@ -12478,7 +12492,7 @@ Private Sub Command10_Click()                                                   
     
     On Error GoTo err2
     
-    Dim fs As New FileSystemObject                                              '建立文件系统对象
+    Dim fs       As New FileSystemObject                                              '建立文件系统对象
     
     'Dim f As Object
     
@@ -12530,6 +12544,7 @@ Private Sub Command10_Click()                                                   
         SkinLabel82.Caption = f.ReadLine                                        '瓶孔号跳过
         SkinLabel26.Caption = f.ReadLine                                        '读条形码
         SkinLabel80.Caption = f.ReadLine                                        'ID
+
     End If
 
     SkinLabel28.Caption = f.ReadLine                                            '读姓名
@@ -12621,6 +12636,7 @@ Private Sub Command10_Click()                                                   
         
         If r <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
+
         End If
 
         SkinLabel2(r).Caption = textline                                        '读条形码
@@ -12629,6 +12645,7 @@ Private Sub Command10_Click()                                                   
         
         If bNewRevision Then
             Line Input #2, textline
+
         End If
         
         Line Input #2, textline
@@ -12729,13 +12746,15 @@ Private Sub Command11_Click()
     
     Dim word As Object
     
-    Dim a As Object
+    Dim a    As Object
     
     If Dir(App.Path & "\print\", vbDirectory) = "" Then
         
         MkDir App.Path & "\print\"                                              '建立关于打印文件夹
         
     End If
+    
+    getFileWriteLock
     
     Open App.Path & "\print\" & SkinLabel26.Caption & ".doc" For Output As #11  '打印内容
     
@@ -12759,6 +12778,8 @@ Private Sub Command11_Click()
     
     Close #11
     
+    releaseFileWriteLock
+    
     Set word = CreateObject("Word.Application")
     
     Set a = word.Documents.Open(App.Path & "\print\" & SkinLabel26.Caption & ".doc")
@@ -12779,7 +12800,7 @@ Private Sub Command13_Click()                                                   
     
     Dim word As Object
     
-    Dim a As Object
+    Dim a    As Object
     
     Set word = CreateObject("Word.Application")
     
@@ -12863,7 +12884,6 @@ Private Sub Command14_Click()                                                   
     
 End Sub
 
-
 Private Sub Command16_Click()                                                   '设置阈值并保存
     
     If Text11.Text = "" Then                                                    '阈值上限值为空
@@ -12920,6 +12940,8 @@ Private Sub Command16_Click()                                                   
             
             yuzhidown = Val(SkinLabel65.Caption)                                '阈值下限值
             
+            getFileWriteLock
+            
             Open App.Path & "\sys\threshold.txt" For Output As #9               '保存阈值
             
             Print #9, Format(Text11.Text, "0000")
@@ -12927,6 +12949,8 @@ Private Sub Command16_Click()                                                   
             Print #9, Format(Text13.Text, "0000")
             
             Close #9
+            
+            releaseFileWriteLock
             
         End If
         
@@ -12986,19 +13010,21 @@ Private Sub Command18_Click()                                                   
     
     warning = CommonDialog1.FileName
     
+    getFileWriteLock
+    
     Open App.Path & "\sys\warning.txt" For Output As #13
     
     Print #13, warning                                                          '显示设置的培养时间
     
     Close #13
     
+    releaseFileWriteLock
+    
 err3:
     
     Exit Sub
     
-    
 End Sub
-
 
 Private Sub Command20_Click()                                                   '设置默认的培养时间
     
@@ -13030,11 +13056,15 @@ Private Sub Command20_Click()                                                   
         
     Else
         
+        getFileWriteLock
+        
         Open App.Path & "\sys\settime.txt" For Output As #11                    '保存设置的培养时间
         
         Print #11, Text14.Text
         
         Close #11
+        
+        releaseFileWriteLock
         
         SkinLabel69.Caption = Text14.Text                                       '显示培养时间
         
@@ -13051,7 +13081,6 @@ Private Sub Text1_KeyPress(KeyAscii As Integer)                                 
     End If
     
 End Sub
-
 
 Private Sub Text11_KeyPress(KeyAscii As Integer)                                '阈值上限值只能输入数字和使用空格
     
@@ -13244,6 +13273,7 @@ Private Sub MSComm1_OnComm()                                                    
             
             If q <> 0 Or bNewRevision Then
                 Line Input #2, textline                                         '将读入的1行存到变量TextLine中
+
             End If
 
             SkinLabel2(q).Caption = textline                                    '读条形码
@@ -13252,6 +13282,7 @@ Private Sub MSComm1_OnComm()                                                    
             
             If bNewRevision Then
                 Line Input #2, textline
+
             End If
             
             Line Input #2, textline
@@ -13325,6 +13356,7 @@ Private Sub MSComm1_OnComm()                                                    
                     Line Input #1, textline
                     Line Input #1, textline
                     Line Input #1, textline
+
                 End If
 
                 Line Input #1, textline
@@ -13356,7 +13388,6 @@ Private Sub MSComm1_OnComm()                                                    
             order1_diff = 0
             order2_diff = 0
             order3_diff = 0
-
             
             If (R2(c).Count > 3) Then
                 
@@ -13465,6 +13496,7 @@ Private Sub MSComm1_OnComm()                                                    
                     Line Input #1, textline
                     Line Input #1, textline
                     Line Input #1, textline
+
                 End If
 
                 Line Input #1, textline
@@ -13741,6 +13773,8 @@ NextLoop:
 
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ''''''''''''''''''''''''''''重写系统文件'''''''''''''''''''''''''''''''''''''''''''
+       getFileWriteLock
+        
         Open App.Path & "\sys\sys.txt" For Output As #2                         '重建sys文件
         
         Print #2, "Revision 2017"                                               '文件版本
@@ -13761,6 +13795,8 @@ NextLoop:
         Next e
         
         Close #2
+        
+        releaseFileWriteLock
         
         AllStatesStatistic
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -13834,6 +13870,8 @@ NextLoop:
             
         End If
         
+        getFileWriteLock
+        
         Open App.Path & "\sys\adjust1.txt" For Output As #3                     '保存数据到adjust1文件里
         
         For d = 0 To 59
@@ -13843,6 +13881,8 @@ NextLoop:
         Next d
         
         Close #3
+        
+        releaseFileWriteLock
         
         Text1.Text = ""                                                         '读完数据文本清空
         
@@ -13951,9 +13991,9 @@ End Sub
 
 Private Sub Timer2_Timer()                                                      '定时器2
     
-    Dim m As Integer
+    Dim m        As Integer
     
-    Dim k As Integer
+    Dim k        As Integer
     
     Dim textline As String
     
@@ -13982,12 +14022,14 @@ Private Sub Timer2_Timer()                                                      
         
         If m <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
+
         End If
         
         Line Input #2, textline
         
         If bNewRevision Then
             Line Input #2, textline
+
         End If
         
         Line Input #2, textline
@@ -14074,15 +14116,15 @@ End Sub
 
 Public Sub AllStatesStatistic()
     
-    Dim k As Integer
+    Dim k         As Integer
     
-    Dim nRunning As Integer
+    Dim nRunning  As Integer
     
-    Dim nPostive As Integer
+    Dim nPostive  As Integer
     
     Dim nNegative As Integer
     
-    Dim nEmptey As Integer
+    Dim nEmptey   As Integer
     
     nRunning = 0
     nPostive = 0

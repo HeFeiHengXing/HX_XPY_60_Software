@@ -42,9 +42,14 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Declare Function GetSystemMenu Lib "user32" (ByVal hWnd As Long, ByVal bRevert As Long) As Long
+Private Declare Function GetSystemMenu _
+                Lib "user32" (ByVal hWnd As Long, _
+                              ByVal bRevert As Long) As Long
 
-Private Declare Function RemoveMenu Lib "user32" (ByVal hMenu As Long, ByVal nPosition As Long, ByVal wFlags As Long) As Long
+Private Declare Function RemoveMenu _
+                Lib "user32" (ByVal hMenu As Long, _
+                              ByVal nPosition As Long, _
+                              ByVal wFlags As Long) As Long
 
 Private Const MF_BYPOSITION = &H400&
 
@@ -78,7 +83,12 @@ Private Sub Form_Load()
     
 End Sub
 
-Private Function Zrak(slika As PictureBox, StartX As Integer, StartY As Integer, Levo As Integer, Desno As Integer, Boja As String)
+Private Function Zrak(slika As PictureBox, _
+                      StartX As Integer, _
+                      StartY As Integer, _
+                      Levo As Integer, _
+                      Desno As Integer, _
+                      Boja As String)
     
     Me.ScaleMode = vbPixels
     
@@ -105,7 +115,6 @@ Private Function Zrak(slika As PictureBox, StartX As Integer, StartY As Integer,
         Line (StartX, StartY)-(Levo + Proba2, Desno + slika.ScaleHeight), Boja
         
     Next
-    
     
     For Proba2 = 0 To slika.ScaleHeight
         

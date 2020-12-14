@@ -102,15 +102,37 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Declare Function SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
-Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
-Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long) As Long
+
+Private Declare Function SetWindowPos _
+                Lib "user32" (ByVal hWnd As Long, _
+                              ByVal hWndInsertAfter As Long, _
+                              ByVal x As Long, _
+                              ByVal y As Long, _
+                              ByVal cx As Long, _
+                              ByVal cy As Long, _
+                              ByVal wFlags As Long) As Long
+
+Private Declare Function SetWindowLong _
+                Lib "user32" _
+                Alias "SetWindowLongA" (ByVal hWnd As Long, _
+                                        ByVal nIndex As Long, _
+                                        ByVal dwNewLong As Long) As Long
+
+Private Declare Function GetWindowLong _
+                Lib "user32" _
+                Alias "GetWindowLongA" (ByVal hWnd As Long, _
+                                        ByVal nIndex As Long) As Long
 
 Const WS_SYSMENU = &H80000                                                      ''''''''''''''''''''''''''''''消除界面上的X按钮
+
 Const GWL_STYLE = (-16)
+
 Const SWP_NOMOVE = &H2
+
 Const SWP_NOSIZE = &H1
+
 Const SWP_NOZORDER = &H4
+
 Const SWP_DRAWFRAME = &H20
 
 Private Sub Form_Load()
@@ -122,6 +144,7 @@ Private Sub Form_Load()
     Skin1.ApplySkin Me.hWnd                                                     '加载皮肤
     
     Dim lStyle As Long                                                          ''''''''''''''''''''''''''''''消除界面上的X按钮
+
     lStyle = GetWindowLong(hWnd, GWL_STYLE)
     lStyle = lStyle And Not WS_SYSMENU
     SetWindowLong Me.hWnd, GWL_STYLE, lStyle
@@ -168,7 +191,6 @@ Private Sub Command1_Click()                                                    
         End If
         
     End If
-    
     
     If Dir(App.Path & "\statistics\" & Combo2.Text & "-" & Combo3.Text, vbDirectory) = "" Then
         

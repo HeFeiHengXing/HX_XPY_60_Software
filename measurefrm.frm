@@ -272,6 +272,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Private Sub Form_Load()                                                         '对各项信息进行处理
     
     Me.Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2            '测量窗体居中
@@ -282,9 +283,9 @@ Private Sub Form_Load()                                                         
     
     Command4.Enabled = False                                                    '打印禁止
     
-    Dim q As Integer                                                            '作为循环标致
+    Dim q      As Integer                                                            '作为循环标致
     
-    Dim R2 As New Collection                                                    '定义集合变量
+    Dim R2     As New Collection                                                    '定义集合变量
     
     Dim TempO1 As New Collection
     
@@ -314,7 +315,9 @@ Private Sub Form_Load()                                                         
         
         If q <> 0 Or bNewRevision Then
             Line Input #2, textline                                             '将读入的1行存到变量TextLine中
+
         End If
+
         Form2.SkinLabel2(q).Caption = textline                                  '读条形码
         
         Line Input #2, textline                                                 '将读入的1行存到变量TextLine中
@@ -325,6 +328,7 @@ Private Sub Form_Load()                                                         
             Form2.SkinLabel78(q).Caption = textline                             '读ID
         Else
             Form2.SkinLabel78(q).Caption = ""
+
         End If
         
         Line Input #2, textline                                                 '将读入的1行存到变量TextLine中
@@ -379,7 +383,6 @@ Private Sub Form_Load()                                                         
         barcode_name = SkinLabel2                                               '条形码
         
         time_start = Mid(SkinLabel16, 1, 5)                                     '测量起始时间，月日
-        
         
         If cul_time = 1 Then                                                    ''
             
@@ -452,11 +455,13 @@ Private Sub Form_Load()                                                         
         Open App.Path & "\data\" & Form2.SkinLabel2(n) & ".txt" For Input As #1 '显示曲线
         
         Line Input #1, textline
+
         If textline = "Revision 2017" Then
             Line Input #1, textline
             Line Input #1, textline
             Line Input #1, textline
         End If                                                                  '
+
         Line Input #1, textline
         Line Input #1, textline
         Line Input #1, textline
@@ -527,6 +532,8 @@ Private Sub Command4_Click()                                                    
         
     End If
     
+    getFileWriteLock
+    
     Open App.Path & "\print\" & SkinLabel2.Caption & ".doc" For Output As #11   '打印内容
     
     Print #11, "条形码：" & SkinLabel2.Caption
@@ -550,6 +557,8 @@ Private Sub Command4_Click()                                                    
     Print #11, "测量结果：" & SkinLabel21.Caption
     
     Close #11
+    
+    releaseFileWriteLock
     
     Set word = CreateObject("Word.Application")
     

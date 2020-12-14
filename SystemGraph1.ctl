@@ -46,27 +46,31 @@ Private Sub UserControl_Resize()
     
 End Sub
 
-Public Function DrawGraph(ByVal RValues As Collection, ByVal O1Values As Collection, ByVal O2Values As Collection, ByVal O3Values As Collection, DayNum As Integer)
+Public Function DrawGraph(ByVal RValues As Collection, _
+                          ByVal O1Values As Collection, _
+                          ByVal O2Values As Collection, _
+                          ByVal O3Values As Collection, _
+                          DayNum As Integer)
     
-    Dim IntX(1) As Integer                                                      'x轴坐标值
+    Dim IntX(1)    As Integer                                                      'x轴坐标值
     
-    Dim IntY(1) As Integer                                                      'y轴坐标值
+    Dim IntY(1)    As Integer                                                      'y轴坐标值
     
-    Dim Red1_Flag As Integer
+    Dim Red1_Flag  As Integer
     
-    Dim Red2_Flag As Integer
+    Dim Red2_Flag  As Integer
     
-    Dim i As Long
+    Dim i          As Long
     
-    Dim k As Long
+    Dim k          As Long
     
     'Dim j As Long
     
-    Dim time As String
+    Dim time       As String
     
     Dim store_line As String
     
-    Dim line As Long
+    Dim line       As Long
     
     'Dim time_month As Integer '月
     
@@ -106,8 +110,6 @@ Public Function DrawGraph(ByVal RValues As Collection, ByVal O1Values As Collect
         
     Next i
     
-    
-    
     For i = 0 To DayNum
         
         Graph.CurrentY = 2600
@@ -129,15 +131,19 @@ Public Function DrawGraph(ByVal RValues As Collection, ByVal O1Values As Collect
     col = RGB(0, 255, 0)                                                        '绿色
     
     'Temp values for the For loop using
-    Dim nUpValCount As Integer
-    Dim nIndex As Integer
+    Dim nUpValCount  As Integer
+
+    Dim nIndex       As Integer
+
     Dim bChangePoint As Boolean
     
-    Dim Temp As Integer
+    Dim Temp         As Integer
     
-    Dim temp_m As Integer
-    Dim temp_n As Integer
-    Dim q As Integer
+    Dim temp_m       As Integer
+
+    Dim temp_n       As Integer
+
+    Dim q            As Integer
     
     nUpValCount = 0
     
@@ -161,12 +167,9 @@ Public Function DrawGraph(ByVal RValues As Collection, ByVal O1Values As Collect
             
         End If
         
-        
         If i > 20 And Red1_Flag = 0 Then                                        '连续8个二阶大于0
             
-            If (O2Values(i) > 0 And O2Values(i - 1) > 0 And O2Values(i - 2) > 0 And O2Values(i - 3) > 0 And _
-                O2Values(i - 4) > 0 And O2Values(i - 5) > 0 And O2Values(i - 6) > 0 And O2Values(i - 7) > 0 And _
-                O1Values(i - 8) > 0 And RValues(i) - RValues(i - 8) > 50) Then
+            If (O2Values(i) > 0 And O2Values(i - 1) > 0 And O2Values(i - 2) > 0 And O2Values(i - 3) > 0 And O2Values(i - 4) > 0 And O2Values(i - 5) > 0 And O2Values(i - 6) > 0 And O2Values(i - 7) > 0 And O1Values(i - 8) > 0 And RValues(i) - RValues(i - 8) > 50) Then
                 
                 Red1_Flag = 1
                 line = i
@@ -348,11 +351,14 @@ Public Function DrawGraph(ByVal RValues As Collection, ByVal O1Values As Collect
             Open App.Path & "\data\" & barcode_name & ".txt" For Input As #1    '显示曲线
             
             Line Input #1, store_line                                           '以下跳过不读
+
             If store_line = "Revision 2017" Then
                 Line Input #1, store_line
                 Line Input #1, store_line
                 Line Input #1, store_line
+
             End If
+
             Line Input #1, store_line
             Line Input #1, store_line
             Line Input #1, store_line

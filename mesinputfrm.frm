@@ -189,16 +189,39 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Declare Function SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
-Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
-Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long) As Long
+
+Private Declare Function SetWindowPos _
+                Lib "user32" (ByVal hWnd As Long, _
+                              ByVal hWndInsertAfter As Long, _
+                              ByVal x As Long, _
+                              ByVal y As Long, _
+                              ByVal cx As Long, _
+                              ByVal cy As Long, _
+                              ByVal wFlags As Long) As Long
+
+Private Declare Function SetWindowLong _
+                Lib "user32" _
+                Alias "SetWindowLongA" (ByVal hWnd As Long, _
+                                        ByVal nIndex As Long, _
+                                        ByVal dwNewLong As Long) As Long
+
+Private Declare Function GetWindowLong _
+                Lib "user32" _
+                Alias "GetWindowLongA" (ByVal hWnd As Long, _
+                                        ByVal nIndex As Long) As Long
 
 Const WS_SYSMENU = &H80000                                                      ''''''''''''''''''''''''''''''消除界面上的X按钮
+
 Const GWL_STYLE = (-16)
+
 Const SWP_NOMOVE = &H2
+
 Const SWP_NOSIZE = &H1
+
 Const SWP_NOZORDER = &H4
+
 Const SWP_DRAWFRAME = &H20
+
 Private CheckBarcode As Boolean
 
 Private Sub Form_Load()                                                         '初始化各项信息
@@ -212,6 +235,7 @@ Private Sub Form_Load()                                                         
     Skin1.ApplySkin Me.hWnd                                                     '加载皮肤
     
     Dim lStyle As Long                                                          ''''''''''''''''''''''''''''''消除界面上的X按钮
+
     lStyle = GetWindowLong(hWnd, GWL_STYLE)
     lStyle = lStyle And Not WS_SYSMENU
     SetWindowLong Me.hWnd, GWL_STYLE, lStyle
@@ -333,6 +357,8 @@ Private Sub Command1_Click()                                                    
             
             If isNew Then
                 
+                getFileWriteLock
+                
                 Open App.Path & "\sys\section.txt" For Output As #14            '在文件中添加科室类别
                 
                 Print #14, Trim(Combo1.Text)
@@ -344,6 +370,8 @@ Private Sub Command1_Click()                                                    
                 Next nn
                 
                 Close #14
+                
+                releaseFileWriteLock
                 
             End If
             
@@ -381,485 +409,485 @@ Private Sub Command1_Click()                                                    
     
     Select Case n
         
-    Case 0
+        Case 0
         
-        command(0) = &H1
+            command(0) = &H1
         
-        Form2.MSComm1.Output = command                                          '对第1个灯发出点灯命令(1)
+            Form2.MSComm1.Output = command                                          '对第1个灯发出点灯命令(1)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 1
+        Case 1
         
-        command(0) = &H2
+            command(0) = &H2
         
-        Form2.MSComm1.Output = command                                          '对第2个灯发出点灯命令(2)
+            Form2.MSComm1.Output = command                                          '对第2个灯发出点灯命令(2)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 2
+        Case 2
         
-        command(0) = &H3
+            command(0) = &H3
         
-        Form2.MSComm1.Output = command                                          '对第3个灯发出点灯命令(3)
+            Form2.MSComm1.Output = command                                          '对第3个灯发出点灯命令(3)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 3
+        Case 3
         
-        command(0) = &H4
+            command(0) = &H4
         
-        Form2.MSComm1.Output = command                                          '对第4个灯发出点灯命令(4)
+            Form2.MSComm1.Output = command                                          '对第4个灯发出点灯命令(4)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 4
+        Case 4
         
-        command(0) = &H5
+            command(0) = &H5
         
-        Form2.MSComm1.Output = command                                          '对第5个灯发出点灯命令(5)
+            Form2.MSComm1.Output = command                                          '对第5个灯发出点灯命令(5)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 5
+        Case 5
         
-        command(0) = &H6
+            command(0) = &H6
         
-        Form2.MSComm1.Output = command                                          '对第6个灯发出点灯命令(6)
+            Form2.MSComm1.Output = command                                          '对第6个灯发出点灯命令(6)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 6
+        Case 6
         
-        command(0) = &H7
+            command(0) = &H7
         
-        Form2.MSComm1.Output = command                                          '对第7个灯发出点灯命令(7)
+            Form2.MSComm1.Output = command                                          '对第7个灯发出点灯命令(7)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 7
+        Case 7
         
-        command(0) = &H8
+            command(0) = &H8
         
-        Form2.MSComm1.Output = command                                          '对第8个灯发出点灯命令(8)
+            Form2.MSComm1.Output = command                                          '对第8个灯发出点灯命令(8)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 8
+        Case 8
         
-        command(0) = &H9
+            command(0) = &H9
         
-        Form2.MSComm1.Output = command                                          '对第9个灯发出点灯命令(9)
+            Form2.MSComm1.Output = command                                          '对第9个灯发出点灯命令(9)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 9
+        Case 9
         
-        command(0) = &HA
+            command(0) = &HA
         
-        Form2.MSComm1.Output = command                                          '对第10个灯发出点灯命令(10)
+            Form2.MSComm1.Output = command                                          '对第10个灯发出点灯命令(10)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 10
+        Case 10
         
-        command(0) = &HB
+            command(0) = &HB
         
-        Form2.MSComm1.Output = command                                          '对第11个灯发出点灯命令(11)
+            Form2.MSComm1.Output = command                                          '对第11个灯发出点灯命令(11)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 11
+        Case 11
         
-        command(0) = &HC
+            command(0) = &HC
         
-        Form2.MSComm1.Output = command                                          '对第12个灯发出点灯命令(12)
+            Form2.MSComm1.Output = command                                          '对第12个灯发出点灯命令(12)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 12
+        Case 12
         
-        command(0) = &HD
+            command(0) = &HD
         
-        Form2.MSComm1.Output = command                                          '对第13个灯发出点灯命令(13)
+            Form2.MSComm1.Output = command                                          '对第13个灯发出点灯命令(13)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 13
+        Case 13
         
-        command(0) = &HE
+            command(0) = &HE
         
-        Form2.MSComm1.Output = command                                          '对第14个灯发出点灯命令(14)
+            Form2.MSComm1.Output = command                                          '对第14个灯发出点灯命令(14)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 14
+        Case 14
         
-        command(0) = &HF
+            command(0) = &HF
         
-        Form2.MSComm1.Output = command                                          '对第15个灯发出点灯命令(15)
+            Form2.MSComm1.Output = command                                          '对第15个灯发出点灯命令(15)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 15
+        Case 15
         
-        command(0) = &H10
+            command(0) = &H10
         
-        Form2.MSComm1.Output = command                                          '对第16个灯发出点灯命令(16)
+            Form2.MSComm1.Output = command                                          '对第16个灯发出点灯命令(16)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 16
+        Case 16
         
-        command(0) = &H11
+            command(0) = &H11
         
-        Form2.MSComm1.Output = command                                          '对第17个灯发出点灯命令(17)
+            Form2.MSComm1.Output = command                                          '对第17个灯发出点灯命令(17)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 17
+        Case 17
         
-        command(0) = &H12
+            command(0) = &H12
         
-        Form2.MSComm1.Output = command                                          '对第18个灯发出点灯命令(18)
+            Form2.MSComm1.Output = command                                          '对第18个灯发出点灯命令(18)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 18
+        Case 18
         
-        command(0) = &H13
+            command(0) = &H13
         
-        Form2.MSComm1.Output = command                                          '对第19个灯发出点灯命令(19)
+            Form2.MSComm1.Output = command                                          '对第19个灯发出点灯命令(19)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 19
+        Case 19
         
-        command(0) = &H14
+            command(0) = &H14
         
-        Form2.MSComm1.Output = command                                          '对第20个灯发出点灯命令(20)
+            Form2.MSComm1.Output = command                                          '对第20个灯发出点灯命令(20)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 20
+        Case 20
         
-        command(0) = &H15
+            command(0) = &H15
         
-        Form2.MSComm1.Output = command                                          '对第21个灯发出点灯命令(21)
+            Form2.MSComm1.Output = command                                          '对第21个灯发出点灯命令(21)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 21
+        Case 21
         
-        command(0) = &H16
+            command(0) = &H16
         
-        Form2.MSComm1.Output = command                                          '对第22个灯发出点灯命令(22)
+            Form2.MSComm1.Output = command                                          '对第22个灯发出点灯命令(22)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 22
+        Case 22
         
-        command(0) = &H17
+            command(0) = &H17
         
-        Form2.MSComm1.Output = command                                          '对第23个灯发出点灯命令(23)
+            Form2.MSComm1.Output = command                                          '对第23个灯发出点灯命令(23)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 23
+        Case 23
         
-        command(0) = &H18
+            command(0) = &H18
         
-        Form2.MSComm1.Output = command                                          '对第24个灯发出点灯命令(24)
+            Form2.MSComm1.Output = command                                          '对第24个灯发出点灯命令(24)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 24
+        Case 24
         
-        command(0) = &H19
+            command(0) = &H19
         
-        Form2.MSComm1.Output = command                                          '对第25个灯发出点灯命令(25)
+            Form2.MSComm1.Output = command                                          '对第25个灯发出点灯命令(25)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 25
+        Case 25
         
-        command(0) = &H1A
+            command(0) = &H1A
         
-        Form2.MSComm1.Output = command                                          '对第26个灯发出点灯命令(26)
+            Form2.MSComm1.Output = command                                          '对第26个灯发出点灯命令(26)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 26
+        Case 26
         
-        command(0) = &H1B
+            command(0) = &H1B
         
-        Form2.MSComm1.Output = command                                          '对第27个灯发出点灯命令(27)
+            Form2.MSComm1.Output = command                                          '对第27个灯发出点灯命令(27)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 27
+        Case 27
         
-        command(0) = &H1C
+            command(0) = &H1C
         
-        Form2.MSComm1.Output = command                                          '对第28个灯发出点灯命令(28)
+            Form2.MSComm1.Output = command                                          '对第28个灯发出点灯命令(28)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 28
+        Case 28
         
-        command(0) = &H1D
+            command(0) = &H1D
         
-        Form2.MSComm1.Output = command                                          '对第29个灯发出点灯命令(29)
+            Form2.MSComm1.Output = command                                          '对第29个灯发出点灯命令(29)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 29
+        Case 29
         
-        command(0) = &H1E
+            command(0) = &H1E
         
-        Form2.MSComm1.Output = command                                          '对第30个灯发出点灯命令(30)
+            Form2.MSComm1.Output = command                                          '对第30个灯发出点灯命令(30)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 30
+        Case 30
         
-        command(0) = &H1F
+            command(0) = &H1F
         
-        Form2.MSComm1.Output = command                                          '对第31个灯发出点灯命令(31)
+            Form2.MSComm1.Output = command                                          '对第31个灯发出点灯命令(31)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 31
+        Case 31
         
-        command(0) = &H20
+            command(0) = &H20
         
-        Form2.MSComm1.Output = command                                          '对第32个灯发出点灯命令(32)
+            Form2.MSComm1.Output = command                                          '对第32个灯发出点灯命令(32)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 32
+        Case 32
         
-        command(0) = &H21
+            command(0) = &H21
         
-        Form2.MSComm1.Output = command                                          '对第33个灯发出点灯命令(33)
+            Form2.MSComm1.Output = command                                          '对第33个灯发出点灯命令(33)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 33
+        Case 33
         
-        command(0) = &H22
+            command(0) = &H22
         
-        Form2.MSComm1.Output = command                                          '对第34个灯发出点灯命令(33)
+            Form2.MSComm1.Output = command                                          '对第34个灯发出点灯命令(33)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 34
+        Case 34
         
-        command(0) = &H23
+            command(0) = &H23
         
-        Form2.MSComm1.Output = command                                          '对第35个灯发出点灯命令(35)
+            Form2.MSComm1.Output = command                                          '对第35个灯发出点灯命令(35)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 35
+        Case 35
         
-        command(0) = &H24
+            command(0) = &H24
         
-        Form2.MSComm1.Output = command                                          '对第36个灯发出点灯命令(36)
+            Form2.MSComm1.Output = command                                          '对第36个灯发出点灯命令(36)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 36
+        Case 36
         
-        command(0) = &H25
+            command(0) = &H25
         
-        Form2.MSComm1.Output = command                                          '对第37个灯发出点灯命令(37)
+            Form2.MSComm1.Output = command                                          '对第37个灯发出点灯命令(37)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 37
+        Case 37
         
-        command(0) = &H26
+            command(0) = &H26
         
-        Form2.MSComm1.Output = command                                          '对第38个灯发出点灯命令(38)
+            Form2.MSComm1.Output = command                                          '对第38个灯发出点灯命令(38)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 38
+        Case 38
         
-        command(0) = &H27
+            command(0) = &H27
         
-        Form2.MSComm1.Output = command                                          '对第39个灯发出点灯命令(39)
+            Form2.MSComm1.Output = command                                          '对第39个灯发出点灯命令(39)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 39
+        Case 39
         
-        command(0) = &H28
+            command(0) = &H28
         
-        Form2.MSComm1.Output = command                                          '对第40个灯发出点灯命令(40)
+            Form2.MSComm1.Output = command                                          '对第40个灯发出点灯命令(40)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 40
+        Case 40
         
-        command(0) = &H29
+            command(0) = &H29
         
-        Form2.MSComm1.Output = command                                          '对第41个灯发出点灯命令(41)
+            Form2.MSComm1.Output = command                                          '对第41个灯发出点灯命令(41)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 41
+        Case 41
         
-        command(0) = &H2A
+            command(0) = &H2A
         
-        Form2.MSComm1.Output = command                                          '对第42个灯发出点灯命令(42)
+            Form2.MSComm1.Output = command                                          '对第42个灯发出点灯命令(42)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 42
+        Case 42
         
-        command(0) = &H2B
+            command(0) = &H2B
         
-        Form2.MSComm1.Output = command                                          '对第43个灯发出点灯命令(43)
+            Form2.MSComm1.Output = command                                          '对第43个灯发出点灯命令(43)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 43
+        Case 43
         
-        command(0) = &H2C
+            command(0) = &H2C
         
-        Form2.MSComm1.Output = command                                          '对第44个灯发出点灯命令(44)
+            Form2.MSComm1.Output = command                                          '对第44个灯发出点灯命令(44)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 44
+        Case 44
         
-        command(0) = &H2D
+            command(0) = &H2D
         
-        Form2.MSComm1.Output = command                                          '对第45个灯发出点灯命令(45)
+            Form2.MSComm1.Output = command                                          '对第45个灯发出点灯命令(45)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 45
+        Case 45
         
-        command(0) = &H2E
+            command(0) = &H2E
         
-        Form2.MSComm1.Output = command                                          '对第46个灯发出点灯命令(46)
+            Form2.MSComm1.Output = command                                          '对第46个灯发出点灯命令(46)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 46
+        Case 46
         
-        command(0) = &H2F
+            command(0) = &H2F
         
-        Form2.MSComm1.Output = command                                          '对第47个灯发出点灯命令(47)
+            Form2.MSComm1.Output = command                                          '对第47个灯发出点灯命令(47)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 47
+        Case 47
         
-        command(0) = &H30
+            command(0) = &H30
         
-        Form2.MSComm1.Output = command                                          '对第48个灯发出点灯命令(48)
+            Form2.MSComm1.Output = command                                          '对第48个灯发出点灯命令(48)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 48
+        Case 48
         
-        command(0) = &H31
+            command(0) = &H31
         
-        Form2.MSComm1.Output = command                                          '对第49个灯发出点灯命令(49)
+            Form2.MSComm1.Output = command                                          '对第49个灯发出点灯命令(49)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 49
+        Case 49
         
-        command(0) = &H32
+            command(0) = &H32
         
-        Form2.MSComm1.Output = command                                          '对第50个灯发出点灯命令(50)
+            Form2.MSComm1.Output = command                                          '对第50个灯发出点灯命令(50)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 50
+        Case 50
         
-        command(0) = &H33
+            command(0) = &H33
         
-        Form2.MSComm1.Output = command                                          '对第51个灯发出点灯命令(51)
+            Form2.MSComm1.Output = command                                          '对第51个灯发出点灯命令(51)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 51
+        Case 51
         
-        command(0) = &H34
+            command(0) = &H34
         
-        Form2.MSComm1.Output = command                                          '对第52个灯发出点灯命令(52)
+            Form2.MSComm1.Output = command                                          '对第52个灯发出点灯命令(52)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 52
+        Case 52
         
-        command(0) = &H35
+            command(0) = &H35
         
-        Form2.MSComm1.Output = command                                          '对第53个灯发出点灯命令(53)
+            Form2.MSComm1.Output = command                                          '对第53个灯发出点灯命令(53)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 53
+        Case 53
         
-        command(0) = &H36
+            command(0) = &H36
         
-        Form2.MSComm1.Output = command                                          '对第54个灯发出点灯命令(54)
+            Form2.MSComm1.Output = command                                          '对第54个灯发出点灯命令(54)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 54
+        Case 54
         
-        command(0) = &H37
+            command(0) = &H37
         
-        Form2.MSComm1.Output = command                                          '对第55个灯发出点灯命令(55)
+            Form2.MSComm1.Output = command                                          '对第55个灯发出点灯命令(55)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 55
+        Case 55
         
-        command(0) = &H38
+            command(0) = &H38
         
-        Form2.MSComm1.Output = command                                          '对第56个灯发出点灯命令(56)
+            Form2.MSComm1.Output = command                                          '对第56个灯发出点灯命令(56)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 56
+        Case 56
         
-        command(0) = &H39
+            command(0) = &H39
         
-        Form2.MSComm1.Output = command                                          '对第57个灯发出点灯命令(57)
+            Form2.MSComm1.Output = command                                          '对第57个灯发出点灯命令(57)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 57
+        Case 57
         
-        command(0) = &H3A
+            command(0) = &H3A
         
-        Form2.MSComm1.Output = command                                          '对第58个灯发出点灯命令(58)
+            Form2.MSComm1.Output = command                                          '对第58个灯发出点灯命令(58)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 58
+        Case 58
         
-        command(0) = &H3B
+            command(0) = &H3B
         
-        Form2.MSComm1.Output = command                                          '对第59个灯发出点灯命令(59)
+            Form2.MSComm1.Output = command                                          '对第59个灯发出点灯命令(59)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
-    Case 59
+        Case 59
         
-        command(0) = &H3C
+            command(0) = &H3C
         
-        Form2.MSComm1.Output = command                                          '对第60个灯发出点灯命令(60)
+            Form2.MSComm1.Output = command                                          '对第60个灯发出点灯命令(60)
         
-        command(0) = &HFF                                                       '清空命令
+            command(0) = &HFF                                                       '清空命令
         
     End Select
     
