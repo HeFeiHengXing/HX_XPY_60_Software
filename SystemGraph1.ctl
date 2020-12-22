@@ -180,7 +180,7 @@ Public Function DrawGraph(ByVal RValues As Collection, _
         
         If i > 22 And Red1_Flag = 0 Then                                        '连续10个二阶大于等于0
             
-            If (O2Values(i) > 0) Then
+            If (O2Values(i) > 0) And (O1Values(i) > 0) Then
                 
                 temp_m = 0
                 temp_n = 0
