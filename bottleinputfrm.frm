@@ -535,7 +535,7 @@ Private Sub Command1_Click()                                                    
     
     ''''''''''''''''''''''''''''''统计病人信息统计资料'''''''''''''''''''''''''''''''''''
     
-   getFileWriteLock
+    getFileWriteLock
     
     If Dir(App.Path & "\statistics\" & Form2.SkinLabel8(n).Caption & "\" & "病人信息" & ".txt", vbDirectory) = "" Then
         

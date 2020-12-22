@@ -169,7 +169,7 @@ Public Function DrawGraph(ByVal RValues As Collection, _
         
         If i > 20 And Red1_Flag = 0 Then                                        '连续8个二阶大于0
             
-            If (O2Values(i) > 0 And O2Values(i - 1) > 0 And O2Values(i - 2) > 0 And O2Values(i - 3) > 0 And O2Values(i - 4) > 0 And O2Values(i - 5) > 0 And O2Values(i - 6) > 0 And O2Values(i - 7) > 0 And O1Values(i - 8) > 0 And RValues(i) - RValues(i - 8) > 50) Then
+            If (O2Values(i) > 0 And O2Values(i - 1) > 0 And O2Values(i - 2) > 0 And O2Values(i - 3) > 0 And O2Values(i - 4) > 0 And O2Values(i - 5) > 0 And O2Values(i - 6) > 0 And O2Values(i - 7) > 0 And O1Values(i - 7) > 0 And O1Values(i - 6) > 0 And O1Values(i - 5) > 0 And O1Values(i - 4) > 0 And O1Values(i - 3) > 0 And O1Values(i - 2) > 0 And O1Values(i - 1) > 0 And O1Values(i) > 0 And RValues(i) - RValues(i - 7) > 50) Then
                 
                 Red1_Flag = 1
                 line = i
@@ -187,11 +187,11 @@ Public Function DrawGraph(ByVal RValues As Collection, _
                 
                 For q = 1 To 11
                     
-                    If (O2Values(i - q) > 0) Then
+                    If (O2Values(i - q) > 0) And (O1Values(i - q) > 0) Then
                         
                         temp_m = temp_m + 1
                         
-                    ElseIf (O2Values(i - q) < 0) Then
+                    ElseIf (O2Values(i - q) < 0) Or (O1Values(i - q) <= 0) Then
                         
                         Exit For
                         

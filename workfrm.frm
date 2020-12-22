@@ -49,34 +49,34 @@ Begin VB.Form Form2
       TabCaption(1)   =   "系统设置"
       TabPicture(1)   =   "workfrm.frx":686E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame21"
-      Tab(1).Control(1)=   "Frame18"
-      Tab(1).Control(2)=   "Frame20"
-      Tab(1).Control(3)=   "Frame19"
-      Tab(1).Control(4)=   "Timer2"
-      Tab(1).Control(5)=   "Timer1"
-      Tab(1).Control(6)=   "Frame16"
-      Tab(1).Control(7)=   "Text10"
+      Tab(1).Control(0)=   "WindowsMediaPlayer1"
+      Tab(1).Control(1)=   "MSComm1"
+      Tab(1).Control(2)=   "Frame6"
+      Tab(1).Control(3)=   "Frame8"
+      Tab(1).Control(4)=   "Text3"
+      Tab(1).Control(5)=   "Text4"
+      Tab(1).Control(6)=   "Text5"
+      Tab(1).Control(7)=   "Text6"
       Tab(1).Control(8)=   "Text9"
-      Tab(1).Control(9)=   "Text6"
-      Tab(1).Control(10)=   "Text5"
-      Tab(1).Control(11)=   "Text4"
-      Tab(1).Control(12)=   "Text3"
-      Tab(1).Control(13)=   "Frame8"
-      Tab(1).Control(14)=   "Frame6"
-      Tab(1).Control(15)=   "MSComm1"
-      Tab(1).Control(16)=   "WindowsMediaPlayer1"
+      Tab(1).Control(9)=   "Text10"
+      Tab(1).Control(10)=   "Frame16"
+      Tab(1).Control(11)=   "Timer1"
+      Tab(1).Control(12)=   "Timer2"
+      Tab(1).Control(13)=   "Frame19"
+      Tab(1).Control(14)=   "Frame20"
+      Tab(1).Control(15)=   "Frame18"
+      Tab(1).Control(16)=   "Frame21"
       Tab(1).ControlCount=   17
       TabCaption(2)   =   "查询统计"
       TabPicture(2)   =   "workfrm.frx":688A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame12"
-      Tab(2).Control(1)=   "Frame14"
-      Tab(2).Control(2)=   "Frame13"
+      Tab(2).Control(0)=   "Frame10"
+      Tab(2).Control(1)=   "Frame11"
+      Tab(2).Control(2)=   "CommonDialog1"
       Tab(2).Control(3)=   "SystemGraph1"
-      Tab(2).Control(4)=   "CommonDialog1"
-      Tab(2).Control(5)=   "Frame11"
-      Tab(2).Control(6)=   "Frame10"
+      Tab(2).Control(4)=   "Frame13"
+      Tab(2).Control(5)=   "Frame14"
+      Tab(2).Control(6)=   "Frame12"
       Tab(2).ControlCount=   7
       Begin VB.Frame Frame21 
          Caption         =   "警报设置"
@@ -595,7 +595,6 @@ Begin VB.Form Form2
             _ExtentX        =   6959
             _ExtentY        =   5953
             _Version        =   393217
-            Enabled         =   -1  'True
             TextRTF         =   $"workfrm.frx":8696
          End
       End
@@ -747,7 +746,6 @@ Begin VB.Form Form2
             _ExtentX        =   3201
             _ExtentY        =   5106
             _Version        =   393217
-            Enabled         =   -1  'True
             TextRTF         =   $"workfrm.frx":8A19
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel40 
@@ -13554,7 +13552,7 @@ Private Sub MSComm1_OnComm()                                                    
                         
                         If j > 20 Then                                          '连续8个二阶大于0
                             
-                            If (TempO2(b)(j) > 0 And TempO2(b)(j - 1) > 0 And TempO2(b)(j - 2) > 0 And TempO2(b)(j - 3) > 0 And TempO2(b)(j - 4) > 0 And TempO2(b)(j - 5) > 0 And TempO2(b)(j - 6) > 0 And TempO2(b)(j - 7) > 0 And TempO1(b)(j - 8) > 0 And R1(b)(j) - R1(b)(j - 8) > 50) Then
+                            If (TempO2(b)(j) > 0 And TempO2(b)(j - 1) > 0 And TempO2(b)(j - 2) > 0 And TempO2(b)(j - 3) > 0 And TempO2(b)(j - 4) > 0 And TempO2(b)(j - 5) > 0 And TempO2(b)(j - 6) > 0 And TempO2(b)(j - 7) > 0 And TempO1(b)(j - 7) > 0 And TempO1(b)(j - 6) > 0 And TempO1(b)(j - 5) > 0 And TempO1(b)(j - 4) > 0 And TempO1(b)(j - 3) > 0 And TempO1(b)(j - 2) > 0 And TempO1(b)(j - 1) > 0 And TempO1(b)(j) > 0 And R1(b)(j) - R1(b)(j - 7) > 50) Then
                                 
                                 Picture1(b).Picture = LoadPicture(App.Path + "\pic\6.jpg")
                                 
@@ -13579,11 +13577,11 @@ Private Sub MSComm1_OnComm()                                                    
                                 
                                 For q = 1 To 11
                                     
-                                    If (TempO2(b)(j - q) > 0) Then
+                                    If (TempO2(b)(j - q) > 0) And (TempO1(b)(j - q) > 0) Then
                                         
                                         temp_m = temp_m + 1
                                         
-                                    ElseIf (TempO2(b)(j - q) < 0) Then
+                                    ElseIf (TempO2(b)(j - q) < 0) Or (TempO1(b)(j - q) <= 0) Then
                                         
                                         Exit For
                                         
@@ -13773,7 +13771,7 @@ NextLoop:
 
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ''''''''''''''''''''''''''''重写系统文件'''''''''''''''''''''''''''''''''''''''''''
-       getFileWriteLock
+        getFileWriteLock
         
         Open App.Path & "\sys\sys.txt" For Output As #2                         '重建sys文件
         
