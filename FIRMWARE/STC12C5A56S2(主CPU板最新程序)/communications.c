@@ -2,7 +2,7 @@
 #include <intrins.h>        //51单片机的汇编语句的C语言调用接口
 #include "communications.h" //通讯头文件
 
-#define RELOAD_COUNT 0xe8   
+#define RELOAD_COUNT 0xe8
 
 
 
@@ -15,13 +15,13 @@
 /*返回值:无                                              */
 /*********************************************************/
 void COM1_initial(void)
-{ 
-  SCON = 0x50; 
-  S2BRT = RELOAD_COUNT;
-  AUXR = 0x11;  
-  PCON = 0x00; //SMOD=0波特率不倍增
-  EA = 1;      //开总中断
-  ES = 1;      
+{
+    SCON = 0x50;
+    S2BRT = RELOAD_COUNT;
+    AUXR = 0x11;
+    PCON = 0x00; //SMOD=0波特率不倍增
+    EA = 1;      //开总中断
+    ES = 1;
 }
 
 
@@ -36,7 +36,7 @@ void COM1_initial(void)
   AUXR1 = 0x10; //将串口2切换到P4口
   S2CON = 0x50; //设定串口工作模式
   S2BRT = RELOAD_COUNT;
-  AUXR = 0x11; 
+  AUXR = 0x11;
   IE2 = 0x01; //等价于ES2=1
 }*/
 
@@ -49,48 +49,48 @@ void COM1_initial(void)
 /*********************************************************/
 void COM2_initial(void)
 {
-  S2CON = 0x50; //设定串口工作模式
-  S2BRT = RELOAD_COUNT;
-  AUXR = 0x11;  
-  AUXR1 = 0x10; //将串口2切换到P4口
-  EA = 1;       //开总中断
-  IE2 = 0x01;   
+    S2CON = 0x50; //设定串口工作模式
+    S2BRT = RELOAD_COUNT;
+    AUXR = 0x11;
+    AUXR1 = 0x10; //将串口2切换到P4口
+    EA = 1;       //开总中断
+    IE2 = 0x01;
 }
 
 
 
 
-/*********************************************************/ 
+/*********************************************************/
 /*函数名:COM1_send_char()                                */
 /*函数功能:串口1发送一个字节数据                         */
-/*入口参数:数据                                          */    
+/*入口参数:数据                                          */
 /*返回值:无                                              */
 /*********************************************************/
-void COM1_send_char(unsigned char CH) 
+void COM1_send_char(unsigned char CH)
 {
-  ES = 0;
-  TI = 0; //发送之前先清除TI
-  SBUF = CH;
-  while(TI==0);
-    TI=0;
-  ES=1;
+    ES = 0;
+    TI = 0; //发送之前先清除TI
+    SBUF = CH;
+    while(TI == 0);
+    TI = 0;
+    ES = 1;
 }
 
 
-/*********************************************************/ 
+/*********************************************************/
 /*函数名:COM2_send_char()                                */
 /*函数功能:串口2发送一个字节数据                         */
-/*入口参数:数据                                          */    
+/*入口参数:数据                                          */
 /*返回值:无                                              */
 /*********************************************************/
-/*void COM2_send_char(unsigned char CH) 
+/*void COM2_send_char(unsigned char CH)
 {
   unsigned char temp = 0;
-  
+
   IE2 = 0x00; //关闭串口2中断,ES2=0
   DIR_485 = 1; //发送状态
   //S2CON=S2CON & 0xEF; //禁止接收
-  S2CON = S2CON & 0xFE; //清除S2RI 
+  S2CON = S2CON & 0xFE; //清除S2RI
   S2CON = S2CON & 0xFD; //清除S2TI
   S2BUF = CH;
   //---------------------------------
@@ -102,64 +102,65 @@ void COM1_send_char(unsigned char CH)
   }while(temp == 0);
   //---------------------------------
   //等价于TI=0;
-  DIR_485 = 0;//接收状态 
-  S2CON = S2CON & 0xFD;  
-  S2CON = S2CON & 0xFE; 
+  DIR_485 = 0;//接收状态
+  S2CON = S2CON & 0xFD;
+  S2CON = S2CON & 0xFE;
   //S2CON=S2CON |0x10;
   IE2 = 0x01; //ES2=1
 }  */
 
 
-/*********************************************************/ 
+/*********************************************************/
 /*函数名:COM2_send_char()                                */
 /*函数功能:串口2发送一个字节数据                         */
-/*入口参数:数据                                          */    
+/*入口参数:数据                                          */
 /*返回值:无                                              */
 /*********************************************************/
-void COM2_send_char(unsigned char CH) 
+void COM2_send_char(unsigned char CH)
 {
-  unsigned char temp = 0;
-  
-  IE2 = 0x00;  //关闭串口2中断,ES2=0
+    unsigned char temp = 0;
 
-  DIR_485 = 1; //发送状态
+    IE2 = 0x00;  //关闭串口2中断,ES2=0
 
-  S2CON = S2CON & 0xFD; //清除S2TI
+    DIR_485 = 1; //发送状态
 
-  S2BUF = CH;
+    S2CON = S2CON & 0xFD; //清除S2TI
+
+    S2BUF = CH;
 
     //while((S2CON & 0x02) == 0);
     //S2CON &= 0xfd;
 
-  do
-  {
-	temp = S2CON;
-	temp = temp & 0x02;
-  }while(temp == 0);
+    do
+    {
+        temp = S2CON;
+        temp = temp & 0x02;
+    }
+    while(temp == 0);
 
-  S2CON = S2CON & 0xFD; 
+    S2CON = S2CON & 0xFD;
 
-  DIR_485 = 0; 
+    DIR_485 = 0;
 
-  IE2 = 0x01; //ES2=1
-}  
+    IE2 = 0x01; //ES2=1
+}
 
 
-/*********************************************************/ 
+/*********************************************************/
 /*函数名:COM1_send_string()                              */
 /*函数功能:串口1发送字符串数据                           */
-/*入口参数:数据                                          */    
+/*入口参数:数据                                          */
 /*返回值:无                                              */
 /*********************************************************/
-void COM1_send_string(unsigned char *str,int strlen) 
-{ 
-  int k= 0;
-   
-  do 
-  { 
-    WD_IN ^= 1;
-    COM1_send_char(*(str + k)); 
-    k++; 
-  }
-  while (k < strlen); 
-} 
+void COM1_send_string(unsigned char *str, int strlen)
+{
+    int k = 0;
+
+    do
+    {
+        WD_IN ^= 1;
+        COM1_send_char(*(str + k));
+        k++;
+    }
+    while (k < strlen);
+}

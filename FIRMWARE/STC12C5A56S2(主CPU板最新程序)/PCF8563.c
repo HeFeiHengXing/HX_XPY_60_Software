@@ -2,8 +2,8 @@
 #include <intrins.h>      //51单片机的汇编语句的C语言调用接口
 #include "PCF8563.H"      //时钟芯片头文
 
-sbit SCL_8563 = P3^4;     //串行时钟
-sbit SDA_8563 = P3^5;     //串行数据
+sbit SCL_8563 = P3 ^ 4;   //串行时钟
+sbit SDA_8563 = P3 ^ 5;   //串行数据
 
 
 /*********************************************************/
@@ -12,21 +12,21 @@ sbit SDA_8563 = P3^5;     //串行数据
 /*入口参数:无                                            */
 /*返回值:无                                              */
 /*********************************************************/
-void I2C_Start(void) 
-{        
-  EA = 0;
+void I2C_Start(void)
+{
+    EA = 0;
 
-  SDA_8563=1; //数据线置高
+    SDA_8563 = 1; //数据线置高
 
-  SCL_8563=1; //时钟线置高
-  _nop_();
-  _nop_();
-            
-  SDA_8563=0; //数据线置低    
-  _nop_();
-  _nop_();
-                     
-  SCL_8563=0; 
+    SCL_8563 = 1; //时钟线置高
+    _nop_();
+    _nop_();
+
+    SDA_8563 = 0; //数据线置低
+    _nop_();
+    _nop_();
+
+    SCL_8563 = 0;
 }
 
 
@@ -41,24 +41,24 @@ void I2C_Start(void)
   本函数执行后,I2C总线处于空闲状态                       */
 /*********************************************************/
 void I2C_Stop(void)
-{   
-  SDA_8563=0; //数据线置低
-  _nop_();
-  _nop_();
-                   
-  SCL_8563=1; //时钟线置高
-  _nop_();
-  _nop_();
-                  
-  SDA_8563=1; //数据线置高
-  _nop_();
-  _nop_();
+{
+    SDA_8563 = 0; //数据线置低
+    _nop_();
+    _nop_();
 
-  //SCL_8563=0; 
-  //_nop_();
-  //_nop_(); 
+    SCL_8563 = 1; //时钟线置高
+    _nop_();
+    _nop_();
 
-  EA = 1;      
+    SDA_8563 = 1; //数据线置高
+    _nop_();
+    _nop_();
+
+    //SCL_8563=0;
+    //_nop_();
+    //_nop_();
+
+    EA = 1;
 }
 
 
@@ -71,58 +71,58 @@ void I2C_Stop(void)
 /*返回值:无                                              */
 /*********************************************************/
 void Wait_ACK(void)
-{   
-  unsigned char errtime=20;
+{
+    unsigned char errtime = 20;
 
-  SDA_8563=1; //数据线置高
-  _nop_();
-  _nop_();
-       
-  SCL_8563=1; //时钟线置高
-  _nop_();
-  _nop_();
+    SDA_8563 = 1; //数据线置高
+    _nop_();
+    _nop_();
 
-  while(SDA_8563)
-  {  
-    errtime--;
-    if(!errtime) //如果没有等到,则结束传输
-	{
-	  I2C_Stop();
-	}
-  }
+    SCL_8563 = 1; //时钟线置高
+    _nop_();
+    _nop_();
 
-  SCL_8563=0; 
-  _nop_();
-  _nop_();
+    while(SDA_8563)
+    {
+        errtime--;
+        if(!errtime) //如果没有等到,则结束传输
+        {
+            I2C_Stop();
+        }
+    }
+
+    SCL_8563 = 0;
+    _nop_();
+    _nop_();
 }
 
 
-/*********************************************************/ 
+/*********************************************************/
 /*函数名:Write_Byte()                                    */
 /*函数功能:发送数据                                      */
-/*入口参数:wData                                         */    
+/*入口参数:wData                                         */
 /*返回值:无                                              */
 /*********************************************************/
 void Write_Byte(unsigned char wdata)
-{  
-  unsigned char i;
+{
+    unsigned char i;
 
-  for(i=0;i<8;i++)
-  { 
-    if(wdata & 0x80) 
-	  SDA_8563 = 1; 
-    else 
-	  SDA_8563 = 0;
+    for(i = 0; i < 8; i++)
+    {
+        if(wdata & 0x80)
+            SDA_8563 = 1;
+        else
+            SDA_8563 = 0;
 
-    wdata <<= 1;
+        wdata <<= 1;
 
-    SCL_8563=1;
-    _nop_();
-    _nop_();
-          
-    SCL_8563=0;
-  }
-  Wait_ACK();
+        SCL_8563 = 1;
+        _nop_();
+        _nop_();
+
+        SCL_8563 = 0;
+    }
+    Wait_ACK();
 }
 
 
@@ -134,13 +134,13 @@ void Write_Byte(unsigned char wdata)
 /*入口参数:地址和数据                                    */
 /*返回值:无                                              */
 /*********************************************************/
-void WriteData(unsigned char address,unsigned char mdata)
+void WriteData(unsigned char address, unsigned char mdata)
 {
-  I2C_Start();
-  Write_Byte(0xa2); 
-  Write_Byte(address);
-  Write_Byte(mdata);          
-  I2C_Stop();
+    I2C_Start();
+    Write_Byte(0xa2);
+    Write_Byte(address);
+    Write_Byte(mdata);
+    I2C_Stop();
 }
 
 
@@ -154,13 +154,13 @@ void WriteData(unsigned char address,unsigned char mdata)
 /*********************************************************/
 void START_8563(void)
 {
-  WriteData(0x0,0x20);    //停止定时器
-  WriteData(0x0e,0x83);   //TE=1,Td1=1,Td0=1
-  
-  //WriteData(0x0f,0x05); //记数器的记数初值
-  WriteData(0x0f,0x0a);   //记数器的记数初值
-  WriteData(0x1,0x01);    
-  WriteData(0x0,0x00);    
+    WriteData(0x0, 0x20);   //停止定时器
+    WriteData(0x0e, 0x83);  //TE=1,Td1=1,Td0=1
+
+    //WriteData(0x0f,0x05); //记数器的记数初值
+    WriteData(0x0f, 0x0a);  //记数器的记数初值
+    WriteData(0x1, 0x01);
+    WriteData(0x0, 0x00);
 }
 
 
@@ -172,11 +172,11 @@ void START_8563(void)
 /*********************************************************/
 void S10_START_8563(unsigned char count)
 {
-  WriteData(0x0,0x20);   //停止定时器
-  WriteData(0x0e,0x82);
-  WriteData(0x0f,count); //记数器的记数初值
-  WriteData(0x1,0x01);  
-  WriteData(0x0,0x00);   
+    WriteData(0x0, 0x20);  //停止定时器
+    WriteData(0x0e, 0x82);
+    WriteData(0x0f, count); //记数器的记数初值
+    WriteData(0x1, 0x01);
+    WriteData(0x0, 0x00);
 }
 
 
@@ -188,7 +188,7 @@ void S10_START_8563(unsigned char count)
 /*********************************************************/
 void stop_sys(void)
 {
-  WriteData(0x0,0x20);
+    WriteData(0x0, 0x20);
 }
 
 
@@ -200,5 +200,5 @@ void stop_sys(void)
 /*********************************************************/
 void start_sys(void)
 {
-  WriteData(0x0,0x00);
+    WriteData(0x0, 0x00);
 }
