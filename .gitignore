@@ -342,3 +342,10 @@ Vb_autoBak/Project1.abk
 Project1.csi
 Project1.PDM
 *.uzy
+*.LST
+*.Bak
+*.uvopt
+*.lnp
+*.htm
+*.M51
+*.uvgui.*
