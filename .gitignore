@@ -351,3 +351,4 @@ Project1.PDM
 *.uvgui.*
 *.orig
 *.__i
+FIRMWARE/STC12C5A56S2(主CPU板最新程序)/main

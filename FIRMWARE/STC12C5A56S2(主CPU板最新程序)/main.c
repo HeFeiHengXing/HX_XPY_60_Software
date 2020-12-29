@@ -404,7 +404,6 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             WORK_LED = 1;
             DATA_COUNT = 2;
             P_COUNT = 2;
-            Count++;
             if(Count < 20)
             {
                 Count++;
@@ -437,7 +436,6 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             WORK_LED = 1;
             DATA_COUNT = 122;
             P_COUNT = 3;
-            Count++;
             if(Count < 20)
             {
                 Count++;
@@ -467,7 +465,6 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             delay(5000);
             P0 = 0xff;
 
-
             START_8563(); //改为以5分钟单位
         }
         else
@@ -477,7 +474,6 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             WORK_LED = 1;
             DATA_COUNT = 242;
             P_COUNT = 4;
-            Count++;
             if(Count < 20)
             {
                 Count++;
