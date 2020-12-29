@@ -677,6 +677,7 @@ void COM2_Interrupt_Receive(void) interrupt 8
         {
             if(k == 0xc1)
             {
+                Count = 0;
                 ++request;
             }
             k = 0xff;
@@ -685,6 +686,7 @@ void COM2_Interrupt_Receive(void) interrupt 8
         {
             if(k == 0xc2)
             {
+                Count = 0;
                 ++request;
             }
             k = 0xff;
@@ -693,6 +695,7 @@ void COM2_Interrupt_Receive(void) interrupt 8
         {
             if(k == 0xc3)
             {
+                Count = 0;
                 request = 0;
             }
             k = 0xff;
