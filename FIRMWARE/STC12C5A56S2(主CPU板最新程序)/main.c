@@ -255,7 +255,6 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
         media = P2;
 
         DATA_COUNT = 0;
-        Count = 0;
 
         if(media >= 0 && media <= 250)
         {
@@ -298,6 +297,7 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
 
         request = 1; // request ¸³ÖµÎª1,ÎªÓ¦´ð
 
+        Count = 0;
         P_COUNT++;
         S10_START_8563(2); //¸ÄÎªÒÔÃëµ¥Î»
         break;
@@ -320,18 +320,42 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
 
             if(request == 1)
             {
+                if(Count < 20)
+                {
+                    Count++;
+                }
+                else //RS485ÍøÂç¹ÊÕÏ
+                {
+                    COM1_send_char(0xfe);
+                }
                 COM2_send_char(0xc1);
                 S10_START_8563(1);
             }
 
             if(request == 2)
             {
+                if(Count < 20)
+                {
+                    Count++;
+                }
+                else //RS485ÍøÂç¹ÊÕÏ
+                {
+                    COM1_send_char(0xfe);
+                }
                 COM2_send_char(0xc2);
                 S10_START_8563(1);
             }
 
             if(request == 3)
             {
+                if(Count < 20)
+                {
+                    Count++;
+                }
+                else //RS485ÍøÂç¹ÊÕÏ
+                {
+                    COM1_send_char(0xfe);
+                }
                 COM2_send_char(0xc3);
                 S10_START_8563(1);
             }
@@ -381,11 +405,13 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             DATA_COUNT = 2;
             P_COUNT = 2;
             Count++;
-            if(Count == 10) //RS485ÍøÂç¹ÊÕÏ
+            if(Count < 20)
+            {
+                Count++;
+            }
+            else //RS485ÍøÂç¹ÊÕÏ
             {
                 COM1_send_char(0xfe);
-                stop_sys();
-                break;
             }
             S10_START_8563(2);
         }
@@ -412,11 +438,13 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             DATA_COUNT = 122;
             P_COUNT = 3;
             Count++;
-            if(Count == 10) //RS485ÍøÂç¹ÊÕÏ
+            if(Count < 20)
+            {
+                Count++;
+            }
+            else //RS485ÍøÂç¹ÊÕÏ
             {
                 COM1_send_char(0xfe);
-                stop_sys();
-                break;
             }
             S10_START_8563(2);
         }
@@ -450,11 +478,13 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             DATA_COUNT = 242;
             P_COUNT = 4;
             Count++;
-            if(Count == 10) //RS485ÍøÂç¹ÊÕÏ
+            if(Count < 20)
+            {
+                Count++;
+            }
+            else //RS485ÍøÂç¹ÊÕÏ
             {
                 COM1_send_char(0xfe);
-                stop_sys();
-                break;
             }
             S10_START_8563(2);
         }
