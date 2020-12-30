@@ -595,7 +595,6 @@ Begin VB.Form Form2
             _ExtentX        =   6959
             _ExtentY        =   5953
             _Version        =   393217
-            Enabled         =   -1  'True
             TextRTF         =   $"workfrm.frx":8696
          End
       End
@@ -747,7 +746,6 @@ Begin VB.Form Form2
             _ExtentX        =   3201
             _ExtentY        =   5106
             _Version        =   393217
-            Enabled         =   -1  'True
             TextRTF         =   $"workfrm.frx":8A19
          End
          Begin ACTIVESKINLibCtl.SkinLabel SkinLabel40 
@@ -13234,7 +13232,7 @@ Private Sub MSComm1_OnComm()                                                    
     ''''''''''''''''''''''''''''''''''数据保存并处理'''''''''''''''''''''''''''''''''''''
     If (Len(Text4.Text) = 724) Then
         
-        SkinLabel61.Caption = "已连接..."
+        'SkinLabel61.Caption = "已连接..."
         
         DataReceiver_flag = 1                                                   '判断是否接收到下位机数据的标志位
         
@@ -13914,7 +13912,24 @@ NextLoop:
         
         Timer2.Enabled = True
         
-        SkinLabel61.Caption = "培养箱已连接..."
+        SkinLabel61.Caption = "已连接..."
+        
+        command(0) = &H84                                                       '初始化时发送传送数据命令(132)
+        
+        MSComm1.Output = command
+        
+        command(0) = &HFF                                                       '清空命令
+        
+        Text4.Text = ""
+        
+        releaseLock
+        
+        Exit Sub
+        
+        ''''''''''''''''''''''''''接收下位机数据''''''''''''''''''''''''''''''
+    ElseIf (Len(Text4.Text) = 2 And Text4.Text = "FA") Then
+        
+        SkinLabel61.Caption = "仓门已打开，检测停止..."
         
         command(0) = &H84                                                       '初始化时发送传送数据命令(132)
         
@@ -14092,7 +14107,7 @@ Private Sub Timer2_Timer()                                                      
             
             Text4.Text = ""
             
-            SkinLabel61.Caption = "培养箱未连接..."
+            SkinLabel61.Caption = "未连接..."
             
             Timer1.Enabled = True
             

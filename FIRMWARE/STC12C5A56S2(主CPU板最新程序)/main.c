@@ -24,6 +24,7 @@ unsigned char xdata DATA_COM[362] = {0x00}; //接收到的数据缓冲区
 unsigned int  DATA_COUNT = 0;               //一次采样的总数据数字
 //unsigned char xdata DATA_BUF[362] = {0x00}; //从EEPORM中读取的数据存放在此处
 
+unsigned int connect_delay = 0;
 
 long new_address1; //存储器地址
 long new_address2; //存储器地址
@@ -122,12 +123,14 @@ void main(void)
 
         if(DOOR == 1 && Open_Flag == 0) //门打开,此时停机状态
         {
+            COM1_send_char(0xfa);
             Open_Flag = 1;
             stop_sys();
         }
         //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if(DOOR == 0 && Open_Flag == 1 && debug == 0 )
         {
+            COM1_send_char(0x88); //通知上位机,下位机已打开
             Open_Flag = 0;
             if( buffer_lock > 1 )
                 buffer_lock -= 2;
@@ -138,7 +141,10 @@ void main(void)
         if(CONNECT_Flag == 1)   //上位机打开标志位
         {
             CONNECT_Flag = 0;     //标志位复位
-            COM1_send_char(0x88); //通知上位机,下位机已打开
+            if(DOOR == 0)
+                COM1_send_char(0x88); //通知上位机,下位机已打开
+            else
+                COM1_send_char(0xfa);
         }
 
         if(Clear_Flag == 1)        //清空数据,改写地址
@@ -162,6 +168,11 @@ void main(void)
         else
         {
             Memory_Flag = 1; //存储芯片中有测量数据
+        }
+
+        if((buffer_lock == 0) && (PC_CONNECT == 1) && (Memory_Flag == 0) && (Send_Enable == 0)) // 数据传输完之后，清空状态位
+        {
+            PC_CONNECT = 0;
         }
 
         if((buffer_lock == 0) && (PC_CONNECT == 1) && (Memory_Flag == 1) && (Send_Enable == 0)) //上位机打开,存储芯片中有数据,而主CPU没有接收到从CPU中数据,这时上传存储芯片数据
@@ -203,14 +214,21 @@ void main(void)
 
         if((buffer_lock == 0) && (PC_CONNECT == 0) && (Send_Enable == 1)) //在上位机没打开,而主CPU接收到数据的时候保存到EEPORM中
         {
-            ++buffer_lock; //锁
-            Send_Enable = 0; //标志位复位
-            AT512_Write(DATA_COM, old_address1, 362);
-            old_address1 += 362; //地址计算
-            SAVE_ADDRESS(1);     //保存地址
-            old_address2 += 362; //地址计算
-            SAVE_ADDRESS(3);     //保存地址
-            --buffer_lock; //释放锁
+            if(connect_delay < 50000)
+            {
+                ++connect_delay;
+            }
+            else
+            {
+                ++buffer_lock; //锁
+                Send_Enable = 0; //标志位复位
+                AT512_Write(DATA_COM, old_address1, 362);
+                old_address1 += 362; //地址计算
+                SAVE_ADDRESS(1);     //保存地址
+                old_address2 += 362; //地址计算
+                SAVE_ADDRESS(3);     //保存地址
+                --buffer_lock; //释放锁
+            }
         }
     }
 }
@@ -460,6 +478,11 @@ void PCF8563_Interrupt_Receive(void) interrupt 2
             buffer_lock -= 2;
             P_COUNT = 0;
             Send_Enable = 1;
+
+            // 发送88,等待上位机应答信号
+            PC_CONNECT = 0;
+            COM1_send_char(0x88);
+            connect_delay = 0;
 
             P0 = 0x94; //发送电机转动命令
             delay(5000);
