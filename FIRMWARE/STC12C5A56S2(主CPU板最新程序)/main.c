@@ -73,6 +73,8 @@ void main(void)
     COM1_initial(); //串口1初始化
     COM2_initial(); //串口2初始化
 
+    COM1_send_char(0x88); //通知上位机,下位机已打开
+
     GET_ADDRESS();  //获取存储芯片地址
 
     if(old_address1 % 362 == 0 && old_address2 % 362 == 0 && old_address1 - old_address2 != 362) //修正地址
@@ -109,7 +111,6 @@ void main(void)
         ADDRESS_Second_Init(); //地址初始化
     }
 
-    COM1_send_char(0x88); //通知上位机,下位机已打开
     S10_START_8563(30);   //改为以秒单位
 
     WORK_LED = 0; //工作指示灯亮
@@ -181,6 +182,7 @@ void main(void)
             PC_CONNECT = 0;  //标志位复位
             Memory_Flag = 0; //标志位复位
             AT512_Read(DATA_COM, new_address1, 362); //读存储芯片中数据
+            COM1_send_char(0xf9);
             COM1_send_string(DATA_COM, 362);       //向上位机中上传数据
             AT512_Write_Zero(new_address1, 362);
             new_address1 += 362; //地址计算
@@ -208,6 +210,7 @@ void main(void)
             ++buffer_lock; //锁
             PC_CONNECT = 0;  //标志位复位
             Send_Enable = 0; //标志位复位
+            COM1_send_char(0xf9);
             COM1_send_string(DATA_COM, 362);
             --buffer_lock; //释放锁
         }
@@ -552,13 +555,13 @@ void COM1_Interrupt_Receive(void) interrupt 4
         else if(k >= 0x3d && k <= 0x78 && debug == 1) //在停机状态下发送校准命令
         {
             COM2_send_char(k);
+            COM1_send_char(0xf9);
             ES = 0;
             delay(60000);	  //增加的延时
             delay(60000);
             //k = S2BUF;
             delay(60000);
             ES = 1;
-            // COM1_send_char(k);
             k = 0xff;
         }
 

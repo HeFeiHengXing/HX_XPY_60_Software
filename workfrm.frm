@@ -49,34 +49,34 @@ Begin VB.Form Form2
       TabCaption(1)   =   "系统设置"
       TabPicture(1)   =   "workfrm.frx":686E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame21"
-      Tab(1).Control(1)=   "Frame18"
-      Tab(1).Control(2)=   "Frame20"
-      Tab(1).Control(3)=   "Frame19"
-      Tab(1).Control(4)=   "Timer2"
-      Tab(1).Control(5)=   "Timer1"
-      Tab(1).Control(6)=   "Frame16"
-      Tab(1).Control(7)=   "Text10"
+      Tab(1).Control(0)=   "WindowsMediaPlayer1"
+      Tab(1).Control(1)=   "MSComm1"
+      Tab(1).Control(2)=   "Frame6"
+      Tab(1).Control(3)=   "Frame8"
+      Tab(1).Control(4)=   "Text3"
+      Tab(1).Control(5)=   "Text4"
+      Tab(1).Control(6)=   "Text5"
+      Tab(1).Control(7)=   "Text6"
       Tab(1).Control(8)=   "Text9"
-      Tab(1).Control(9)=   "Text6"
-      Tab(1).Control(10)=   "Text5"
-      Tab(1).Control(11)=   "Text4"
-      Tab(1).Control(12)=   "Text3"
-      Tab(1).Control(13)=   "Frame8"
-      Tab(1).Control(14)=   "Frame6"
-      Tab(1).Control(15)=   "MSComm1"
-      Tab(1).Control(16)=   "WindowsMediaPlayer1"
+      Tab(1).Control(9)=   "Text10"
+      Tab(1).Control(10)=   "Frame16"
+      Tab(1).Control(11)=   "Timer1"
+      Tab(1).Control(12)=   "Timer2"
+      Tab(1).Control(13)=   "Frame19"
+      Tab(1).Control(14)=   "Frame20"
+      Tab(1).Control(15)=   "Frame18"
+      Tab(1).Control(16)=   "Frame21"
       Tab(1).ControlCount=   17
       TabCaption(2)   =   "查询统计"
       TabPicture(2)   =   "workfrm.frx":688A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame12"
-      Tab(2).Control(1)=   "Frame14"
-      Tab(2).Control(2)=   "Frame13"
+      Tab(2).Control(0)=   "Frame10"
+      Tab(2).Control(1)=   "Frame11"
+      Tab(2).Control(2)=   "CommonDialog1"
       Tab(2).Control(3)=   "SystemGraph1"
-      Tab(2).Control(4)=   "CommonDialog1"
-      Tab(2).Control(5)=   "Frame11"
-      Tab(2).Control(6)=   "Frame10"
+      Tab(2).Control(4)=   "Frame13"
+      Tab(2).Control(5)=   "Frame14"
+      Tab(2).Control(6)=   "Frame12"
       Tab(2).ControlCount=   7
       Begin VB.Frame Frame21 
          Caption         =   "警报设置"
@@ -11764,10 +11764,6 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第1个瓶做校准1(61)
             
-                command(0) = &H3D
-            
-                MSComm1.Output = command                                            '第1个瓶做校准1(61)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 1
@@ -11776,17 +11772,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第2个瓶做校准1(61)
             
-                command(0) = &H3E
-            
-                MSComm1.Output = command                                            '第2个瓶做校准1(62)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 2
-            
-                command(0) = &H3F
-            
-                MSComm1.Output = command                                            '第3个瓶做校准1(63)
             
                 command(0) = &H3F
             
@@ -11800,17 +11788,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第4个瓶做校准1(64)
             
-                command(0) = &H40
-            
-                MSComm1.Output = command                                            '第4个瓶做校准1(64)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 4
-            
-                command(0) = &H41
-            
-                MSComm1.Output = command                                            '第5个瓶做校准1(65)
             
                 command(0) = &H41
             
@@ -11824,17 +11804,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第6个瓶做校准1(66)
             
-                command(0) = &H42
-            
-                MSComm1.Output = command                                            '第6个瓶做校准1(66)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 6
-            
-                command(0) = &H43
-            
-                MSComm1.Output = command                                            '第7个瓶做校准1(67)
             
                 command(0) = &H43
             
@@ -11848,17 +11820,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第8个瓶做校准1(68)
             
-                command(0) = &H44
-            
-                MSComm1.Output = command                                            '第8个瓶做校准1(68)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 8
-            
-                command(0) = &H45
-            
-                MSComm1.Output = command                                            '第9个瓶做校准1(69)
             
                 command(0) = &H45
             
@@ -11872,17 +11836,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第10个瓶做校准1(70)
             
-                command(0) = &H46
-            
-                MSComm1.Output = command                                            '第10个瓶做校准1(70)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 10
-            
-                command(0) = &H47
-            
-                MSComm1.Output = command                                            '第11个瓶做校准1(71)
             
                 command(0) = &H47
             
@@ -11896,17 +11852,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第12个瓶做校准1(72)
             
-                command(0) = &H48
-            
-                MSComm1.Output = command                                            '第12个瓶做校准1(72)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 12
-            
-                command(0) = &H49
-            
-                MSComm1.Output = command                                            '第13个瓶做校准1(73)
             
                 command(0) = &H49
             
@@ -11920,17 +11868,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第14个瓶做校准1(74)
             
-                command(0) = &H4A
-            
-                MSComm1.Output = command                                            '第14个瓶做校准1(74)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 14
-            
-                command(0) = &H4B
-            
-                MSComm1.Output = command                                            '第15个瓶做校准1(75)
             
                 command(0) = &H4B
             
@@ -11944,17 +11884,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第16个瓶做校准1(76)
             
-                command(0) = &H4C
-            
-                MSComm1.Output = command                                            '第16个瓶做校准1(76)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 16
-            
-                command(0) = &H4D
-            
-                MSComm1.Output = command                                            '第17个瓶做校准1(77)
             
                 command(0) = &H4D
             
@@ -11968,17 +11900,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第18个瓶做校准1(78)
             
-                command(0) = &H4E
-            
-                MSComm1.Output = command                                            '第18个瓶做校准1(78)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 18
-            
-                command(0) = &H4F
-            
-                MSComm1.Output = command                                            '第19个瓶做校准1(79)
             
                 command(0) = &H4F
             
@@ -11992,17 +11916,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第20个瓶做校准1(80)
             
-                command(0) = &H50
-            
-                MSComm1.Output = command                                            '第20个瓶做校准1(80)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 20
-            
-                command(0) = &H51
-            
-                MSComm1.Output = command                                            '第21个瓶做校准1(81)
             
                 command(0) = &H51
             
@@ -12016,17 +11932,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第22个瓶做校准1(82)
             
-                command(0) = &H52
-            
-                MSComm1.Output = command                                            '第22个瓶做校准1(82)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 22
-            
-                command(0) = &H53
-            
-                MSComm1.Output = command                                            '第23个瓶做校准1(83)
             
                 command(0) = &H53
             
@@ -12040,17 +11948,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第24个瓶做校准2(84)
             
-                command(0) = &H54
-            
-                MSComm1.Output = command                                            '第24个瓶做校准2(84)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 24
-            
-                command(0) = &H55
-            
-                MSComm1.Output = command                                            '第25个瓶做校准1(85)
             
                 command(0) = &H55
             
@@ -12064,17 +11964,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第26个瓶做校准1(86)
             
-                command(0) = &H56
-            
-                MSComm1.Output = command                                            '第26个瓶做校准1(86)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 26
-            
-                command(0) = &H57
-            
-                MSComm1.Output = command                                            '第27个瓶做校准1(87)
             
                 command(0) = &H57
             
@@ -12088,17 +11980,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第28个瓶做校准1(88)
             
-                command(0) = &H58
-            
-                MSComm1.Output = command                                            '第28个瓶做校准1(88)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 28
-            
-                command(0) = &H59
-            
-                MSComm1.Output = command                                            '第29个瓶做校准1(89)
             
                 command(0) = &H59
             
@@ -12112,17 +11996,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第30个瓶做校准1(90)
             
-                command(0) = &H5A
-            
-                MSComm1.Output = command                                            '第30个瓶做校准1(90)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 30
-            
-                command(0) = &H5B
-            
-                MSComm1.Output = command                                            '第31个瓶做校准1(91)
             
                 command(0) = &H5B
             
@@ -12136,17 +12012,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第32个瓶做校准1(92)
             
-                command(0) = &H5C
-            
-                MSComm1.Output = command                                            '第32个瓶做校准1(92)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 32
-            
-                command(0) = &H5D
-            
-                MSComm1.Output = command                                            '第33个瓶做校准1(93)
             
                 command(0) = &H5D
             
@@ -12160,17 +12028,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第34个瓶做校准1(94)
             
-                command(0) = &H5E
-            
-                MSComm1.Output = command                                            '第34个瓶做校准1(94)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 34
-            
-                command(0) = &H5F
-            
-                MSComm1.Output = command                                            '第35个瓶做校准1(95)
             
                 command(0) = &H5F
             
@@ -12184,17 +12044,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第36个瓶做校准1(96)
             
-                command(0) = &H60
-            
-                MSComm1.Output = command                                            '第36个瓶做校准1(96)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 36
-            
-                command(0) = &H61
-            
-                MSComm1.Output = command                                            '第37个瓶做校准1(97)
             
                 command(0) = &H61
             
@@ -12208,17 +12060,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第38个瓶做校准1(98)
             
-                command(0) = &H62
-            
-                MSComm1.Output = command                                            '第38个瓶做校准1(98)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 38
-            
-                command(0) = &H63
-            
-                MSComm1.Output = command                                            '第39个瓶做校准1(99)
             
                 command(0) = &H63
             
@@ -12232,17 +12076,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第40个瓶做校准1(100)
             
-                command(0) = &H64
-            
-                MSComm1.Output = command                                            '第40个瓶做校准1(100)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 40
-            
-                command(0) = &H65
-            
-                MSComm1.Output = command                                            '第41个瓶做校准1(101)
             
                 command(0) = &H65
             
@@ -12256,17 +12092,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第42个瓶做校准1(102)
             
-                command(0) = &H66
-            
-                MSComm1.Output = command                                            '第42个瓶做校准1(102)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 42
-            
-                command(0) = &H67
-            
-                MSComm1.Output = command                                            '第43个瓶做校准1(103)
             
                 command(0) = &H67
             
@@ -12280,17 +12108,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第44个瓶做校准1(104)
             
-                command(0) = &H68
-            
-                MSComm1.Output = command                                            '第44个瓶做校准1(104)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 44
-            
-                command(0) = &H69
-            
-                MSComm1.Output = command                                            '第45个瓶做校准1(105)
             
                 command(0) = &H69
             
@@ -12304,17 +12124,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第46个瓶做校准1(106)
             
-                command(0) = &H6A
-            
-                MSComm1.Output = command                                            '第46个瓶做校准1(106)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 46
-            
-                command(0) = &H6B
-            
-                MSComm1.Output = command                                            '第47个瓶做校准1(107)
             
                 command(0) = &H6B
             
@@ -12328,17 +12140,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第48个瓶做校准1(108)
             
-                command(0) = &H6C
-            
-                MSComm1.Output = command                                            '第48个瓶做校准1(108)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 48
-            
-                command(0) = &H6D
-            
-                MSComm1.Output = command                                            '第49个瓶做校准1(109)
             
                 command(0) = &H6D
             
@@ -12352,17 +12156,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第50个瓶做校准1(110)
             
-                command(0) = &H6E
-            
-                MSComm1.Output = command                                            '第50个瓶做校准1(110)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 50
-            
-                command(0) = &H6F
-            
-                MSComm1.Output = command                                            '第51个瓶做校准1(111)
             
                 command(0) = &H6F
             
@@ -12376,17 +12172,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第52个瓶做校准1(112)
             
-                command(0) = &H70
-            
-                MSComm1.Output = command                                            '第52个瓶做校准1(112)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 52
-            
-                command(0) = &H71
-            
-                MSComm1.Output = command                                            '第53个瓶做校准1(113)
             
                 command(0) = &H71
             
@@ -12400,17 +12188,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第54个瓶做校准1(114)
             
-                command(0) = &H72
-            
-                MSComm1.Output = command                                            '第54个瓶做校准1(114)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 54
-            
-                command(0) = &H73
-            
-                MSComm1.Output = command                                            '第55个瓶做校准1(115)
             
                 command(0) = &H73
             
@@ -12424,17 +12204,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第56个瓶做校准1(116)
             
-                command(0) = &H74
-            
-                MSComm1.Output = command                                            '第56个瓶做校准1(116)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 56
-            
-                command(0) = &H75
-            
-                MSComm1.Output = command                                            '第57个瓶做校准1(117)
             
                 command(0) = &H75
             
@@ -12448,10 +12220,6 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第58个瓶做校准1(118)
             
-                command(0) = &H76
-            
-                MSComm1.Output = command                                            '第58个瓶做校准1(118)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 58
@@ -12460,17 +12228,9 @@ Private Sub Command8_Click()
             
                 MSComm1.Output = command                                            '第59个瓶做校准1(119)
             
-                command(0) = &H77
-            
-                MSComm1.Output = command                                            '第59个瓶做校准1(119)
-            
                 command(0) = &HFF                                                   '清空命令
             
             Case 59
-            
-                command(0) = &H78
-            
-                MSComm1.Output = command                                            '第60个瓶做校准1(120)
             
                 command(0) = &H78
             
@@ -13229,8 +12989,40 @@ Private Sub MSComm1_OnComm()                                                    
         
     End Select
     
+    If (Len(Text4.Text) > 2) And (Left(Text4.Text, 2) <> "F9") Then
+   
+        Text4.Text = Right(Text4.Text, 2)
+    
+    End If
+    
+    If (Len(Text4.Text) > 726) Then
+   
+        Text4.Text = Left(Text4.Text, 726)
+   
+    End If
+    
     ''''''''''''''''''''''''''''''''''数据保存并处理'''''''''''''''''''''''''''''''''''''
-    If (Len(Text4.Text) = 724) Then
+    If (Len(Text4.Text) = 726) Then
+        
+        If (Mid(Text4.Text, 1, 2) = "F9") Then
+        
+            Text4.Text = Mid(Text4.Text, 3, 724)
+        
+        Else
+        
+            Text4.Text = ""
+        
+            command(0) = &H84
+        
+            MSComm1.Output = command                                                '发命令给下位机,通知下次传送数据(132)
+        
+            command(0) = &HFF                                                       '清空命令
+        
+            releaseLock
+        
+            Exit Sub
+        
+        End If
         
         'SkinLabel61.Caption = "已连接..."
         
@@ -13816,79 +13608,85 @@ NextLoop:
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         
         '''''''''''''''''''''''''''''''接收校准1数据'''''''''''''''''''''''''''''''''''''''''
-    ElseIf (Len(Text4.Text) = 12 And adjust1_flag = 1) Then '接收校准1数据正确
+    ElseIf (Len(Text4.Text) = 14 And adjust1_flag = 1) Then '接收校准1数据正确
         
-        adjust1_flag = 0                                                        '标志位清零
+        If (Mid(Text4.Text, 1, 2) = "F9") Then
         
-        For c = 0 To 2                                                          '处理后的数据放到text9文本里
+            Text4.Text = Right(Text4.Text, 12)
             
-            Text9.Text = Text9.Text + Format(HEX_to_DEC(Mid(Text4.Text, c * 4 + 1, 4)), "0000")
+            adjust1_flag = 0                                                        '标志位清零
+        
+            For c = 0 To 2                                                          '处理后的数据放到text9文本里
             
-        Next c
+                Text9.Text = Text9.Text + Format(HEX_to_DEC(Mid(Text4.Text, c * 4 + 1, 4)), "0000")
+            
+            Next c
         
-        read1(s1) = Text9.Text
+            read1(s1) = Text9.Text
         
-        SkinLabel57.Caption = Val(Mid(read1(s1), 1, 4))                         '显示校准1的数据
+            SkinLabel57.Caption = Val(Mid(read1(s1), 1, 4))                         '显示校准1的数据
         
-        Dim ad1_max As Double
+            Dim ad1_max As Double
 
-        Dim ad1_min As Double
+            Dim ad1_min As Double
         
-        ad1_max = Val(Mid(read1(s1), 1, 4))
+            ad1_max = Val(Mid(read1(s1), 1, 4))
         
-        ad1_min = Val(Mid(read1(s1), 1, 4))
+            ad1_min = Val(Mid(read1(s1), 1, 4))
         
-        If (Val(Mid(read1(s1), 5, 4)) > ad1_max) Then
+            If (Val(Mid(read1(s1), 5, 4)) > ad1_max) Then
             
-            ad1_max = Val(Mid(read1(s1), 5, 4))
+                ad1_max = Val(Mid(read1(s1), 5, 4))
             
+            End If
+        
+            If (Val(Mid(read1(s1), 9, 4)) > ad1_max) Then
+            
+                ad1_max = Val(Mid(read1(s1), 9, 4))
+            
+            End If
+        
+            If (Val(Mid(read1(s1), 5, 4)) < ad1_min) Then
+            
+                ad1_min = Val(Mid(read1(s1), 5, 4))
+            
+            End If
+        
+            If (Val(Mid(read1(s1), 9, 4)) < ad1_min) Then
+            
+                ad1_min = Val(Mid(read1(s1), 9, 4))
+            
+            End If
+        
+            If (ad1_max - ad1_min) / ad1_max > 0.15 Or ad1_min < 1800 Then
+            
+                answer = MsgBox("提示：校准发生错误,请检查校准瓶和孔位!", 48, "信息提示")
+            
+            End If
+        
+            getFileWriteLock
+        
+            Open App.Path & "\sys\adjust1.txt" For Output As #3                     '保存数据到adjust1文件里
+        
+            For d = 0 To 59
+            
+                Print #3, Format((d + 1), "00") & "#:" & Mid(read1(d), 1, 4); Mid(read1(d), 5, 4); Mid(read1(d), 9, 4)
+            
+            Next d
+        
+            Close #3
+        
+            releaseFileWriteLock
+                
+            Text1.Text = ""                                                         '读完数据文本清空
+        
+            Text9.Text = ""
+                
+            Unload Form9
+        
         End If
-        
-        If (Val(Mid(read1(s1), 9, 4)) > ad1_max) Then
-            
-            ad1_max = Val(Mid(read1(s1), 9, 4))
-            
-        End If
-        
-        If (Val(Mid(read1(s1), 5, 4)) < ad1_min) Then
-            
-            ad1_min = Val(Mid(read1(s1), 5, 4))
-            
-        End If
-        
-        If (Val(Mid(read1(s1), 9, 4)) < ad1_min) Then
-            
-            ad1_min = Val(Mid(read1(s1), 9, 4))
-            
-        End If
-        
-        If (ad1_max - ad1_min) / ad1_max > 0.15 Or ad1_min < 1800 Then
-            
-            answer = MsgBox("提示：校准发生错误,请检查校准瓶和孔位!", 48, "信息提示")
-            
-        End If
-        
-        getFileWriteLock
-        
-        Open App.Path & "\sys\adjust1.txt" For Output As #3                     '保存数据到adjust1文件里
-        
-        For d = 0 To 59
-            
-            Print #3, Format((d + 1), "00") & "#:" & Mid(read1(d), 1, 4); Mid(read1(d), 5, 4); Mid(read1(d), 9, 4)
-            
-        Next d
-        
-        Close #3
-        
-        releaseFileWriteLock
-        
-        Text1.Text = ""                                                         '读完数据文本清空
         
         Text4.Text = ""
-        
-        Text9.Text = ""
-        
-        Unload Form9
         
         releaseLock
         
