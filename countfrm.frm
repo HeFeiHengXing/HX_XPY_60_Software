@@ -125,6 +125,12 @@ Private Sub Form_Load()
     
     Skin1.ApplySkin Me.hWnd                                                     '加载皮肤
     
+    For nian = 2021 To 2050
+    
+        Combo1.AddItem (Format(nian, "0000"))
+        
+    Next
+    
     Dim lStyle As Long                                                          ''''''''''''''''''''''''''''''消除界面上的X按钮
 
     lStyle = GetWindowLong(hWnd, GWL_STYLE)

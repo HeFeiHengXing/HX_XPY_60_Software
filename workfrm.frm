@@ -11618,6 +11618,8 @@ Private Sub Command4_Click()                                                    
     
     'SkinLabel13.Caption = "下位机处于运行状态"                                  '状态提示
     
+    Text4.Text = ""
+    
     command(0) = &H83                                                           '发送运行命令(131)
     
     MSComm1.Output = command
@@ -11735,6 +11737,8 @@ Private Sub Command8_Click()
     Else
         
         Form2.Enabled = False                                                   '工作界面禁用
+        
+        Text4.Text = ""
         
         adjust1_flag = 1                                                        '接收上传的校准1数据标志位有效
         
